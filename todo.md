@@ -1,3 +1,5 @@
+## Manual TODO list for EstNLTK model training
+
 ### Confusion matrix, random baseline score (most frequent class or uniform random)
 
 Weighted training...
@@ -36,3 +38,5 @@ GPT experiments:
 Millistes keeltes käänte homonüümia üldse esineb?
 How to use LLM (GPT) to predict cases for words? Morphological analysis. Search for existing research or examples using LLM based tools.,
 Catastrophic forgetting literature review: does it apply to this dashboard case?
+
+## Automatic TODO list for EstNLTK model training
