@@ -1,11 +1,11 @@
 import os
 import typing
 import tqdm
-import csv
 import estnltk
 import pandas as pd
-
-from tqdm import tqdm
+import pyarrow as pa
+import pyarrow.parquet as pq
+import pathlib
 
 from scripts.model.bert_morph_tagger import BertMorphTagger
 
@@ -48,89 +48,9 @@ class Preprocessor:
         return
 
     @staticmethod
-    def create_csv_file_by_file_enc2017(
-        jsons: typing.List[str], in_dir: str, csv_dir: str
-    ):
-        """
-        Creates a CSV file for each text file. \n
-        Skips CSV files that have already been created. \n
-        For each <code>.json</code> file, the following info is gathered:
-        <ul>
-            <li><code>sentence_id</code> -- given for each sentence</li>
-            <li><code>words</code> -- words gathered from text</li>
-            <li><code>form</code> -- word form notation</li>
-            <li><code>pos</code> -- part of speech</li>
-            <li><code>type</code> -- text type (i.e. genre)</li>
-            <li><code>source</code> -- file name where the text is taken from</li>
-        </ul>
-        <a href="https://github.com/Filosoft/vabamorf/blob/e6d42371006710175f7ec328c98f90b122930555/doc/tagset.md">Tables of morphological categories</a> for more information about <code>form</code> and <code>pos</code>.
-
-        Args:
-            jsons (list): List of json files from which to read in the text
-            in_dir (str): Directory where to read the json files from
-            csv_dir (str): Directory where to save the new csv files
-        """
-        print("Beginning to morphologically tag file by file")
-        for file_name in tqdm(jsons):
-            tokens = list()
-            sentence_id = 0
-
-            # Skipping previous CSV files
-            csv_file_name = file_name[:-4] + "csv"
-            if os.path.exists(os.path.join(csv_dir, csv_file_name)):
-                # print(f"Skipping {file_name} as {csv_file_name} already exists.")
-                continue
-
-            # print(f"Beginning to tag {file_name}")
-
-            # Morph. tagging using estnltk
-            text = estnltk.converters.json_to_text(file=os.path.join(in_dir, file_name))
-            Preprocessor.find_text_type(
-                text, file_name
-            )  # Assign text type metadata if not already assigned
-            morph_analysis = text.tag_layer("morph_analysis")
-            for sentence in morph_analysis.sentences:
-                sentence_analysis = sentence.morph_analysis
-                for text, form, pos in zip(
-                    sentence_analysis.text,
-                    sentence_analysis.form,
-                    sentence_analysis.partofspeech,
-                ):
-                    if text:
-                        tokens.append(
-                            (
-                                sentence_id,
-                                text,
-                                form[0],
-                                pos[0],
-                                text.meta.get("texttype"),
-                                file_name,
-                            )
-                        )  # In case of ambiguity, select the first or index 0
-                sentence_id += 1
-
-            # print(f"{file_name} tagged, now saving")
-
-            # Salvestamine
-            with open(os.path.join(csv_dir, csv_file_name), "w") as f:
-                fieldnames = ["sentence_id", "word", "form", "pos"]
-                writer = csv.writer(
-                    f, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL
-                )
-                writer.writerow(fieldnames)
-                for row in tokens:
-                    writer.writerow(row)
-
-            # print(f"{file_name} saved to {csv_file_name}\n")
-
-        print("Morphological tagging completed successfully")
-
-    @staticmethod
-    def create_json_file_by_file_enc2017(
-        jsons: typing.List[str],
-        in_dir: str,
-        save_dir: str,
-        corpus_name: typing.Optional[str],
+    def create_json_file_by_file_est_ud(
+        jsons: typing.List[str | pathlib.Path],
+        save_dir: str | pathlib.Path,
         do_morph_layer: bool = True,
         bert_morph_tagger: typing.Optional[BertMorphTagger] = None,
         necessary_layers: typing.List[str] = [
@@ -143,7 +63,7 @@ class Preprocessor:
         replace_files: bool = False,
     ):
         """
-        Creates a JSON file for each text file.
+        Creates a new JSON file containing the morphological analysis from each JSON file.
         <ul>
             <li>Skips JSON files that have already been created.</li>
             <li>Converts JSON file into EstNLTK Text object.</li>
@@ -153,11 +73,8 @@ class Preprocessor:
             <li>Converts EstNLTK Text object into JSON using <code>estnltk.converters.text_to_json.</code></li>
         </ul>
         Args:
-            jsons (list): List of json files from which to read in the text
-            in_dir (str): Directory where to read the json files from
-            save_dir (str): Directory where to save the new json files
-            corpus_name (optional, str): Name of the corpus from which the json files were generated.
-                Currently supported are: <code>'enc2017'</code> and <code>'UD_EST-EDT'</code>.
+            jsons (list[str | pathlib.Path]): List of json filepaths from which to read in the text
+            save_dir (str | pathlib.Path): Directory where to save the new json files
             bert_morph_tagger (optional, BertMorphTagger): Configured <code>BertMorphTagger</code> class instance, if None, will not use this tagger
             necessary_layers (optional, list[str]): Text object layers that will not be deleted
             ignore_errors (optional, bool): Ignores texts that give errors when tagging
@@ -167,15 +84,15 @@ class Preprocessor:
         count_errors = 0
 
         print("Beginning to morphologically tag file by file")
-        for file_name in tqdm(jsons):
+        for file_path in tqdm.tqdm(jsons):
+            file_name = pathlib.Path(file_path).stem + pathlib.Path(file_path).suffix
             # Skipping previous JSON files
             if not replace_files and os.path.exists(os.path.join(save_dir, file_name)):
                 continue
 
             # Convert json to EstNLTK Text object
-            text = estnltk.converters.json_to_text(file=os.path.join(in_dir, file_name))
+            text = estnltk.converters.json_to_text(file=file_path)
 
-            # Add text type metadata
             Preprocessor.find_text_type(
                 text, file_name
             )  # Assign text type metadata if not already assigned
@@ -206,7 +123,7 @@ class Preprocessor:
             ):  # Assertion that the length of both layers are the same
                 assert len(text.morph_analysis) == len(
                     text.bert_morph_tagging
-                ), f"""Failed to assert file '{file_name}'
+                ), f"""Failed to assert file '{file_path}'
                 Length of layers aren't the same:
                 morph_analysis = {len(text.morph_analysis)}
                 bert_morph_tagging = {len(text.bert_morph_tagging)}"""
@@ -225,9 +142,13 @@ class Preprocessor:
             print(f"Failed to tag {count_errors} texts")
 
     @staticmethod
-    def create_df_ud_corpus(jsons, in_dir, tokenizer, csv_filename):
+    def create_df_ud_corpus(
+        jsons: typing.List[str | pathlib.Path],
+        tokenizer: str,
+        output_filename: typing.Union[str, pathlib.Path],
+    ):
         """
-        Creates a new dataset from converted the Estonian UD EDT <a href="https://github.com/UniversalDependencies/UD_Estonian-EDT">corpus</a>. \n
+        Creates a new dataset from converted the Estonian UD EDT <a href="https://github.com/UniversalDependencies/UD_Estonian-EDT">corpus</a> JSON files. \n
         For each <code>.json</code> file, the following info is gathered:
         <ul>
             <li><code>sentence_id</code> -- given for each sentence</li>
@@ -240,73 +161,130 @@ class Preprocessor:
         <a href="https://github.com/Filosoft/vabamorf/blob/e6d42371006710175f7ec328c98f90b122930555/doc/tagset.md">Tables of morphological categories</a> for more information about <code>form</code> and <code>pos</code>.
 
         Args:
-            jsons (list[str]): List of json files from which to read in the text
-            in_dir (str): Directory containing list of files (<code>jsons</code>)
+            jsons (list[str | pathlib.Path]): List of json files from which to read in the text
             tokenizer (str): Use goldstandard (<code>ud_morph_reduced</code>) or Vabamorf tokenization ((<code>morph_analysis</code>))
-            csv_filename (str): CSV filename where to save the gathered text
+            output_filename (str | pathlib.Path): Filename where to save the gathered text. Supports .csv and .parquet extensions. If the file already exists, it will be overwritten.
         """
+        # Check that the tokenizer argument is valid
         if tokenizer not in {"ud_morph_reduced", "morph_analysis"}:
             raise ValueError(
                 "create_df_ud_corpus: tokenizer must be one of %r."
                 % {"ud_morph_reduced", "morph_analysis"}
             )
 
-        tokens = list()
+        # Check that the output filename has a supported extension
+        file_extension = pathlib.Path(output_filename).suffix.lower()
+        if file_extension not in [".csv", ".parquet"]:
+            raise ValueError(
+                f"Unsupported file extension: {file_extension}. Supported extensions are .csv and .parquet."
+            )
+
+        # If file exists, remove it (we overwrite by default)
+        if os.path.exists(output_filename):
+            os.remove(output_filename)
+
         sentence_id = 0
         fieldnames = ["sentence_id", "words", "form", "pos", "file_prefix", "source"]
 
         print("Beginning to morphologically tag file by file. This can take a while.")
-        for file_name in jsons:
-            # print(f"Beginning to tokenize {file_name}")
-            sentence_id = 0
 
-            # Morph. tagging
-            text = estnltk.converters.json_to_text(file=os.path.join(in_dir, file_name))
-            if tokenizer == "morph_analysis":
-                text.tag_layer("morph_analysis")
-            file_prefix = text.meta.get("file_prefix")
-            for sentence in text.sentences:
-                if tokenizer == "ud_morph_reduced":
+        def _extract_rows(
+            text_obj: estnltk.Text,
+            tokenizer_value: str,
+            file_prefix_value,
+            file_name_value,
+        ) -> list:
+            """Extract rows (sentence_id, word, form, pos, file_prefix, source) from an EstNLTK Text.
+
+            Returns a list of tuples. Sentence ids start at 0 for each text and increment per sentence.
+            """
+            rows_local: list[tuple] = []
+            sentence_id_local = 0
+            for sentence in text_obj.sentences:
+                if tokenizer_value == "ud_morph_reduced":
                     sentence_analysis = sentence.ud_morph_reduced
-                    for text, form, pos in zip(
+                    iter_triplet = zip(
                         sentence_analysis.text,
                         sentence_analysis.form,
                         sentence_analysis.pos,
-                    ):
-                        if text:
-                            tokens.append(
-                                (
-                                    sentence_id,
-                                    text,
-                                    form[0],
-                                    pos[0],
-                                    file_prefix,
-                                    file_name,
-                                )
-                            )  # In case of ambiguity, select the first or index 0
+                    )
                 else:
                     sentence_analysis = sentence.morph_analysis
-                    for text, form, pos in zip(
+                    iter_triplet = zip(
                         sentence_analysis.text,
                         sentence_analysis.form,
                         sentence_analysis.partofspeech,
-                    ):
-                        if text:
-                            tokens.append(
-                                (
-                                    sentence_id,
-                                    text,
-                                    form[0],
-                                    pos[0],
-                                    file_prefix,
-                                    file_name,
-                                )
-                            )  # In case of ambiguity, select the first or index 0
-                sentence_id += 1
-            # print(f"{file_name} tokenized")
+                    )
+
+                for s_text, s_form, s_pos in iter_triplet:
+                    if s_text:
+                        rows_local.append(
+                            (
+                                sentence_id_local,
+                                s_text,
+                                s_form[0],
+                                s_pos[0],
+                                file_prefix_value,
+                                file_name_value,
+                            )
+                        )
+                sentence_id_local += 1
+
+            return rows_local
+
+        task_progress = tqdm.tqdm(
+            jsons, desc="Processing files", unit="file", total=len(jsons)
+        )
+
+        if file_extension == ".parquet":
+            writer: typing.Optional[pq.ParquetWriter] = None
+            for file_path in task_progress:
+                text = estnltk.converters.json_to_text(file=file_path)
+                if tokenizer == "morph_analysis":
+                    text.tag_layer("morph_analysis")
+                file_prefix = text.meta.get("file_prefix")
+                file_name = pathlib.Path(file_path).name
+
+                rows: list[tuple] = _extract_rows(
+                    text, tokenizer, file_prefix, file_name
+                )
+
+                if not rows:
+                    continue
+
+                df_chunk = pd.DataFrame(rows, columns=fieldnames)
+                table = pa.Table.from_pandas(df_chunk, preserve_index=False)
+                if writer is None:
+                    writer = pq.ParquetWriter(output_filename, table.schema)
+                writer.write_table(table)
+
+            if writer is not None:
+                writer.close()
+
+        else:  # CSV
+            header_written = False
+            for file_path in task_progress:
+                text = estnltk.converters.json_to_text(file=file_path)
+                if tokenizer == "morph_analysis":
+                    text.tag_layer("morph_analysis")
+                file_prefix = text.meta.get("file_prefix")
+                file_name = pathlib.Path(file_path).name
+                rows: list[tuple] = _extract_rows(
+                    text, tokenizer, file_prefix, file_name
+                )
+
+                if not rows:
+                    continue
+
+                df_chunk = pd.DataFrame(rows, columns=fieldnames)
+                df_chunk.to_csv(
+                    output_filename,
+                    mode="a",
+                    header=not header_written,
+                    index=False,
+                    encoding="utf-8",
+                )
+                header_written = True
 
         print("Morphological tagging completed successfully")
-        print("Creating Pandas dataframe")
-        df = pd.DataFrame(data=tokens, columns=fieldnames)
-        df.to_csv(path_or_buf=csv_filename, index=False)
-        print(f"Tagged texts saved to {csv_filename}\n")
+        print(f"Tagged texts saved to {output_filename}\n")
