@@ -19,7 +19,7 @@ from transformers import AutoConfig, AutoTokenizer, AutoModelForTokenClassificat
 from estnltk import Text, Layer, Tagger
 from estnltk.downloader import get_resource_paths
 
-from EstNLTK_model_training.scripts.model.bert_tokens_to_words_rewriter import (
+from scripts.model.bert_tokens_to_words_rewriter import (
     BertTokens2WordsRewriter,
 )
 
