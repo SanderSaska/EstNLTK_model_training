@@ -8,10 +8,18 @@ from estnltk.converters.label_studio.labelling_configurations import (
 from estnltk.converters.label_studio.labelling_tasks import PhraseClassificationTask
 
 
-class Extractor:
+class Preprocessor:
     def __init__(self):
+        pass
+
+    @staticmethod
+    def create_df(
+        input_files: typing.List[typing.Tuple],
+        output_dir: typing.Union[str, Path],
+        do_overall_df: bool = True,
+    ):
         # Use specific annotation configurations that were used in homonyms dataset
-        self.annotation_confs = {
+        annotation_confs = {
             1: PhraseClassificationConfiguration(
                 phrase_labels=["analüüsitav sõna"],
                 class_labels={"sg n": "sg n", "sg g": "sg g"},
@@ -37,22 +45,13 @@ class Extractor:
                 header_placement="middle",
             ),
         }
-        return self.annotation_confs
-
-    def create_df(
-        self,
-        input_files: typing.List[typing.Tuple],
-        output_dir: typing.Union[str, Path],
-        do_individual_dfs: bool = True,
-        do_overall_df: bool = True,
-    ):
 
         overall_data = []
         # Extract data from input files
         for infl_type, input_file in input_files:
             print(f"Processing file: {input_file} (inflection type {infl_type})")
-            num = input_file.split("/")[3]
-            annotation_conf = self.annotation_confs[infl_type]
+            num = int(input_file.parent.stem)
+            annotation_conf = annotation_confs[infl_type]
             with open(input_file, "r", encoding="utf-8") as f:
                 raw = f.read()
             task = PhraseClassificationTask(
@@ -82,13 +81,14 @@ class Extractor:
                             }
                         )
             df = pd.DataFrame(data)
-            output_csv = f"{output_dir}/homonyms_infltype_{num}_{infl_type}.csv"
+            output_csv = output_dir / Path(f"homonyms_infltype_{num}_{infl_type}.csv")
             df.to_csv(output_csv, index=False)
             print(f"Saved processed data to {output_csv}")
             overall_data.extend(data)
 
-        # Create overall dataframe
-        overall_df = pd.DataFrame(overall_data)
-        overall_output_csv = f"{output_dir}/homonyms_overall.csv"
-        overall_df.to_csv(overall_output_csv, index=False)
-        print(f"Saved overall processed data to {overall_output_csv}")
+        if do_overall_df:
+            # Create overall dataframe
+            overall_df = pd.DataFrame(overall_data)
+            overall_output_csv = output_dir / Path("homonyms_overall.csv")
+            overall_df.to_csv(overall_output_csv, index=False)
+            print(f"Saved overall processed data to {overall_output_csv}")

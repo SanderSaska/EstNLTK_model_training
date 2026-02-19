@@ -28,7 +28,7 @@ class Extractor:
                         input_files.append(
                             (
                                 inflection_type,
-                                str(input_dir) + "/" + fname + "/" + subfname,
+                                input_dir / fname / subfname,
                             )
                         )
 
