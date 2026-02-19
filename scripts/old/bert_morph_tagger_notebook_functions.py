@@ -208,9 +208,11 @@ class NotebookFunctions:
         """
         print("Creating column 'labels'")
         df["labels"] = df.apply(
-            lambda row: str(row["form"]) + "_" + str(row["pos"])
-            if row["form"] and row["pos"]
-            else str(row["form"]) or str(row["pos"]),
+            lambda row: (
+                str(row["form"]) + "_" + str(row["pos"])
+                if row["form"] and row["pos"]
+                else str(row["form"]) or str(row["pos"])
+            ),
             axis=1,
         )
         print("Column 'labels' created")
