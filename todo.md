@@ -1,5 +1,15 @@
 ## Manual TODO list for EstNLTK model training
 
+### Priority
+
+Train the model on homonym dataset and try to overfit it as much as possible. Try to get the best results for this dataset only.
+
+Overleaf: Write the Table Of Contents and start writing some paragraphs for each section if possible.
+
+Since we have tabular results for the homonym dataset, transfer these results to the Overleaf document and write some analysis for these results.
+
+Generate a confusion matrix on the overall homonym dataset and for each inflection type separately. The confusion matrix should show the percentage of correct predictions for each case and the percentage of incorrect predictions for each case.
+
 ### Confusion matrix, random baseline score (most frequent class or uniform random)
 
 Weighted training...
@@ -38,6 +48,17 @@ GPT experiments:
 Millistes keeltes käänte homonüümia üldse esineb?
 How to use LLM (GPT) to predict cases for words? Morphological analysis. Search for existing research or examples using LLM based tools.
 Catastrophic forgetting literature review: does it apply to this dashboard case?
+
+### Conflicts syntax vs morphology dataset
+
+Filter out words with dash suffix like "laenu-" and two or more connected words such as "Monte Carlo" from the conflicts dataset. These will become problematic if we try to use LLM to replace the word with a synonym or a placeholder like "see" or "tema" depending on the subject being animate or inanimate. If the subject is a pronoun then replace the word with a name, preferably a name that has different case forms in Estonian (text is different for each case).
+
+After filtering write a prompt task for LLM to replace the confliting word with a synonym or a placeholder.
+
+Use Vabamorf on the conflicts dataset to find out whether Vabamorf can disambiguate the cases and if it can, are they correct.
+
+1) For getting a morph analysis for the conflicting word, use analyze_token function to get the analysis for the word in the sentence. If the analysis has only one possible case, then Vabamorf can disambiguate the word. If it has more than one possible case, then Vabamorf cannot disambiguate the word.
+2) For checking if the analysis is correct, compare the predicted case with the given case in the dataset. If they don't match, then the problem is syntaxtic and not morphological. Otherwise...?
 
 ## Automatic TODO list for EstNLTK model training
 
