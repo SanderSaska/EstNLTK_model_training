@@ -2,13 +2,19 @@
 
 ### Priority
 
-Train the model on homonym dataset and try to overfit it as much as possible. Try to get the best results for this dataset only.
+Train the model on homonym dataset and try to overfit it as much as possible. Try to get the best results for this dataset only. Next step is to do train/test splitting, where we have 5000 examples for train and 2000 examples for test. After that, we evaluate the model on the test set and see if the confusion matrix shows similar results as with training on the whole dataset. The results will be a bit more pessimistic, but we want to see if the model can generalize to unseen data.
+
+Inspect homonym models confusion matrix results, specifically the confusions between adt and sg g, sg n and sg g, and sg p and sg g. Gather 10 examples for each of these confusions and analyze them to see if there are any patterns or commonalities that could explain why the model is confusing these cases.
 
 Overleaf: Write the Table Of Contents and start writing some paragraphs for each section if possible.
 
 Since we have tabular results for the homonym dataset, transfer these results to the Overleaf document and write some analysis for these results.
 
-Generate a confusion matrix on the overall homonym dataset and for each inflection type separately. The confusion matrix should show the percentage of correct predictions for each case and the percentage of incorrect predictions for each case.
+Weighted training: samples vs weights. Should we sample more from the homonym dataset or should we give more weight to the examples from the homonym dataset? Or maybe a combination of both?
+
+Early stopping criteria: if F1-score on the validation set does not go under 95% for 2 consecutive epochs, stop training.
+
+Might have to write report for Siim showcasing the results and the process of training the model on the homonym dataset. Explain why we chose so.
 
 ### Confusion matrix, random baseline score (most frequent class or uniform random)
 
