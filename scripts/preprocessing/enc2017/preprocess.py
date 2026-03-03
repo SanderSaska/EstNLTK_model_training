@@ -9,6 +9,9 @@ import pyarrow.parquet as pq
 import pathlib
 
 from tqdm import tqdm
+import numpy as np
+import random
+from bisect import bisect_left, bisect_right
 
 from scripts.model.bert_morph_tagger import BertMorphTagger
 
@@ -248,9 +251,8 @@ class Preprocessor:
             raise ValueError(
                 f"Unsupported file extension: {file_extension}. Supported extensions are .csv and .parquet."
             )
-
-        sentence_id = 0
-        fieldnames = ["sentence_id", "words", "form", "pos", "type", "source"]
+        # Column names for the output dataset
+        fieldnames = ["sentence_id", "words", "form", "pos", "labels", "type", "source"]
 
         # If file exists, remove it (we overwrite by default)
         if os.path.exists(output_filename):
@@ -258,45 +260,65 @@ class Preprocessor:
 
         print("Beginning to create dataset from JSON files.")
 
+        def _rows_for_file(file_path: typing.Union[str, pathlib.Path]) -> list:
+            """Collect rows for a single JSON file.
+
+            Returns a list of tuples matching `fieldnames` or an empty list if the
+            file should be skipped.
+            """
+            sentence_id_local = 0
+            text = estnltk.converters.json_to_text(
+                file=file_path
+            )  # Convert json to EstNLTK Text object
+            # Assign text type metadata if not already assigned
+            file_name_local = (
+                pathlib.Path(file_path).stem + pathlib.Path(file_path).suffix
+            )
+            Preprocessor.find_text_type(text, file_name_local)
+            if "morph_analysis" not in text.layers:
+                print(
+                    f"Text from file '{file_path}' doesn't have morph_analysis layer, skipping this text."
+                )
+                return []
+            # Iterate through sentences and gather the necessary info for each word
+            rows_local: list[tuple] = []
+            for sentence in text.sentences:
+                sentence_analysis = sentence.morph_analysis
+                for s_text, s_form, s_pos in zip(
+                    sentence_analysis.text,
+                    sentence_analysis.form,
+                    sentence_analysis.partofspeech,
+                ):
+                    if s_text:
+                        # In case of ambiguity, select the first or index 0 for form and pos tag, and create a label by combining them. If either form or pos tag is missing, use the available one as the label.
+                        label = s_form[0] + "_" + s_pos[0]
+                        if s_form[0] == "" and s_pos[0] != "":
+                            label = s_pos[0]
+                        elif s_form[0] != "" and s_pos[0] == "":
+                            label = s_form[0]
+                        rows_local.append(
+                            (
+                                sentence_id_local,
+                                s_text,
+                                s_form[0],
+                                s_pos[0],
+                                label,
+                                text.meta.get("texttype"),
+                                file_name_local,
+                            )
+                        )
+                sentence_id_local += 1
+
+            return rows_local
+
+        # Save the gathered info into a new file with the given name and extension
         if file_extension == ".parquet":  # Parquet
             writer: typing.Optional[pq.ParquetWriter] = None
             for file_path in tqdm(jsons):
-                sentence_id = 0
-                text = estnltk.converters.json_to_text(file=file_path)
-                file_name = (
-                    pathlib.Path(file_path).stem + pathlib.Path(file_path).suffix
-                )
-                Preprocessor.find_text_type(text, file_name)
-                if "morph_analysis" not in text.layers:
-                    print(
-                        f"Text from file '{file_path}' doesn't have morph_analysis layer, skipping this text."
-                    )
-                    continue
-
-                rows: list[tuple] = []
-                for sentence in text.sentences:
-                    sentence_analysis = sentence.morph_analysis
-                    for s_text, s_form, s_pos in zip(
-                        sentence_analysis.text,
-                        sentence_analysis.form,
-                        sentence_analysis.partofspeech,
-                    ):
-                        if s_text:
-                            rows.append(
-                                (
-                                    sentence_id,
-                                    s_text,
-                                    s_form[0],
-                                    s_pos[0],
-                                    text.meta.get("texttype"),
-                                    file_name,
-                                )
-                            )
-                    sentence_id += 1
-
+                rows = _rows_for_file(file_path)
                 if not rows:
                     continue
-
+                # Save in chunks to avoid memory issues with large datasets
                 df_chunk = pd.DataFrame(rows, columns=fieldnames)
                 table = pa.Table.from_pandas(df_chunk, preserve_index=False)
                 if writer is None:
@@ -309,44 +331,11 @@ class Preprocessor:
         else:  # CSV
             header_written = False
             for file_path in tqdm(jsons):
-                sentence_id = 0
-                text = estnltk.converters.json_to_text(file=file_path)
-                file_name = (
-                    pathlib.Path(file_path).stem + pathlib.Path(file_path).suffix
-                )
-                Preprocessor.find_text_type(text, file_name)
-                if "morph_analysis" not in text.layers:
-                    print(
-                        f"Text from file '{file_path}' doesn't have morph_analysis layer, skipping this text."
-                    )
-                    continue
-
-                rows: list[tuple] = []
-                for sentence in text.sentences:
-                    sentence_analysis = sentence.morph_analysis
-                    for s_text, s_form, s_pos in zip(
-                        sentence_analysis.text,
-                        sentence_analysis.form,
-                        sentence_analysis.partofspeech,
-                    ):
-                        if s_text:
-                            rows.append(
-                                (
-                                    sentence_id,
-                                    s_text,
-                                    s_form[0],
-                                    s_pos[0],
-                                    text.meta.get("texttype"),
-                                    file_name,
-                                )
-                            )
-                    sentence_id += 1
-
+                rows = _rows_for_file(file_path)
                 if not rows:
                     continue
-
+                # Save in chunks to avoid memory issues with large datasets
                 df_chunk = pd.DataFrame(rows, columns=fieldnames)
-                # append to csv; write header only once
                 df_chunk.to_csv(
                     output_filename,
                     mode="a",
@@ -358,3 +347,134 @@ class Preprocessor:
 
         print("Morphological tagging completed successfully")
         print(f"Tagged texts saved to {output_filename}\n")
+
+    @staticmethod
+    def shuffle_blocks_by_source(
+        data: pd.DataFrame, source_col: str = "source", seed: int | None = None
+    ) -> pd.DataFrame:
+        """
+        Shuffle a DataFrame by blocks defined by `source_col`, preserving the original
+        order of rows within each source block.
+
+        Parameters
+        - data: DataFrame to shuffle (not modified in-place).
+        - source_col: column name used to form blocks (default "source").
+        - seed: optional integer seed for reproducible shuffling.
+
+        Returns
+        - Shuffled DataFrame with blocks rearranged and internal block ordering preserved.
+        """
+        if data.empty:
+            return data.copy()
+
+        groups = data.groupby(
+            source_col, sort=False
+        ).groups  # dict: source -> Index of labels
+        keys = list(groups.keys())
+
+        rnd = np.random.default_rng(seed)
+        rnd.shuffle(keys)
+
+        if isinstance(data.index, pd.RangeIndex):
+            ordered_pos = np.concatenate([groups[k].values for k in keys])
+        else:
+            idx = data.index
+            ordered_pos = np.concatenate([idx.get_indexer_for(groups[k]) for k in keys])
+
+        return data.take(ordered_pos).reset_index(drop=True)
+
+    @staticmethod
+    def stratified_sample_by_type(
+        shuffled_df: pd.DataFrame,
+        N: int,
+        source_col: str = "source",
+        type_col: str = "type",
+        seed: int | None = None,
+        verbose: bool = False,
+    ) -> pd.DataFrame:
+        """
+        Stratified sample N rows from `shuffled_df` by selecting whole source blocks.
+        - Preserves internal order of each source block.
+        - Tries to sample roughly uniformly across text `type`s.
+        - Overshoot is allowed (sources cannot be split).
+        """
+        rnd = random.Random(seed)
+
+        sizes = shuffled_df.groupby(source_col, sort=False).size().rename("size")
+        types = shuffled_df.groupby(source_col, sort=False)[type_col].first()
+        sources_df = pd.concat(
+            [sizes, types], axis=1
+        ).reset_index()  # columns: source, size, type
+
+        mapping: dict[str, list[tuple[str, int]]] = {}
+        for _, row in sources_df.iterrows():
+            t = row[type_col]
+            s = row[source_col]
+            sz = int(row["size"])
+            mapping.setdefault(t, []).append((s, sz))
+
+        for t in mapping:
+            rnd.shuffle(mapping[t])
+
+        types_list = list(mapping.keys())
+        num_types = max(1, len(types_list))
+        base_quota = N // num_types
+        remainder = N % num_types
+
+        selected_sources: list[str] = []
+        accumulated_total = 0
+
+        for i, t in enumerate(types_list):
+            quota = base_quota + (1 if i < remainder else 0)
+            lst = mapping[t]
+
+            lst.sort(key=lambda x: x[1])
+            srcs = [x[0] for x in lst]
+            sizes_list = [x[1] for x in lst]
+
+            acc = 0
+            while sizes_list and acc < quota:
+                rem = quota - acc
+                idx_eq = bisect_left(sizes_list, rem)
+                if idx_eq < len(sizes_list) and sizes_list[idx_eq] == rem:
+                    pick_idx = idx_eq
+                else:
+                    idx_le = bisect_right(sizes_list, rem) - 1
+                    if idx_le >= 0:
+                        pick_idx = idx_le
+                    else:
+                        pick_idx = 0
+
+                src = srcs.pop(pick_idx)
+                sz = sizes_list.pop(pick_idx)
+                selected_sources.append(src)
+                acc += sz
+                accumulated_total += sz
+
+            print(
+                f"Type '{t}': quota={quota}, selected={acc}, overshoot={acc - quota}"
+            ) if verbose else None
+            mapping[t] = list(zip(srcs, sizes_list))
+
+        if accumulated_total < N:
+            print(
+                f"Accumulated total {accumulated_total} is less than N={N}, selecting more sources from remaining pool."
+            ) if verbose else None
+            remaining = []
+            for lst in mapping.values():
+                remaining.extend(lst)
+            remaining.sort(key=lambda x: x[1], reverse=True)
+            idx = 0
+            while accumulated_total < N and idx < len(remaining):
+                src, sz = remaining[idx]
+                selected_sources.append(src)
+                accumulated_total += sz
+                idx += 1
+
+        groups = shuffled_df.groupby(source_col, sort=False).groups
+        positions = [groups[s] for s in selected_sources if s in groups]
+        if not positions:
+            return pd.DataFrame(columns=shuffled_df.columns)
+
+        ordered_pos = np.concatenate(positions)
+        return shuffled_df.take(ordered_pos).reset_index(drop=True)

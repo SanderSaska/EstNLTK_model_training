@@ -183,8 +183,15 @@ class Preprocessor:
         if os.path.exists(output_filename):
             os.remove(output_filename)
 
-        sentence_id = 0
-        fieldnames = ["sentence_id", "words", "form", "pos", "file_prefix", "source"]
+        fieldnames = [
+            "sentence_id",
+            "words",
+            "form",
+            "pos",
+            "labels",
+            "file_prefix",
+            "source",
+        ]
 
         print("Beginning to morphologically tag file by file. This can take a while.")
 
@@ -194,7 +201,7 @@ class Preprocessor:
             file_prefix_value,
             file_name_value,
         ) -> list:
-            """Extract rows (sentence_id, word, form, pos, file_prefix, source) from an EstNLTK Text.
+            """Extract rows (sentence_id, word, form, pos, labels, file_prefix, source) from an EstNLTK Text.
 
             Returns a list of tuples. Sentence ids start at 0 for each text and increment per sentence.
             """
@@ -218,12 +225,19 @@ class Preprocessor:
 
                 for s_text, s_form, s_pos in iter_triplet:
                     if s_text:
+                        # In case of ambiguity, select the first or index 0 for form and pos tag, and create a label by combining them. If either form or pos tag is missing, use the available one as the label.
+                        label = s_form[0] + "_" + s_pos[0]
+                        if s_form[0] == "" and s_pos[0] != "":
+                            label = s_pos[0]
+                        elif s_form[0] != "" and s_pos[0] == "":
+                            label = s_form[0]
                         rows_local.append(
                             (
                                 sentence_id_local,
                                 s_text,
                                 s_form[0],
                                 s_pos[0],
+                                label,
                                 file_prefix_value,
                                 file_name_value,
                             )
