@@ -15,8 +15,10 @@ from transformers import (
     AutoTokenizer,
     AutoConfig,
     AutoModelForTokenClassification,
+    RobertaForTokenClassification,
     get_linear_schedule_with_warmup,
     DataCollatorForTokenClassification,
+    RobertaTokenizerFast,
 )
 from seqeval.metrics import classification_report, f1_score
 from tqdm.auto import tqdm
@@ -26,6 +28,7 @@ def initialize_model(
     model_name: str,
     unique_labels: typing.Optional[typing.List[str]] = None,
     no_progress_bars: bool = False,
+    use_Roberta_tokenizer: bool = False,
     cleanup: bool = True,
 ) -> typing.Dict[str, typing.Any]:
     """
@@ -35,6 +38,7 @@ def initialize_model(
         model_name: Pretrained model name or local path (e.g. 'camembert-base').
         unique_labels: All possible label strings the model will predict.
         no_progress_bars: If True, reduces HF logging verbosity.
+        use_Roberta_tokenizer: If True, uses RobertaTokenizerFast instead of AutoTokenizer (for better handling of RoBERTa-like tokenization).
         cleanup: If True, attempts to free previous model memory before initialisation.
 
     Returns:
@@ -130,8 +134,14 @@ def initialize_model(
     config.id2label = {str(k): v for k, v in id2label.items()}
     config.label2id = {str(k): v for k, v in label2id.items()}
 
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
-    model = AutoModelForTokenClassification.from_pretrained(model_name, config=config)
+    if use_Roberta_tokenizer:
+        tokenizer = RobertaTokenizerFast.from_pretrained(model_name, use_fast=True)
+        model = RobertaForTokenClassification.from_pretrained(model_name, config=config)
+    else:
+        tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+        model = AutoModelForTokenClassification.from_pretrained(
+            model_name, config=config
+        )
 
     # Move model to device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

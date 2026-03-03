@@ -126,7 +126,19 @@ def get_unique_labels(json_file: typing.Optional[str] = None):
     #     "vat",
     # ]
 
-    pos_mutable = ["A", "C", "H", "N", "O", "P", "S", "U", "X", "Y"]
+    pos_mutable = [
+        "A",
+        "C",
+        "H",
+        "N",
+        "O",
+        "P",
+        "S",
+        "T",
+        "U",
+        "X",
+        "Y",
+    ]  # T is foreign word or "tsitaatsõna" in Estonian
     pos_immutable = ["D", "G", "I", "J", "K", "Z"]
     pos_verb = ["V"]
     form_mutable = [
@@ -168,6 +180,7 @@ def get_unique_labels(json_file: typing.Optional[str] = None):
         "me",
         "n",
         "neg",
+        # "neg da",
         "neg ge",
         "neg gem",
         "neg gu",
@@ -246,7 +259,7 @@ def get_unique_labels(json_file: typing.Optional[str] = None):
     for comb, pos in mutable_combinations:
         form = comb
         if isinstance(form, tuple):  # form is a combination of count and form
-            form = comb[0] + "_" + comb[1]
+            form = comb[0] + " " + comb[1]
         mutable_labels.append((form, pos))
 
     # immutable_labels = [("", pos) for pos in pos_immutable] # Is replaced by only_pos_labels
@@ -256,7 +269,7 @@ def get_unique_labels(json_file: typing.Optional[str] = None):
     for comb in only_form:
         form = comb
         if isinstance(form, tuple):  # form is a combination of count and form
-            form = form[0] + "_" + form[1]
+            form = form[0] + " " + form[1]
         only_form_labels.append((form, ""))
 
     # Unknown form labels for all POS tags
@@ -268,7 +281,7 @@ def get_unique_labels(json_file: typing.Optional[str] = None):
         if form in form_verb:
             continue  # verb forms are only combined with verb POS, so we skip them here
         if isinstance(form, tuple):  # form is a combination of count and form
-            form = form[0] + "_" + form[1]
+            form = form[0] + " " + form[1]
         unknown_form_labels.append((form, "?"))
 
     unique_labels = (
@@ -287,7 +300,7 @@ def get_unique_labels(json_file: typing.Optional[str] = None):
     # Create the 'labels' column by combining 'form' and 'pos'
     unique_labels_df["labels"] = unique_labels_df.apply(
         lambda row: (
-            row["form"] + " " + row["pos"]
+            row["form"] + "_" + row["pos"]
             if row["form"] and row["pos"]
             else row["form"] or row["pos"]
         ),
