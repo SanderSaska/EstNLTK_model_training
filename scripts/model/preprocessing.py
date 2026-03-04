@@ -320,6 +320,8 @@ def train_token_classification(
     max_grad_norm: float = 1.0,
     evaluate_during_training: bool = False,
     use_early_stopping: bool = True,
+    patience_n: int = 2,
+    early_stopping_method: str = "f1",
     best_model_dir: typing.Optional[str] = None,
     save_model_every_epoch: bool = False,
     save_steps: int = -1,
@@ -343,11 +345,14 @@ def train_token_classification(
       eval_df: optional DataFrame for evaluation (same format as train_df).
       evaluate_during_training: if True, evaluate after each epoch (required for early stopping).
       use_early_stopping: requires evaluation; uses best validation f1 to stop.
+      patience_n: number of epochs to wait for improvement before stopping (if use_early_stopping).
+      early_stopping_method: "f1" or "loss".
       best_model_dir: where to save best model (if provided).
       save_model_every_epoch: save a checkpoint every epoch (if True).
       save_steps: not used here because checkpointing is epoch-based; keep for API compatibility.
       device: torch.device; auto-detected if None.
       silent: if True reduce tqdm output.
+      dry_run: if True, runs through the motions without saving any models or checkpoints (useful for testing).
 
     Returns:
       dict with training statistics and last evaluation report.
@@ -481,7 +486,7 @@ def train_token_classification(
     # Training loop
     best_val_f1 = -float("inf")
     best_state = None
-    patience = 3 if use_early_stopping else None
+    patience = patience_n if use_early_stopping else None
     patience_counter = 0
 
     global_step = 0
