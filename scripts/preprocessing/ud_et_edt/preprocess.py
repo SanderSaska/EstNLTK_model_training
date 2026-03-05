@@ -3,10 +3,12 @@ import typing
 import tqdm
 import estnltk
 import pandas as pd
+import numpy as np
 import pyarrow as pa
 import pyarrow.parquet as pq
 import pathlib
 
+from sklearn.model_selection import train_test_split
 from scripts.model.bert_morph_tagger import BertMorphTagger
 
 
@@ -302,3 +304,69 @@ class Preprocessor:
 
         print("Morphological tagging completed successfully")
         print(f"Tagged texts saved to {output_filename}\n")
+
+    @staticmethod
+    def split_by_source(
+        df: pd.DataFrame,
+        test_size: float = 0.2,
+        source_col: str = "source",
+        stratify_col: str | None = "type",
+        seed: int | None = None,
+    ):
+        """
+        Split a DataFrame into train and test sets by source, ensuring that all rows from the same source are in the same set.
+        Optionally stratifies the split by a specified column (e.g. text type) to maintain a similar distribution of that column in both sets.
+
+        Args:
+            df (pd.DataFrame): Input DataFrame to split.
+            test_size (float, optional): Proportion of test data. Defaults to 0.2.
+            source_col (str, optional): Column name for source identifiers. Defaults to "source".
+            stratify_col (str | None, optional): Column name for stratification values (e.g. text type). Defaults to "type".
+            seed (int | None, optional): Random seed for reproducibility. Defaults to None.
+
+        Returns:
+            Tuple[pd.DataFrame, pd.DataFrame, list, list]: (train_df, test_df, train_sources, test_sources)
+             - train_df: DataFrame containing training data.
+             - test_df: DataFrame containing test data.
+             - train_sources: List of unique source identifiers in the training set.
+             - test_sources: List of unique source identifiers in the test set.
+        """
+        groups = df.groupby(source_col, sort=False).groups  # source -> Int64Index
+        sources = np.array(list(groups.keys()))
+
+        # optional per-source stratify values (one value per source)
+        stratify_vals = None
+        if stratify_col is not None:
+            # take the type of the first row of each source (all rows in a source share the same type)
+            stratify_vals = np.array(
+                [df.iloc[groups[s][0]][stratify_col] for s in sources]
+            )
+
+        train_src, test_src = train_test_split(
+            sources, test_size=test_size, random_state=seed, stratify=stratify_vals
+        )
+
+        # Preserve the original source-block ordering by sorting by first-row position
+        def preserve_order(src_list):
+            order = np.argsort([groups[s][0] for s in src_list])
+            return src_list[order]
+
+        train_src = preserve_order(train_src)
+        test_src = preserve_order(test_src)
+
+        # Efficiently build row positions and slice (avoids per-row operations)
+        train_pos = (
+            np.concatenate([groups[s] for s in train_src])
+            if len(train_src) > 0
+            else np.array([], dtype=int)
+        )
+        test_pos = (
+            np.concatenate([groups[s] for s in test_src])
+            if len(test_src) > 0
+            else np.array([], dtype=int)
+        )
+
+        train_df = df.take(train_pos).reset_index(drop=True)
+        test_df = df.take(test_pos).reset_index(drop=True)
+
+        return train_df, test_df, list(train_src), list(test_src)
