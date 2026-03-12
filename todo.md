@@ -2,9 +2,9 @@
 
 ### Priority
 
-Train the model on homonym dataset and try to overfit it as much as possible. Try to get the best results for this dataset only. Next step is to do train/test splitting, where we have 5000 examples for train and 2000 examples for test. After that, we evaluate the model on the test set and see if the confusion matrix shows similar results as with training on the whole dataset. The results will be a bit more pessimistic, but we want to see if the model can generalize to unseen data.
+~~Train the model on homonym dataset and try to overfit it as much as possible. Try to get the best results for this dataset only. Next step is to do train/test splitting, where we have 5000 examples for train and 2000 examples for test. After that, we evaluate the model on the test set and see if the confusion matrix shows similar results as with training on the whole dataset. The results will be a bit more pessimistic, but we want to see if the model can generalize to unseen data. Train model on the whole dataset and try to get 100 score~~
 
-Inspect homonym models confusion matrix results, specifically the confusions between adt and sg g, sg n and sg g, and sg p and sg g. Gather 10 examples for each of these confusions and analyze them to see if there are any patterns or commonalities that could explain why the model is confusing these cases.
+~~Inspect homonym models confusion matrix results, specifically the confusions between adt and sg g, sg n and sg g, and sg p and sg g. Gather 10 examples for each of these confusions and analyze them to see if there are any patterns or commonalities that could explain why the model is confusing these cases.~~
 
 Overleaf: Write the Table Of Contents and start writing some paragraphs for each section if possible.
 
@@ -16,10 +16,34 @@ Early stopping criteria: if F1-score on the validation set does not go under 95%
 
 Might have to write report for Siim showcasing the results and the process of training the model on the homonym dataset. Explain why we chose so.
 
-### Confusion matrix, random baseline score (most frequent class or uniform random)
+### Mixture of experts approach
+
+We have a new model trained on the whole homonym dataset and an old model that was trained on enc2017 corpus and UD treebank. We can use the new model as an expert for the homonym dataset and the old model as an expert for the enc2017 and UD treebank datasets. We can then use a gating mechanism to decide which model to use for each example. Find a simple gating mechanism that can be implemented easily and does not require a lot of additional training.
+
+### Koondkorpus
+
+Now, that we have examples of predictions for the homonym dataset, where the model predicted wrong cases, we can use these examples to find similar sentences containing these words in the Koondkorpus. The problem is that Koondkorpus presumably does not have morphological annotations, but Siim might have some scripts or a way to get the morphological analysis for the sentences in the Koondkorpus.
+
+### Background research
+
+Millistes keeltes käänte homonüümia üldse esineb?
+How to use LLM (GPT) to predict cases for words? Morphological analysis. Search for existing research or examples using LLM based tools.
+Catastrophic forgetting literature review: does it apply to this dashboard case?
+
+### Conflicts syntax vs morphology dataset
+
+Filter out words with dash suffix like "laenu-" and two or more connected words such as "Monte Carlo" from the conflicts dataset. These will become problematic if we try to use LLM to replace the word with a synonym or a placeholder like "see" or "tema" depending on the subject being animate or inanimate. If the subject is a pronoun then replace the word with a name, preferably a name that has different case forms in Estonian (text is different for each case).
+
+After filtering write a prompt task for LLM to replace the confliting word with a synonym or a placeholder.
+
+Use Vabamorf on the conflicts dataset to find out whether Vabamorf can disambiguate the cases and if it can, are they correct.
+
+1. For getting a morph analysis for the conflicting word, use analyze_token function to get the analysis for the word in the sentence. If the analysis has only one possible case, then Vabamorf can disambiguate the word. If it has more than one possible case, then Vabamorf cannot disambiguate the word.
+2. For checking if the analysis is correct, compare the predicted case with the given case in the dataset. If they don't match, then the problem is syntaxtic and not morphological. Otherwise...?
+
+### Notes
 
 Weighted training...
-Train model on the whole dataset and try to get 100 score
 
 How to handle different weights of different data points?
 
@@ -48,23 +72,6 @@ GPT experiments:
 - Test GPT on 10 sample sentences from homonyms test set and see if the score is over 90%.
 - Use few-shot prompting.
 - Try to limit API calls to 10€ or even less for GPT.
-
-### Background research
-
-Millistes keeltes käänte homonüümia üldse esineb?
-How to use LLM (GPT) to predict cases for words? Morphological analysis. Search for existing research or examples using LLM based tools.
-Catastrophic forgetting literature review: does it apply to this dashboard case?
-
-### Conflicts syntax vs morphology dataset
-
-Filter out words with dash suffix like "laenu-" and two or more connected words such as "Monte Carlo" from the conflicts dataset. These will become problematic if we try to use LLM to replace the word with a synonym or a placeholder like "see" or "tema" depending on the subject being animate or inanimate. If the subject is a pronoun then replace the word with a name, preferably a name that has different case forms in Estonian (text is different for each case).
-
-After filtering write a prompt task for LLM to replace the confliting word with a synonym or a placeholder.
-
-Use Vabamorf on the conflicts dataset to find out whether Vabamorf can disambiguate the cases and if it can, are they correct.
-
-1) For getting a morph analysis for the conflicting word, use analyze_token function to get the analysis for the word in the sentence. If the analysis has only one possible case, then Vabamorf can disambiguate the word. If it has more than one possible case, then Vabamorf cannot disambiguate the word.
-2) For checking if the analysis is correct, compare the predicted case with the given case in the dataset. If they don't match, then the problem is syntaxtic and not morphological. Otherwise...?
 
 ## Automatic TODO list for EstNLTK model training
 
