@@ -10,6 +10,10 @@ Overleaf: Write the Table Of Contents and start writing some paragraphs for each
 
 Since we have tabular results for the homonym dataset, transfer these results to the Overleaf document and write some analysis for these results.
 
+Find diffs between predicted and gold labels for sentences where expert was selected.
+
+Inspect and gather senteneces containing homonym words in the Koondkorpus and plot form distribution for these words. Check if our model predicts the most common form for these words in the Koondkorpus. If not, try to find out why.
+
 Weighted training: samples vs weights. Should we sample more from the homonym dataset or should we give more weight to the examples from the homonym dataset? Or maybe a combination of both?
 
 Early stopping criteria: if F1-score on the validation set does not go under 95% for 2 consecutive epochs, stop training.
