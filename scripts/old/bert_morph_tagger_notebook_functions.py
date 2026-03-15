@@ -21,17 +21,19 @@ import gc
 
 from tqdm import tqdm
 from simpletransformers.ner import NERModel, NERArgs
-from bert_morph_tagger import BertMorphTagger
-from morph_eval_utils import (
+from scripts.models.bert_morph_tagger import BertMorphTagger
+from scripts.models.morph_eval_utils import (
     MorphDiffSummarizer,
     MorphDiffFinder,
     write_formatted_diff_str_to_file,
 )
-from est_ud_utils import (
+from scripts.preprocessing.ud_et_edt.est_ud_utils import (
     load_ud_file_texts_with_corrections,
     load_ud_file_with_corrections,
 )
-from est_ud_morph_conv import convert_ud_layer_to_reduced_morph_layer
+from scripts.preprocessing.ud_et_edt.est_ud_morph_conv import (
+    convert_ud_layer_to_reduced_morph_layer,
+)
 
 
 class NotebookFunctions:
