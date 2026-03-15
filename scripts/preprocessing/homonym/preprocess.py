@@ -4,7 +4,6 @@ import numpy as np
 import tqdm
 import estnltk
 from pathlib import Path
-from sklearn.model_selection import train_test_split
 from estnltk.converters.label_studio.labelling_configurations import (
     PhraseClassificationConfiguration,
 )
@@ -278,67 +277,141 @@ class Preprocessor:
         return data.take(ordered_pos).reset_index(drop=True)
 
     @staticmethod
-    def split_by_source(
+    def train_test_split(
         df: pd.DataFrame,
         test_size: float = 0.2,
         source_col: str = "source",
-        stratify_col: str | None = "type",
         seed: int | None = None,
-    ):
+        homonym_col: str = "words",
+        form_col: str = "form",
+    ) -> tuple[pd.DataFrame, pd.DataFrame, list, list]:
         """
-        Split a DataFrame into train and test sets by source, ensuring that all rows from the same source are in the same set.
-        Optionally stratifies the split by a specified column (e.g. text type) to maintain a similar distribution of that column in both sets.
+        Split a DataFrame into train and test sets by sentence blocks while
+        guaranteeing minimum homonym coverage in training.
+
+        Sentence blocks are identified by (`source_col`, `sentence_id`).
+        The minimum training set contains at least one sentence for every
+        observed (homonym word, form) pair on labelled rows (`labels != "-"`).
+
+        After the minimum set is created, additional random sentence blocks are
+        added to training until the test share approaches `test_size`, stopping
+        before adding the next block would push test share below `test_size`.
+        If the minimum set already implies a smaller test share than requested,
+        coverage is prioritised and no blocks are removed.
 
         Args:
             df (pd.DataFrame): Input DataFrame to split.
             test_size (float, optional): Proportion of test data. Defaults to 0.2.
             source_col (str, optional): Column name for source identifiers. Defaults to "source".
-            stratify_col (str | None, optional): Column name for stratification values (e.g. text type). Defaults to "type".
             seed (int | None, optional): Random seed for reproducibility. Defaults to None.
+            homonym_col (str, optional): Column containing homonym token text. Defaults to "words".
+            form_col (str, optional): Column containing homonym form. Defaults to "form".
 
         Returns:
             Tuple[pd.DataFrame, pd.DataFrame, list, list]: (train_df, test_df, train_sources, test_sources)
              - train_df: DataFrame containing training data.
              - test_df: DataFrame containing test data.
-             - train_sources: List of unique source identifiers in the training set.
-             - test_sources: List of unique source identifiers in the test set.
+             - train_sources: Ordered unique sources present in training set.
+             - test_sources: Ordered unique sources present in test set.
         """
-        groups = df.groupby(source_col, sort=False).groups  # source -> Int64Index
-        sources = np.array(list(groups.keys()))
+        if df.empty:
+            return df.copy(), df.copy(), [], []
 
-        # optional per-source stratify values (one value per source)
-        stratify_vals = None
-        if stratify_col is not None:
-            # take the type of the first row of each source (all rows in a source share the same type)
-            stratify_vals = np.array(
-                [df.iloc[groups[s][0]][stratify_col] for s in sources]
+        if not (0.0 <= test_size < 1.0):
+            raise ValueError("`test_size` must be in range [0.0, 1.0).")
+        # Validate required columns
+        sentence_col = "sentence_id"
+        label_col = "labels"
+        required_cols = {source_col, sentence_col, homonym_col, form_col, label_col}
+        missing_cols = [col for col in required_cols if col not in df.columns]
+        if missing_cols:
+            raise ValueError(
+                f"Missing required columns for train_test_split: {missing_cols}"
             )
-
-        train_src, test_src = train_test_split(
-            sources, test_size=test_size, random_state=seed, stratify=stratify_vals
+        # Create a working copy of the DataFrame to avoid modifying the original
+        working_df = df.reset_index(drop=True)
+        # Initialize random number generator for reproducibility
+        rng = np.random.default_rng(seed)
+        # Group by sentence blocks defined by (source, sentence_id)
+        sentence_groups = working_df.groupby(
+            [source_col, sentence_col], sort=False
+        ).indices
+        # Extract unique sentence keys and count total sentences
+        sentence_keys = [
+            typing.cast(tuple[typing.Any, typing.Any], key)
+            for key in sentence_groups.keys()
+        ]
+        total_sentences = len(sentence_keys)
+        if total_sentences == 0:
+            return working_df.copy(), working_df.copy(), [], []
+        # Map (homonym, form) pairs to the first sentence key where they appear on labelled rows
+        pair_to_sentence: dict[tuple[str, str], tuple[typing.Any, typing.Any]] = {}
+        for row in working_df.itertuples(index=False):
+            label_value = str(getattr(row, label_col))
+            homonym_value = getattr(row, homonym_col)
+            form_value = getattr(row, form_col)
+            # Only consider rows with valid labels and non-missing homonym and form values
+            if (
+                label_value == "-"
+                or pd.isna(homonym_value)
+                or pd.isna(form_value)
+                or str(homonym_value) == "-"
+                or str(form_value) == "-"
+            ):
+                continue
+            # Use string representations of homonym and form to ensure hashability and consistency
+            pair_key = (str(homonym_value), str(form_value))
+            sentence_key = (getattr(row, source_col), getattr(row, sentence_col))
+            # Map the pair to the first sentence key where it appears, ensuring coverage of all pairs in training
+            if pair_key not in pair_to_sentence:
+                pair_to_sentence[pair_key] = sentence_key
+        # Start with the minimum training set that covers all observed (homonym, form) pairs
+        selected_sentences: set[tuple[typing.Any, typing.Any]] = set(
+            pair_to_sentence.values()
         )
+        train_sentence_count = len(selected_sentences)
+        # Randomly add more sentence blocks to training until test share approaches `test_size`, stopping before adding the next block would push test share below `test_size`
+        remaining_sentence_keys = [
+            key for key in sentence_keys if key not in selected_sentences
+        ]
+        # Shuffle the remaining sentence keys to ensure random selection of additional blocks
+        rng.shuffle(remaining_sentence_keys)
+        # Iterate over the remaining sentence keys and add them to training if it does not reduce test share below `test_size`
+        for sentence_key in remaining_sentence_keys:
+            current_test_share = 1.0 - (train_sentence_count / total_sentences)
+            if current_test_share <= test_size:
+                break
 
-        # Preserve the original source-block ordering by sorting by first-row position
-        def preserve_order(src_list):
-            order = np.argsort([groups[s][0] for s in src_list])
-            return src_list[order]
+            next_train_count = train_sentence_count + 1
+            next_test_share = 1.0 - (next_train_count / total_sentences)
+            if next_test_share < test_size:
+                break
 
-        train_src = preserve_order(train_src)
-        test_src = preserve_order(test_src)
-
-        # Efficiently build row positions and slice (avoids per-row operations)
-        train_pos = (
-            np.concatenate([groups[s] for s in train_src])
-            if len(train_src) > 0
+            selected_sentences.add(sentence_key)
+            train_sentence_count = next_train_count
+        # Create train and test DataFrames based on the selected sentence keys
+        train_sentence_keys = [
+            key for key in sentence_keys if key in selected_sentences
+        ]
+        test_sentence_keys = [
+            key for key in sentence_keys if key not in selected_sentences
+        ]
+        # Concatenate the indices of the selected sentence blocks to create train and test sets, preserving the original order of sentences within each block
+        train_positions = (
+            np.concatenate([sentence_groups[key] for key in train_sentence_keys])
+            if train_sentence_keys
             else np.array([], dtype=int)
         )
-        test_pos = (
-            np.concatenate([groups[s] for s in test_src])
-            if len(test_src) > 0
+        test_positions = (
+            np.concatenate([sentence_groups[key] for key in test_sentence_keys])
+            if test_sentence_keys
             else np.array([], dtype=int)
         )
+        # Use .take() to select rows by position and reset index for the resulting DataFrames
+        train_df = working_df.take(train_positions).reset_index(drop=True)
+        test_df = working_df.take(test_positions).reset_index(drop=True)
+        # Extract the unique sources present in train and test sets, preserving the order of first occurrence in the original DataFrame
+        train_sources = list(dict.fromkeys([key[0] for key in train_sentence_keys]))
+        test_sources = list(dict.fromkeys([key[0] for key in test_sentence_keys]))
 
-        train_df = df.take(train_pos).reset_index(drop=True)
-        test_df = df.take(test_pos).reset_index(drop=True)
-
-        return train_df, test_df, list(train_src), list(test_src)
+        return train_df, test_df, train_sources, test_sources
