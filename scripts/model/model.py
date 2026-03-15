@@ -30,7 +30,10 @@ import evaluate
 try:
     poseval = evaluate.load("evaluate-metric/poseval", module_type="metric")
 except Exception:
-    poseval = None
+    raise ImportError(
+        "Poseval metric is required for evaluation but could not be loaded. "
+        "Please install it via `pip install evaluate` or check your environment."
+    )
 from tqdm.auto import tqdm
 
 
@@ -38,6 +41,7 @@ def initialize_model(
     model_name: str,
     unique_labels: typing.Optional[typing.List[str]] = None,
     use_Roberta_tokenizer: bool = False,
+    use_fast_tokenizer: typing.Optional[bool] = None,
     cleanup: bool = True,
 ) -> typing.Dict[str, typing.Any]:
     """
@@ -47,6 +51,9 @@ def initialize_model(
         model_name: Pretrained model name or local path (e.g. 'camembert-base').
         unique_labels: All possible label strings the model will predict.
         use_Roberta_tokenizer: If True, uses RobertaTokenizerFast instead of AutoTokenizer (for better handling of RoBERTa-like tokenization).
+        use_fast_tokenizer: Whether to use a fast tokenizer implementation. If None,
+            defaults to SimpleTransformers-compatible behaviour for CamemBERT
+            checkpoints (`False`), and `True` for other model types.
         cleanup: If True, attempts to free previous model memory before initialisation.
 
     Returns:
@@ -142,11 +149,19 @@ def initialize_model(
     config.id2label = {str(k): v for k, v in id2label.items()}
     config.label2id = {str(k): v for k, v in label2id.items()}
 
+    if use_fast_tokenizer is None:
+        model_type = str(getattr(config, "model_type", "")).lower()
+        use_fast_tokenizer = model_type != "camembert"
+
     if use_Roberta_tokenizer:
-        tokenizer = RobertaTokenizer.from_pretrained(model_name, use_fast=True)
+        tokenizer = RobertaTokenizer.from_pretrained(
+            model_name, use_fast=use_fast_tokenizer
+        )
         model = RobertaForTokenClassification.from_pretrained(model_name, config=config)
     else:
-        tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name, use_fast=use_fast_tokenizer
+        )
         model = AutoModelForTokenClassification.from_pretrained(
             model_name, config=config
         )
@@ -215,88 +230,122 @@ def prepare_token_classification_data(
     tokenizer,
     sentences: typing.List[typing.Tuple[typing.List[str], typing.List[str]]],
     label2id: typing.Dict[str, int],
-    max_length: int = None,
+    max_length: typing.Optional[int] = None,
     ignore_placeholders: bool = False,
     pad_token_label_id: int = -100,
 ) -> typing.Tuple[typing.List[dict], typing.List[typing.List[int]]]:
     """
-    Tokenize and align labels. Returns list of per-example encodings (dicts) and label id lists.
-    Uses -100 for subtokens we want to ignore for loss computation.
-    Requires a fast tokenizer (use_fast=True).
+    Tokenize and align labels using a SimpleTransformers-compatible pipeline.
+
+    This mirrors the older `simpletransformers.ner.convert_example_to_feature`
+    behaviour used by the historic checkpoints in this repository:
+    tokenise each word independently, assign the gold label only to the first
+    produced subtoken, add special tokens manually, and then truncate/pad to
+    `max_length`.
+
+    Returns list of per-example encodings (dicts) and label id lists. Uses
+    `pad_token_label_id` for special tokens, padded positions, and ignored
+    subtokens so evaluation/training behaves like the original pipeline.
     """
     encodings = []
     all_label_ids: typing.List[typing.List[int]] = []
 
-    for words, labels in sentences:
-        # tokenise with word-level input
-        enc = tokenizer(
-            words,
-            is_split_into_words=True,
-            truncation=True,
-            max_length=max_length,
-            return_attention_mask=True,
-            return_token_type_ids=False,
+    def _is_placeholder_label(label: typing.Optional[str]) -> bool:
+        if label is None:
+            return True
+        normalized = str(label).strip()
+        return normalized == "" or normalized.upper() in {"NONE", "-"}
+
+    tokenizer_signature = " ".join(
+        [
+            tokenizer.__class__.__name__.lower(),
+            str(getattr(tokenizer, "name_or_path", "")).lower(),
+        ]
+    )
+    sep_token_extra = any(
+        model_name in tokenizer_signature
+        for model_name in ("roberta", "camembert", "xlmroberta", "longformer", "mpnet")
+    )
+
+    cls_token = getattr(tokenizer, "cls_token", None)
+    sep_token = getattr(tokenizer, "sep_token", None)
+    unk_token = getattr(tokenizer, "unk_token", None)
+    pad_token_id = getattr(tokenizer, "pad_token_id", None)
+    if pad_token_id is None:
+        pad_token_id = getattr(tokenizer, "eos_token_id", None)
+    if pad_token_id is None:
+        pad_token_id = 0
+
+    if cls_token is None or sep_token is None:
+        raise ValueError(
+            "Tokenizer must define cls_token and sep_token for token classification preprocessing."
         )
-        word_ids = enc.word_ids()  # available for fast tokenizers
 
-        # If ignore_placeholders is enabled, we will mask only placeholder labels
-        # (e.g. '-', 'NONE', empty) and leave all other labels untouched.
-        def _is_placeholder_label(l: typing.Optional[str]) -> bool:
-            if l is None:
-                return True
-            nl = str(l).strip()
-            return nl == "" or nl.upper() in {"NONE", "-"}
+    def _tokenize_word(word: str) -> typing.List[str]:
+        word_tokens = tokenizer.tokenize(str(word))
+        if word_tokens:
+            return word_tokens
 
-        label_ids = []
-        previous_word_idx = None
-        for idx, word_idx in enumerate(word_ids):
-            if word_idx is None:
-                label_ids.append(pad_token_label_id)
+        if unk_token is None:
+            raise ValueError(
+                "Tokenizer produced no tokens for a word and has no unk_token fallback."
+            )
+
+        fallback_tokens = tokenizer.tokenize(unk_token)
+        return fallback_tokens or [unk_token]
+
+    for words, labels in sentences:
+        if len(words) != len(labels):
+            raise ValueError(
+                "Each sentence must contain the same number of words and labels."
+            )
+
+        tokens: typing.List[str] = []
+        label_ids: typing.List[int] = []
+
+        for word, label in zip(words, labels):
+            word_tokens = _tokenize_word(str(word))
+            tokens.extend(word_tokens)
+
+            if ignore_placeholders and _is_placeholder_label(label):
+                first_label_id = pad_token_label_id
             else:
-                label = labels[word_idx]
-                # If ignore_placeholders is True, mask only placeholder labels (e.g. '-', 'NONE')
-                if ignore_placeholders and _is_placeholder_label(label):
-                    label_ids.append(pad_token_label_id)
-                else:
-                    if word_idx != previous_word_idx:
-                        # Map label to id, but handle unknown labels by assigning
-                        # the padding label id so they're ignored in loss.
-                        if label in label2id:
-                            label_ids.append(label2id[label])
-                        else:
-                            label_ids.append(pad_token_label_id)
-                    else:
-                        # For sub-word tokens of the same word: ignore for loss
-                        label_ids.append(pad_token_label_id)
-                previous_word_idx = word_idx
+                first_label_id = label2id.get(str(label), pad_token_label_id)
 
-        input_ids = enc["input_ids"]
-        attention_mask = enc["attention_mask"]
-        token_type_ids = enc.get("token_type_ids")
+            label_ids.extend(
+                [first_label_id] + [pad_token_label_id] * (len(word_tokens) - 1)
+            )
 
-        # If max_length is set, truncate or pad to that length (like convert_examples_to_features)
         if max_length is not None:
-            # truncate if necessary
-            if len(input_ids) > max_length:
-                input_ids = input_ids[:max_length]
-                attention_mask = attention_mask[:max_length]
-                if token_type_ids is not None:
-                    token_type_ids = token_type_ids[:max_length]
-                label_ids = label_ids[:max_length]
+            special_tokens_count = 3 if sep_token_extra else 2
+            max_token_count = max_length - special_tokens_count
+            if len(tokens) > max_token_count:
+                tokens = tokens[:max_token_count]
+                label_ids = label_ids[:max_token_count]
 
-            # pad if necessary
+        tokens = tokens + [sep_token]
+        label_ids = label_ids + [pad_token_label_id]
+        if sep_token_extra:
+            tokens = tokens + [sep_token]
+            label_ids = label_ids + [pad_token_label_id]
+
+        tokens = [cls_token] + tokens
+        label_ids = [pad_token_label_id] + label_ids
+
+        input_ids = tokenizer.convert_tokens_to_ids(tokens)
+        attention_mask = [1] * len(input_ids)
+
+        token_type_ids = None
+        if "token_type_ids" in getattr(tokenizer, "model_input_names", []):
+            token_type_ids = [0] * len(input_ids)
+
+        if max_length is not None:
             pad_len = max_length - len(input_ids)
             if pad_len > 0:
-                pad_id = (
-                    getattr(tokenizer, "pad_token_id", None)
-                    or getattr(tokenizer, "eos_token_id", None)
-                    or 0
-                )
-                input_ids = input_ids + [pad_id] * pad_len
+                input_ids = input_ids + [pad_token_id] * pad_len
                 attention_mask = attention_mask + [0] * pad_len
                 if token_type_ids is not None:
-                    pad_type = getattr(tokenizer, "pad_token_type_id", 0)
-                    token_type_ids = token_type_ids + [pad_type] * pad_len
+                    token_type_ids = token_type_ids + [0] * pad_len
                 label_ids = label_ids + [pad_token_label_id] * pad_len
 
         enc_dict = {"input_ids": input_ids, "attention_mask": attention_mask}
@@ -516,7 +565,7 @@ def train_token_classification(
     )
 
     # helper: compute metrics on a dataloader
-    # seqeval replaced by poseval (via evaluate) for metric computation
+    # poseval (via evaluate) for metric computation
 
     def _compute_metrics(dataloader):
         """
@@ -594,38 +643,25 @@ def train_token_classification(
         avg_loss = total_loss / (len(dataloader) if len(dataloader) else 1)
         accuracy = total_correct / total_tokens if total_tokens else 0.0
 
-        # Use poseval (if available) to compute precision/recall/F1 on sequence labels
-        poseval_result = None
-        if poseval is not None and preds_all:
-            try:
-                poseval_result = poseval.compute(
-                    predictions=preds_all, references=labels_all
-                )
-            except Exception:
-                # If the metric computation fails, fall back to empty result
-                poseval_result = None
+        # Use poseval to compute precision/recall/F1 on sequence labels
+        poseval_result = poseval.compute(
+            predictions=preds_all, references=labels_all, zero_division=0
+        )
 
-        # Extract common metrics with safe fallbacks when poseval is unavailable
-        if poseval_result:
-            prec = poseval_result.get("precision", poseval_result.get("prec", 0.0))
-            rec = poseval_result.get("recall", poseval_result.get("rec", 0.0))
-            f1 = poseval_result.get("f1", poseval_result.get("fscore", 0.0))
-            report = poseval_result
-        else:
-            # No poseval available or no predictions: return simple defaults
-            prec = 0.0
-            rec = 0.0
-            f1 = 0.0
-            report = {}
+        # Extract common metrics
+        accuracy = poseval_result.get("accuracy", accuracy)
+        prec = poseval_result.get("weighted avg", {}).get("precision", 0.0)
+        rec = poseval_result.get("weighted avg", {}).get("recall", 0.0)
+        f1 = poseval_result.get("weighted avg", {}).get("f1-score", 0.0)
+        report = poseval_result
 
         return {
             "loss": avg_loss,
             "accuracy": accuracy,
-            "precision": prec,
-            "recall": rec,
-            "f1": f1,
+            "weighted avg precision": prec,
+            "weighted avg recall": rec,
+            "weighted avg f1-score": f1,
             "report": report,
-            "poseval": poseval_result,
         }
 
     # Training loop
@@ -728,7 +764,7 @@ def train_token_classification(
 
             # Shorthand report containing the most-used fields
             eval_report = {
-                "f1": eval_metrics["f1"],
+                "f1": eval_metrics["weighted avg f1-score"],
                 "loss": eval_metrics["loss"],
                 "report": eval_metrics["report"],
             }
