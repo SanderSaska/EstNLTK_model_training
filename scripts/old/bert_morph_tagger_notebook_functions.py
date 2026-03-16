@@ -21,8 +21,8 @@ import gc
 
 from tqdm import tqdm
 from simpletransformers.ner import NERModel, NERArgs
-from scripts.models.bert_morph_tagger import BertMorphTagger
-from scripts.models.morph_eval_utils import (
+from scripts.model.bert_morph_tagger import BertMorphTagger
+from scripts.model.morph_eval_utils import (
     MorphDiffSummarizer,
     MorphDiffFinder,
     write_formatted_diff_str_to_file,
