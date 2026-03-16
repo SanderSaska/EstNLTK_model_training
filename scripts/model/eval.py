@@ -6,7 +6,7 @@ This module provides two evaluation modes:
 2) Two-model hybrid token-level density-based gating evaluation
 
 The implementation intentionally reuses existing helper functions from
-``scripts.model.model`` for model initialisation and preprocessing.
+``scripts.model.utils`` for model initialisation and preprocessing.
 """
 
 from __future__ import annotations
@@ -20,10 +20,17 @@ import pandas as pd
 import torch
 from transformers import DataCollatorForTokenClassification
 
-from scripts.model.model import (
+from scripts.model.utils import (
     TokenClassificationDataset,
     _group_sentences_from_df,
+    _is_placeholder_label,
+    _normalise_placeholder_labels,
+    _parse_placeholder_labels,
+    _select_placeholder_output_label,
+    _token_count_for_word,
     initialize_model,
+    load_df,
+    prepare_shared_inputs,
     prepare_token_classification_data,
 )
 
@@ -93,6 +100,15 @@ def parse_args() -> argparse.Namespace:
         help="Sentence ID column name in test set.",
     )
     parser.add_argument(
+        "--source-col",
+        type=str,
+        default=None,
+        help=(
+            "Optional source column name. If provided (or if a 'source' column "
+            "exists), sentence IDs are normalised per source before grouping."
+        ),
+    )
+    parser.add_argument(
         "--text-col",
         type=str,
         default="words",
@@ -110,41 +126,13 @@ def parse_args() -> argparse.Namespace:
         default="auto",
         help="Input file format (auto-detected by suffix by default).",
     )
+    parser.add_argument(
+        "--placeholder-labels",
+        type=str,
+        default="-,NONE",
+        help="Comma-separated placeholder labels (case-insensitive).",
+    )
     return parser.parse_args()
-
-
-def load_test_df(path: Path, file_format: str) -> pd.DataFrame:
-    """Load evaluation dataset from CSV or Parquet.
-
-    Args:
-            path: Path to input file.
-            file_format: One of ``auto``, ``csv`` or ``parquet``.
-
-    Returns:
-            Loaded dataframe.
-    """
-
-    if not path.exists():
-        raise FileNotFoundError(f"Test set not found: {path}")
-
-    resolved_format = file_format
-    if file_format == "auto":
-        suffix = path.suffix.lower()
-        if suffix == ".csv":
-            resolved_format = "csv"
-        elif suffix in {".parquet", ".pq"}:
-            resolved_format = "parquet"
-        else:
-            raise ValueError(
-                f"Could not infer file format from suffix '{suffix}'. "
-                "Use --test-format explicitly."
-            )
-
-    if resolved_format == "csv":
-        return pd.read_csv(path)
-    if resolved_format == "parquet":
-        return pd.read_parquet(path)
-    raise ValueError(f"Unsupported file format: {resolved_format}")
 
 
 def custom_metrics(
@@ -179,35 +167,6 @@ def print_metrics(results: dict[str, Any]) -> None:
     print(f"F1-score: \t{results['weighted avg']['f1-score']:.2%}")
 
 
-def prepare_shared_inputs(
-    test_df: pd.DataFrame,
-    sent_id_col: str,
-    text_col: str,
-    label_col: str,
-) -> list[tuple[list[str], list[str]]]:
-    """Build sentence-level inputs used by both evaluation modes.
-
-    Args:
-            test_df: Token-level dataframe.
-            sent_id_col: Sentence id column.
-            text_col: Token text column.
-            label_col: Label column.
-
-    Returns:
-            List of tuples ``(words, labels)`` grouped by sentence.
-    """
-
-    missing_cols = [
-        col for col in (sent_id_col, text_col, label_col) if col not in test_df.columns
-    ]
-    if missing_cols:
-        raise ValueError(f"Missing required test-set columns: {missing_cols}")
-
-    eval_df = test_df[[sent_id_col, text_col, label_col]].copy()
-    eval_df.columns = ["sentence_id", "words", "labels"]
-    return _group_sentences_from_df(eval_df)
-
-
 def run_single_model_eval(
     model_path: Path | None,
     model_bundle: dict[str, Any] | None,
@@ -215,6 +174,8 @@ def run_single_model_eval(
     batch_size: int,
     max_length: int | None,
     poseval_metric: Any,
+    ignore_placeholders: bool = True,
+    placeholder_labels: set[str] | None = None,
     verbose: bool = False,
 ) -> dict[str, Any]:
     """Run notebook-equivalent single-model evaluation loop.
@@ -226,6 +187,9 @@ def run_single_model_eval(
             batch_size: Batch size.
             max_length: Optional max tokenisation length.
             poseval_metric: Loaded poseval metric.
+            ignore_placeholders: If True, ignore placeholder tokens (label id -100) in evaluation.
+            placeholder_labels: Placeholder labels used by preprocessing and
+                output alignment logic.
             verbose: If True, print verbose progress information.
 
     Returns:
@@ -234,6 +198,11 @@ def run_single_model_eval(
 
     if verbose:
         print("Initializing model...")
+
+    normalized_placeholder_labels = _normalise_placeholder_labels(placeholder_labels)
+    placeholder_output_label = _select_placeholder_output_label(
+        normalized_placeholder_labels
+    )
 
     bundle = initialize_model(str(model_path)) if model_bundle is None else model_bundle
     model = bundle["model"]
@@ -253,7 +222,8 @@ def run_single_model_eval(
         sentences,
         label2id,
         max_length=max_length,
-        ignore_placeholders=False,
+        ignore_placeholders=ignore_placeholders,
+        placeholder_labels=normalized_placeholder_labels,
     )
     dataset = TokenClassificationDataset(encodings, aligned_labels)
     collator = DataCollatorForTokenClassification(tokenizer)
@@ -271,22 +241,52 @@ def run_single_model_eval(
 
     preds_all: list[list[str]] = []
     labels_all: list[list[str]] = []
+    sent_idx = 0
     with torch.no_grad():
         for batch in dataloader:
             batch = {key: value.to(device) for key, value in batch.items()}
             outputs = model(**batch)
             logits = outputs.logits.detach().cpu().numpy()
-            label_ids = batch["labels"].detach().cpu().numpy()
             pred_ids = logits.argmax(axis=-1)
 
-            for pred_row, label_row in zip(pred_ids, label_ids):
+            for pred_row in pred_ids:
+                words, sentence_gold_labels = sentences[sent_idx]
+                sent_idx += 1
+
                 pred_labels: list[str] = []
                 gold_labels: list[str] = []
-                for pred_id, gold_id in zip(pred_row, label_row):
-                    if gold_id == -100:
+
+                token_pointer = 1
+                for word, gold_word_label in zip(words, sentence_gold_labels):
+                    token_count = _token_count_for_word(tokenizer, str(word))
+                    is_placeholder = _is_placeholder_label(
+                        gold_word_label,
+                        normalized_placeholder_labels,
+                    )
+
+                    if is_placeholder and ignore_placeholders:
+                        # Do not include placeholder tokens in metric inputs.
+                        # Keep pointer movement so token-word alignment remains correct.
+                        token_pointer += token_count
                         continue
-                    pred_labels.append(id2label[int(pred_id)])
-                    gold_labels.append(id2label[int(gold_id)])
+                    elif is_placeholder and not ignore_placeholders:
+                        # For evaluation purposes, treat placeholders as a special case of token-level gating:
+                        # if the gold label is a placeholder, use the model prediction for that token regardless of token count.
+                        pred_labels.append(placeholder_output_label)
+                        gold_labels.append(placeholder_output_label)
+                    else:
+                        if token_pointer < len(pred_row):
+                            pred_label = id2label.get(
+                                int(pred_row[token_pointer]),
+                                placeholder_output_label,
+                            )
+                        else:
+                            pred_label = placeholder_output_label
+                        pred_labels.append(pred_label)
+                        gold_labels.append(str(gold_word_label))
+
+                    token_pointer += token_count
+
                 preds_all.append(pred_labels)
                 labels_all.append(gold_labels)
 
@@ -348,6 +348,8 @@ def run_hybrid_density_eval(
     density_threshold: float,
     homonym_set: set[str],
     poseval_metric: Any,
+    ignore_placeholders: bool = True,
+    placeholder_labels: set[str] | None = None,
     verbose: bool = False,
 ) -> dict[str, Any]:
     """
@@ -372,6 +374,9 @@ def run_hybrid_density_eval(
             density_threshold: Gating threshold T.
             homonym_set: Set of homonymous words.
             poseval_metric: Loaded poseval metric.
+            ignore_placeholders: If True, ignore placeholder tokens (label id -100) in evaluation.
+            placeholder_labels: Placeholder labels used by preprocessing and
+                output alignment logic.
             verbose: Whether to print verbose output.
 
     Returns:
@@ -380,6 +385,11 @@ def run_hybrid_density_eval(
 
     if verbose:
         print("Initializing baseline model...")
+
+    normalized_placeholder_labels = _normalise_placeholder_labels(placeholder_labels)
+    placeholder_output_label = _select_placeholder_output_label(
+        normalized_placeholder_labels
+    )
 
     baseline_bundle = (
         initialize_model(str(baseline_model_path))
@@ -418,7 +428,8 @@ def run_hybrid_density_eval(
         sentences,
         label2id_baseline,
         max_length=max_length,
-        ignore_placeholders=False,
+        ignore_placeholders=ignore_placeholders,
+        placeholder_labels=normalized_placeholder_labels,
     )
 
     if verbose:
@@ -429,7 +440,8 @@ def run_hybrid_density_eval(
         sentences,
         label2id_expert,
         max_length=max_length,
-        ignore_placeholders=False,
+        ignore_placeholders=ignore_placeholders,
+        placeholder_labels=normalized_placeholder_labels,
     )
 
     if verbose:
@@ -493,58 +505,103 @@ def run_hybrid_density_eval(
 
             logits_baseline = outputs_baseline.logits.detach().cpu().numpy()
             logits_expert = outputs_expert.logits.detach().cpu().numpy()
-            label_ids = batch_baseline["labels"].detach().cpu().numpy()
 
-            for baseline_row, expert_row, label_row in zip(
-                logits_baseline, logits_expert, label_ids
-            ):
+            for baseline_row, expert_row in zip(logits_baseline, logits_expert):
                 baseline_pred_ids = baseline_row.argmax(axis=-1)
                 expert_pred_ids = expert_row.argmax(axis=-1)
 
-                sentence_words = sentences[sent_idx][0]
+                sentence_words, sentence_gold_word_labels = sentences[sent_idx]
                 density = densities[sent_idx]
                 sent_idx += 1
 
                 selected_preds: list[str] = []
                 sentence_labels: list[str] = []
                 sentence_sources: list[str] = []
+                placeholder_token_count = 0
 
-                word_pos = 0
-                for baseline_pred_id, expert_pred_id, gold_id in zip(
-                    baseline_pred_ids, expert_pred_ids, label_row
+                baseline_pointer = 1
+                expert_pointer = 1
+                for word, gold_word_label in zip(
+                    sentence_words, sentence_gold_word_labels
                 ):
-                    if gold_id == -100:
-                        continue
+                    baseline_token_count = _token_count_for_word(
+                        tokenizer_baseline,
+                        str(word),
+                    )
+                    expert_token_count = _token_count_for_word(
+                        tokenizer_expert,
+                        str(word),
+                    )
 
-                    baseline_pred = id2label_baseline[int(baseline_pred_id)]
-                    expert_pred = id2label_expert[int(expert_pred_id)]
-                    gold_label = id2label_baseline[int(gold_id)]
-
-                    if density >= density_threshold:
-                        selected_preds.append(expert_pred)
-                        sentence_sources.append("expert")
+                    is_placeholder = _is_placeholder_label(
+                        gold_word_label,
+                        normalized_placeholder_labels,
+                    )
+                    if is_placeholder and ignore_placeholders:
+                        # Do not include placeholder tokens in metric inputs.
+                        # Keep separate count for gate diagnostics.
+                        placeholder_token_count += 1
+                    elif is_placeholder and not ignore_placeholders:
+                        # For evaluation purposes, treat placeholders as a special case of token-level gating:
+                        # if the gold label is a placeholder, use the model prediction for that token regardless of token count or homonym status.
+                        selected_preds.append(placeholder_output_label)
+                        sentence_labels.append(placeholder_output_label)
+                        sentence_sources.append("placeholder")
                     else:
-                        current_word = str(sentence_words[word_pos]).lower()
-                        if current_word in homonym_set:
+                        if baseline_pointer < len(baseline_pred_ids):
+                            baseline_pred = id2label_baseline.get(
+                                int(baseline_pred_ids[baseline_pointer]),
+                                placeholder_output_label,
+                            )
+                        else:
+                            baseline_pred = placeholder_output_label
+
+                        if expert_pointer < len(expert_pred_ids):
+                            expert_pred = id2label_expert.get(
+                                int(expert_pred_ids[expert_pointer]),
+                                placeholder_output_label,
+                            )
+                        else:
+                            expert_pred = placeholder_output_label
+
+                        if density >= density_threshold:
                             selected_preds.append(expert_pred)
                             sentence_sources.append("expert")
                         else:
-                            selected_preds.append(baseline_pred)
-                            sentence_sources.append("baseline")
+                            current_word = str(word).lower()
+                            if current_word in homonym_set:
+                                selected_preds.append(expert_pred)
+                                sentence_sources.append("expert")
+                            else:
+                                selected_preds.append(baseline_pred)
+                                sentence_sources.append("baseline")
 
-                    sentence_labels.append(gold_label)
-                    word_pos += 1
+                        sentence_labels.append(str(gold_word_label))
+
+                    baseline_pointer += baseline_token_count
+                    expert_pointer += expert_token_count
 
                 preds_all.append(selected_preds)
                 labels_all.append(sentence_labels)
                 sources_all.append(sentence_sources)
-                gate_decisions.append(
-                    {
-                        "expert_tokens": sentence_sources.count("expert"),
-                        "baseline_tokens": sentence_sources.count("baseline"),
-                        "density": float(density),
-                    }
-                )
+                if ignore_placeholders:
+                    gate_decisions.append(
+                        {
+                            "expert_tokens": sentence_sources.count("expert"),
+                            "baseline_tokens": sentence_sources.count("baseline"),
+                            "placeholder_tokens": placeholder_token_count,
+                            "density": float(density),
+                        }
+                    )
+                else:
+                    gate_decisions.append(
+                        {
+                            "expert_tokens": sentence_sources.count("expert"),
+                            "baseline_tokens": sentence_sources.count("baseline"),
+                            "placeholder_tokens": sentence_sources.count("placeholder"),
+                            "density": float(density),
+                        }
+                    )
 
     if verbose:
         print("Hybrid evaluation loop completed. Computing metrics...")
@@ -576,15 +633,21 @@ def print_hybrid_gate_stats(
 
     total_sentences = len(gate_decisions)
     total_tokens = sum(
-        int(decision["expert_tokens"]) + int(decision["baseline_tokens"])
+        int(decision["expert_tokens"])
+        + int(decision["baseline_tokens"])
+        + int(decision.get("placeholder_tokens", 0))
         for decision in gate_decisions
     )
     total_expert = sum(int(decision["expert_tokens"]) for decision in gate_decisions)
     total_baseline = sum(
         int(decision["baseline_tokens"]) for decision in gate_decisions
     )
+    total_placeholder = sum(
+        int(decision.get("placeholder_tokens", 0)) for decision in gate_decisions
+    )
     expert_share = (total_expert / total_tokens) if total_tokens else 0.0
     baseline_share = (total_baseline / total_tokens) if total_tokens else 0.0
+    placeholder_share = (total_placeholder / total_tokens) if total_tokens else 0.0
 
     print("\n=== Hybrid Gate Stats ===")
     print(f"Threshold T: {density_threshold}")
@@ -592,6 +655,7 @@ def print_hybrid_gate_stats(
     print(f"Total tokens: {total_tokens}")
     print(f"Expert tokens: {total_expert} ({expert_share:.1%})")
     print(f"Baseline tokens: {total_baseline} ({baseline_share:.1%})")
+    print(f"Placeholder tokens: {total_placeholder} ({placeholder_share:.1%})")
 
 
 def main() -> None:
@@ -609,35 +673,42 @@ def main() -> None:
         )
 
     poseval_metric = evaluate.load("evaluate-metric/poseval", module_type="metric")
+    placeholder_labels = _parse_placeholder_labels(args.placeholder_labels)
 
-    test_df = load_test_df(args.test_set, args.test_format)
+    test_df = load_df(args.test_set, args.test_format)
     sentences = prepare_shared_inputs(
         test_df,
         sent_id_col=args.sent_id_col,
         text_col=args.text_col,
         label_col=args.label_col,
+        source_col=args.source_col,
     )
 
     if args.second_model_path is None:
         output = run_single_model_eval(
             model_path=args.model_path,
+            model_bundle=None,
             sentences=sentences,
             batch_size=args.batch_size,
             max_length=args.max_length,
             poseval_metric=poseval_metric,
+            placeholder_labels=placeholder_labels,
         )
         print_metrics(output["metrics"])
     else:
         homonym_set = load_homonym_set(args.homonym_list_path)
         output = run_hybrid_density_eval(
             baseline_model_path=args.model_path,
+            baseline_bundle=None,
             expert_model_path=args.second_model_path,
+            expert_bundle=None,
             sentences=sentences,
             batch_size=args.batch_size,
             max_length=args.max_length,
             density_threshold=args.density_threshold,
             homonym_set=homonym_set,
             poseval_metric=poseval_metric,
+            placeholder_labels=placeholder_labels,
         )
         print_metrics(output["metrics"])
         print_hybrid_gate_stats(
