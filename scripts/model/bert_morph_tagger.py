@@ -97,6 +97,13 @@ class BertMorphTagger(Tagger):
         tokenizer_kwargs = {
             k: v for (k, v) in kwargs.items() if k in ["do_lower_case", "use_fast"]
         }
+        # Default to the slow SentencePiece tokenizer to match the simpletransformers
+        # training pipeline, which uses use_fast=False for CamemBERT checkpoints.
+        # The fast tokenizer produces different subword splits (e.g. "võitja" → ["▁võ",
+        # "it", "ja"] vs ["▁võitja"]), causing input mismatch with what the model saw
+        # during training, leading to incorrect predictions.
+        if "use_fast" not in tokenizer_kwargs:
+            tokenizer_kwargs["use_fast"] = False
         self.get_top_n_predictions = get_top_n_predictions
         self.bert_tokenizer = AutoTokenizer.from_pretrained(
             self.model_location, **tokenizer_kwargs
@@ -205,12 +212,59 @@ class BertMorphTagger(Tagger):
         """
         tokens = []
         batch_encoding = self.bert_tokenizer(text)
-        for token_id, token in enumerate(batch_encoding.tokens()):
-            char_span = batch_encoding.token_to_chars(token_id)
-            if char_span is not None:
-                tokens.append((char_span.start, char_span.end, token))
-            elif include_spanless:
-                tokens.append((None, None, token))
+
+        if self.bert_tokenizer.is_fast:
+            # Fast tokenizers expose .tokens() and .token_to_chars() directly.
+            for token_id, token in enumerate(batch_encoding.tokens()):
+                char_span = batch_encoding.token_to_chars(token_id)
+                if char_span is not None:
+                    tokens.append((char_span.start, char_span.end, token))
+                elif include_spanless:
+                    tokens.append((None, None, token))
+        else:
+            # Slow (SentencePiece) tokenizer: .tokens() and .token_to_chars() are not
+            # available, so character spans are reconstructed manually.
+            # SentencePiece prefixes every word-initial subword with ▁ (U+2581),
+            # which represents the space that precedes the word in running text.
+            # Walking through the original string with this knowledge gives us
+            # accurate [start, end) character spans for each subtoken.
+            _WORD_START = "\u2581"  # ▁
+
+            cls_token = self.bert_tokenizer.cls_token  # e.g. <s>
+            sep_token = self.bert_tokenizer.sep_token  # e.g. </s>
+
+            # tokenize() returns subword pieces without special tokens
+            token_strings = self.bert_tokenizer.tokenize(text)
+            full_tokens = [cls_token] + token_strings + [sep_token]
+
+            char_pos = 0
+            for token in full_tokens:
+                # Special / spanless tokens
+                if token in (cls_token, sep_token) or token == _WORD_START:
+                    if include_spanless:
+                        tokens.append((None, None, token))
+                    continue
+
+                # Always skip whitespace before assigning start. SentencePiece
+                # normally marks word-initial subwords with ▁, but certain
+                # characters (punctuation, special symbols such as ‰, ±, ),  .)
+                # may appear WITHOUT the ▁ prefix even at a word boundary.
+                # Skipping whitespace unconditionally is safe: true continuation
+                # subtokens are never preceded by a space, so the loop is a no-op
+                # for them, while boundary tokens without ▁ land on the right char.
+                while char_pos < len(text) and text[char_pos] in " \t\n\r":
+                    char_pos += 1
+
+                if token.startswith(_WORD_START):
+                    actual_chars = token[1:]  # strip the ▁ prefix
+                else:
+                    actual_chars = token  # continuation subword (or boundary without ▁)
+
+                start = char_pos
+                end = char_pos + len(actual_chars)
+                tokens.append((start, end, token))
+                char_pos = end
+
         return tokens, batch_encoding
 
     def _make_layer(
@@ -362,9 +416,8 @@ def convert_bert_labels_to_vabamorf(predictions: List[dict]):
 def rewriter_decorator_BERT(text_obj, word_index, span):
     """
     Decorator function for <code>BertTokens2WordsRewriter</code>. \n
-    Aggregates the <code>morph_labels</code> and <code>probabilities</code> from <code>shared_bert_tokens</code>, finds the most
-    common top-1 label, and retrieves the top N labels and their probabilities from the
-    first token that contains this top-1 label.
+    Takes predictions from the FIRST subtoken only (aligns with model training)
+    and returns all top-N labels and their probabilities from that token.
 
     Args:
         text_obj: EstNLTK Text object.
@@ -372,50 +425,34 @@ def rewriter_decorator_BERT(text_obj, word_index, span):
         span: EstNLTK's Span object.
 
     Returns:
-        dict: Annotations with the top N labels and probabilities for the word/phrase.
+        list: Annotations with the top N labels and probabilities for the word/phrase.
     """
 
-    # Step 1: Find the most frequent top-1 label across all tokens
-    top_1_label_counts = collections.Counter()
+    # Take only the first subtoken's predictions
+    first_token = span[0]
+    labels = first_token["morph_label"]
+    probabilities = first_token["probability"]
 
-    for sp in span:
-        top_1_label = sp["morph_label"][0]  # Get top-1 label
-        top_1_label_counts[top_1_label] += 1  # Count occurrences of each top-1 label
+    assert len(labels) == len(probabilities)
 
-    # Identify the most frequent top-1 label
-    most_frequent_label = top_1_label_counts.most_common(1)[0][0]
-    annotations = list()
+    # Return all top-N predictions from the first token
+    annotations = []
+    for label, prob in zip(labels, probabilities):
+        annotation = {
+            "bert_tokens": [sp["bert_tokens"][0] for sp in span],
+            "morph_label": label,
+            "probability": prob,
+        }
+        annotations.append(annotation)
 
-    # Step 2: Find the first token that has this most frequent top-1 label
-    for sp in span:
-        if most_frequent_label in sp["morph_label"]:
-            # Extract the top N labels and their probabilities starting from this label
-            labels = sp["morph_label"]
-            probabilities = sp["probability"]
-
-            assert len(labels) == len(probabilities)
-
-            for label, prob in zip(labels, probabilities):
-                annotation = {
-                    "bert_tokens": [sp["bert_tokens"][0] for sp in span],
-                    "morph_label": label,
-                    "probability": prob,
-                }
-                annotations.append(annotation)
-
-            # Return the final annotation
-            return annotations
-
-    # Fallback if no label found (shouldn't happen)
-    raise RuntimeError(f"Could not find a token with this label: {most_frequent_label}")
+    return annotations
 
 
 def rewriter_decorator_Vabamorf(text_obj, word_index, span):
     """
     Decorator function for <code>BertTokens2WordsRewriter</code>. \n
-    Aggregates the <code>form</code>, <code>partofspeech</code> and <code>probabilities</code> from <code>shared_bert_tokens</code>, finds the most
-    common top-1 label, and retrieves the top N labels and their probabilities from the
-    first token that contains this top-1 label.
+    Takes predictions from the FIRST subtoken only (aligns with model training)
+    and returns all top-N labels split into form and partofspeech from that token.
 
     Args:
         text_obj: EstNLTK Text object.
@@ -423,48 +460,31 @@ def rewriter_decorator_Vabamorf(text_obj, word_index, span):
         span: EstNLTK's Span object.
 
     Returns:
-        dict: Annotations with the top N labels and probabilities for the word/phrase.
+        list: Annotations with the top N labels and probabilities for the word/phrase,
+              with labels split into form and partofspeech components.
     """
 
-    # Step 1: Find the most frequent top-1 label across all tokens
-    top_1_label_counts = collections.Counter()
-    for sp in span:
-        forms = sp["form"]
-        poses = sp["partofspeech"]
-        for form, pos in zip(forms, poses):
-            top_1_label = form + "_" + pos  # Get top-1 label
-            top_1_label_counts[top_1_label] += (
-                1  # Count occurrences of each top-1 label
-            )
+    # Take only the first subtoken's predictions
+    first_token = span[0]
+    forms = first_token["form"]
+    poses = first_token["partofspeech"]
+    probabilities = first_token["probability"]
 
-    # Identify the most frequent top-1 label
-    most_frequent_label = top_1_label_counts.most_common(1)[0][0]
-    annotations = list()
+    assert len(forms) == len(poses) == len(probabilities)
 
-    # Step 2: Find the first token that has this most frequent top-1 label
-    for sp in span:
-        form = most_frequent_label.split("_")[0]
-        pos = most_frequent_label.split("_")[1]
-        if form in sp["form"] and pos in sp["partofspeech"]:
-            # Extract the top N labels and their probabilities starting from this label
-            tokens = [sp["bert_tokens"][0] for sp in span]
-            forms = sp["form"]
-            poses = sp["partofspeech"]
-            probabilities = sp["probability"]
-            for form, pos, probability in zip(forms, poses, probabilities):
-                annotation = {
-                    "bert_tokens": tokens,
-                    "form": form,
-                    "partofspeech": pos,
-                    "probability": probability,
-                }
-                annotations.append(annotation)
+    # Return all top-N predictions from the first token
+    tokens = [sp["bert_tokens"][0] for sp in span]
+    annotations = []
+    for form, pos, probability in zip(forms, poses, probabilities):
+        annotation = {
+            "bert_tokens": tokens,
+            "form": form,
+            "partofspeech": pos,
+            "probability": probability,
+        }
+        annotations.append(annotation)
 
-            # Return the final annotation
-            return annotations
-
-    # Fallback if no label found (shouldn't happen)
-    raise RuntimeError(f"Could not find a token with this label: {most_frequent_label}")
+    return annotations
 
 
 def _split_sentence_into_smaller_chunks(

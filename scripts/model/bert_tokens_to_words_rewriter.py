@@ -3,7 +3,7 @@
 # The output layer is an enveloping layer around words layer.
 #
 
-from typing import Dict, Any, List
+from typing import Dict, Any
 import warnings
 
 from estnltk import Text, Layer, Span, ElementaryBaseSpan, EnvelopingBaseSpan
@@ -12,6 +12,55 @@ from estnltk.taggers import Tagger
 
 def default_decorator(text, sharing_words, shared_bert_tokens):
     return {}
+
+
+def _is_silent_bert_token(bert_token_span: Span) -> bool:
+    """Checks if a BERT token span has no surface content.
+
+    Treats SentencePiece boundary-only markers (e.g. '▁') and whitespace-only
+    spans as silent. These spans are expected to have no corresponding word.
+    """
+
+    def _normalise(token_text: str) -> str:
+        return token_text.replace("▁", "").strip()
+
+    candidate_texts = []
+
+    # 1) Surface text from the span itself
+    span_text = getattr(bert_token_span, "text", None)
+    if isinstance(span_text, str):
+        candidate_texts.append(span_text)
+
+    # 2) Token values from annotations
+    annotations = getattr(bert_token_span, "annotations", None)
+    if annotations is None:
+        annotations = []
+    elif isinstance(annotations, dict):
+        annotations = [annotations]
+    elif not isinstance(annotations, (list, tuple)):
+        try:
+            annotations = list(annotations)
+        except TypeError:
+            annotations = [annotations]
+
+    for annotation in annotations:
+        if isinstance(annotation, dict):
+            for key in ("bert_tokens", "text", "token"):
+                value = annotation.get(key)
+                if isinstance(value, str):
+                    candidate_texts.append(value)
+        else:
+            for key in ("bert_tokens", "text", "token"):
+                value = getattr(annotation, key, None)
+                if isinstance(value, str):
+                    candidate_texts.append(value)
+
+    # 3) Fallback to string representation if nothing else is available
+    if not candidate_texts:
+        candidate_texts.append(str(bert_token_span))
+
+    # Check if all candidate texts are empty after normalisation
+    return all(_normalise(token_text) == "" for token_text in candidate_texts)
 
 
 class BertTokens2WordsRewriter(Tagger):
@@ -173,11 +222,7 @@ def map_words_to_bert_tokens(
         # tokens carry no surface content and are expected to have no
         # corresponding word span.
         for i in sorted(list(unmatched_bert_tokens)):
-            try:
-                tok_text = str(bert_tokens_layer[i])
-            except Exception:
-                tok_text = ""
-            if tok_text.replace("▁", "").strip() == "":
+            if _is_silent_bert_token(bert_tokens_layer[i]):
                 # skip silent tokens without emitting a warning
                 continue
             warnings.warn(
