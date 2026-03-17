@@ -165,7 +165,7 @@ def run_single_model_predict(
             max_length: Optional max sequence length for preprocessing.
             ignore_placeholders: Whether to encode placeholder labels as ``-100``.
             placeholder_labels: Placeholder labels for alignment behaviour.
-            include_all_tokens: Whether to include full sequence tokens in output.
+            include_all_tokens: Whether to include full sequence tokens in output. This means the output will include the model's tokenization of the input, including special tokens, which can be useful for debugging tokenization and alignment issues.
             verbose: Print progress.
 
     Returns:
