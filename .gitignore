@@ -3,6 +3,9 @@ data/*
 models/*
 outputs/*
 
+# Enable plots
+!outputs/plots/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
