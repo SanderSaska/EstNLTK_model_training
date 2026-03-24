@@ -1,7 +1,7 @@
 # Folders that contain large files that should not be tracked by git. These include:
 data/*
 models/*
-outputs/*
+outputs/old/
 
 # Enable plots
 !outputs/plots/
