@@ -96,18 +96,18 @@ class Preprocessor:
             morph_analysis = text.tag_layer("morph_analysis")
             for sentence in morph_analysis.sentences:
                 sentence_analysis = sentence.morph_analysis
-                for text, form, pos in zip(
+                for s_text, s_form, s_pos in zip(
                     sentence_analysis.text,
                     sentence_analysis.form,
                     sentence_analysis.partofspeech,
                 ):
-                    if text:
+                    if s_text:
                         tokens.append(
                             (
                                 sentence_id,
-                                text,
-                                form[0],
-                                pos[0],
+                                s_text,
+                                s_form[0],
+                                s_pos[0],
                                 text.meta.get("texttype"),
                                 file_name,
                             )
