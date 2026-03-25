@@ -20,9 +20,9 @@ Early stopping criteria: if F1-score on the validation set does not go under 95%
 
 Might have to write report for Siim showcasing the results and the process of training the model on the homonym dataset. Explain why we chose so.
 
-BERT do masked prediction. Take TOP 10 predictions for the masked word and do Vabamorf morph analysis. Do case profile (for forms) analysis for these predictions. Check if the correct form is among the TOP 10 predictions and if it is, check if it has the correct case profile. You can filter out cases or labels (cases + forms), where the case does not match with the word at all. The idea is to see whether BERT can predict a word for the masked position that has the correct case profile, for gathering more data for the homonym dataset. Nevertheless, we need to check the same with GPT as well, since it is a more powerful model and might give better results.
+Do BERT masked prediction. Take TOP 10 predictions for the masked word and do morph analysis. Do case profile (for forms) analysis for these predictions. Check if the correct form is among the TOP 10 predictions and if it is, check if it has the correct case profile. You can filter out cases or labels (cases + forms), where the case does not match with the word at all. The idea is to see whether BERT can predict a word for the masked position that has the correct case profile, for gathering more data for the homonym dataset. Nevertheless, we need to check the same with GPT as well, since it is a more powerful model and might give better results.
 
-Võta morf-süntaksi konfliktide andmestik.
+Take the morph-syntax conflicts dataset and generate annotations for these sentences using Vabamorf and the BERT-based model. Check if the models can disambiguate the cases correctly.
 
 Send at <kadri.muischnek@ut.ee> the expert diffs between predicted and gold labels for sentences where expert was selected on the UD treebank test set.
 
