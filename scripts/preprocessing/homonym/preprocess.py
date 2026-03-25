@@ -20,10 +20,11 @@ class Preprocessor:
         pass
 
     @staticmethod
-    def create_df(
+    def create_sentences_df(
         input_files: typing.List[typing.Tuple],
         output_dir: typing.Union[str, Path],
         do_overall_df: bool = True,
+        do_individual_dfs: bool = False,
     ):
         # Use specific annotation configurations that were used in homonyms dataset
         annotation_confs = {
@@ -87,18 +88,19 @@ class Preprocessor:
                                 "label": sentence.meta["class_label"],
                             }
                         )
-            df = pd.DataFrame(data)
-            output_csv = output_dir / Path(f"homonyms_infltype_{num}_{infl_type}.csv")
-            df.to_csv(output_csv, index=False)
-            print(f"Saved processed data to {output_csv}")
+            if do_individual_dfs:
+                df = pd.DataFrame(data)
+                output_parquet = output_dir / Path(f"homonyms_sentences_infltype_{num}_{infl_type}.parquet")
+                df.to_parquet(output_parquet, index=False)
+                print(f"Saved processed data to {output_parquet}")
             overall_data.extend(data)
 
         if do_overall_df:
             # Create overall dataframe
             overall_df = pd.DataFrame(overall_data)
-            overall_output_csv = output_dir / Path("homonyms_overall.csv")
-            overall_df.to_csv(overall_output_csv, index=False)
-            print(f"Saved overall processed data to {overall_output_csv}")
+            overall_output_parquet = output_dir / Path("homonyms_overall_sentences.parquet")
+            overall_df.to_parquet(overall_output_parquet, index=False)
+            print(f"Saved overall processed data to {overall_output_parquet}")
 
     @staticmethod
     def create_model_df(
