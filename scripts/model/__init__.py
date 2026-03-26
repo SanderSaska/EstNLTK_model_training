@@ -38,6 +38,8 @@ from scripts.model.train import (
     train_token_classification,
 )
 
+from scripts.model.bert_morph_tagger import BertMorphTagger
+
 __all__ = [
     # utils
     "TokenClassificationDataset",
@@ -65,4 +67,6 @@ __all__ = [
     "run_single_model_eval",
     # train
     "train_token_classification",
+    # bert_morph_tagger
+    "BertMorphTagger",
 ]
