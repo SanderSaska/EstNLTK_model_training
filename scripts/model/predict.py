@@ -221,7 +221,7 @@ def run_single_model_predict(
             logits = outputs.logits.detach().cpu().numpy()
             pred_ids = logits.argmax(axis=-1)
 
-            for pred_row in pred_ids:
+            for batch_row_idx, pred_row in enumerate(pred_ids):
                 words, true_labels = sentences[sent_idx]
                 word_tokens = [
                     _tokenize_word_for_output(tokenizer, str(word)) for word in words
@@ -229,6 +229,7 @@ def run_single_model_predict(
 
                 pred_labels: list[str] = []
                 aligned_true_labels: list[str] = []
+                probabilities: list[float] = []
 
                 token_pointer = 1
                 for word_index, (word, true_label) in enumerate(
@@ -257,6 +258,21 @@ def run_single_model_predict(
                     pred_labels.append(predicted_label)
                     aligned_true_labels.append(gold_label)
 
+                    # Safely retrieve token-level probability. If the token_pointer
+                    # is outside the model's sequence length for this batch row,
+                    # use a default probability of 0.0 to avoid IndexError.
+                    if token_pointer < logits.shape[1]:
+                        probability = float(
+                            torch.softmax(
+                                torch.tensor(logits[batch_row_idx][token_pointer]), dim=-1
+                            ).max()
+                        )
+                    else:
+                        probability = 0.0
+
+                    # Append to per-sentence probability list and row-level outputs.
+                    probabilities.append(probability)
+
                     row_outputs.append(
                         {
                             "sentence_index": sent_idx,
@@ -265,6 +281,7 @@ def run_single_model_predict(
                             "word_tokens": current_word_tokens,
                             "pred_label": predicted_label,
                             "true_label": gold_label,
+                            "probability": probability,
                         }
                     )
 
@@ -276,6 +293,7 @@ def run_single_model_predict(
                     "word_tokens": word_tokens,
                     "pred_labels": pred_labels,
                     "true_labels": aligned_true_labels,
+                    "probabilities": probabilities,
                 }
 
                 if include_all_tokens:
@@ -458,6 +476,9 @@ def run_hybrid_density_predict(
                 pred_labels: list[str] = []
                 aligned_true_labels: list[str] = []
                 sources: list[str] = []
+                baseline_probabilities: list[float] = []
+                expert_probabilities: list[float] = []
+                probabilities: list[float] = []
 
                 baseline_pointer = 1
                 expert_pointer = 1
@@ -474,7 +495,7 @@ def run_hybrid_density_predict(
                         normalized_placeholder_labels,
                     )
 
-                    if is_placeholder:
+                    if is_placeholder and ignore_placeholders:
                         predicted_label = placeholder_output_label
                         gold_label = placeholder_output_label
                         source = "placeholder"
@@ -513,6 +534,41 @@ def run_hybrid_density_predict(
                     aligned_true_labels.append(gold_label)
                     sources.append(source)
 
+                    # Compute token-level probabilities for both models (safe bounds).
+                    if is_placeholder and ignore_placeholders:
+                        baseline_prob = 0.0
+                        expert_prob = 0.0
+                    else:
+                        if baseline_pointer < baseline_row.shape[0]:
+                            baseline_prob = float(
+                                torch.softmax(
+                                    torch.tensor(baseline_row[baseline_pointer]), dim=-1
+                                ).max()
+                            )
+                        else:
+                            baseline_prob = 0.0
+
+                        if expert_pointer < expert_row.shape[0]:
+                            expert_prob = float(
+                                torch.softmax(
+                                    torch.tensor(expert_row[expert_pointer]), dim=-1
+                                ).max()
+                            )
+                        else:
+                            expert_prob = 0.0
+
+                    # Choose probability according to the selected source.
+                    if source == "expert":
+                        chosen_prob = expert_prob
+                    elif source == "baseline":
+                        chosen_prob = baseline_prob
+                    else:
+                        chosen_prob = 0.0
+
+                    baseline_probabilities.append(baseline_prob)
+                    expert_probabilities.append(expert_prob)
+                    probabilities.append(chosen_prob)
+
                     row_outputs.append(
                         {
                             "sentence_index": sent_idx,
@@ -523,6 +579,9 @@ def run_hybrid_density_predict(
                             "true_label": gold_label,
                             "source": source,
                             "density": float(density),
+                            "probability": chosen_prob,
+                            "baseline_probability": baseline_prob,
+                            "expert_probability": expert_prob,
                         }
                     )
 
@@ -537,6 +596,9 @@ def run_hybrid_density_predict(
                     "true_labels": aligned_true_labels,
                     "sources": sources,
                     "density": float(density),
+                    "probabilities": probabilities,
+                    "baseline_probabilities": baseline_probabilities,
+                    "expert_probabilities": expert_probabilities,
                 }
 
                 if include_all_tokens:
