@@ -31,6 +31,12 @@ class Extractor:
                                 input_dir / fname / subfname,
                             )
                         )
+            else:
+                if fname.endswith(".json"):
+                    inflection_type = int(
+                        fname.split("_")[2]
+                    )  # infl_type_xx_randomly_picked_1000_sentences...
+                    input_files.append((inflection_type, input_dir / fname))
 
         if not input_files:
             raise RuntimeError("No input files found!")
