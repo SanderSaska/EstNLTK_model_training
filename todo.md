@@ -30,11 +30,12 @@ Add more constraints to the BERT word predictions using part of speech or predic
 
 Take the morph-syntax conflicts dataset and generate annotations for these sentences using Vabamorf and the BERT-based model. Check if the models can disambiguate the cases correctly.
 
-- Save csv with columns: Sentence_id, sentence, word, span, Bert Morph v2 form, Vabamorf form
-  - Basically in a way so we can easily see on a monitor without needing to scroll horizontally.
-- Filter sentences where Bert Morph v2 form is not in ["n", "p"], pick randomly 20 sentences and inspect them to see if there are any patterns that could explain why the model is predicting these forms.
-- Predict more than the most probable morph label for the word. If the most probable label's probability is lower than the sum of the probabilities of the labels "n" and "p", then we can predict "n" or "p" instead of the most probable label. Essentially, we want to see how sure the model is about its predictions and if it is not sure, then we can use the case profile of the word to make a better prediction. For example, if the model predicts "sg g" with 0.4 probability, "sg n" with 0.3 probability and "sg p" with 0.3 probability, then we can predict "sg n" or "sg p" instead of "sg g", since the sum of the probabilities of "sg n" and "sg p" is higher than the probability of "sg g". This way we can potentially improve the predictions for these cases where the model is not very sure about its predictions.
-- Predict with Bert Morph v2 model and get the most probable label and sum the predictions of both forms n and p.
+~~- Save csv with columns: Sentence_id, sentence, word, span, Bert Morph v2 form, Vabamorf form~~
+~~- Basically in a way so we can easily see on a monitor without needing to scroll horizontally.~~
+~~- Filter sentences where Bert Morph v2 form is not in ["n", "p"], pick randomly 20 sentences and inspect them to see if there are any patterns that could explain why the model is predicting these forms.~~
+~~- Predict more than the most probable morph label for the word. If the most probable label's probability is lower than the sum of the probabilities of the labels "n" and "p", then we can predict "n" or "p" instead of the most probable label. Essentially, we want to see how sure the model is about its predictions and if it is not sure, then we can use the case profile of the word to make a better prediction. For example, if the model predicts "sg g" with 0.4 probability, "sg n" with 0.3 probability and "sg p" with 0.3 probability, then we can predict "sg n" or "sg p" instead of "sg g", since the sum of the probabilities of "sg n" and "sg p" is higher than the probability of "sg g". This way we can potentially improve the predictions for these cases where the model is not very sure about its predictions.~~
+~~- Predict with Bert Morph v2 model and get the most probable label and sum the predictions of both forms n and p.~~
+
 - <https://github.com/estnltk/estnltk-model-data/tree/main/morph_tagging/syntax_morph_conflicts>
   1. Take the morph-syntax conflicts dataset, where Bert and Vabamorf differ and where BERT predicts form that is not in ["n", "p"]
   2. Modify MoE model pipeline so it also adds syntax analysis layer.
