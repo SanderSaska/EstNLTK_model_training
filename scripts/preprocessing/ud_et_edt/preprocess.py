@@ -202,13 +202,14 @@ class Preprocessor:
             tokenizer_value: str,
             file_prefix_value,
             file_name_value,
-        ) -> list:
+            start_sentence_id: int,
+        ) -> tuple[list, int]:
             """Extract rows (sentence_id, word, form, pos, labels, file_prefix, source) from an EstNLTK Text.
 
-            Returns a list of tuples. Sentence ids start at 0 for each text and increment per sentence.
+            Returns a list of tuples and next sentence id.
             """
             rows_local: list[tuple] = []
-            sentence_id_local = 0
+            sentence_id_local = start_sentence_id
             for sentence in text_obj.sentences:
                 if tokenizer_value == "ud_morph_reduced":
                     sentence_analysis = sentence.ud_morph_reduced
@@ -246,11 +247,12 @@ class Preprocessor:
                         )
                 sentence_id_local += 1
 
-            return rows_local
+            return rows_local, sentence_id_local
 
         task_progress = tqdm.tqdm(
             jsons, desc="Processing files", unit="file", total=len(jsons)
         )
+        next_sentence_id = 0
 
         if file_extension == ".parquet":
             writer: typing.Optional[pq.ParquetWriter] = None
@@ -261,8 +263,12 @@ class Preprocessor:
                 file_prefix = text.meta.get("file_prefix")
                 file_name = pathlib.Path(file_path).name
 
-                rows: list[tuple] = _extract_rows(
-                    text, tokenizer, file_prefix, file_name
+                rows, next_sentence_id = _extract_rows(
+                    text,
+                    tokenizer,
+                    file_prefix,
+                    file_name,
+                    next_sentence_id,
                 )
 
                 if not rows:
@@ -285,8 +291,12 @@ class Preprocessor:
                     text.tag_layer("morph_analysis")
                 file_prefix = text.meta.get("file_prefix")
                 file_name = pathlib.Path(file_path).name
-                rows: list[tuple] = _extract_rows(
-                    text, tokenizer, file_prefix, file_name
+                rows, next_sentence_id = _extract_rows(
+                    text,
+                    tokenizer,
+                    file_prefix,
+                    file_name,
+                    next_sentence_id,
                 )
 
                 if not rows:

@@ -163,7 +163,6 @@ def train_token_classification(
         sent_id_col="sentence_id",
         text_col="words",
         label_col="labels",
-        source_col="source",
     )
     if len(train_sentences) == 0:
         raise ValueError("No training sentences found in train_df")

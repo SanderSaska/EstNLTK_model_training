@@ -429,6 +429,7 @@ def prepare_shared_inputs(
     Raises:
         ValueError: When any required column is absent from ``test_df``.
     """
+
     def _normalize_sentence_ids_by_source(
         df: pd.DataFrame,
         sentence_id_col: str,
@@ -459,8 +460,6 @@ def prepare_shared_inputs(
         raise ValueError(f"Missing required test-set columns: {missing_cols}")
 
     processed_source_col = source_col
-    if processed_source_col is None and "source" in test_df.columns:
-        processed_source_col = "source"
 
     source_df = test_df
     if processed_source_col is not None:

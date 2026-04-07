@@ -261,13 +261,16 @@ class Preprocessor:
 
         print("Beginning to create dataset from JSON files.")
 
-        def _rows_for_file(file_path: typing.Union[str, pathlib.Path]) -> list:
+        def _rows_for_file(
+            file_path: typing.Union[str, pathlib.Path],
+            start_sentence_id: int,
+        ) -> tuple[list, int]:
             """Collect rows for a single JSON file.
 
             Returns a list of tuples matching `fieldnames` or an empty list if the
             file should be skipped.
             """
-            sentence_id_local = 0
+            sentence_id_local = start_sentence_id
             text = estnltk.converters.json_to_text(
                 file=file_path
             )  # Convert json to EstNLTK Text object
@@ -280,7 +283,7 @@ class Preprocessor:
                 print(
                     f"Text from file '{file_path}' doesn't have morph_analysis layer, skipping this text."
                 )
-                return []
+                return [], start_sentence_id
             # Iterate through sentences and gather the necessary info for each word
             rows_local: list[tuple] = []
             for sentence in text.sentences:
@@ -310,13 +313,15 @@ class Preprocessor:
                         )
                 sentence_id_local += 1
 
-            return rows_local
+            return rows_local, sentence_id_local
+
+        next_sentence_id = 0
 
         # Save the gathered info into a new file with the given name and extension
         if file_extension == ".parquet":  # Parquet
             writer: typing.Optional[pq.ParquetWriter] = None
             for file_path in tqdm(jsons):
-                rows = _rows_for_file(file_path)
+                rows, next_sentence_id = _rows_for_file(file_path, next_sentence_id)
                 if not rows:
                     continue
                 # Save in chunks to avoid memory issues with large datasets
@@ -332,7 +337,7 @@ class Preprocessor:
         else:  # CSV
             header_written = False
             for file_path in tqdm(jsons):
-                rows = _rows_for_file(file_path)
+                rows, next_sentence_id = _rows_for_file(file_path, next_sentence_id)
                 if not rows:
                     continue
                 # Save in chunks to avoid memory issues with large datasets

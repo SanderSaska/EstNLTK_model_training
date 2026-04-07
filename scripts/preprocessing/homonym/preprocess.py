@@ -1,3 +1,4 @@
+import ast
 import typing
 import pandas as pd
 import numpy as np
@@ -78,19 +79,23 @@ class Preprocessor:
                         "class_label" in sentence.meta
                         and sentence.meta["class_label"] is not None
                     ):
+                        label = sentence.meta["class_label"]
                         data.append(
                             {
                                 "num": num,
                                 "inflection_type": infl_type,
                                 "sentence": sentence.text,
                                 "word": annotation.text,
-                                "word_span": (annotation.start, annotation.end),
-                                "label": sentence.meta["class_label"],
+                                "word_span": tuple([annotation.start, annotation.end]),
+                                "label": label,
+                                "source": input_file.name,
                             }
                         )
             if do_individual_dfs:
                 df = pd.DataFrame(data)
-                output_parquet = output_dir / Path(f"homonyms_sentences_infltype_{num}_{infl_type}.parquet")
+                output_parquet = output_dir / Path(
+                    f"homonyms_sentences_infltype_{num}_{infl_type}.parquet"
+                )
                 df.to_parquet(output_parquet, index=False)
                 print(f"Saved processed data to {output_parquet}")
             overall_data.extend(data)
@@ -98,7 +103,9 @@ class Preprocessor:
         if do_overall_df:
             # Create overall dataframe
             overall_df = pd.DataFrame(overall_data)
-            overall_output_parquet = output_dir / Path("homonyms_overall_sentences.parquet")
+            overall_output_parquet = output_dir / Path(
+                "homonyms_overall_sentences.parquet"
+            )
             overall_df.to_parquet(overall_output_parquet, index=False)
             print(f"Saved overall processed data to {overall_output_parquet}")
 
@@ -138,6 +145,7 @@ class Preprocessor:
         }
 
         overall_data = []
+        global_sentence_id = 0
         # Extract data from input files
         for i, (infl_type, input_file) in enumerate(input_files):
             num = int(input_file.parent.stem)  # Numbers (V)1 or (V)2 in filenames
@@ -160,7 +168,9 @@ class Preprocessor:
                 leave=False,
                 position=0,
             )
-            for sentence_id, sentence in enumerate(inner):
+            for sentence in inner:
+                sentence_id = global_sentence_id
+                global_sentence_id += 1
                 # Create estnltk Text object from sentence text
                 text = estnltk.Text(sentence.text)
                 # Apply morphological analysis to the text
@@ -282,7 +292,10 @@ class Preprocessor:
                 core = ""
             return core
 
-        for sentence_id, (_, row) in enumerate(homonym_dataset.iterrows()):
+        global_sentence_id = 0
+        for _, row in homonym_dataset.iterrows():
+            sentence_id = global_sentence_id
+            global_sentence_id += 1
             sentence_text = row["sentence"]
             homonym_label = row.get("label")
             labelled_word_span = row.get("word_span")
