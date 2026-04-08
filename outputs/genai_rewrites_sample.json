@@ -1,0 +1,209 @@
+[
+  {
+    "id": "0",
+    "candidates": [
+      "mudel",
+      "kontseptsioon",
+      "hüpotees",
+      "lähenemisviis",
+      "printsiip",
+      "paradigma",
+      "raamistik",
+      "käsitlus",
+      "doktriin",
+      "süsteem"
+    ],
+    "chosen": "mudel",
+    "rewritten": "Normi-aktiveerimise mudel (Schwartz, 1970) on algselt mõeldud moraalse otsustamisprotsessi analüüsimiseks abistava käitumise näitel.",
+    "source_sentence": "Normi-aktiveerimise teooria (Schwartz, 1970) on algselt mõeldud moraalse otsustamisprotsessi analüüsimiseks abistava käitumise näitel.",
+    "target_word": "teooria",
+    "word_span": [
+      20,
+      27
+    ]
+  },
+  {
+    "id": "1",
+    "candidates": [
+      "aktsioon",
+      "teavitustöö",
+      "üritus",
+      "algatus",
+      "projekt",
+      "üleskutse",
+      "programm",
+      "konverents",
+      "seminar",
+      "väljapanek"
+    ],
+    "chosen": "aktsioon",
+    "rewritten": "\"Ehk oleks mõttekas ka mõni selleteemaline hoiatav aktsioon korraldada,\" lisab punase autoga preili.",
+    "source_sentence": "\"Ehk oleks mõttekas ka mõni selleteemaline hoiatav kampaania korraldada,\" lisab punase autoga preili.",
+    "target_word": "kampaania",
+    "word_span": [
+      51,
+      60
+    ]
+  },
+  {
+    "id": "2",
+    "candidates": [
+      "õige",
+      "põhjendatud",
+      "kaalutletud",
+      "vajalik",
+      "aus",
+      "õigustatud",
+      "kindel",
+      "otsustav",
+      "teadlik",
+      "kaalukas"
+    ],
+    "chosen": "õigustatud",
+    "rewritten": "\"Minu otsus oli õigustatud ning teeksin kõik sama moodi, kui saaksin uuesti teha,\" kommenteerib kolm aastat tagasi eriliste teenete eest Eesti passi saanud Primakov.",
+    "source_sentence": "\"Minu otsus oli õige ning teeksin kõik sama moodi, kui saaksin uuesti teha,\" kommenteerib kolm aastat tagasi eriliste teenete eest Eesti passi saanud Primakov.",
+    "target_word": "õige",
+    "word_span": [
+      16,
+      20
+    ]
+  },
+  {
+    "id": "3",
+    "candidates": [
+      "Prantsusmaa",
+      "Saksamaa",
+      "Soome",
+      "Eesti",
+      "Poola",
+      "Hispaania",
+      "Austria",
+      "Läti",
+      "Rootsi",
+      "Ungari"
+    ],
+    "chosen": "Prantsusmaa",
+    "rewritten": "Prantsusmaa president ütles Venemaa riigipea auks korraldatud suurejoonelisel banketil, et kahe riigi ühisavaldus Iraagi kohta oli kahe riigipea \"suur tarkuseavaldus\".",
+    "source_sentence": "Itaalia president ütles Venemaa riigipea auks korraldatud suurejoonelisel banketil, et kahe riigi ühisavaldus Iraagi kohta oli kahe riigipea \"suur tarkuseavaldus\".",
+    "target_word": "Itaalia",
+    "word_span": [
+      0,
+      7
+    ]
+  },
+  {
+    "id": "4",
+    "candidates": [
+      "Marko",
+      "Martin",
+      "Andres",
+      "Indrek",
+      "Tanel",
+      "Kristjan",
+      "Priit",
+      "Silver",
+      "Rauno",
+      "Jaanus"
+    ],
+    "chosen": "Marko",
+    "rewritten": "Žüriis olid Ave Needo (Ruut FM), Aivo Tammela (Jüri noortemaja), Thea Tekkel (politsei esindaja), Margus Sõna (DJ School) ja Marko Liimann (OÜ Audiomeedia).",
+    "source_sentence": "Žüriis olid Ave Needo (Ruut FM), Aivo Tammela (Jüri noortemaja), Thea Tekkel (politsei esindaja), Margus Sõna (DJ School) ja Mario Liimann (OÜ Audiomeedia).",
+    "target_word": "Mario",
+    "word_span": [
+      125,
+      130
+    ]
+  },
+  {
+    "id": "5",
+    "candidates": [
+      "Lähis-Ida",
+      "Aafrika",
+      "Aasia",
+      "Põhja-Aafrika",
+      "Pärsia lahe",
+      "islami",
+      "lähinaabruse",
+      "arengumaade",
+      "regiooni",
+      "Euroopa"
+    ],
+    "chosen": "Lähis-Ida",
+    "rewritten": "Samas teeb aga murelikuks asjaolu, et paljudes Lähis-Ida riikides kasvab rahva seas pahameel oma nn liiga Läänemeelse valitsuse vastu.",
+    "source_sentence": "Samas teeb aga murelikuks asjaolu, et paljudes Araabia riikides kasvab rahva seas pahameel oma nn liiga Läänemeelse valitsuse vastu.",
+    "target_word": "Araabia",
+    "word_span": [
+      47,
+      54
+    ]
+  },
+  {
+    "id": "6",
+    "candidates": [
+      "Põhja",
+      "Lääne",
+      "Balti",
+      "teist",
+      "mitut",
+      "paljusid",
+      "üht",
+      "kaht",
+      "viit",
+      "naaber"
+    ],
+    "chosen": "Põhja",
+    "rewritten": "Meri kinnitas eile Hamburgi linnapeale, et Eesti on valmis viisata suhtluseks kümmet Põhja Liidu riiki ühendava Schengeni ühisviisaruumiga, sest Eesti piirikaitse on eeskujulik ja üks tänapäevasemaid Euroopas.",
+    "source_sentence": "Meri kinnitas eile Hamburgi linnapeale, et Eesti on valmis viisata suhtluseks kümmet Euroopa Liidu riiki ühendava Schengeni ühisviisaruumiga, sest Eesti piirikaitse on eeskujulik ja üks tänapäevasemaid Euroopas.",
+    "target_word": "Euroopa",
+    "word_span": [
+      85,
+      92
+    ]
+  },
+  {
+    "id": "7",
+    "candidates": [
+      "piiramatu",
+      "tohutu",
+      "suure",
+      "määratu",
+      "hiiglasliku",
+      "väga suure",
+      "uskumatu",
+      "kasvava",
+      "kõrge",
+      "küllusliku"
+    ],
+    "chosen": "tohutu",
+    "rewritten": "Siiditee John W. Orrison, endine CSX Transportationi presidendi abi, on rääkinud Wall Street Journalile, et kaupade eksportimine Hiinast ja Koreast Euroopa Liitu on tohutu potentsiaaliga äri, kus liigub aastas kümneid miljardeid eurosid.",
+    "source_sentence": "Siiditee John W. Orrison, endine CSX Transportationi presidendi abi, on rääkinud Wall Street Journalile, et kaupade eksportimine Hiinast ja Koreast Euroopa Liitu on piiramatu potentsiaaliga äri, kus liigub aastas kümneid miljardeid eurosid.",
+    "target_word": "piiramatu",
+    "word_span": [
+      165,
+      174
+    ]
+  },
+  {
+    "id": "8",
+    "candidates": [
+      "vahendustegevus",
+      "koostöö",
+      "läbirääkimised",
+      "poliitika",
+      "sekkumine",
+      "lepitus",
+      "suhtlus",
+      "dialoog",
+      "kokkulepe",
+      "esindus"
+    ],
+    "chosen": "vahendustegevus",
+    "rewritten": "Rahvusvaheline vahendustegevus hoidis ära kahe naabri vahelise sõja.",
+    "source_sentence": "Rahvusvaheline diplomaatia hoidis ära kahe naabri vahelise sõja.",
+    "target_word": "diplomaatia",
+    "word_span": [
+      15,
+      26
+    ]
+  }
+]
