@@ -1,0 +1,2070 @@
+Masked sentence: Põhja-Koreaga alustas Jaapan läbirääkimisi 1992. aastal, kuid need katkesid <mask> hiljem just samal põhjusel, mille üle nüüdki vaieldakse.
+Word to mask: aasta
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Andres <mask> Paetisme - Pühapäeval läheb Eesti suveajale.
+Word to mask: Ülviste
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Laenu <mask> esitatud andmete õigsust kontrollib lisaks pangale laenu garanteerija Maaelu Laenude Tagamise Sihtasutus, mistõttu võib laenulepingu rahuldamine siiski veidi enam aega nõuda.
+Word to mask: taotleja
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Näiteks on saatkondadena ära kadunud <mask>, Kanada ja Island, juurde aga tulnud Hispaania, Itaalia, Shveits, Slovakkia ja Jaapan.
+Word to mask: Mehhiko
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: 1985. <mask> pisikesest energiafirmast oli ta 15 aastaga kasvatanud oma turuväärtuse 1760 miljardile dollarile.
+Word to mask: aasta
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Esikoha saanud meeskond pääseb jaanuari alguses Leipzigis peetavale <mask> kvalifikatsiooniturniirile, mille võitja saab Ateena olümpiale.
+Word to mask: Euroopa
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Minu arvates on see väärt investeering, sest need riigid, kes <mask> Liidus meis kõige rohkem kahtlesid, osutusid meie sõpradeks tänu sellele, et nad said adekvaatset informatsiooni.
+Word to mask: Euroopa
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Viimastel aastatel oli <mask> eestikeelseid saateid võimalik kuulda Vikerraadios, Klassikaraadios, Raadio Kukus, Raadio Kadis ning Tartu Raadios.
+Word to mask: raadio
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: ETV-l tulnuks täiendavalt leida palgaks kuni <mask> miljonit krooni.
+Word to mask: kaheksa
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Kompromiss või bluff Tänaseks võivad valimas käinud kergendatult ohata - tänu linnapeale ja siseministrile <mask> võimuliit püsib.
+Word to mask: Tartu
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: "Kahekordses mängus" leidub müstikat, veel rohkem lõimib Ristikivi ajas ja ruumis <mask> rahvaid ja kultuure.
+Word to mask: Euroopa
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: <mask> Kui tunned, et olukorrad ahistavad su vabadusi, siis lõdvestu ja võta aeg maha.
+Word to mask: NEITSI
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: <mask> : Ja üks vanem naine meie ees ütles, et te lähete liiale.
+Word to mask: Marika
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: "Olen Paldiski juhtorganites töötanud juba 1994. aastast, aastal 1996 sai minust abilinnapea ning möödunud <mask> jaanuarist linnapea," ütles Reformierakonda kuuluv Kadak BNS-ile.
+Word to mask: aasta
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Sel juhul väldid olukorda, kus saad <mask>.
+Word to mask: dünamo
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Aristide, Haiti esimene demokraatlikult valitud president, teatas veel päev enne riigist põgenemist, et ta ei astu tagasi enne oma ametiaja lõppu 2006. <mask> veebruaris, kuigi USA soovitas tal võimust loobuda.
+Word to mask: aasta
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: See nelikveo ja nelikroolimisega Opel <mask> teisik konstrueeriti Dany Snobeki töökodades Magny Cours'is.
+Word to mask: Astra
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Siin mängib rolli <mask>.
+Word to mask: poliitika
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: <mask> Ühendriikide saatkonnahoone aknad Moskvas on allkorrustel ammu meeleavaldajate poolt puruks loobitud.
+Word to mask: Ameerika
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Chichester kandis esimese ehmatusega kaardile <mask> lähema punkti Fremantlei, kuid tema lõi selja sirgeks.
+Word to mask: Austraalia
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: See <mask> firma sai asja Ameerika kohtusse anda.
+Word to mask: Ameerika
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Põhiseaduse nende sätete toime, mis pole <mask> Liidu õigusega kooskõlas ja mida seepärast kohaldada ei saa, aga peatub.
+Word to mask: Euroopa
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Enamasti toovad kliendid ise <mask> tagasi.
+Word to mask: auto
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: On meeldiv teada, et ka kaks <mask> meest huviorbiidis on," tõdeb Pohlak.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Ei tunnustata Shukokai harrastajad <mask> Karateföderatsiooniga seotud pole.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: " Eksklusiivsete puulelude tootja AS Palwood käive aastas -- 20 mln kr töötajaid -- 75 keskmine palk -- 4300 kr erinevaid tooteid -- 1000 <mask> eraisikutest aktsionäre -- 21 1/3 osalusega välisaktsionäre -- 2 (alates sellest nädalast) Toodangu struktuur mänguasjad -- 50% dekoratiivesemed -- 40% mööbel -- 10% Allikas : Palwood AS
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Laias laastus peaks selline erakondade klubilise tegutsemise aeg läbi saama, kui tahame, et <mask> riik läheks normaalselt edasi.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Mitu tundi jälitas noort peatoimetajat varjuna gümnaasiumiõpilane <mask>.
+Word to mask: Risto
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Mainitud kohtumine olnud narvalastele Mjatšini sõnul nii rabav (<mask> õpetas Mjatšini : kui Narova on kehvas seisus, siis otsige endale rikas onu välismaalt või laske tal pankrotti minna, riiki teie mured ei huvita), et otsustati luua oma valimisliit "Minu kodu - Narva".
+Word to mask: Vähi
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Ka jäätantsudes ei ole <mask> paaril sõnaõigust.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: "Kümne miljoni piir võtab eriti just <mask> väikefirmadelt võimaluse oma nime all konkursil osaleda.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Foto : Reuters <mask> koerad peavad kaalust alla võtma, et mitte enneaegse surmaga riskida.
+Word to mask: Rootsi
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Eesti Päevalehe tellitud avaliku arvamuse uuring näitas, et 71 protsenti rahvast ei nõustu Lennart Meri <mask> Päevalehes avaldatud arvamusega, et puupiirituse joomise tagajärjel hukkunud ei vääri haletsust.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Madridi <mask> Bernabeu staadionil 80 000 pealtvaataja ees peetud lahingus etendas tähtsat rolli Reali kuulsus Roberto Carlos.
+Word to mask: Santiago
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Euroläbirääkija Alar Streimanni söötude-jootude-sõitude-palga peale kulutab <mask> riik ligikaudu pool miljonit krooni ja ega siis tema, töömees, pole üksi, kes pisut läbi räägib ja rohkelt propagandat toimetab.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: <mask> Päevaleht kandis majanduslikku kahju, kuid eelistas PrinTalli kohtusse kaebamisele siiski läbirääkimiste teed.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: E-grupis heidavad ühte <mask>, Läti ja Valgevene ning USA, Shveits ja Venemaa, F-grupis jätkavad Slovakkia, Soome, Itaalia, Tshehhimaa, Norra ja Kanada.
+Word to mask: Rootsi
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Aastatel 1999-2002 vargustega kokku 4,2 miljonit krooni <mask> tekitanud jõugu käekiri oli robustne.
+Word to mask: kahju
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Siiski kalduvad <mask> asutused järgima Wall Streeti eeskuju - seal tunnustatakse parimaid töötajaid, kes edendavad äritegevust, hiiglaslike preemiatega.
+Word to mask: City
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Pärast Haapsalu Soojuse müügist saadud 26,1 miljonit krooni on sanatooriumi <mask> müügiraha kaalukas lisa linnaeelarvele, kus ei jätku raha investeeringuiks.
+Word to mask: Laine
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: " Hooaja alguse vormist on piisanud kahe küllalt tugeva vastase, <mask> Levski ja Lamia alistamiseks.
+Word to mask: Sofia
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: <mask> aknaklaasid on vahetatud ja masin jälle sõidukorras.
+Word to mask: Auto
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Teavet võib saada isikute, teemade ja <mask> kohanimede järgi.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: 2006. aasta lõpuks rekonstrueerib kuue miljoni krooni (384 000 <mask>) eest lennuliiklusala.??
+Word to mask: euro
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Ei tea, ehk on <mask> raudtee ja ka linnatranspordi firmad teinud ametkondliku uurimuse ja leidnud, et "jäneste" osa on tühine ega tasu tagaajamise vaeva.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Seostame Käbini käitumise <mask> mainitud tipikate kui väga rahulike vendade "valesti plaksutamisega".
+Word to mask: Toome
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Me teame, et Iiri Vabastus-armee üks Londoni rühmitusi plaanib rünnata mister Blairi ja valitsusel ei ole tema elu säästmiseks rahast <mask>, kinnitas kohal olnud peaministri kantselei ametnik.
+Word to mask: kahju
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Täna kell 18 kohtuvad Kadrioru staadionil pühapäeval Itaaliast saabunud <mask> reedel Shotimaalt saabunud Lantanaga.
+Word to mask: Flora
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Aastal 2000 kuulus Talleggile 90 protsenti kogu <mask> jahutatud linnulihaturust.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Ka tolliameti peadirektor Rein Talvik on öelnud, et "<mask> salaalkoholiturul pakutav on muutunud viimaste aastatega ebakvaliteetsemaks".
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Ringkonnakohtu 12. novembri otsuse järgi peab Tartu linnavalitsus kannatanuks osutunud naisterahvale hüvitama talvises avariis sõiduautole Jaguar tekkinud <mask>.
+Word to mask: kahju
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Rossini ja Bellini mahedate meloodiate asemel on meie lavadel dramaatilised <mask> ning Puccini ooperid.
+Word to mask: Verdi
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: " TEADJAMEES : Entsüklopeediakirjastuse tegevdirektor Tõnu Koger leiab, et <mask> teatmeteoste koostajatel hästi läinud - neil jätkub nii tööd kui ka leiba.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Minu silmad avas <mask> pedagoog Karin Jamesson, kes käis siin 1993. aastal.
+Word to mask: Rootsi
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Lõhnaõlidest <mask> Aqua di Gio.
+Word to mask: Armani
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: RFE/RL-i kommunikatsioonidirektor Donald Jensen kinnitas <mask> Päevalehele, et viimaste aastate jooksul on nende potentsiaalne kuulajaskond tõe-poolest langenud, kuid see pole veel märgatavalt kahandanud reaalset kuulajaskonda.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Brüsselis resideerinud Kannike akrediteeriti <mask> suursaadikuks ka NATO ja Lääne-Euroopa Liidu juurde.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Esiteks, kui me kõik need Euroopa Liidu nõuded, mis halvendavad meie olukorda, ellu viime, siis ilmselt hääletab <mask> rahvas Euroopa Liitu astumise vastu.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Aga see pruun on juba <mask> pruun, ma tean, seda ma olen siin läinud talvel juba näinud.
+Word to mask: talve
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Justiitsministeeriumi pädevuses on hinnata nii teistes ministeeriumides valminud õi-gusaktide <mask> kui ka nende normitehnilist ja keelelist külge.
+Word to mask: sisu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Sel juhul : "<mask> Mõõdukatele!"
+Word to mask: Häda
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Autokasutuse piiramine kesklinnas peaks suunama vähemalt <mask> autokasutajatest muid liikumisvõimalusi kasutama.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Juba tegutsevate ettevõtete puhul on laenu pakkumine üks võimalus, aga kui riigil on ressurssi vähe, siis põhimõtteliselt on riigil võimalik asuda laenude tagaja rolli, võttes <mask> riskist enda kanda.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Arvestades Tõnismäel väljakaevamiste ja ümbermatmise korraldamise õigustamiseks kõlanud peamist selgitust, et hauad ei tohi asuda surnute rahu rikkuvates - avalikes, viimseks puhkepaigaks mittemõeldud - kohtades, peaks sõjahaudade komisjon nende sõjahaudade suhtes vähemalt <mask> otsusekindlalt käituma," sõnas Mutli.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Paarkümmend kohta võib ühiselamuis vabaneda sügisel, kui magistrantuurist välja jäänud oma <mask> vabastavad, märkis Hango.
+Word to mask: koha
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Taevaskoja kontserdiplats oli publikut tulvil, <mask> külalisi jälgis show'd metsa alt.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Vereproov võeti lehmadel <mask> veenist või arterist firma Terumo Corporation vaakumkatsutitesse, milles konservandina kasutati liitiumhepariini.
+Word to mask: saba
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tänaseks on kohalikult areenilt lahkunud endine peasponsor ALMAVÜ ning tegevuse lõpetanud Autom, Unic elab aga Unic-Moto nime all oma <mask>.
+Word to mask: elu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Omegaga oleme väga rahul, sest kuigi auto saab <mask> vatti, on ta ekspluatatsioonikulud väikesed," ütles ta.
+Word to mask: kõva
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Nii peab Gasol loovutama <mask> palgast ja talle jääb "vaid" 4 miljonit USD esimesel kolmel hooajal.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "<mask> õpilasi on käinud Berliinis ja Viinis, aga Viljandis mitte," lausus ta.
+Word to mask: Osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kui <mask> terroriste oleks elusalt kinni võetud ja see oleks avalikkusele teada olnud, siis oleks nende üle tulnud korraldada kohtuprotsess, mis oleks maailmas äratanud suurt tähelepanu.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kolleegid vanades demokraatiates mõistavad Eesti erakondade võimumänge <mask> vähe kui valijad Virumaal või Võrumaal.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> ei tohi pinda sisse kuivada lasta.
+Word to mask: Õli
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Siiguri sõnul kulub maakonnahaigla kirurgiabrigaadi kodusest valvest kohale kutsumiseks ja haige lõikuslauale saatmiseks <mask> palju aega kui patsiendi Tartusse toomiseks.
+Word to mask: sama
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Et asi paljuski vaid ristikese pärast tehtud oli, näitab seegi, et riigieelarvest eraldati õpikute tarvis <mask> napilt - selleks aastaks saadi küsitud 230 asemel 198 krooni õpilase kohta.
+Word to mask: raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Nemad iseloomustavad meie kultuuri sama hästi, või õieti <mask> halvasti, kui meie kultuuri tipud.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Eesti Päevalehe andmetel nähakse sinna ette nelja <mask> Leedust ning viit Lätist ja Eestist.
+Word to mask: klubi
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Osade uurijate arvates seavad Surnumere tekstid kahtluse alla Jeesuse sündimise neitsist, sest Jeesuse <mask> puhul kasutatakse heebreakeelset sõna, mis tähistab lihtsalt noort naist.
+Word to mask: ema
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: " <mask> sõnum politseinikele, kohtunikele ja riigiisadele : "Kui poisid pandaks kas või tasuta tööd tegema...
+Word to mask: Ema
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Möödunud nädala lõpul lõppes kristliku <mask> peremehe ja Vähi kohtumine kaklusega.
+Word to mask: kodu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Raske südamega andsin <mask> poisile, kes palaval päeval kandis pea kogu ihu katvaid klouniriideid.
+Word to mask: raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Valimiskampaaniate välise vormi kirumine hakkab juba muutuma <mask> tüütuks nagu kampaaniad ise.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Endisest N. Liidust on <mask> kahvatult esindatud vaid Moldova.
+Word to mask: sama
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Aktsioonimees Eenpalu Kolmekümnendate <mask> kaunistustöö tegev juhiks oli siseminister Kaarel Een palu ja korraldusorganiks tema loodud Riiklik Propa ganda Talitus.
+Word to mask: kodu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tarn märkis, et tema juurde suunatud tüdruku näoarmide <mask> kogumaksumust võib vaid oletada.
+Word to mask: ravi
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Asi läks sedavõrd monotoonseks, et Trashki otsustas oma kuldaväärt koha otse <mask> all teistele loovutada -- kuni Manowari etteasteni.
+Word to mask: lava
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: 18 aastat keelatud <mask> Tänapäeval tundub kujuteldamatu, et välismaise toodanguga kaubelnud valuutapoest ei tohtinud kohalikud kaupa osta.
+Word to mask: äri
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: ärgem unustagem, et paljud neist on eakad inimesed, kel puudub piisaval hulgal <mask> maamaksu tasumiseks.
+Word to mask: raha
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Köln võitis poolaja 41 : 28, kuid mängis siis suure <mask> maha ja oli veel minut enne lõppu taga 70 : 73.
+Word to mask: edu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> hädavajalik oleks aga ilmne liialdus.
+Word to mask: Sõna
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Mõõtmine : Väga tähtsa <mask> shapingust moodustab mõõtmine.
+Word to mask: osa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Aeglaseks peetakse ka <mask> veterinaarias.
+Word to mask: edu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: 14. märtsil kell 19 ja 16. märtsil kell 14 laulab Estonia Teatris Mimi <mask> G. Puccini "Boheemis" Rootsi noor lauljatar Charlotta Larsson.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tore oleks, kui tuleks põllumehi, kes suudaks valitsuselt agrometeoroloogiale raha leida - paar aastat tagasi eraldati EMHI-le <mask> suur summa kui kuulsale Tallinna libedusevastasele voldikule!
+Word to mask: sama
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ajalehe Vooremaa teatel oli umbusaldamise poolt viis saadikut ja vastu <mask> palju, ja Kulkov jätkab Mustvee linnapeana.
+Word to mask: sama
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Riigikogu katkestas eile teede- ja sideminister Toivo Jürgensoni ettepanekul taas Edelaraudtee kümneaastase doteerimisplaani <mask>, sest esialgu kavandatud toetusi tahetakse rongiliinide sulgemise arvelt 320 miljoni võrra kärpida.
+Word to mask: arutelu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Meie <mask> põhjus on ilmselt see, et meil on olnud väga hea koostöö ehituse erialaliitudega," sõnas Pettai.
+Word to mask: edu
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Saad valida kas 760 marka <mask> või paki.
+Word to mask: raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Palju abi oma <mask> ja tegemiste paremaks korraldamiseks saate "Astroloogilise abimehe 2007" igapäevaste nõuannete ja hoiatuste järgimisest.
+Word to mask: elu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tunnen end <mask> hästi nagu hooaja alguses.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Oktoobris ilmunud Saksa loodustoodete rõivakataloogis Hess Natur (talv 1997-1998) on kampsuni näidis, mille on kudunud Pihla <mask> perenaine Hiiumaalt Anu-Maie Jõgi.
+Word to mask: talu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Soovitame algatada selle probleemi kõigi aspektide <mask> erakondade ümarlauas, mille töösse kaasatakse Saksamaale ümberasunute ja tagastamise objektiks olevates majades elavate inimeste esindajad.
+Word to mask: arutelu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Need detailid on enamasti veekindlast tehnilisest kangast ja ülejäänud kangaga <mask> tooni.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: 45 "Kodutänav", 81. <mask>.
+Word to mask: osa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: 14. märts 2003 Helistaja soovis teada, kui palju tal on pangaarvel <mask> alles jäänud.
+Word to mask: raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ober Hausi <mask> kohaselt säilib hoones kaks korrust, kuid laieneb mere suunas.
+Word to mask: kava
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kui kohe ei ole võimalik notariaalset ostu-müügitehingut teha (näiteks osa <mask> tuleb veel oma korteri müügist), on võimaluse korral soovitatav teha notariaalne ostu-müügi eelleping, et müüjal oleks ostja suhtes kindlus, ja vastupidi.
+Word to mask: raha
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ringkäik kauplustes kinnitas, et D-korvidest mahukamaid rinnahoidjaid vajavad naised peavad oma <mask> endiselt välismaalt ostma või järgima prantslannade eeskuju, kelle kõige sagedasem iluoperatsioon on rindade vähendamine.
+Word to mask: pesu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kreitzbergi võitu ei aruta <mask> kindlad olid oma häältes Reformierakond ja Res Publica, vaadates aseesimeeste valimist kui opositsiooni omavahelist malemängu.
+Word to mask: Sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Artikkel 2 Fondide ja FIFG tegevuse kooskõlastamine Fondide ja FIFG tegevuse kooskõlastamine toimub eelkõige järgmistel tasanditel : - ühenduse <mask> raamprogrammid, - mitmeaastased eelarveprognoosid, - kui see on soovitatav, siis integreeritud abi vormide rakendamine, - fondide ettevõtmiste eelhindamine, järelevalve ja järelhindamine ettevõtmiste puhul, mis on seotud ühe eesmärgiga, ja ettevõtmiste puhul, mis on seotud mitme eesmärgiga samal territooriumil.
+Word to mask: abi
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Languse faasis tuleb languse leevendamiseks suurendada riiklikke kulutusi, tõusu faasis peab ülekuumenemise vältimiseks <mask> tuludest säästma.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tshernomõrdin tunnistas, et esimese nelja kuuga õnnestus valitsusel täita eelarve tulude osa 64 protsendi ja kulude <mask> 70 protsendi ulatuses.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kuigi <mask> juhatuse liikmeid tegi üldkoosolekule ettepaneku Raimond Lihtmaa välja heita, ei võtnud juhatus seltsi presidendi Enno Annioti survel seda eraldi punktina üldkoosoleku päevakorda.
+Word to mask: osa
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Kuid võib ka varuda mitu moppi ja ilma vahepeal loputamata põrand puhtaks saada," annab Alt <mask> töö hõlbustamiseks.
+Word to mask: nõu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tema sõnul tuleb paratamatult <mask> tööstusi sulgeda, sest tooret nii palju ei ole.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Rivaldo palus anda Saviolale natuke aega Allkirjad paberitel, palus Saviola <mask> suvepuhkust viie päeva võrra pikendada.
+Word to mask: voli
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Purjus politsei kroonika Kassikuldvillak Ostuhüsteeriakanal <mask> Raivo udujutupliiats Päevaraamat Inna Aeg 25. oktoober Vanamees oli kogu päeva mu peale tulivihane.
+Word to mask: Onu
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Linnaametnikud soovitasid korteriühistutel ja majaelanikel siiski jälgida, kuidas toimik liigub ja ka ise <mask> vajalikke õiendeid otsida ning maamõõtmist korraldada.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Lennates nägi ta hästi tillukesi punktisuuruseid autosid, <mask> suured olid ka majad.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kui siis suutis ta ühe oma lemmiknäitlejatest Gene Hackmani panna pinget looma suletud metall-laevas allpool merepinda, siis <mask> filigraanselt suudab Scott higi vaatajate peopesadesse pigistada piiramatu tegevusruumiga maa peal.
+Word to mask: sama
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Rutiin tappis kiiresti selle, mis andis Hitleri tähele <mask> - oskuse intuitsioonile tuginedes õigeid lahendusi leida.
+Word to mask: sära
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kolmanda koha ja 10 000 krooni vääriliseks tunnistas zhürii Aarne Biini romaani "Kõik, mida pole", Oskar Vilde "Mina, väärakas" ja Kalle Käsperi "Trdat, See- ja-See-jani <mask>".
+Word to mask: elu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ja kui vaatavadki, midagi <mask> ei saa.
+Word to mask: aru
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Hommikul vaatasime teisipäevase kaotuse videot, kodutööst oli <mask>, sõnas sidemängija Avo Keel.
+Word to mask: kasu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Korraldajad on vette päästnud 300 lõhet, neist 101 märgistatud <mask> annavad püüdjale auhinna.
+Word to mask: kala
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tipp-poliitikute tuleku alguseks oli aga nn Hruštšovi <mask> kõrgperiood, 1960ndate algus.
+Word to mask: sula
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: puuduvad lepingud, aga ma olen lubanud, et kui Waldin tahab minu käest nõu, siis olen nõus seda <mask> andma.
+Word to mask: nõu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: See on <mask> hea kui võõras mees tuleks abielunaise juurde, ütleks, et ma olen parem, ja viskaks naise abikaasa voodist välja, tõi ta võrdluse.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Järgmisel korral ei pruugi me <mask> paati saada.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: " Macey haudus võiduplaani 107 silmaga nelja aasta tagusele 8706 punkti graafikule kaotanud Busemann polnud oma võimetes sugugi <mask> kindel kui Nool.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Jah, lapsena ei saanud ma <mask> ega tossusid.
+Word to mask: pusa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Sestap on Andruse nahutamine mulle mingil määral tähtis," seletas Mae ja lisas, et sõprus-ahelaid <mask> ei murenda.
+Word to mask: edu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tema üks jalg on <mask> paks kui minu mõlemad jalad kokku," vaimustus Šarapova.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tänavu juulis on Rahvusraamatukogu korrastamiseks kavas teha mitmeid töid : pestakse lugemissaalide vaipkatted, tehakse alajaamade ja elektrikilpide profülaktilist remonti ning ehitatakse peakorpuse lugejateeninduse <mask> uus valvesignalisatsioonisüsteem.
+Word to mask: osa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Pani ise ajalehte kuulutuse, otsis sõiduõpetaja ja juba maksis ära pool autojuhikursuste <mask>.
+Word to mask: raha
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Väike Kaarel piilub toa ukse vahelt ja teatab, et jõuluvana tõi talle titelegod ja homme tuleb <mask> Piia.
+Word to mask: tädi
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kapi uksele oli knopkaga kinnitatud sedel : "Said nüüd <mask>, kes saatis?
+Word to mask: aru
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ellujäänud taimi on vähe, kuigi töös osalesid nende taimede <mask> head tundjad.
+Word to mask: elu
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: See on isegi suurem kui <mask> jälgida teisi inimesi ekraanil hullumeelseid asju tegemas.
+Word to mask: iha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Osta endale korter, sa igavene laiskvorst, ja ela seal üksi!" vastab <mask>.
+Word to mask: ema
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Järgmine beatifikatsioon toimub 28. mail, kui õndsaks kuulutatakse <mask> jutlustaja Rita Amanda De Jesus.
+Word to mask: Portugali
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Eesti taasiseseisvumisel seisis kaitsejõudude taasloomise ees määratu ülesanne luua üheaegselt toimivad kaitsejõud ja samal ajal koolitada neidsamu mehi, kes neid kaitsejõudusid lõid, anda neile <mask> väljaõpet.
+Word to mask: ohvitseri
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Siis sõideti Siguldasse, ja sedagi kord aastas, nüüd sõidetakse paari kuu tagant Sigtunasse ja <mask>.
+Word to mask: Singapuri
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kui artikli 1 lõigetes 1 ja 2 määratletud liikmesriigi kodanikud või laevaühingud on olukorras või neid ähvardab olukord, kus nad ei saa tõhusalt tegutseda teatud kolmandas riigis, informeerib asjaomane liikmesriik viivitamatult teisi liikmesriike ja <mask>.
+Word to mask: komisjoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: "Ühe Euroopa sõidu ajal, kui arvati, et see idarahvas on natuke rumal, ja taheti presidendile tõlki, ütles Meri <mask> inglise keeles, et tal on vaja küsimusi, mitte tõlki!" lausub 7. klassi poiss Tõnis.
+Word to mask: mikrofoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Samas on kõik uue kodu lähistel asuvad koolid sellised, mis võtavad <mask> vastu katsetega.
+Word to mask: gümnaasiumi
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Transiitteede kulgedes läbi kahtlase maine ja ebaselge otsustusloogikata sõjalise liidu liikmesriikide <mask> on Venemaa jaoks mõistagi oluline end ebameeldivate üllatuste eest kaitsta.
+Word to mask: territooriumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Seega kaotab ta eelviimasele <mask> lõpetanule kuue päevaga, sest Lloyd Scott, kes vedas enda taga kivikuuli, lõpetas jooksus 24 tunniga.
+Word to mask: maratoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Võite pommitamise lõpetada," kirjutas ta <mask> tagasi saadetud teates.
+Word to mask: Belgradi
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Otepää <mask> 3.b 3.
+Word to mask: gümnaasiumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: "<mask>" eluaseme leidsid Ventspilsi politseinikud jälgede järgi, mille mees jättis pärast vargust ühes talus.
+Word to mask: Robinsoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Seetõttu üüris Raju paari eelmise aasta jooksul sportlastele <mask> lähikonnas paiknevad majutuskohad.
+Word to mask: staadioni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> mehed vaatasid nagu Nõukogude armees, kuidas saavad ise veesüsteemi paremasse olukorda viia.
+Word to mask: Pataljoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Joosti <mask> Belgradi maratoni võitis meestest keenialane Reuben Chebutich ajaga 2.
+Word to mask: maratoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Hiljaaegu Soome parimaks teatriks tunnistatud Rühmateater tõi juuni lõpus Suomenlinna laval välja värske soome draama, Sami Keski-Vähälä etenduse "<mask> kohal".
+Word to mask: Ookeani
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> abistab statistikaprogrammi komitee (edaspidi" komitee ").
+Word to mask: Komisjoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Ennustatav hind kõigub USA administratsiooni ametlikel hinnangutel kujuneb NATO laienemise esimese ringi maksumuseks kuni 35 miljardit dollarit järgmise kümne aasta jooksul, <mask> osa sellest ei ületaks kahte miljardit.
+Word to mask: Washingtoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Õppuse avamisel 10. oktoobril osalenud Läti Vabariigi president Vaira Vike-Freiberga kiitis Balti <mask> seitsme aasta jooksul saavutatu eest ning soovis oalejatele jõudu ja edu õppuseks.
+Word to mask: Pataljoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kui palju oli vaja <mask> alustamiseks?
+Word to mask: kapitali
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: WTO pidi jaanuari alguses ütlema välja oma seisukoha geneetiliselt muundatud organismide küsimuses, kuid lükkas vastava arutelu <mask>.
+Word to mask: veebruari
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Tõenäoliselt vahetub see <mask> liige sagedamini kui teised.
+Word to mask: komisjoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Komplekt sisaldab <mask> ADSL-ruuterit koos wifi-funktsiooni ning nelja tavapärase võrguliidesega, juhtmeid ja kõike muud vajalikku seadme paigaldamiseks.
+Word to mask: Ericssoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> II sammas toimib Rootsis üsna sarnaselt Eesti süsteemiga.
+Word to mask: Pensioni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kuulsustest võib näha Konstantin Pätsi ja Johan <mask> Kivimäe sõjaväesanatooriumi avamas.
+Word to mask: Laidoneri
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: P. S. Kuna jõulud on tulemas ning heategevus hinnas, siis palun Maalehel oma tänase "Päevaraamatu" <mask> anda Tallinna vabaduskella ehitamise kulude katteks.
+Word to mask: honorari
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Mulle jääb aga selgusetuks, et kui kehtivat süsteemi poliitilistel põhjustel muuta, siis miks tuleb <mask> lisakasv alles 1. juulil?
+Word to mask: pensioni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> küljel asuva eriklahviga saab hankida infot reisimise ja meelelahutuse kohta maailma suuremates linnades.
+Word to mask: Telefoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kui varem on rajatava gaasijuhtme kohta olnud ohtralt kriitikat, siis <mask> sel moel sekkumisel võivad olla ka euroseadustest tulenevad tagajärjed, leidis Reuters.
+Word to mask: komisjoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Külgpõrke <mask> (16 punkti) tumestab küll pisut lauppõrke tulemus punkte saadi kokku 13, sest põlveturvapadjata autos on taas kord ohus sõitjate jalad ning peale armatuurlaua ohtlikkuse on turvarisk ka avariis rohkem kui 10 cm võrra kabiini tungiv siduripedaal.
+Word to mask: maksimumi
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Hiljem tuleb tunnussõnaga numbri valimiseks vajutada aparaadi küljel olevale nupule ning öelda aparaadi või hands-free <mask> tunnussõna ning telefon valibki soovitava numbri.
+Word to mask: mikrofoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: BNS/EPL Belgradis ei saa jalgpalli mängida Rahvusvaheline Jalgpalliliit FIFA teatas, et oktoobriks <mask> planeeritud 2002. aasta jalgpalli MM-võistluste valikmängud lükatakse edasi.
+Word to mask: Belgradi
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Marge : Kui ma oleksin linnapea, käsiksin rohkem tänavaid koristada, annaksin korralduse mitte müüa noortele <mask>.
+Word to mask: alkoholi
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Ajalehe Ha'aretz teatel sõidab Peres Cairosse neljapäeval enne järgmise nädala visiiti <mask> kõnelustele USA välisministri Colin Powelliga.
+Word to mask: Washingtoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Moskva teatas kavatusest 540 km pikkune piir sulgeda läinud nädalal, reageerides sellega tshetsheeni islamivõitlejate tungimisele üle piiri <mask> ja pommiplahvatustele Venemaal.
+Word to mask: Dagestani
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> plaadil teevad kaasa nimekad noorema põlvkonna rockitähed.
+Word to mask: Veterani
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Sotsiaaldemokraatide kantslerikandidaat Gerhard Schröder tahaks, et tööandjad osaleksid rohkem rahvamajanduses : näiteks paigutaksid osa <mask> pensionifondi.
+Word to mask: kapitali
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Tagantjärelegi on tal raske mõista, miks võtsid professoritest vangid leedulane Kezgailo ja lätlane Ošins endale suure riski : kui neil tekkis võimalus võtta haigla <mask> lisaks üks meditsiinitöötaja, valisid nad Laane.
+Word to mask: personali
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kui tähtpäev kätte jõudis, sõidutasid sünnipäevalised <mask>, kes kingitusest midagi ei teadnud, massaazhisalongi ukse ette.
+Word to mask: juubilari
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: See ladina keelest tulnud sõna tähendab põhjalikku kvalitatiivset muutust või plahvatuslikku üleminekut ühelt kvaliteedilt teisele (vt. Võõrsõnade <mask>).
+Word to mask: leksikoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Warner Bros lükkas oktoobrist <mask> uue Arnold Schwarzeneggeri filmi "Kaasnevad purustused" (Collateral damage) esilinastuse, sest seal on juttu õhkulastud pilvelõhkujast.
+Word to mask: veebruari
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: 16. 10. 2000 Praegu purjetab Lennuk oma reisi pikimat etappi, olles teel India <mask> Mauritiuse saarestikule ning väljunud sidesatelliitide tööpiirkonnast.
+Word to mask: ookeani
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Ei saa salata, mingi eelarvamus tekib kui iseenesest, kui kuuled, et <mask> Kurgjal teatri pähe jälle miskit saja-aastast külatükki tehakse.
+Word to mask: Jakobsoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: USA välisminister Madeleine Albright tühistas eile kümme aastat kehtinud reisikeelu <mask>, kui Beiruti valitsuselt saadi lubadus teha senisest rohkem koostööd võitluses terrorismiga.
+Word to mask: Liibanoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> alumiste kohtade eest heideldi ägedalt.
+Word to mask: Poodiumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Maksuameti andmetel ei anna vähemalt <mask> maksude laekumine põhjust tänavuse riigieelarve tulude vähendamiseks.
+Word to mask: jaanuari
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Ojuland oli enda sõnul joonud kaks klaasi veini, ent ekspertiis tuvastas ta veres 0, 4 promilli <mask>.
+Word to mask: alkoholi
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Näiteks Eesti Kunstimuuseumi kogudest esitati ainuüksi Rüütelkonna hoones korraldatud ajutistel näitustel läinud aastal 500 teost, lisaks 150 teosele <mask> igasuvises klassikaväljapanekus.
+Word to mask: muuseumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Lisaks Koreale külastas Eesti delegatsioon Jaapanit, täna õhtul lennatakse <mask>.
+Word to mask: Singapuri
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Marko Rohelist <mask> Minul on üks täidetav unistus omada lõpuks ometi korralikku akordioni.
+Word to mask: akordioni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Ampiir on Prantsusmaal sündinud niinimetatud <mask> stiil, ka arhitektuuris.
+Word to mask: Napoleoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Peamise hindajana on Raudteeinspektsiooni <mask> nõustanud MTÜ Transiidi Assotsiatsioon, mille tegevdirektor Andrus Kuusmann on juba pikemat aega olnud nõustamislepingute kaudu seotud ühe protsessiosalise?
+Word to mask: komisjoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Eesti esitas küll pidevalt <mask> järelepärimisi, ent seal ei osanud harta sisu kohta keegi midagi mõistlikku vastata.
+Word to mask: Washingtoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Rääkimine toob selgust Befrienders <mask> samariitlastel on ühised põhimõtted.
+Word to mask: Internationali
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kodustele jõulukinke ei otsi, toon parem <mask> näha!"
+Word to mask: Oliveri
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kuigi on lõunaaeg ja rahvast ka <mask> poolel murdu, on võimalik valida päris mitme laua vahel.
+Word to mask: muuseumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Virtuaalne marss <mask> lubab igal sõja vastu seisval ameeriklasel oma seisukohta avaldada ja seda arvesse võtta, kui te helistate, faksite või e-mailite USA senatisse või Valgesse Majja," selgitab teleseriaali peategelane.
+Word to mask: Washingtoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Harju Politseiprefektuur saatis kohtusse Aleksei (34) ja <mask> (24) kriminaalasja, milles mõlemaid mehi süüdistatakse kokku nelja inimese tahtlikus tapmises.
+Word to mask: Konstantini
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kolmas grupp olid etniliselt lootusetult eesti või läti soost põgenikud, kellel lubati jääda vaid Saksa mitte-idaaladele või siis lahkuda tagasi <mask> (28,5%).
+Word to mask: Baltikumi
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kes aga usub ja tahab päris kindel olla, see langetagu tarbepuu <mask> kõval ajal otse põhja- või idatuule sisse ja känd olgu siledaks tehtud!
+Word to mask: veebruari
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Meil pole isegi veel <mask> avaldust klubist lahkumiseks," kinnitab Rakvere tegevjuht Kristo Vaino.
+Word to mask: mängija
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Keel on meil tõesti eriskummaline, <mask> keeltekaardil üks vanemaid, kui vanuse mõõdupuuks võtta paiksus.
+Word to mask: Euroopa
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Naiste epees on peetud kolm <mask> etappi ja Eesti on 54 punktiga üheksandal kohal.
+Word to mask: Euroopa
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Paljud arvavad, et voodoo on midagi negatiivset, inimest nõidustesse kiskuvat, kuid tegelikult on see sõprust ja koostööd edendav uskumus, räägib Kidjo, kuidas ta sai aimu <mask> uskumustest ja muusikast.
+Word to mask: Brasiilia
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Suur-Tallinna ideega tuli avalikult tänavu märtsis välja Tallinna linnavolikogu esimees Rein Voog, kes pakkus, et tulevikus võiksid Tallinnaga ühineda linna ümbritsevad <mask> Jõelähtme, Kiili, Saku, Harku, Rae ja Saue vald.
+Word to mask: Viimsi
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: President Chiraci eestvõttel kirjutati dokumenti sisse tulevase laienemise peakandidaatidena <mask> ja Rumeenia, rõhutades samas kogu Euroopa kagupiirkonna strateegilist tähendust alliansile.
+Word to mask: Sloveenia
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: 70 senti oli üks pontšik ja siis me ostsime neid <mask> viis tükki raudselt.
+Word to mask: mingi
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Eesti sai esiliiga A-grupis ja <mask> B-grupis kuuenda koha, üks neist pidi lisaks mõlema grupi viimasele ja eelviimasele võistkonnale kukkuma nõrgemasse sarja.
+Word to mask: Sloveenia
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Borši kannab baaridaam <mask> ette üsna kähku.
+Word to mask: Natalia
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Teatavasti peaks enamik teist ajakirjanduse andmeil olema kursis asjaoluga, et Esoili erastamise tegi jutumärkides huvitavaks, kui nii võib nimetada, <mask> Kommertspangaga seonduv.
+Word to mask: Tartu
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Kuni libretokonkursi tulemusena valmiv eesti algupärane ooper end veel <mask> oodata laseb, on Estonia kava ainsaks eesti oma looks Ehala tuntud filmimuusikal põhinev lasteetendus.
+Word to mask: aasta
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Külalised tundsid huvi soolise võrdõiguslikkuse edendamise seaduseelnõu ja Eesti administratiivse suutlikkuuse vastu kindlustamaks vahendite saamine <mask> Liidu struktuurifondidest.
+Word to mask: Euroopa
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Meie ees seisabki erudiit ja seejuures ka fantastiliselt hea Goethe uurija (<mask>).
+Word to mask: tundja
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Lõppeva muusikasuve järel tõstatus taas teravalt vajadus kontserdi- ja konverentsisaali järele, mille rajamisel ei saa <mask> loota ainult välistele allikatele.
+Word to mask: Pärnu
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Võrreldes juuliga kallines piima kokkuostuhind augustis <mask> senti kilogrammilt.
+Word to mask: üheksa
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Temperatuurisummade suurema varieeruvuse ja seega ka suuremate võimalike vigadega paistis silma 'Vambo', kõige stabiilsemad olid tulemused '<mask> 112' korral.
+Word to mask: Jõgeva
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Kes juhtus läinud <mask> Dionysial nägema Fomenko õpikoja (nüüdse) III kursuse toonast täisräpastavat "Tõrksa taltsutust", oskasid ehk rohkem hinnata ka toore jõu taha ilmunud peenendunumat voolimistehnikat.
+Word to mask: aasta
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Loodusevihkajaid on palju Aruka Kasutamise Liikumise juhid kinnitavad, et nende liikumises osalejate arv on kasvanud riigis 1988. <mask> 200lt organisatsioonilt 1500ni 1995. aastal.
+Word to mask: aasta
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Ta keksles ümber poja nagu tüdrukutirts, volksutas oma lottis silmalaugusid, põllest ilmus tal <mask> põletatud viina pudel.
+Word to mask: selge
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Tavaliselt ei viitsi narkootikumide <mask> hügieeni pikalt pidada.
+Word to mask: tarvitaja
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Neli hooaega Soomes veetnud kaitsja sõlmis kaheaastase lepingu Eesti jalgpallimeistri <mask> FC Levadiaga ning seab uusi sihte.
+Word to mask: Maardu
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Pakterminal veab tänavu umbes <mask> miljonit tonni naftasaadusi.
+Word to mask: kaheksa
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: "Ma olen <mask> Jeesus Kristus.
+Word to mask: poliitika
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: " EM-võistluste normi 13.95 üritab Leibak uuesti eeloleval nädalavahetusel Eesti meistrivõistlustel, siis pakub tõenäoliselt konkurentsi ka <mask>.
+Word to mask: Baranova
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Kõndida võiks 4–6 korda nädalas, <mask> 3–4 korda nädalas kuni pool tundi.
+Word to mask: algaja
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Osalenud paljudes muusikaprojektides ja kirjutanud <mask> Vanemuise lavastustele "Kaheteistkümnes öö" ning "Kaval-Ants ja Vanapagan".
+Word to mask: muusika
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Vana-aasta <mask> tuleb heita magama riietega, rahakott taskus, siis pole eeloleval aastal rahapuudust karta.
+Word to mask: õhtu
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Ta oli <mask> oluline mõjutaja, et mitte öelda niiditõmbaja.
+Word to mask: poliitika
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Võidusamba jääb nägemata <mask> probleemid algavad väravavahist ja lõpevad ründajatega, algkoosseisus jagub ärevusttekitavat igasse liini.
+Word to mask: Brasiilia
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Nüüd veelgi harvem bussiga <mask>
+Word to mask: sõitja
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Arenenud <mask> elatustasemega riikidele omaselt kasvab Eestis haigestumine jäme- ja pärasoolevähki keskmiselt 1% võrra aastas, sama palju harvemaks jääb aga maovähk.
+Word to mask: kõrge
+True form: sg n
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: "Loodame, et valima tuleb vähemalt sama palju inimesi kui 1996. <mask> kohalike omavalitsuste volikogude valimistel," ütles siseministeeriumi pressiesindaja Ilona Leib.
+Word to mask: aasta
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Vene seadusandjate sõnul ei alanud Teine maailmasõda mõningatest kinnitustest hoolimata mitte 1939. aastal kurikuulsast Molotovi-Ribbentropi paktist, vaid 1938. <mask> niinimetatud Müncheni sobingust, mis andis Hitleri-Saksamaale võimaluse tükeldada Tšehhoslovakkia ning soodustas Teise maailmasõja vallapäästmist.
+Word to mask: aasta
+True form: sg g
+Inflection type: 1
+--------------------------------------------------------------------------------
+Masked sentence: Venemaa Suusaliidu esindaja sõnul Voronin konkreetseid põhjuseid ei esitanud, kuid pärast Salt Lake <mask> OM-il avalikkuse ette jõudnud dopingukrahhi pole otsus üllatav.
+Word to mask: City
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Tallinki pressiesindaja Luulea Lääne ütles <mask> Päevaleht Online'ile, et sadamast väljuma hakates tekkis Silja Symphonyl ühe põtkuri rike, mistõttu laev vajus otsa reisijatekoridorile ehk nn tuubusele.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Me oleme teinud <mask> ja Saue vallale kirjalikud pakkumised kahe auto ülalpidamise saamiseks.
+Word to mask: Harku
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: <mask> ADV - riik ilma territooriumita Lääne-Saharas käivad juba viiendat kuud ettevalmistused referendumiks.
+Word to mask: Sahara
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: "Usun, et selle filmi puhul annab eelmüügist selgema pildi siiski avanädalavahetus," ütles <mask> MPDE pressiesindaja Lauri Kaare.
+Word to mask: firma
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: " Rahvas sattus tõeliselt hoogu kaks tundi pärast seti algust, kui kõlas selle aasta suurim <mask> ja Ibiza hitt, Black Legendi "You See The Trouble With Me".
+Word to mask: Miami
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Läänemaailmale oli Lipp mingi segane kuju, kelle säravad, kuid ehk ka ebamäärasteks peetud tagajärjed, olid saavutatud sellistes kohtades nagu Tbilisi, Ashhabad, Pärnu ja Naltshik, kirjutatakse <mask> Lipu kohta ameeriklase dr Frank Zarnowski raamatus "Olympic glory denied".
+Word to mask: Heino
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Vastuses Eesti keskkonnaorganisatsioonide arupärimisele soovitas õiguskantsler Allar Jõks oma 21. augustil tehtud avalduses strateegilise keskkonnamõjude hindamise läbiviimist <mask> põlevkivienergeetika restruktureerimise tegevuskavale.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Euroopa Liidust kauples Eesti välja hulga sooduskvoote põllumajandustoodete ekspordiks : võiks müüa tonnide viisi <mask> linnumune, värskeid õunu, tikreid, küüslauku, rukist.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Iga nädal vallandab Karu iga nädal ühe pürgija, kirjutab <mask> Ekspress.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Hinnanguliselt kulutavad G8 tippkohtumise korraldajad turvameetmetele astronoomilise <mask> vähemalt 50 miljonit naelsterlingit ehk ümmarguselt 1,15 miljardit Eesti krooni.
+Word to mask: summa
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Eile surnud Venemaa esimene president Boriss Jeltsin tekitab väga vastuolulisi tundeid, rõhutasid eile kõik, kellega <mask> Päevaleht Moskvas rääkis.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: "Kuna kontsert möödus kenasti, siis pole välistatud, et <mask> saab veel näha maailmamuusika tõelisi tähti," lubas Pihel.
+Word to mask: Eesti
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Marbella, kus aastas soojakraade keskmiselt 19, talve keskmine temperatuur 12 kraadi ja kus päike paistab aastas üle 300 päeval, oli eestlastele sobiv elukoht ning sellest ajast algas <mask> kurjategijate vool Lõuna-Hispaania päikese ning palmide alla.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Esialgu on autojälitajad suutnud kinnitust leida, et vahi alla võetud Romani (23) ning <mask> (27) kätetöö tulemusena kadus 23. märtsil Coca-Cola Plaza kobarkino juurest ühele advokaadibüroole kuulunud 1997. aasta Audi A6.
+Word to mask: Vitali
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Ott ei taha koos Tammega allavoolu minna <mask> Ott esindab ametnikutüüpi, kellel on küllalt ettevaatlikkust, kogemust ja juba ka jõukust.
+Word to mask: Jüri
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: "<mask>, vaata onul on sukkpüksid jalas ja täitsa õhukesed," kilkas pisike plika Raekoja platsil.
+Word to mask: Emme
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Senine vallavanem Tiit Madisson pani <mask> – Lii Jürmanile, uuele vallavanemale, kaela ametiraha ja avaldas lootust, et Jürman kannab raha rohkem kui tema.
+Word to mask: Anu
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: "Ma ei tea, mida see jube haisev vesi endas sisaldab," kurtis <mask> ühes suures majas elav Anne.
+Word to mask: Valga
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: <mask> paar loeb ilmselt hooaja lõppenuks.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: . Talle meeldib hoolitseda, talle meeldib, kui temast sõltutakse, "jätkas <mask>.
+Word to mask: Rita
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Esmakordselt elus avanes mul võimalus salapärast <mask> Baskervilli lähedalt silmitseda!
+Word to mask: Hugo
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Millistel asjaoludel <mask> pitsat tema kätte sattus, seda väidab ta mitte mäletavat.
+Word to mask: firma
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: <mask> jalgrattaspordist on iga aastaga üha vähem põhjust kirjutada.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: " <mask> panid nad mööblikasti, mis Ungarisse reisis.
+Word to mask: Foto
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: "Huvitav, miks <mask> spordiarstid rattameeste Jaan Kirsipuu või Lauri Ausi kallale ei torma.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Aidsi ennetuskeskuse juhataja Nelli Kalikova on pakkunud <mask> narkomaanide koguarvuks umbes 30.000.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: 1. jaanuarist 2003 peavad kõik <mask> autokütused vastama euronormidele.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: "<mask>, küll teil on ilusad juuksed!
+Word to mask: Neiu
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: erifina kuulsaks saanud Aivar Krustal, kes kolm aastat tagasi siirdus pealinna komissari kohale, ei oma Autoregistri Keskuse andmetel juhiluba, kirjutab <mask> Ekspress.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: <mask> :" Kogu aeg räägin.
+Word to mask: Kristina
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Mina ise arvan, et missioon täidab jätkuvalt kasulikku osa, näiteks aidates ellu viia <mask> paika pandud integratsiooniprotsessi.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: <mask> naiste tee ettevõtlusesse ja seal püsimine on olnud meeste omast keerukam.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Samuti leidis kohtus kinnitust, et Klõga käis Alajõe baaris, näitas baari koristanud isikutele kätte, kust veel kuriteo jälgi koristada, samuti muretses Klõga Juri Zaitsevi äraviimiseks <mask>, et kergendada tema kõrvalehoidmist uurimisest.
+Word to mask: auto
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Õppekursus koosneb seal kümnest loengust, mida peavad <mask> kõrgkoolide õppejõud.
+Word to mask: Moskva
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Tartu Emajõe kool kuulub <mask> Lieni projekti juhtrühma Eestis.
+Word to mask: Phare
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Eesti ühiskond on sallimatu <mask> Denks peab Eesti ühiskonda ebatolerantseks.
+Word to mask: Svetlana
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Kohe näha, et uus-asum on tõepoolest uus : kõnniteede asemel laiuvad esialgu üleujutatud alad ning mõnele sellisele lumega kaetud jäälapile <mask> parkimine oleks uskumatu viga.
+Word to mask: auto
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: " Mõni inimene ei oska kokkusaamisel midagi rääkida, "lausub <mask>," aga võrgus on õudne lobiseja.
+Word to mask: Regina
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Viimastele viib <mask> jahu ise autoga kohale, kuna paljud neist on vanad üksikud inimesed, kel pole oma transporti.
+Word to mask: Aldo
+True form: sg n
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Üritan maikuus, vahetult enne võistlust, <mask> meedias esineda, ehk mõjub hästi häälte kogumisele.
+Word to mask: Rootsi
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Jälle Ühispank ja Nomura <mask> Ühispanga asepresident Margus Schults ei osanud eile veel öelda, kas selline teade vastab tõele.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Möödunud aasta suvel kinnitasid aga Talviste ja talle 22 000 krooniga riiulifirma AS Domex Kinnisvara müünud ärimees Argos Kracht <mask> Päevalehele, et Talviste ostis ligi aasta vanuse, Krachti ja tema äripartneri asutatud firma alles veebruaris 2001.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: Loosungitega vehkimine ei aita ja üleskutsele maa lastega täita <mask> naine lihtsalt ei reageeri.
+Word to mask: Eesti
+True form: sg g
+Inflection type: 16
+--------------------------------------------------------------------------------
+Masked sentence: <mask> kriisis perele Pärnu maantee 9 esmaspäeval ja kolmapäeval kella 13-20, eelregistreerimisel.
+Word to mask: Abi
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: " Hansapanga intressitoodete ja -riskide osakonna juhataja Erkki Raasuke kinnitas eile, et kui linnal on vaja raha, on pangal <mask> selle raha leidmiseks.
+Word to mask: huvi
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Et esimese geimi läbi põlesime, saan <mask>, aga et edasi... " Otsustavaks kujunenud kolmas ja neljas geim kulgesid mõlemad sarnase stsenaariumi järgi.
+Word to mask: aru
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Õnnetusest teadasaamine viis haiglasse ka 67-aastase naise, avariis hukkunud Raivo <mask>.
+Word to mask: ema
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Kuskil viis on täiesti arvestatavaid töid ning umbes <mask> palju on neid, millega pole midagi peale hakata.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ohvitseride <mask> ilmselt kõige enam kasumit tootev firma on restoran Ostap.
+Word to mask: maja
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Isade eeskuju vastu võiks aidata ainult <mask> sõna.
+Word to mask: ema
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kuna ühisveevärgi ja kanalisatsiooniteenuses liiguvad sajad miljonid maksumaksjaist korteri- ja majaomanike <mask>, siis soovime juhtida tähelepanu seaduse vastuvõtmisega kaasnevatele olulistele puudustele, mis on vastuolus põhiseaduse ning demokraatliku riigikorralduse põhimõtetega.
+Word to mask: raha
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kapo vahistas kolmapäeval Paldiskis seersant Jüri, reamees Jaani, rahuoperatsioonide keskuse relvalao ülema <mask> nooremveebel Edmundi ja nende tuttava Aramise.
+Word to mask: abi
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Arvestusmetoodika järgi võib mittesõltuva <mask> suurus olla 30-50 protsenti kogu küttekulust.
+Word to mask: osa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Erilist vaimustust keegi küll üles ei näidanud, aga <mask> lubajaid oli.
+Word to mask: raha
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Nimelt ei pea paljud meeste paljaid karvaseid sääri kuigi veetlevateks, samas tekitab aga raseeritud jalgadega mees <mask> palju negatiivseid emotsioone.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: " Kaja Kell Eesti Pangast tahab, et inimesed endalt enne <mask> paigutamist küsiksid, miks peaks ärimees neile kingitusi tegema.
+Word to mask: raha
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: V. ESITUSVIISI NÕUDED A. Ühtlikkus Iga pakendi sisu peab olema ühtlik ja sisaldama ainult sama päritoluga, <mask> sorti või kaubanduslikku tüüpi, sama kvaliteedi ja suurusega (kui toode sorditakse suuruse järgi) aprikoose.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ma esitan teile <mask> küsimuse, mille esitasid mulle minu valla pensionärid.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kultuuriminister Urmas Paet kinnitas, et tegelikult pole kiriku ehituslikku projekti olemas ning nn kirik-äribüroo <mask> nimetas ta eskiisprojektiks.
+Word to mask: kava
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Labaseim oleks olmetüli versioon, kus arveid klaarisid diilerid, kes vales järjekorras <mask> naisterahva juurde saabusid.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ettevõtte nõukogus saab <mask> viis suuremat omanikku.
+Word to mask: koha
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Lootis hoopis palju <mask> aega saada.
+Word to mask: vaba
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Heaolu on nende jaoks vangipõlv, millest Smilla lõikab <mask> peenelt riietudes.
+Word to mask: kasu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Aga Metsakalmistul möödub <mask> Erik Hanseni (1928-1981) matustest juba kakskümmend aastat.
+Word to mask: poja
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Politsei vajab meediat <mask> palju kui meedia politseid.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Võin kinnitada, et Larik saab inimeste jutust absoluutselt kõik <mask>," väidab ta.
+Word to mask: aru
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Kõige tähtsamaks peab kombeõpetuse õpetaja seda, et ühtki <mask> sel päeval ära ei unustataks.
+Word to mask: isa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Mõnevõrra filmilik on ka "Väikeste Asjade Jumal" - lugeja silme eest jooksevad läbi episoodid ühe perekonna elust, fragmendid, millel lasub nende inimeste <mask> pea peale pööranud sündmuse tabamatu vari.
+Word to mask: elu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Neljakümnendates eluaastates Karim Keita tuli Prantsusmaale elama viie aasta eest ja <mask> kaua on ta olnud ka illegaalne immigrant.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> kalli aparatuuri jaoks küsis ebaeestlaslikult hakkaja naine sponsoritelt.
+Word to mask: Raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ehk oleks pidanud võtma, oleks <mask> tõusnud?
+Word to mask: tuju
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> sõnaga Seppo Räty lõpetas luigelennuga...
+Word to mask: Kõva
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Praes ei asendata <mask> hernestega, sest need on odavamad.
+Word to mask: liha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Gruusia president Mihhail Saakašvili võttis pühapäeval Thbilisis koos valitsusega <mask> aasta esimese veini valmistamise tseremooniast.
+Word to mask: osa
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> I osas loetletakse spetsiaalse otsusega hõlmatud riigid ja piirkonnad ning II osas otsuse 95/408/EÜ artikli 2 lõike 2 tingimustele vastavad riigid ja piirkonnad ; 2) komisjoni otsustes 2000/672/EÜ, 5 2000/675/EÜ, 6 2000/676/EÜ 7 ja 2000/673/EÜ 8 sätestatakse vastavalt Venezuelast, Iraanist, Poolast ja Namiibiast pärit kala- ja akvakultuuritoodete impordi eritingimused.
+Word to mask: Lisa
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tööst on <mask>, sest imelikul kombel tekib päeva peale vaid üks ärev moment, seegi õieti poolärev : "Libisesime korra viienda katse lõpus.
+Word to mask: kasu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Eesti saab uue võimaluse Eesti jalgpall läheb <mask> teed.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Madissonide <mask> laagriplatsil oli piknik.
+Word to mask: talu
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ent <mask> alusetu olnuks uskuda, et selline ettepanek igavesti tegemata jääb.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> lisas tulle juhtum Tallinna sadama agitaatorite koosolekul.
+Word to mask: Õli
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Eelparadiis vanuritele Eriliselt pakkus filmitegijatele pinget Century Village'i nimeline vanainimeste kuurort, kus peale reglementeeritud <mask> elavate vanainimeste suurt nooremaid ei kohtagi.
+Word to mask: elu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Iga inimene kardab ämblikke, aga kõik ei saa sest <mask>.
+Word to mask: aru
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Paberit läheb jube palju, räägib Kadi kunstnikust <mask>.
+Word to mask: ema
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Nii et uute prillide jaoks tuleb Liisul <mask> küsida Otilt.
+Word to mask: raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Nüüd küsime vastakuti, kuidas <mask>, ja kõik.
+Word to mask: elu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Koogas oli voodis lamades tundnud, kuidas lained lõid parts – parts vastu <mask> välisseina ja panid maja vappuma.
+Word to mask: maja
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Keskmise intressimäära leidmiseks on vaja teada, kuidas jagunevad fondi investeeringud võlakirjade, aktsiate, kinnisvara, hoiuste, repo-tehingute (tehing, kus fond müüb oma <mask> koos kohustusega see hiljem kindla hinnaga tagasi osta, kusjuures tagasiostuhind on müügihinnast madalam - hinnavahe näol on sisuliselt tegu intressituluga) ja hallatavate kontode (konto, millel oleva rahasumma paigutamisega tegeleb mõni fondihaldur - näiteks Hansa Varajuhtimise AS) vahel iga kuu lõpus.
+Word to mask: vara
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> valas veelgi tulle Gruusia presidendi Mihhail Saakašvili keelevääratus päev pärast peaministri surma.
+Word to mask: Õli
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ehitustöödega alustatakse 1998. aastal ning hoone karp valmib <mask> aasta oktoobris.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tõenäolisem on, et pronksimässu ajal massidele <mask> rusikat näidanud politsei kardab, et ei saa vanalinnas turistide ja kaamerate silme all võimalikke kaklejaid piisavalt jõuliselt taltsutada.
+Word to mask: kõva
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Oli aeg, kus ta pidi iga päev käima posti järel - 19 kilomeetrit sinna ja <mask> palju tagasi.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Nikastab veel selja ära, kus siis <mask> ots.
+Word to mask: häda
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kaupo maksab 1-Mbitise püsiühenduse eest 345 krooni kuus, kuid detsembrist peaks ta hakkama <mask> palju maksma poole aeglasema ühenduse eest.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> tervislikud on okaspuud, mis siiski on saasteõrnad ja kesklinnast peaaegu kadunud.
+Word to mask: Sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: (<mask> mitmele orkestrisolistile nende teokstegemisel.)
+Word to mask: Au
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kuigi Taanis-Rootsis pole pesupulbrid <mask> koostisega mis Eestis või Lätis.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Mis puutub proosasse, siis on asi <mask> hull.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tänaseks on jaamahoone, raudtee ja kogu ümbrus Vladimiri <mask> asja-ajamise tulemusena riigi poolt korda tehtud.
+Word to mask: visa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Võrreldes eelmise aasta <mask> perioodiga laekus tulumaksu tänavu 116,4 miljonit krooni ehk 7,5% enam.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Arvuti võimaldab pilti ka liigutada ning uurida <mask> kohta erinevate nurkade alt.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ajastu vajaduste analüüsist "<mask> argipäeva" loosungi all sündinud ideed lõid disainiikoone, mis toimivad tänaseni.
+Word to mask: Ilu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Mida siis ikkagi teha nende inimestega, kes <mask> järjekindlusega jätkavad lehmapidamist?
+Word to mask: visa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kas Rahvaliidu ja Reformierakonna ministritele kehtivad <mask> ranged nõuded kui Res Publica ministritele?
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Terveid munakoori saate nii, et eemaldate poolpehmeks keedetud munadest <mask>.
+Word to mask: sisu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Nende esituses on <mask> karikatuur, koomiks, bluff...
+Word to mask: keha
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "<mask> teil pole peas..." torisesin kööki koperdades.
+Word to mask: Aru
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Mabetexi kahtlustatakse hiiglaslike altkäemaksude maksmises kõrgetele ametnikele ehk Jeltsini lähikonnale, võitmaks suuri kontrahte ehitustegevuseks Moskvas - muu hulgas näiteks Valge <mask> ehk endise parlamendi- ja praeguse valitsushoone remondiks pärast selle sattumist Jeltsini tankirünnaku alla 1993. aasta sügisel, ja ka Kremli rekonstrueerimiseks.
+Word to mask: maja
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Nii näiteks ei maksaks oodata, et kassas töötav müüja teab toodetest <mask> palju kui konsultant.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Eesti riigi rahanduse teise mehe Agu Lellepi andmetel jäi Maapanka kuni 70 miljonit krooni riigieelarve <mask>.
+Word to mask: raha
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Jooksime raja rahulikult lõpuni, lausub <mask>.
+Word to mask: ema
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Narkotsiga võib Tallinnaski samal moel ja <mask> eduga kaubelda, arvan.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> võttis ka rahvusühingu juhatuse liige Artem Davidjants, tutvustades Bülli jõudmist misjonäriametisse, tema õpinguid ja saavutusi.
+Word to mask: Sõna
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ühinemisel Euroopa Liiduga muutub juhiluba Eestis <mask> väikseks kui ID-kaart, kuid praegust juhiluba enne kehtivusaja lõppu välja vahetama ei pea.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Üksi jäädes kuulab Anna <mask> köögis eestikeelseid isamaalisi laule ja nutab, sest raudeesriide taha tagasiminek pole ka enam võimalik.
+Word to mask: ema
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Komisjon edastab komitee <mask> tulemused komitee ettepaneku korral nõukogule.
+Word to mask: arutelu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kõva <mask> on selles öelda olümpiamängude korraldajatel, tänavu niisiis ameeriklastel.
+Word to mask: sõna
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Majandusminister Jaak Leimann ütles eile, et kuigi ta ei ole määruse originaalteksti näinud, saab ta <mask>, et sellega on palju probleeme.
+Word to mask: aru
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Järsud ümberkirjeldused, teadagi, on ajaloo murdehetkede ja noorte <mask>.
+Word to mask: osa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Et diilerid konverteerisid oma <mask> tagasi dollariteks, devalveerusid Aasia kohalikud valuutad, muutes omakorda aasia rahvaste laenude tagasimaksmise võimatuks (laenud oleks tulnud tagasi maksta dollarites või mõnes teises välisvaluutas - devalvatsiooni tõttu muutusid laenud neile kallimaks).
+Word to mask: raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: AS Tallinna Prügila nõukogu esimehe Merike Varvase hinnangul on SKP põrumine volikogu ees <mask> hästi kui välistatud.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Positiivsuse säilitamiseks ei tohiks ta ristiga lipul mitte mingil juhul <mask> palju lipupinda katta, kui sinine ja valge.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Tegelikult on nii, et kui pooled suitsetajatest elavad <mask> vanaks kui nende mittesuitsetajatest eakaaslased, sureb veerand varases pensionieas ja veerand enne 60-ndat eluaastat just suitsetamise tõttu.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Peavalu on probleem, mis saadab inimest kogu tema <mask>, lapseeast kuni vanaduseni.
+Word to mask: elu
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Aasta algusest on Ühispanga Elukindlustus kogunud 69, 3 miljonit krooni kindlustuspreemiaid, võrrelduna 2001. aasta <mask> perioodiga on preemiate maht kasvanud 51 protsenti.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Eesti tegelike võimalustega ning välisministeeriumi kaalutlustega tutvudes sai ka president ise <mask>, et tema lennukas ettepanek osutunuks nii rahalistel, julgeolekulistel, keelelistel kui ka mitmetel muudel asjaoludel võimatuks.
+Word to mask: aru
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Saksamaa ametiasutused saadavad komisjonile ja teistele liikmesriikidele käesoleva lisa reguleerimisalasse kuuluvate koolituskursuste <mask>.
+Word to mask: loetelu
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Mittelenduvate ainete määramine propioonhappes (E 280) II <mask> 3. meetodi abil.
+Word to mask: lisa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "<mask>, sa tuled Naganos teiseks," arvanud kaheksa-aastane Alicia.
+Word to mask: Ema
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Ajutiselt teises asulas töötades võib töötaja soovi korral lasta tööandjal tööülesannete täitmise <mask> pangaasutusse üle kanda ainult osa palgast.
+Word to mask: koha
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Maskuliinne feminism nõuab naistele samu õigusi kui on meestel, s.t õigust olla <mask> tugev nagu mees, õigust pääseda ametikohtadele, kus varem olid ainult mehed jmt.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Nüüd oli plaan tegelikkuses ja Eik <mask> plaanist, pisike täpp 1 : 1000 mõõtkavas kaardil ning temast pliiatsisöe puudutuse võrra kõrval olev täpp tähistas Randarit.
+Word to mask: osa
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> väga on siinkohal väga õige.
+Word to mask: Sõna
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Praegune Läti finantsminister Aivars Kreituss arvab, et <mask> majade tagasiostmiseks oleks vaja laenata, sest mõne aasta pärast on majade väärtus mitu korda suurem.
+Word to mask: raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Prügi <mask> heinamaadel oli madalamaid kohti, mis talvel kattusid jääga.
+Word to mask: talu
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Hoiame <mask> seadistust mis Carlosel.
+Word to mask: sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kui isa on kaugemal, oleks <mask> teha ikka ära see edasilükatud telefonikõne ning küsida, kuidas tal läheb.
+Word to mask: kena
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> annetasid USA San Francisco kogudus ja Feliks Vaide Kanadast.
+Word to mask: Raha
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: <mask> paragrahviga - teadlikult ebaõigete andmete esitamine - saatsid võitu uskunud uurijad ja prokurörid kohtusse ka Eesti Panga ekspresidendi Siim Kallase, kelle kohal rippus süüdistus PEPi 10 miljoni dollari tehingu varjamises audiitori eest.
+Word to mask: Sama
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Kaalukad kohvridollarid Eestis Noist miljoneistki teame vaid seetõttu, et Lääne ajakirjandus hoiab riigieelarve <mask> kulutamisel teraselt silma peal ja tahab teada, kas iga dollar läks asja ette või maandus mõne poliitiku taskus, nagu külma sõja aegadel teinekord juhtus.
+Word to mask: raha
+True form: sg g
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: "Siis on <mask> noosi oodata..."
+Word to mask: kena
+True form: sg n
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Meie stardipositsioon taasiseseisvumisel ei olnud <mask>, eluaseme mõttes just roosiline : aastaid venivad korterijärjekorrad ning pikkade vintsutuste järel õnne aseainena saadud keskpärane korter pereõnne pärssivas paneelkeskkonnas.
+Word to mask: kodu
+True form: sg p
+Inflection type: 17
+--------------------------------------------------------------------------------
+Masked sentence: Peterburi ja Vilniuse ülikoolis töötab <mask> saadetud eesti keele ja kultuuri lektor teist õppeaastat.
+Word to mask: ministeeriumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Otseteed olevikku või ajatusse illustreerib laval inglite kamp, kes oma sõnumeid <mask> laulab-deklareerib.
+Word to mask: mikrofoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Bush oli hästi informeeritud ka Eestis levinud kahtlustustest, nagu läheks Kallas <mask> sõlmima USA sõdurite puutumatuse lepet.
+Word to mask: Washingtoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kuid need rollid on kõik niisugused pealiskaudsed <mask> rollid.
+Word to mask: naiivitari
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Itaalia reformiminister Roberto Calderoli laskis trükkida prohvet <mask> naeruvääristavad pilapildid T-särkidele.
+Word to mask: Muhamedi
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: "Pärast 1996. aastat tuli vastupanu <mask> ekspert-nõukogust, kus eelistati pseudoortodoksse, pseudorahvusliku sisuga riigiideoloogiat," lisas Dolutski.
+Word to mask: ministeeriumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Lõhkumist alustasid <mask> töötajad ise hommikul.
+Word to mask: muuseumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Praegu <mask> juurde sõita ei saa, kuskilt ümber nurga saame juurde.
+Word to mask: konservatooriumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: õigus nõuet rahuldada on ka siis, kui töötaja tõendab, et ei saanud õigel ajal <mask> pöörduda.
+Word to mask: komisjoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Oma teksti lugesime lihtsalt <mask>, kuid omaette tehniline protseduur oli lindistatud intervjuude edastamine.
+Word to mask: telefoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kahjuks läksid mul mõtted segi ning ma teatasin :" Tabamus oli sama kasulik kui põie tühjendamine <mask>!
+Word to mask: ookeani
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Iseasi, kas nood ravikümblused just <mask> silti vajavad.
+Word to mask: festivali
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Sõjaeelse Riigikogu ajaloos oli ka kaks kaklust : Johannes Zimmermann peksis Jüri Uluotsa ja Artur Tupits Leopold <mask>.
+Word to mask: Johansoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: RUMA investeerib <mask> kahe aasta jooksul ligi 100 miljonit dollarit ehk 1, 5 miljardit krooni.
+Word to mask: terminali
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Väga ilusasti ütles see daam <mask>.
+Word to mask: telefoni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Samas jooksevad näiteks puusaliigese proteesiga inimesed mujal maailmas ka <mask>," rääkis Kööp.
+Word to mask: maratoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Päev hiljem tabas Harju politsei mitte-piraadist mikrobussijuhi Väino, veres 3 promilli <mask>.
+Word to mask: alkoholi
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Venemaa hoiatab Iraaki tõeliste rünnakute eest Venemaa teatas eile, et on kategooriliselt Iraagi suhtes jõu kasutamise vastu, kuid hoiatas samas <mask> USA õhurünnakute eest, kui too ei anna kiiresti järele ÜRO nõudmistele.
+Word to mask: Bagdadi
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: "Ainsa ja igavese elu" etendusest, etendusejärgsest arutelust ning kuluaariklatshist juba täpsemalt paari päeva pärast <mask> järgmises ülevaates.
+Word to mask: festivali
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: " UEFA karika ja Euroopa superkarika valdaja <mask> Galatasaray liigub esikoha poole B-grupis.
+Word to mask: Istanbuli
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Vaip ei jää siiski <mask>, vaid on müüdud 5,8 miljoni dollari eest Araabia Ühendemiraatide pealinna Abu Dhabi hiigelmošeele.
+Word to mask: Teherani
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Kaks politsei autogrupi meest, kelle nimede avalikustamist politsei esindaja ei pea vajalikuks, sõitsid <mask> ja tõid Mercedese läbi Venemaa avaruste tagasi.
+Word to mask: Stavropoli
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Et hävitatud on mitte ainult Jugoslaavia infrastruktuuri, vaid ka paarsada tanki ja kahurit ning Serbiast ära lõigatud <mask> Kosovos asuvad väeüksused.
+Word to mask: Belgradi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> arvutused näitavad, et ka Maa sisemuses, kus aine omab samuti üsna suurt tihedust, võib osa soojust olla pärit just virtuaalsete osakeste väljatõrjumisest ainest.
+Word to mask: Sokolovi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Politsei võttis kuriteos kahtlustatavatena kinni 22-aastased Vitali ja <mask>.
+Word to mask: Vladislavi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Restoran Argentiina varad ja sellel lasuvad võlanõuded ostis enampakkumisel AS Müntla ja selle omanikud jätkavad samas <mask> pidamist tänagi.
+Word to mask: restorani
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Valitsus moodustas õnnetuse uurimiseks <mask>.
+Word to mask: komisjoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Carl Robert <mask> kogunes 1882. aasta märtsis viimsele teekonnale saatma üle tuhande inimese, nüüd on tema haud aga räämas ja vabariigi aastapäeval ei jagunud sinna küünlajuppigi.
+Word to mask: Jakobsoni
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Foto : Rauno Volmar Estonian Air hakkab alates 25. märtsist lendama Pariisi Charles de Gaulle'i lennujaama <mask> 1 senise terminali 2B asemel.
+Word to mask: terminali
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Usbekid ja turkmeenid olid väga üllatunud nähes omal ajal <mask> gruppe nende linnadest kõrbesse lahkumas.
+Word to mask: Baltikumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Eesti ainus diplomaat Portugalis peab rahuldama ühel ajal maailmanäitusele <mask> sõitvate peaminister Mart Siimanni, Tallinna linnapea Ivi Eenmaa ja volikogu esimehe Edgar Savisaare juhitavate delegatsioonide nõudmisi.
+Word to mask: Lissaboni
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Tollal oli klassiga kaugetesse paikadesse sõitmine haruldane ning Kopli lastele oli suursündmuseks ka ekskursioon Pääskülla, Kadriorgu, Lasna-mäele, Naissaarele, Vabadussõja <mask>, riigikogu hoonesse või Pika Hermanni torni.
+Word to mask: muuseumi
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: USA kontsernid on huvitatud oma <mask> kaasamisest Venemaa majanduse erastamisse, samuti on Venemaa turg, mille avaruste täitmine tõotab suuri kasumeid.
+Word to mask: kapitali
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Elu jooksul tehti talle jala ja selja tõttu ligi 30 operatsiooni ning kokku pidi ta mitmeid aastaid voodis lamama, väljakannatamatute valude tõttu võttis ta morfiiniannuseid ja <mask>.
+Word to mask: alkoholi
+True form: sg p
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Programmitoimkonna juht Toomas Lepp ütles, et "programm tuleb vaatajale senisest ligemale, selleks kasutatakse <mask> uuringuid ja senist kogemust".
+Word to mask: auditooriumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Lõoke olevat öelnud, et "kõik kommunistid tuleb hävitada", seda pandi talle süüks ning kõik kätte saadud rakkelastest omakaitselased toodi <mask> tunnistama.
+Word to mask: tribunali
+True form: adt
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> ametlik teade jõudnuks Riiga alles 29. oktoobril ja just sellisele bürokraatlikule aeglusele autovargad panuse teevadki.
+Word to mask: Interpoli
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: <mask> komisjon oleks pidanud põhjalikult arutama, kellele projekti läbiviimine usaldada.
+Word to mask: Ministeeriumi
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
+Masked sentence: Siinkirjutaja eriala - muinasteaduse - valdkonnast meenuvad näiteks tema ettekanne Eesti muinasaja uurimise periodiseerimises eesti ja rootsi arheoloogide sümpoosionil Sigtunas 1991 ning Priit Ligi, Evald <mask> ja allakirjutanu mõttevahetus Loomingu veergudel (1993, nr 8 ; 1994 nr 1, 3 ja 6).
+Word to mask: Tõnissoni
+True form: sg g
+Inflection type: 19
+--------------------------------------------------------------------------------
