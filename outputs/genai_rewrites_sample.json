@@ -2,6 +2,32 @@
   {
     "id": "0",
     "candidates": [
+      "laureaadi",
+      "preemia saaja",
+      "autori",
+      "tšempioni",
+      "nominendi",
+      "tiitliomaniku",
+      "tunnustatu",
+      "preemiaomaniku",
+      "auhinnavõitja",
+      "staari"
+    ],
+    "chosen": "laureaadi",
+    "rewritten": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri laureaadi James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+    "source_sentence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri võitja James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+    "target_word": "võitja",
+    "word_span": [
+      74,
+      80
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "1",
+    "candidates": [
       "mudel",
       "kontseptsioon",
       "hüpotees",
@@ -20,10 +46,13 @@
     "word_span": [
       20,
       27
+    ],
+    "form_label": [
+      "sg n"
     ]
   },
   {
-    "id": "1",
+    "id": "2",
     "candidates": [
       "aktsioon",
       "teavitustöö",
@@ -43,10 +72,13 @@
     "word_span": [
       51,
       60
+    ],
+    "form_label": [
+      "sg n"
     ]
   },
   {
-    "id": "2",
+    "id": "3",
     "candidates": [
       "õige",
       "põhjendatud",
@@ -66,10 +98,13 @@
     "word_span": [
       16,
       20
+    ],
+    "form_label": [
+      "sg n"
     ]
   },
   {
-    "id": "3",
+    "id": "4",
     "candidates": [
       "Prantsusmaa",
       "Saksamaa",
@@ -89,10 +124,13 @@
     "word_span": [
       0,
       7
+    ],
+    "form_label": [
+      "sg g"
     ]
   },
   {
-    "id": "4",
+    "id": "5",
     "candidates": [
       "Marko",
       "Martin",
@@ -112,10 +150,13 @@
     "word_span": [
       125,
       130
+    ],
+    "form_label": [
+      "sg n"
     ]
   },
   {
-    "id": "5",
+    "id": "6",
     "candidates": [
       "Lähis-Ida",
       "Aafrika",
@@ -135,10 +176,13 @@
     "word_span": [
       47,
       54
+    ],
+    "form_label": [
+      "sg g"
     ]
   },
   {
-    "id": "6",
+    "id": "7",
     "candidates": [
       "Põhja",
       "Lääne",
@@ -158,10 +202,13 @@
     "word_span": [
       85,
       92
+    ],
+    "form_label": [
+      "sg g"
     ]
   },
   {
-    "id": "7",
+    "id": "8",
     "candidates": [
       "piiramatu",
       "tohutu",
@@ -181,10 +228,13 @@
     "word_span": [
       165,
       174
+    ],
+    "form_label": [
+      "sg g"
     ]
   },
   {
-    "id": "8",
+    "id": "9",
     "candidates": [
       "vahendustegevus",
       "koostöö",
@@ -204,6 +254,2323 @@
     "word_span": [
       15,
       26
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "10",
+    "candidates": [
+      "lihtne",
+      "kerge",
+      "hõlbus",
+      "vaevatu",
+      "võimalik",
+      "muretu",
+      "reaalne",
+      "ladus",
+      "triviaalne",
+      "lihtne"
+    ],
+    "chosen": "lihtne",
+    "rewritten": "Väravavaht on teadagi pool meeskonda, ka Floral pole lihtne leida Poomi-taolist meest.",
+    "source_sentence": "Väravavaht on teadagi pool meeskonda, ka Floral pole kerge leida Poomi-taolist meest.",
+    "target_word": "kerge",
+    "word_span": [
+      53,
+      58
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "11",
+    "candidates": [
+      "Tallinna",
+      "Pärnu",
+      "Narva",
+      "Viljandi",
+      "Eesti",
+      "Tallinna Tehnika",
+      "Eesti Maa",
+      "Tallinna Ülikooli",
+      "Balti Kaitsekolledži",
+      "Rakvere"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "Nädala alguses saabus Ilin Avatud Eesti Fondi stipendiumi toel Eestisse, et osaleda Tallinna ülikooli suvekoolis.",
+    "source_sentence": "Nädala alguses saabus Ilin Avatud Eesti Fondi stipendiumi toel Eestisse, et osaleda Tartu ülikooli suvekoolis.",
+    "target_word": "Tartu",
+    "word_span": [
+      84,
+      89
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "12",
+    "candidates": [
+      "kurb",
+      "raskusi kogenud",
+      "kannatanud",
+      "pettunud",
+      "murelik",
+      "läbikukkunud",
+      "kaotusi kogenud",
+      "hädaline",
+      "vaevatud",
+      "nukker"
+    ],
+    "chosen": "kannatanud",
+    "rewritten": " Öeldakse ju, et inimene, kes pole kannatanud olnud, ei oska ka õnnelik olla.",
+    "source_sentence": "\" Öeldakse ju, et inimene, kes pole õnnetu olnud, ei oska ka õnnelik olla.",
+    "target_word": "õnnetu",
+    "word_span": [
+      36,
+      42
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "13",
+    "candidates": [
+      "Araabia",
+      "Araabia",
+      "Araabia",
+      "Araabia",
+      "Araabia",
+      "Araabia",
+      "Araabia",
+      "Araabia",
+      "Araabia",
+      "Araabia"
+    ],
+    "chosen": "Araabia",
+    "rewritten": "Täna mängivad Omaan - Araabia Ühendemiraadid ja Iraan - Bahrein, homme kohtuvad Hiina - Usbekistan ja Tai Saudi Araabia.",
+    "source_sentence": "Täna mängivad Omaan - Araabia Ühendemiraadid ja Iraan - Bahrein, homme kohtuvad Hiina - Usbekistan ja Tai Saudi Araabia.",
+    "target_word": "Araabia",
+    "word_span": [
+      112,
+      119
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "14",
+    "candidates": [
+      "peatreener",
+      "abitreener",
+      "mänedžer",
+      "strateeg",
+      "eestvedaja",
+      "koostööpartner",
+      "mentor",
+      "juht",
+      "taktik",
+      "pealik"
+    ],
+    "chosen": "peatreener",
+    "rewritten": "\"Mängijad peavad tegutsema maksimaalselt sihikindlalt, ainult siis võime võitlusele häälestunud tartlasi ületada,\" rääkis võitjate peatreener Maarten van Gent.",
+    "source_sentence": "\"Mängijad peavad tegutsema maksimaalselt sihikindlalt, ainult siis võime võitlusele häälestunud tartlasi ületada,\" rääkis võitjate juhendaja Maarten van Gent.",
+    "target_word": "juhendaja",
+    "word_span": [
+      131,
+      140
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "15",
+    "candidates": [
+      "Itaalia",
+      "Horvaatia",
+      "Ungari",
+      "Tšehhi",
+      "Slovakkia",
+      "Poola",
+      "Leedu",
+      "Läti",
+      "Bulgaaria",
+      "Rumeenia"
+    ],
+    "chosen": "Horvaatia",
+    "rewritten": "Austria kantsler Wolfgang Schlüssel ütles, et Saksamaa kantsleri Gerhard Schröderi ning Horvaatia ametist lahkuva peaministri Andrej Bajuki osavõtt mälestusjumalateenistusest oli väga teretulnud.",
+    "source_sentence": "Austria kantsler Wolfgang Schlüssel ütles, et Saksamaa kantsleri Gerhard Schröderi ning Sloveenia ametist lahkuva peaministri Andrej Bajuki osavõtt mälestusjumalateenistusest oli väga teretulnud.",
+    "target_word": "Sloveenia",
+    "word_span": [
+      88,
+      97
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "16",
+    "candidates": [
+      "paratamatu",
+      "vältimatu",
+      "ootamatu",
+      "kurb",
+      "hädavajalik",
+      "traagiline",
+      "paratamatu",
+      "paratamatu",
+      "paratamatu",
+      "paratamatu"
+    ],
+    "chosen": "vältimatu",
+    "rewritten": "Järgnes vältimatu pankrott tänavu kevadel.",
+    "source_sentence": "Järgnes paratamatu pankrott tänavu kevadel.",
+    "target_word": "paratamatu",
+    "word_span": [
+      8,
+      18
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "17",
+    "candidates": [
+      "Kalevi",
+      "Flora",
+      "Levadia",
+      "Tammeka",
+      "Sillamäe",
+      "Transi",
+      "Vapruse",
+      "Tuleviku",
+      "Merkuuri",
+      "Dünamo"
+    ],
+    "chosen": "Kalevi",
+    "rewritten": "Ehitustööriista abitreeneri Heino Rebase jaoks oli eile kaela saadud kuldmedal väga erilise tähendusega üheksakümnendate esimesel poolel oli ta ihaldatud trofeed Kalevi peatreenerina nii kaua püüdnud, kuni peasponsor üritamisest loobus ja klubi laiali läks.",
+    "source_sentence": "Ehitustööriista abitreeneri Heino Rebase jaoks oli eile kaela saadud kuldmedal väga erilise tähendusega üheksakümnendate esimesel poolel oli ta ihaldatud trofeed Baltika peatreenerina nii kaua püüdnud, kuni peasponsor üritamisest loobus ja klubi laiali läks.",
+    "target_word": "Baltika",
+    "word_span": [
+      162,
+      169
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "18",
+    "candidates": [
+      "Tallinna",
+      "Tartu",
+      "Viljandi",
+      "Haapsalu",
+      "Rakvere",
+      "Kuressaare",
+      "Võru",
+      "Valga",
+      "Paide",
+      "Narva"
+    ],
+    "chosen": "Tartu",
+    "rewritten": "Pärnu linnavalitsus hakkab välja andma teenetemärki, mis on koopia kümne aasta eest Tartu kesklinnast leitud ainulaadsest palverändurimärgst.",
+    "source_sentence": "Pärnu linnavalitsus hakkab välja andma teenetemärki, mis on koopia kümne aasta eest Pärnu kesklinnast leitud ainulaadsest palverändurimärgst.",
+    "target_word": "Pärnu",
+    "word_span": [
+      84,
+      89
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "19",
+    "candidates": [
+      "aasta",
+      "kuu",
+      "päeva",
+      "nädala",
+      "õhtu",
+      "tunni",
+      "minuti",
+      "hetke",
+      "ajajärgu",
+      "kümnendi"
+    ],
+    "chosen": "kuu",
+    "rewritten": "Põhja-Koreaga alustas Jaapan läbirääkimisi 1992. aastal, kuid need katkesid kuu hiljem just samal põhjusel, mille üle nüüdki vaieldakse.",
+    "source_sentence": "Põhja-Koreaga alustas Jaapan läbirääkimisi 1992. aastal, kuid need katkesid aasta hiljem just samal põhjusel, mille üle nüüdki vaieldakse.",
+    "target_word": "aasta",
+    "word_span": [
+      76,
+      81
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "20",
+    "candidates": [
+      "Tallinna",
+      "Tartu",
+      "Pärnu",
+      "Viljandi",
+      "Rakvere",
+      "Paide",
+      "Haapsalu",
+      "Kuressaare",
+      "Valga",
+      "Jõgeva"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "Noorele Rod Stewartile sarnanev Sal-Saller jalutas esmaspäeval läbi Tallinna ja Võru raadiomajast, et paisata koos uue CDga eetrisse intervjuu.",
+    "source_sentence": "Noorele Rod Stewartile sarnanev Sal-Saller jalutas esmaspäeval läbi Põlva ja Võru raadiomajast, et paisata koos uue CDga eetrisse intervjuu.",
+    "target_word": "Põlva",
+    "word_span": [
+      68,
+      73
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "21",
+    "candidates": [
+      "advokaat",
+      "esindaja",
+      "kaitsja",
+      "õigusnõustaja",
+      "volitatud esindaja",
+      "jurist",
+      "kaitsja",
+      "advokaat",
+      "advokaat",
+      "kaitsja"
+    ],
+    "chosen": "advokaat",
+    "rewritten": "Klaassepa advokaat vandeadvokaat Sulev Raudsepp taotles kohtualuse õigeksmõistmist.",
+    "source_sentence": "Klaassepa kaitsja vandeadvokaat Sulev Raudsepp taotles kohtualuse õigeksmõistmist.",
+    "target_word": "kaitsja",
+    "word_span": [
+      10,
+      17
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "22",
+    "candidates": [
+      "Ameerika",
+      "Põhja-Ameerika",
+      "Lõuna-Aafrika",
+      "Aasia",
+      "Austraalia",
+      "Põhjamaade",
+      "Ida-Euroopa",
+      "Lääne-Euroopa",
+      "Balti",
+      "Skandinaavia"
+    ],
+    "chosen": "Ameerika",
+    "rewritten": "Kakskümmend aastat tagasi töötasin teadurina Raadio Vaba Ameerika Instituudis.",
+    "source_sentence": "Kakskümmend aastat tagasi töötasin teadurina Raadio Vaba Euroopa Instituudis.",
+    "target_word": "Euroopa",
+    "word_span": [
+      57,
+      64
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "23",
+    "candidates": [
+      "ajakirjandus",
+      "teabekanal",
+      "uudistekanal",
+      "rahvusringhääling",
+      "ajaleht",
+      "infokanal",
+      "meediakanal",
+      "press",
+      "teabeagentuur",
+      "meediaportaal"
+    ],
+    "chosen": "ajakirjandus",
+    "rewritten": "Nii väideti, et kuulsa Uus-Meremaa laulja ema on kaukaaslanna, ja kui Filipiinide pantvangikriisi ajal otsiti taga kadunud pantvange, siis teatas meie ajakirjandus, et keegi kohalikest oli põgenevate asiaatidest sisside seas näinud paari \"kaukaaslase välimusega\" inimest.",
+    "source_sentence": "Nii väideti, et kuulsa Uus-Meremaa laulja ema on kaukaaslanna, ja kui Filipiinide pantvangikriisi ajal otsiti taga kadunud pantvange, siis teatas meie meedia, et keegi kohalikest oli põgenevate asiaatidest sisside seas näinud paari \"kaukaaslase välimusega\" inimest.",
+    "target_word": "meedia",
+    "word_span": [
+      151,
+      157
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "24",
+    "candidates": [
+      "keeruline",
+      "vaevaline",
+      "tülikas",
+      "problemaatiline",
+      "piinlik",
+      "kurnav",
+      "ebamugav",
+      "pingeline",
+      "küsitav",
+      "nõudlik"
+    ],
+    "chosen": "keeruline",
+    "rewritten": "Seega tekitas Iraagi sõda paljudes inimestes segadust : selgelt positiivsele seisukohale USA suhtes on inimestel pärast hiljutisi sündmusi keeruline kindlaks jääda, samas ei tihata veel omaks võtta ka hukkamõistvat tooni.",
+    "source_sentence": "Seega tekitas Iraagi sõda paljudes inimestes segadust : selgelt positiivsele seisukohale USA suhtes on inimestel pärast hiljutisi sündmusi raske kindlaks jääda, samas ei tihata veel omaks võtta ka hukkamõistvat tooni.",
+    "target_word": "raske",
+    "word_span": [
+      139,
+      144
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "25",
+    "candidates": [
+      "Tallinna",
+      "Pärnu",
+      "Narva",
+      "Viljandi",
+      "Rakvere",
+      "Kuressaare",
+      "Võru",
+      "Paide",
+      "Haapsalu",
+      "Valga"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "Seminarile on eelkõige oodatud kohalike omavalitsuste ja prefektuuride profülaktikatalituste juhid, ütles ETAle Tallinna naabrusvalve projektijuht Peeter Rehemaa.",
+    "source_sentence": "Seminarile on eelkõige oodatud kohalike omavalitsuste ja prefektuuride profülaktikatalituste juhid, ütles ETAle Tartu naabrusvalve projektijuht Peeter Rehemaa.",
+    "target_word": "Tartu",
+    "word_span": [
+      112,
+      117
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "26",
+    "candidates": [
+      "üleeuroopalist",
+      "regionaalset",
+      "mandri",
+      "globaalset",
+      "rahvusvahelist",
+      "kollektiivset",
+      "piirkondlikku",
+      "strateegilist",
+      "üldist",
+      "julgeoleku"
+    ],
+    "chosen": "regionaalset",
+    "rewritten": "USA ja Kanada uuringute instituudi direktor Sergei Rogov lisas, et kõigil Ida-Euroopa riikidel tuleb arvestada nüüd NATO 6+1 vormiga ning eilsest alates on Venemaal regionaalset julgeolekut puudutavates küsimustes vetoõigus.",
+    "source_sentence": "USA ja Kanada uuringute instituudi direktor Sergei Rogov lisas, et kõigil Ida-Euroopa riikidel tuleb arvestada nüüd NATO 6+1 vormiga ning eilsest alates on Venemaal Euroopa julgeolekut puudutavates küsimustes vetoõigus.",
+    "target_word": "Euroopa",
+    "word_span": [
+      165,
+      172
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "27",
+    "candidates": [
+      "Euroopa",
+      "Põhjamaade",
+      "Balti",
+      "naaber",
+      "liidu",
+      "ühenduse",
+      "teistesse",
+      "kõigisse",
+      "välis",
+      "kaugematesse"
+    ],
+    "chosen": "Põhjamaade",
+    "rewritten": "; Kui hakkavad kehtima ühtsed lemmikloomapassid, mis karmistavad loomade tervisenõudeid, siis on võimalik ka Eestis elavate loomadega kõigisse Põhjamaade riikidesse reisida.",
+    "source_sentence": "; Kui hakkavad kehtima ühtsed lemmikloomapassid, mis karmistavad loomade tervisenõudeid, siis on võimalik ka Eestis elavate loomadega kõigisse Euroopa riikidesse reisida.",
+    "target_word": "Euroopa",
+    "word_span": [
+      143,
+      150
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "28",
+    "candidates": [
+      "Loksa",
+      "Tapa",
+      "Kehra",
+      "Rakvere",
+      "Jõelähtme",
+      "Anija",
+      "Haljala",
+      "Tamsalu",
+      "Aegviidu",
+      "Väike-Maarja"
+    ],
+    "chosen": "Loksa",
+    "rewritten": "Selle suure metsalahamaka peal, mida Loksa Kuusalult tagasi tahab, elavat vaid üks inimene.",
+    "source_sentence": "Selle suure metsalahamaka peal, mida Kadrina Kuusalult tagasi tahab, elavat vaid üks inimene.",
+    "target_word": "Kadrina",
+    "word_span": [
+      37,
+      44
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "29",
+    "candidates": [
+      "juhataja",
+      "direktor",
+      "nõunik",
+      "asjajaja",
+      "peaspetsialist",
+      "osakonnajuhataja",
+      "esindaja",
+      "ametnik",
+      "juht",
+      "kuraator"
+    ],
+    "chosen": "osakonnajuhataja",
+    "rewritten": "Tema sõnul on ka haridusministeeriumi kutsehariduse osakonna osakonnajuhataja Mati Kask öelnud, et meditsiinikooli liitmine TÜga on vaid ülikooli soov ning praegu sellist vajadust ei ole.",
+    "source_sentence": "Tema sõnul on ka haridusministeeriumi kutsehariduse osakonna juhataja Mati Kask öelnud, et meditsiinikooli liitmine TÜga on vaid ülikooli soov ning praegu sellist vajadust ei ole.",
+    "target_word": "juhataja",
+    "word_span": [
+      61,
+      69
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "30",
+    "candidates": [
+      "aasta",
+      "kvartali",
+      "kuu",
+      "perioodi",
+      "sügise",
+      "aja",
+      "talve",
+      "kevade",
+      "suve",
+      "etapi"
+    ],
+    "chosen": "kvartali",
+    "rewritten": "Hüpe ei ole olnud küll tiigerlik, kuid võimas ometi : eelmise kvartali veebruaris oli arvutit kasutanud 33 protsenti Eesti 15-74-aastastest elanikest, sama aasta septembris 37 protsenti ja tänavu septembris-oktoobris 40 protsenti.",
+    "source_sentence": "Hüpe ei ole olnud küll tiigerlik, kuid võimas ometi : eelmise aasta veebruaris oli arvutit kasutanud 33 protsenti Eesti 15-74-aastastest elanikest, sama aasta septembris 37 protsenti ja tänavu septembris-oktoobris 40 protsenti.",
+    "target_word": "aasta",
+    "word_span": [
+      62,
+      67
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "31",
+    "candidates": [
+      "väljalaskeaasta",
+      "mudeliaasta",
+      "tootmisaasta",
+      "valmimisaasta",
+      "sünniaasta",
+      "registreerimisaasta",
+      "ehitusaasta",
+      "esmaregistreerimisaasta",
+      "vanuse",
+      "tegemisaasta"
+    ],
+    "chosen": "väljalaskeaasta",
+    "rewritten": "Rahu tänavast varastati vana Žiguli Pühapäeva hommikul kell seitse teatati politseisse, et Rahu tänava maja eest on varastatud sinine 1972. väljalaskeaasta Žiguli 01 (026 TAG).",
+    "source_sentence": "Rahu tänavast varastati vana Žiguli Pühapäeva hommikul kell seitse teatati politseisse, et Rahu tänava maja eest on varastatud sinine 1972. aasta Žiguli 01 (026 TAG).",
+    "target_word": "aasta",
+    "word_span": [
+      140,
+      145
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "32",
+    "candidates": [
+      "Tallinna",
+      "Tartu",
+      "Narva",
+      "Rakvere",
+      "Kuressaare",
+      "Haapsalu",
+      "Võru",
+      "Valga",
+      "Paide",
+      "Keila"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "Esiteks Tallinna Endla lavastust \"Meil aia-äärne tänaval\" ja teiseks Viljandi Ugala lavastust \"Tõde ja õigus\".",
+    "source_sentence": "Esiteks Pärnu Endla lavastust \"Meil aia-äärne tänaval\" ja teiseks Viljandi Ugala lavastust \"Tõde ja õigus\".",
+    "target_word": "Pärnu",
+    "word_span": [
+      8,
+      13
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "33",
+    "candidates": [
+      "projekti",
+      "plaani",
+      "ettevõtmise",
+      "kavatsuse",
+      "idee",
+      "eesmärgi",
+      "algatuse",
+      "kava",
+      "soovi",
+      "mõtte"
+    ],
+    "chosen": "projekti",
+    "rewritten": "Kullamaa Muusika Seltsi esimees Loit Lepalaan ütles, et projekti elluviimine läheb raskelt, aga kavakohaselt.",
+    "source_sentence": "Kullamaa Muusika Seltsi esimees Loit Lepalaan ütles, et kavandatu elluviimine läheb raskelt, aga kavakohaselt.",
+    "target_word": "kavandatu",
+    "word_span": [
+      56,
+      65
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "34",
+    "candidates": [
+      "kliinik",
+      "keskus",
+      "asutus",
+      "polikliinik",
+      "raviasutus",
+      "perearstikeskus",
+      "meditsiiniasutus",
+      "tervisekeskus",
+      "töötaja",
+      "juhtkond"
+    ],
+    "chosen": "kliinik",
+    "rewritten": "Riho Tapfer ütles, et Valga kliinik on koostanud arengukava ja selle sotsiaalministeeriumisse saatnud, kuid vastust ei ole tulnud.",
+    "source_sentence": "\" Riho Tapfer ütles, et Valga haigla on koostanud arengukava ja selle sotsiaalministeeriumisse saatnud, kuid vastust ei ole tulnud.",
+    "target_word": "haigla",
+    "word_span": [
+      30,
+      36
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "35",
+    "candidates": [
+      "ilmne",
+      "kindel",
+      "teada",
+      "aksepteeritav",
+      "hinnatav",
+      "kahtlusteta",
+      "arusaadav",
+      "ilmselge",
+      "tõsine",
+      "vaieldamatu"
+    ],
+    "chosen": "ilmne",
+    "rewritten": "Samas on ilmne, et Lääneriikide abi vastuvõtmine tähendab üsna ulatuslikku \"peade lendamist\" Venemaa merelaevastiku kõrgemas juhtkonnas.",
+    "source_sentence": "Samas on selge, et Lääneriikide abi vastuvõtmine tähendab üsna ulatuslikku \"peade lendamist\" Venemaa merelaevastiku kõrgemas juhtkonnas.",
+    "target_word": "selge",
+    "word_span": [
+      9,
+      14
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "36",
+    "candidates": [
+      "Põhja-Atlandi",
+      "Euroopa",
+      "Ülemaailmse",
+      "Rahvusvahelise",
+      "Põhjamaade",
+      "Balti",
+      "Ameerika",
+      "Ühinenud Rahvaste",
+      "Euroopa Liidu",
+      "Vahemere"
+    ],
+    "chosen": "Põhja-Atlandi",
+    "rewritten": "Riigikogu liige ja Põhja-Atlandi Nõukogu Parlamentaarse Assamblee asepresident Kristiina Ojuland on lõpetanud Tartu Ülikooli juristina ja Eesti Diplomaatide Kooli diplomaadina.",
+    "source_sentence": "Riigikogu liige ja Euroopa Nõukogu Parlamentaarse Assamblee asepresident Kristiina Ojuland on lõpetanud Tartu Ülikooli juristina ja Eesti Diplomaatide Kooli diplomaadina.",
+    "target_word": "Euroopa",
+    "word_span": [
+      19,
+      26
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "37",
+    "candidates": [
+      "aktivist",
+      "ekspert",
+      "liige",
+      "analüütik",
+      "nõunik",
+      "kõneisik",
+      "uurija",
+      "spetsialist",
+      "volinik",
+      "koordinaator"
+    ],
+    "chosen": "aktivist",
+    "rewritten": "Keskkonnakaitse organisatsiooni Greenpeace aktivist Veit Bürger ütles, et sellel saadetisel on äärmiselt negatiivne mõju keskkonnale.",
+    "source_sentence": "Keskkonnakaitse organisatsiooni Greenpeace esindaja Veit Bürger ütles, et sellel saadetisel on äärmiselt negatiivne mõju keskkonnale.",
+    "target_word": "esindaja",
+    "word_span": [
+      43,
+      51
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "38",
+    "candidates": [
+      "Kallas",
+      "Ratas",
+      "Helme",
+      "Reinsalu",
+      "Läänemets",
+      "Kallas",
+      "Tsahkna",
+      "Kõlvart",
+      "Terras",
+      "Pevkur"
+    ],
+    "chosen": "Kallas",
+    "rewritten": "Andres Kallas Paetisme - Pühapäeval läheb Eesti suveajale.",
+    "source_sentence": "Andres Ülviste Paetisme - Pühapäeval läheb Eesti suveajale.",
+    "target_word": "Ülviste",
+    "word_span": [
+      7,
+      14
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "39",
+    "candidates": [
+      "mandri",
+      "maailma",
+      "lääne",
+      "piirkonna",
+      "tugevaks",
+      "iseseisvaks",
+      "demokraatlikuks",
+      "uueks",
+      "suureks",
+      "ühiseks"
+    ],
+    "chosen": "mandri",
+    "rewritten": "Kardinaalsed muudatused riikidevahelistes suhetes tõi kaasa N Liidu lagunemine ja seni lõhestatud Saksamaa ühinemine ühtseks mandri suurriigiks.",
+    "source_sentence": "Kardinaalsed muudatused riikidevahelistes suhetes tõi kaasa N Liidu lagunemine ja seni lõhestatud Saksamaa ühinemine ühtseks Euroopa suurriigiks.",
+    "target_word": "Euroopa",
+    "word_span": [
+      125,
+      132
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "40",
+    "candidates": [
+      "panga",
+      "otsuse",
+      "eelnõu",
+      "algatuse",
+      "muudatuse",
+      "poliitika",
+      "strateegia",
+      "tegevuse",
+      "lepingu",
+      "reformi"
+    ],
+    "chosen": "otsuse",
+    "rewritten": "Neljapäeval panga esindajate ja otsuse kritiseerijate vahel toimunud kohtumisel osalenud Merit Karise sõnul sõltub noorte vastuaktsiooni toimumine panga reaktsioonist.",
+    "source_sentence": "Neljapäeval panga esindajate ja kampaania kritiseerijate vahel toimunud kohtumisel osalenud Merit Karise sõnul sõltub noorte vastuaktsiooni toimumine panga reaktsioonist.",
+    "target_word": "kampaania",
+    "word_span": [
+      32,
+      41
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "41",
+    "candidates": [
+      "Tallinna",
+      "Pärnu",
+      "Narva",
+      "Viljandi",
+      "Rakvere",
+      "Valga",
+      "Võru",
+      "Jõhvi",
+      "Haapsalu",
+      "Kuressaare"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "Tartus algas protsess väidetava valerahategija üle Tallinna linnakohtus algas eile kohtuprotsess üle 100 000 krooni eest valeraha valmistamises süüdistatava Taavi Taaveti üle.",
+    "source_sentence": "Tartus algas protsess väidetava valerahategija üle Tartu linnakohtus algas eile kohtuprotsess üle 100 000 krooni eest valeraha valmistamises süüdistatava Taavi Taaveti üle.",
+    "target_word": "Tartu",
+    "word_span": [
+      51,
+      56
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "42",
+    "candidates": [
+      "pressiesindaja",
+      "konsul",
+      "atašee",
+      "diplomaat",
+      "nõunik",
+      "ametnik",
+      "esindaja",
+      "asekonsul",
+      "pressisekretär",
+      "kõneisik"
+    ],
+    "chosen": "pressiesindaja",
+    "rewritten": "Kui valite Vene kodakondsuse, võtab Venemaa kohustuse teie eest hoolitseda,\" ütles Venemaa saatkonna pressiesindaja Aleksandr Mamajev.",
+    "source_sentence": "Kui valite Vene kodakondsuse, võtab Venemaa kohustuse teie eest hoolitseda,\" ütles Venemaa saatkonna esindaja Aleksandr Mamajev.",
+    "target_word": "esindaja",
+    "word_span": [
+      101,
+      109
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "43",
+    "candidates": [
+      "ametnik",
+      "peaspetsialist",
+      "nõunik",
+      "konsultant",
+      "sekretär",
+      "osakonnajuhataja",
+      "referent",
+      "asjaajaja",
+      "spetsialist",
+      "abi"
+    ],
+    "chosen": "ametnik",
+    "rewritten": "Politseiameti pressiesindaja sõnul ei ole Tartu Ülikooli diplomi võltsitud koopia kasutamises kahtlustatav Narva linnavalitsuse investeeringute osakonna endine ametnik Julia Viirsalu-Velikaja käinud uurija juures ülekuulamistel, mistõttu pikendas prokuratuur tema kriminaalasja eeluurimistähtaega kuu aja võrra 23. märtsini.",
+    "source_sentence": "Politseiameti pressiesindaja sõnul ei ole Tartu Ülikooli diplomi võltsitud koopia kasutamises kahtlustatav Narva linnavalitsuse investeeringute osakonna endine töötaja Julia Viirsalu-Velikaja käinud uurija juures ülekuulamistel, mistõttu pikendas prokuratuur tema kriminaalasja eeluurimistähtaega kuu aja võrra 23. märtsini.",
+    "target_word": "töötaja",
+    "word_span": [
+      160,
+      167
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "44",
+    "candidates": [
+      "aktsia",
+      "osaku",
+      "väärtpaberi",
+      "aktsiaühiku",
+      "osatähe",
+      "aktsiakapitali ühiku",
+      "aktsiaosaku",
+      "emiteeritud aktsia",
+      "nimiväärtuse",
+      "aktsia kohta"
+    ],
+    "chosen": "osaku",
+    "rewritten": "Aktsionärid kinnitasid juhatuse ettepaneku maksta korralisi dividende 2 krooni osaku kohta ja erakorralisi dividende 6 krooni aktsia kohta, kogusummas 105 600 000 krooni.",
+    "source_sentence": "Aktsionärid kinnitasid juhatuse ettepaneku maksta korralisi dividende 2 krooni aktsia kohta ja erakorralisi dividende 6 krooni aktsia kohta, kogusummas 105 600 000 krooni.",
+    "target_word": "aktsia",
+    "word_span": [
+      79,
+      85
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "45",
+    "candidates": [
+      "aasta",
+      "kuu",
+      "hooaja",
+      "perioodi",
+      "majandusaasta",
+      "kalendriaasta",
+      "aastakümne",
+      "poolaasta",
+      "tööaasta",
+      "tegutsemisaasta"
+    ],
+    "chosen": "majandusaasta",
+    "rewritten": "Tartu eksmeedikute ühendus Halastus valiti eelmise majandusaasta parimaks Eesti mittetulundusühinguks vabatahtliku ja tänuväärse töö eest sotsiaalhoolduse vallas.",
+    "source_sentence": "Tartu eksmeedikute ühendus Halastus valiti eelmise aasta parimaks Eesti mittetulundusühinguks vabatahtliku ja tänuväärse töö eest sotsiaalhoolduse vallas.",
+    "target_word": "aasta",
+    "word_span": [
+      51,
+      56
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "46",
+    "candidates": [
+      "sätete",
+      "põhimõtete",
+      "regulatsiooni",
+      "mõtte",
+      "tõlgenduse",
+      "aluste",
+      "kontseptsiooni",
+      "põhimõttestiku",
+      "normide",
+      "struktuuri"
+    ],
+    "chosen": "sätete",
+    "rewritten": "Rahuaja riigikaitse seaduse sätete järgi võiks kaitseväe juhataja äraolekul täita tema kohuseid peastaabi ülem ehk kolonel Ants Laaneots, kes naaseb tuleva aasta veebruaris pikaajaliselt täiendõppelt Roomas NATO kolledzhis.",
+    "source_sentence": "Rahuaja riigikaitse seaduse loogika järgi võiks kaitseväe juhataja äraolekul täita tema kohuseid peastaabi ülem ehk kolonel Ants Laaneots, kes naaseb tuleva aasta veebruaris pikaajaliselt täiendõppelt Roomas NATO kolledzhis.",
+    "target_word": "loogika",
+    "word_span": [
+      28,
+      35
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "47",
+    "candidates": [
+      "ametnik",
+      "vallavanem",
+      "esindaja",
+      "töötaja",
+      "kantselei",
+      "juht",
+      "sekretär",
+      "valitseja",
+      "ametkond",
+      "asjaajaja"
+    ],
+    "chosen": "ametnik",
+    "rewritten": "Puusepa sõnul teatas ka Vinni valla ametnik, et Benita Rihma nimelist inimest pole vallas pärast Eesti taasiseseisvumist elanud.",
+    "source_sentence": "Puusepa sõnul teatas ka Vinni valla esindaja, et Benita Rihma nimelist inimest pole vallas pärast Eesti taasiseseisvumist elanud.",
+    "target_word": "esindaja",
+    "word_span": [
+      36,
+      44
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "48",
+    "candidates": [
+      "kindla",
+      "otsustava",
+      "lõpliku",
+      "põhimõttelise",
+      "kaaluka",
+      "tõsise",
+      "konkreetse",
+      "jõulise",
+      "selgesõnalise",
+      "ühemõttelise"
+    ],
+    "chosen": "kindla",
+    "rewritten": "Ma arvan, et selle eelnõu kolmandal lugemisel peab Riigikogu tegema oma kindla otsuse, mis on Eesti riigi tulud, ja kui mõnel Eesti riigiasutusel on põhimõtteliselt ebaseaduslikud tulud, siis tuleb nad lihtsalt ära kaotada, aga mitte neid",
+    "source_sentence": "Ma arvan, et selle eelnõu kolmandal lugemisel peab Riigikogu tegema oma selge otsuse, mis on Eesti riigi tulud, ja kui mõnel Eesti riigiasutusel on põhimõtteliselt ebaseaduslikud tulud, siis tuleb nad lihtsalt ära kaotada, aga mitte neid",
+    "target_word": "selge",
+    "word_span": [
+      72,
+      77
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "49",
+    "candidates": [
+      "ilmne",
+      "arusaadav",
+      "kinnitatud",
+      "teada",
+      "tõestatud",
+      "hinnatav",
+      "nähtav",
+      "mõistetav",
+      "vaieldamatu",
+      "tõenäoline"
+    ],
+    "chosen": "ilmne",
+    "rewritten": "On ilmne, et tollitöötaja ei konkureeri palgataseme poolest salakaubanduse süsteemiga.",
+    "source_sentence": "On selge, et tollitöötaja ei konkureeri palgataseme poolest salakaubanduse süsteemiga.",
+    "target_word": "selge",
+    "word_span": [
+      3,
+      8
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "50",
+    "candidates": [
+      "bensiinijaama",
+      "kütusejaama",
+      "terminali",
+      "ärihoone",
+      "kompleksi",
+      "teenindusjaama",
+      "objekti",
+      "punkti",
+      "ettevõtte",
+      "lao"
+    ],
+    "chosen": "bensiinijaama",
+    "rewritten": "Võimalikke konflikti tagamaid kommenteerides ütles Kivistik, et tegemist on Paldiski ametnike pahatahtlikkusega ning Hydro Texaco bensiinijaama rajamist takistavad kohalike inimeste huvid.",
+    "source_sentence": "Võimalikke konflikti tagamaid kommenteerides ütles Kivistik, et tegemist on Paldiski ametnike pahatahtlikkusega ning Hydro Texaco tankla rajamist takistavad kohalike inimeste huvid.",
+    "target_word": "tankla",
+    "word_span": [
+      130,
+      136
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "51",
+    "candidates": [
+      "aasta",
+      "kuu",
+      "kevad",
+      "sügis",
+      "talve",
+      "suve",
+      "ajajärgu",
+      "perioodi",
+      "seitsme",
+      "üheksakümnenda"
+    ],
+    "chosen": "aasta",
+    "rewritten": "1997. aasta lõpust ette valmistatud ja mullu detsembris valitsuse kinnituse saanud väärtpaberituru seaduse eelnõu jõuab riigikogus esimesele lugemisele kolmapäeval.",
+    "source_sentence": "1997. aasta lõpust ette valmistatud ja mullu detsembris valitsuse kinnituse saanud väärtpaberituru seaduse eelnõu jõuab riigikogus esimesele lugemisele kolmapäeval.",
+    "target_word": "aasta",
+    "word_span": [
+      6,
+      11
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "52",
+    "candidates": [
+      "küsija",
+      "soovija",
+      "huviline",
+      "laenaja",
+      "klient",
+      "esitaja",
+      "allakirjutaja",
+      "laenutaotleja",
+      "krediidisoovija",
+      "taotleja"
+    ],
+    "chosen": "küsija",
+    "rewritten": "Laenu küsija esitatud andmete õigsust kontrollib lisaks pangale laenu garanteerija Maaelu Laenude Tagamise Sihtasutus, mistõttu võib laenulepingu rahuldamine siiski veidi enam aega nõuda.",
+    "source_sentence": "Laenu taotleja esitatud andmete õigsust kontrollib lisaks pangale laenu garanteerija Maaelu Laenude Tagamise Sihtasutus, mistõttu võib laenulepingu rahuldamine siiski veidi enam aega nõuda.",
+    "target_word": "taotleja",
+    "word_span": [
+      6,
+      14
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "53",
+    "candidates": [
+      "pressiesindaja",
+      "kõneisik",
+      "ametnik",
+      "ohvitser",
+      "allikas",
+      "staabiülem",
+      "kapten",
+      "esindaja",
+      "kommunikatsioonijuht",
+      "asjatundja"
+    ],
+    "chosen": "pressiesindaja",
+    "rewritten": "Barentsi mere põhjas lebava Vene tuumaallveelaeva Kursk kallal töötavad tuukrid eemaldasid laevakere küljest teleskoopseadmed, et paremini selle pinnaletõstimiseks trosse kinnitada, teatas Vene laevastiku pressiesindaja eile.",
+    "source_sentence": "Barentsi mere põhjas lebava Vene tuumaallveelaeva Kursk kallal töötavad tuukrid eemaldasid laevakere küljest teleskoopseadmed, et paremini selle pinnaletõstimiseks trosse kinnitada, teatas Vene laevastiku esindaja eile.",
+    "target_word": "esindaja",
+    "word_span": [
+      205,
+      213
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "54",
+    "candidates": [
+      "välismaine",
+      "hollywoodi",
+      "kaasajastatud",
+      "isikupärane",
+      "dokumentaalne",
+      "kunstiline",
+      "suurejooneline",
+      "iseseisev",
+      "tänapäevane",
+      "ingliskeelne"
+    ],
+    "chosen": "välismaine",
+    "rewritten": "\"Three Seasons\" on esimene Vietnami pinnal vändatud välismaine film ja võib vaid kujutleda, milliste raskustega selle sünd üldse võimalikuks sai.",
+    "source_sentence": "\"Three Seasons\" on esimene Vietnami pinnal vändatud Ameerika film ja võib vaid kujutleda, milliste raskustega selle sünd üldse võimalikuks sai.",
+    "target_word": "Ameerika",
+    "word_span": [
+      52,
+      60
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "55",
+    "candidates": [
+      "kuu",
+      "perioodi",
+      "kvartali",
+      "ajavahemiku",
+      "aasta",
+      "aastaringi",
+      "aja",
+      "hooaja",
+      "aastakäigu",
+      "aastaaja"
+    ],
+    "chosen": "kuu",
+    "rewritten": "2001. aasta märtsis tootsid ettevõtted 9% vähem elektrienergiat ja 2% rohkem soojust kui eelmise kuu märtsis.",
+    "source_sentence": "2001. aasta märtsis tootsid ettevõtted 9% vähem elektrienergiat ja 2% rohkem soojust kui eelmise aasta märtsis.",
+    "target_word": "aasta",
+    "word_span": [
+      97,
+      102
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "56",
+    "candidates": [
+      "tegelast",
+      "figuuri",
+      "liidrit",
+      "ametnikku",
+      "juhti",
+      "isikut",
+      "suurkuju",
+      "tegelast",
+      "eestvedajat",
+      "nime"
+    ],
+    "chosen": "tegelast",
+    "rewritten": "Kaks tolle aja tegelast tipptegijat, Tiit Vähi ja Arnold Rüütel ju Kindla Kodu valimisnimekirjas ei kandideerinud.",
+    "source_sentence": "Kaks tolle aja poliitika tipptegijat, Tiit Vähi ja Arnold Rüütel ju Kindla Kodu valimisnimekirjas ei kandideerinud.",
+    "target_word": "poliitika",
+    "word_span": [
+      15,
+      24
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "57",
+    "candidates": [
+      "Austraalia",
+      "Brasiilia",
+      "Norra",
+      "Taani",
+      "Belgia",
+      "Portugal",
+      "Iirimaa",
+      "Ungari",
+      "Tšehhi",
+      "Austria"
+    ],
+    "chosen": "Austraalia",
+    "rewritten": "Näiteks on saatkondadena ära kadunud Austraalia, Kanada ja Island, juurde aga tulnud Hispaania, Itaalia, Shveits, Slovakkia ja Jaapan.",
+    "source_sentence": "Näiteks on saatkondadena ära kadunud Mehhiko, Kanada ja Island, juurde aga tulnud Hispaania, Itaalia, Shveits, Slovakkia ja Jaapan.",
+    "target_word": "Mehhiko",
+    "word_span": [
+      37,
+      44
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "58",
+    "candidates": [
+      "ennetuse",
+      "tervise",
+      "kaitse",
+      "tugevdamise",
+      "hoolitsuse",
+      "turgutuse",
+      "hoidumise",
+      "karastamise",
+      "ravimise",
+      "ettevaatuse"
+    ],
+    "chosen": "ennetuse",
+    "rewritten": "See pole üldse nali : kes nakatub kergesti ülemiste hingamisteede põletikesse (ka nohusse), peaks ennetuse mõttes pidevalt mõnd lauluviisi ümisema.",
+    "source_sentence": "See pole üldse nali : kes nakatub kergesti ülemiste hingamisteede põletikesse (ka nohusse), peaks profülaktika mõttes pidevalt mõnd lauluviisi ümisema.",
+    "target_word": "profülaktika",
+    "word_span": [
+      98,
+      110
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "59",
+    "candidates": [
+      "Saksamaa",
+      "Itaalia",
+      "Šveitsi",
+      "Prantsusmaa",
+      "Sloveenia",
+      "Ungari",
+      "Tšehhi",
+      "Slovakkia",
+      "Poola",
+      "Belgia"
+    ],
+    "chosen": "Saksamaa",
+    "rewritten": "Esmaspäevases kokkupõrkes Saksamaa lõunaosa Gleinalmi tunnelis hukkus viis inimest.",
+    "source_sentence": "Esmaspäevases kokkupõrkes Austria lõunaosa Gleinalmi tunnelis hukkus viis inimest.",
+    "target_word": "Austria",
+    "word_span": [
+      26,
+      33
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "60",
+    "candidates": [
+      "aastal",
+      "kuu",
+      "nädala",
+      "ajavahemiku",
+      "päeval",
+      "suve",
+      "talve",
+      "kvartali",
+      "aja",
+      "aastapäeva"
+    ],
+    "chosen": "aastal",
+    "rewritten": "Rahvastikutoimingute juhataja Anne Pulleri andmeil sõlmiti möödunud aastal samal perioodil 19 abielu.",
+    "source_sentence": "Rahvastikutoimingute juhataja Anne Pulleri andmeil sõlmiti möödunud aasta samal perioodil 19 abielu.",
+    "target_word": "aasta",
+    "word_span": [
+      68,
+      73
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "61",
+    "candidates": [
+      "Vanemuise",
+      "Draamateatri",
+      "Ugala",
+      "Rakvere",
+      "Von Krahli",
+      "NUKU",
+      "Estonia",
+      "VAT",
+      "Tallinna Linnateatri",
+      "Vene"
+    ],
+    "chosen": "Vanemuise",
+    "rewritten": "PÄRNU, 29. juuni (EPLO) - Alates esmaspäevast on Vanemuise teatri dramaturgiks Tartu Ülikooli teatriteaduse magistrantuuris tudeeriv Kiti Kaur.",
+    "source_sentence": "PÄRNU, 29. juuni (EPLO) - Alates esmaspäevast on Endla teatri dramaturgiks Tartu Ülikooli teatriteaduse magistrantuuris tudeeriv Kiti Kaur.",
+    "target_word": "Endla",
+    "word_span": [
+      49,
+      54
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "62",
+    "candidates": [
+      "sobiva",
+      "kindla",
+      "toimiva",
+      "reaalse",
+      "asjakohase",
+      "vajaliku",
+      "teostatava",
+      "praktilise",
+      "soodsa",
+      "õige"
+    ],
+    "chosen": "sobiva",
+    "rewritten": "\"Praktiliselt võttes ütleksin, et tõstmine saab teoks kõige varem tuleva aasta suvel, kui me leiame selleks sobiva võimaluse,\" lisas Thomson.",
+    "source_sentence": "\"Praktiliselt võttes ütleksin, et tõstmine saab teoks kõige varem tuleva aasta suvel, kui me leiame selleks ohutu võimaluse,\" lisas Thomson.",
+    "target_word": "ohutu",
+    "word_span": [
+      108,
+      113
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "63",
+    "candidates": [
+      "keskkonnakaitse",
+      "loodushoiu",
+      "bioloogia",
+      "geoloogia",
+      "kliimamuutuste",
+      "energeetika",
+      "majanduse",
+      "kultuuri",
+      "sotsiaaltöö",
+      "meditsiini"
+    ],
+    "chosen": "keskkonnakaitse",
+    "rewritten": "\"Mittetulunduslik filiaal hakkab arendama Eesti ja Venemaa kontakte teaduse, tehnoloogia, informatsioonivahetuse, hariduse ja keskkonnakaitse vallas ning on mõeldud kahe riigi vaheliste suhete taastamiseks,\" osutas Kubassov.",
+    "source_sentence": "\"Mittetulunduslik filiaal hakkab arendama Eesti ja Venemaa kontakte teaduse, tehnoloogia, informatsioonivahetuse, hariduse ja ökoloogia vallas ning on mõeldud kahe riigi vaheliste suhete taastamiseks,\" osutas Kubassov.",
+    "target_word": "ökoloogia",
+    "word_span": [
+      126,
+      135
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "64",
+    "candidates": [
+      "filosoofia",
+      "sotsioloogia",
+      "pedagoogika",
+      "antropoloogia",
+      "teoloogia",
+      "bioloogia",
+      "ökonoomika",
+      "poliitika",
+      "teadus",
+      "koolkond"
+    ],
+    "chosen": "filosoofia",
+    "rewritten": "Analüütiline filosoofia nii ei arva.",
+    "source_sentence": "Analüütiline psühholoogia nii ei arva.",
+    "target_word": "psühholoogia",
+    "word_span": [
+      13,
+      25
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "65",
+    "candidates": [
+      "Prantsusmaa",
+      "Saksamaa",
+      "Hispaania",
+      "Rootsi",
+      "Belgia",
+      "Holland",
+      "Norra",
+      "Taani",
+      "Austria",
+      "Soome"
+    ],
+    "chosen": "Prantsusmaa",
+    "rewritten": "Valdavalt sooritatakse aumõrvu islamimaades, kuid sellest kurvast nimistust ei puudu ka Prantsusmaa ning Suurbritannia.",
+    "source_sentence": "Valdavalt sooritatakse aumõrvu islamimaades, kuid sellest kurvast nimistust ei puudu ka Itaalia ning Suurbritannia.",
+    "target_word": "Itaalia",
+    "word_span": [
+      88,
+      95
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "66",
+    "candidates": [
+      "aasta",
+      "ajast",
+      "algusest",
+      "kestel",
+      "hetkest",
+      "perioodist",
+      "punktist",
+      "tasemest",
+      "kohast",
+      "alates"
+    ],
+    "chosen": "algusest",
+    "rewritten": "1985. algusest pisikesest energiafirmast oli ta 15 aastaga kasvatanud oma turuväärtuse 1760 miljardile dollarile.",
+    "source_sentence": "1985. aasta pisikesest energiafirmast oli ta 15 aastaga kasvatanud oma turuväärtuse 1760 miljardile dollarile.",
+    "target_word": "aasta",
+    "word_span": [
+      6,
+      11
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "67",
+    "candidates": [
+      "Euroopa",
+      "Põhja-Atlandi",
+      "Maailma",
+      "Ühinenud Rahvaste",
+      "Põhjamaade",
+      "Skandinaavia",
+      "Läänemere",
+      "Rahvusvahelise",
+      "Majanduskoostöö",
+      "Julgeoleku"
+    ],
+    "chosen": "Põhja-Atlandi",
+    "rewritten": "Baltimaade peaministrid sõidavad homme Rootsi, et arutada sealse valitsusjuhi Göran Perssoni kutsel Põhja-Atlandi Liidu laiendamist.",
+    "source_sentence": "Baltimaade peaministrid sõidavad homme Rootsi, et arutada sealse valitsusjuhi Göran Perssoni kutsel Euroopa Liidu laiendamist.",
+    "target_word": "Euroopa",
+    "word_span": [
+      100,
+      107
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "68",
+    "candidates": [
+      "Järvamaa",
+      "VK",
+      "TTÜ",
+      "Selver",
+      "Audentes",
+      "Rakvere",
+      "Pärnu",
+      "Duo",
+      "Barrus",
+      "TalTech"
+    ],
+    "chosen": "Järvamaa",
+    "rewritten": "Homme on kell 16 Ozolniekis vastamisi Poliurs/Biolars - Selver, kell 14 Kuldigas ELVI/Kuldiga - Cargohunters/Tallinna Kalev, kell 17 Võru spordihoones Võru VK - Tartu Pere Leib ning kell 17 Kuressaare spordihoones Falck Järvamaa - Aeroc Rakvere.",
+    "source_sentence": "Homme on kell 16 Ozolniekis vastamisi Poliurs/Biolars - Selver, kell 14 Kuldigas ELVI/Kuldiga - Cargohunters/Tallinna Kalev, kell 17 Võru spordihoones Võru VK - Tartu Pere Leib ning kell 17 Kuressaare spordihoones Falck Pärnu - Aeroc Rakvere.",
+    "target_word": "Pärnu",
+    "word_span": [
+      220,
+      225
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "69",
+    "candidates": [
+      "Tallinna",
+      "kogu Eesti",
+      "maakonna",
+      "linna",
+      "piirkonna",
+      "valla",
+      "vabariigi",
+      "kandi",
+      "ühiskonna",
+      "nõrgemate"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "Kokku hoitud rohkem kui miljardi jaotab ta järgmiselt : 100 miljonit kesklinna moodsa kunsti keskuse rajamiseks, 100 miljonit puuetega inimeste toetamiseks, 900 miljonit Tallinna laste koolitamiseks ja nende õpetajate palkade tõstmiseks.",
+    "source_sentence": "Kokku hoitud rohkem kui miljardi jaotab ta järgmiselt : 100 miljonit kesklinna moodsa kunsti keskuse rajamiseks, 100 miljonit puuetega inimeste toetamiseks, 900 miljonit Kopli laste koolitamiseks ja nende õpetajate palkade tõstmiseks.",
+    "target_word": "Kopli",
+    "word_span": [
+      170,
+      175
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "70",
+    "candidates": [
+      "aasta",
+      "hooaja",
+      "võistluse",
+      "ürituse",
+      "etapi",
+      "tiitlivõistluste",
+      "suusamaratoni",
+      "sõidu",
+      "päeva",
+      "väljaande"
+    ],
+    "chosen": "hooaja",
+    "rewritten": "Oma osavõttu 18. veebruaril toimuvast suusatajate suursündmusest on praeguseks kinnitanud ka näiteks Norra suusatajate pikamaakoondis eesotsas 2003. hooaja maratoni võitja Joergen Auklandiga.",
+    "source_sentence": "Oma osavõttu 18. veebruaril toimuvast suusatajate suursündmusest on praeguseks kinnitanud ka näiteks Norra suusatajate pikamaakoondis eesotsas 2003. aasta maratoni võitja Joergen Auklandiga.",
+    "target_word": "aasta",
+    "word_span": [
+      149,
+      154
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "71",
+    "candidates": [
+      "aasta",
+      "kuu",
+      "valimiste",
+      "ajastu",
+      "perioodi",
+      "sügise",
+      "kevade",
+      "korraliste",
+      "toimunud",
+      "eelnevate"
+    ],
+    "chosen": "valimiste",
+    "rewritten": "Ei, ma mõtlesin kaotust Merile 1992. valimiste presidendivalimistel.",
+    "source_sentence": "Ei, ma mõtlesin kaotust Merile 1992. aasta presidendivalimistel.",
+    "target_word": "aasta",
+    "word_span": [
+      37,
+      42
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "72",
+    "candidates": [
+      "plutokraatia",
+      "korruptsiooni",
+      "klientelismi",
+      "monopolide",
+      "suurkapitali",
+      "varakapitalismi",
+      "klannimajanduse",
+      "röövkapiatalismi",
+      "korporativismi",
+      "eliidi"
+    ],
+    "chosen": "plutokraatia",
+    "rewritten": "Ses mõttes on palju räägitud Venemaast, kus Viktor Tshernomõrdini valitsus viie aasta jooksul mahitas plutokraatia teket ja kosumist riigi arvel.",
+    "source_sentence": "Ses mõttes on palju räägitud Venemaast, kus Viktor Tshernomõrdini valitsus viie aasta jooksul mahitas oligarhia teket ja kosumist riigi arvel.",
+    "target_word": "oligarhia",
+    "word_span": [
+      102,
+      111
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "73",
+    "candidates": [
+      "Fordi",
+      "Honda",
+      "Nikoni",
+      "Sony",
+      "Mazda",
+      "Canoni",
+      "Yamaha",
+      "Toshiba",
+      "Hitachi",
+      "Fujitsu"
+    ],
+    "chosen": "Fordi",
+    "rewritten": "See meetod sai alguse Fordi tehastest millalgi 1950. aastatel.",
+    "source_sentence": "See meetod sai alguse Toyota tehastest millalgi 1950. aastatel.",
+    "target_word": "Toyota",
+    "word_span": [
+      22,
+      28
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "74",
+    "candidates": [
+      "Õpetaja",
+      "Mentor",
+      "Ekspert",
+      "Teadlane",
+      "Mõtleja",
+      "Visionäär",
+      "Haritlane",
+      "Autoriteet",
+      "Pedagoog",
+      "Tarkpea"
+    ],
+    "chosen": "Mentor",
+    "rewritten": "Loog ütleb, et pikki aastaid juhtimissüsteemide iseärasusi uurinud Vooglaid on \"Mentor suure algustähega\".",
+    "source_sentence": "Loog ütleb, et pikki aastaid juhtimissüsteemide iseärasusi uurinud Vooglaid on \"Õpetaja suure algustähega\".",
+    "target_word": "Õpetaja",
+    "word_span": [
+      80,
+      87
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "75",
+    "candidates": [
+      "kandidaat",
+      "kandideerija",
+      "valitav",
+      "hääletaja",
+      "soovija",
+      "esindaja",
+      "osaleja",
+      "poliitik",
+      "taotleja",
+      "nimekirjaliige"
+    ],
+    "chosen": "kandidaat",
+    "rewritten": "Häälte võrdsuse korral paigutatakse ettepoole noorem kandidaat ja parlamenti pääseksid need inimesed, kes on nimekirjas eespool.",
+    "source_sentence": "Häälte võrdsuse korral paigutatakse ettepoole noorem kandideerija ja parlamenti pääseksid need inimesed, kes on nimekirjas eespool.",
+    "target_word": "kandideerija",
+    "word_span": [
+      53,
+      65
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "76",
+    "candidates": [
+      "Jaanus",
+      "Margus",
+      "Andrus",
+      "Toomas",
+      "Priit",
+      "Heiki",
+      "Mart",
+      "Urmas",
+      "Peeter",
+      "Rein"
+    ],
+    "chosen": "Jaanus",
+    "rewritten": "Kolleeg Jaanus Hansen, kõne Riigikogu kõnepuldist.",
+    "source_sentence": "Kolleeg Vootele Hansen, kõne Riigikogu kõnepuldist.",
+    "target_word": "Vootele",
+    "word_span": [
+      8,
+      15
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "77",
+    "candidates": [
+      "valdkond",
+      "teema",
+      "materjal",
+      "sisu",
+      "osa",
+      "info",
+      "suund",
+      "valik",
+      "küsimus",
+      "aspekt"
+    ],
+    "chosen": "valdkond",
+    "rewritten": "\"See valdkond läks kenasti reisijuhtide osa kõrvale,\" lausus Pihl, kelle sõnul on kogu Eestit ja Tallinna tutvustavad materjalid kogutud nüüd alumisele korrusele.",
+    "source_sentence": "\"See temaatika läks kenasti reisijuhtide osa kõrvale,\" lausus Pihl, kelle sõnul on kogu Eestit ja Tallinna tutvustavad materjalid kogutud nüüd alumisele korrusele.",
+    "target_word": "temaatika",
+    "word_span": [
+      5,
+      14
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "78",
+    "candidates": [
+      "majandusaasta",
+      "kvartali",
+      "perioodi",
+      "finantsaasta",
+      "aruandeaasta",
+      "tegevusaasta",
+      "eelarveaasta",
+      "esimese poolaasta",
+      "tööaasta",
+      "jooksva aasta"
+    ],
+    "chosen": "majandusaasta",
+    "rewritten": "Kompanii selle majandusaasta tulemused tulevad igal juhul suurepärased, sest alles kaks aastat tagasi töötas firma kahjumiga.",
+    "source_sentence": "Kompanii selle aasta tulemused tulevad igal juhul suurepärased, sest alles kaks aastat tagasi töötas firma kahjumiga.",
+    "target_word": "aasta",
+    "word_span": [
+      15,
+      20
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "79",
+    "candidates": [
+      "Ida-Aasia",
+      "kommunistlikus",
+      "suures",
+      "vastavas",
+      "selles",
+      "kõnealuses",
+      "rahvarohkes",
+      "idapoolses",
+      "kauges",
+      "võimsas"
+    ],
+    "chosen": "kommunistlikus",
+    "rewritten": "Lisaks garanteerib põhiseadus kõigile Hiina kodanikele usu-, pressi-, kogunemise- ja sõnavabaduse, mille rakendamine on aga kommunistlikus hiiglases kaheldava väärtusega.",
+    "source_sentence": "Lisaks garanteerib põhiseadus kõigile Hiina kodanikele usu-, pressi-, kogunemise- ja sõnavabaduse, mille rakendamine on aga Aasia hiiglases kaheldava väärtusega.",
+    "target_word": "Aasia",
+    "word_span": [
+      124,
+      129
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "80",
+    "candidates": [
+      "Põhjamaade",
+      "Lääne",
+      "Aasia",
+      "Paljudes",
+      "Skandinaavia",
+      "Teistes",
+      "Arenenud",
+      "Vahemere",
+      "Balti",
+      "Kesk-Euroopa"
+    ],
+    "chosen": "Põhjamaade",
+    "rewritten": "Põhjamaade riikides toetatakse mittepoliitilisi vanurite organisatsioone.",
+    "source_sentence": "Euroopa riikides toetatakse mittepoliitilisi vanurite organisatsioone.",
+    "target_word": "Euroopa",
+    "word_span": [
+      0,
+      7
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "81",
+    "candidates": [
+      "Euroopa",
+      "Ameerika",
+      "Aafrika",
+      "Lõuna-Ameerika",
+      "Skandinaavia",
+      "Baltimaade",
+      "Põhja-Ameerika",
+      "Austraalia",
+      "Ida-Euroopa",
+      "Lääne-Euroopa"
+    ],
+    "chosen": "Euroopa",
+    "rewritten": "Real aladel eelistatakse sportlikku printsiipi, aga näiteks laskmises on väga palju kohti antud Euroopa, Aafrika ja Okeaania sportlastele.",
+    "source_sentence": "Real aladel eelistatakse sportlikku printsiipi, aga näiteks laskmises on väga palju kohti antud Aasia, Aafrika ja Okeaania sportlastele.",
+    "target_word": "Aasia",
+    "word_span": [
+      96,
+      101
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "82",
+    "candidates": [
+      "autor",
+      "ettekandja",
+      "fraktsioon",
+      "esitaja",
+      "saadik",
+      "eelnõu esitaja",
+      "komisjon",
+      "liige",
+      "esimees",
+      "koguja"
+    ],
+    "chosen": "autor",
+    "rewritten": "Teine muudatusettepanek on juhtivkomisjonilt, autor toetab.",
+    "source_sentence": "Teine muudatusettepanek on juhtivkomisjonilt, algataja toetab.",
+    "target_word": "algataja",
+    "word_span": [
+      46,
+      54
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "83",
+    "candidates": [
+      "aasta",
+      "kuu",
+      "õppeaasta",
+      "semestri",
+      "perioodi",
+      "kvartali",
+      "nädala",
+      "päeva",
+      "aja",
+      "tsükli"
+    ],
+    "chosen": "õppeaasta",
+    "rewritten": "Vanema lapse õppemaks erakõrgkoolis, viie õppeaasta jooksul kokku 200 000 krooni (vaba jääk 8, 7 miljonit krooni).",
+    "source_sentence": "Vanema lapse õppemaks erakõrgkoolis, viie aasta jooksul kokku 200 000 krooni (vaba jääk 8, 7 miljonit krooni).",
+    "target_word": "aasta",
+    "word_span": [
+      42,
+      47
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "84",
+    "candidates": [
+      "ajakirjanduse",
+      "uudiste",
+      "infokanalite",
+      "avalikkuse",
+      "telekanali",
+      "pressi",
+      "võrguväljaannete",
+      "kommunikatsioonivahendite",
+      "meediaportaalide",
+      "teabekanalite"
+    ],
+    "chosen": "ajakirjanduse",
+    "rewritten": "Vene noorte organiseeritud protest Ameerika Ühendriikide saatkonna ees on paljutähenduslik sündmus, sest pani Eesti ühiskonna ajakirjanduse vahendusel mõtlema ja arutlema, kas sellel aktsioonil on ka laiem sotsiaalne tähendus või saab noorte venelaste meeleavalduse liigitada juhuslike sündmuste hulka.",
+    "source_sentence": "Vene noorte organiseeritud protest Ameerika Ühendriikide saatkonna ees on paljutähenduslik sündmus, sest pani Eesti ühiskonna meedia vahendusel mõtlema ja arutlema, kas sellel aktsioonil on ka laiem sotsiaalne tähendus või saab noorte venelaste meeleavalduse liigitada juhuslike sündmuste hulka.",
+    "target_word": "meedia",
+    "word_span": [
+      126,
+      132
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "85",
+    "candidates": [
+      "tühi",
+      "sisutu",
+      "igav",
+      "tulemusetu",
+      "mõttetu",
+      "abitu",
+      "eluvaene",
+      "kõlav",
+      "pealiskaudne",
+      "ebaoluline"
+    ],
+    "chosen": "tühi",
+    "rewritten": "Saksa laulikutehiies tõusis siis eriti esile too ebamäärane ja tühi paatos, too kasutu entusiasmiudu, mis surmapõlglikult paiskus üldsõnalisuse ookeani ja mulle alati meenutas ameerika madrust, kes oli kindral Jacksonist nii ülevoolavalt vaimustatud, et ta kord mastitipust merre kargas, karjudes : \"Suren kindral Jacksoni eest!",
+    "source_sentence": "Saksa laulikutehiies tõusis siis eriti esile too ebamäärane ja viljatu paatos, too kasutu entusiasmiudu, mis surmapõlglikult paiskus üldsõnalisuse ookeani ja mulle alati meenutas ameerika madrust, kes oli kindral Jacksonist nii ülevoolavalt vaimustatud, et ta kord mastitipust merre kargas, karjudes : \"Suren kindral Jacksoni eest!",
+    "target_word": "viljatu",
+    "word_span": [
+      63,
+      70
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "86",
+    "candidates": [
+      "Tallinna",
+      "Pärnu",
+      "Narva",
+      "Rakvere",
+      "Viljandi",
+      "Võru",
+      "Haapsalu",
+      "Paide",
+      "Valga",
+      "Kuressaare"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "Tallinna õlletehase müügikoht on atraktiivsem, puha punane.",
+    "source_sentence": "Tartu õlletehase müügikoht on atraktiivsem, puha punane.",
+    "target_word": "Tartu",
+    "word_span": [
+      0,
+      5
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "87",
+    "candidates": [
+      "režiimi",
+      "võimu",
+      "valitsuse",
+      "ideoloogia",
+      "süsteemi",
+      "juhtimise",
+      "strateegia",
+      "tegevuse",
+      "diktaadi",
+      "kavatsuste"
+    ],
+    "chosen": "režiimi",
+    "rewritten": "Värskemaid sündmusi meenutavad Mihhaili kiriku juures asuv mälestusmärk aastail 1932-1933 Ukraina suures näljahädas hukkunutele (Nõukogude Liidu režiimi tahtlik vili), hiiglasuur üle linna vaatav Ema Kodumaa kivikuju (märkimaks võitu fasŠistide üle) ja Iseseisvuse väljak, kus umbes aasta tagasi seisid telgid ja tehti oranzŠi revolutsiooni.",
+    "source_sentence": "Värskemaid sündmusi meenutavad Mihhaili kiriku juures asuv mälestusmärk aastail 1932-1933 Ukraina suures näljahädas hukkunutele (Nõukogude Liidu poliitika tahtlik vili), hiiglasuur üle linna vaatav Ema Kodumaa kivikuju (märkimaks võitu fasŠistide üle) ja Iseseisvuse väljak, kus umbes aasta tagasi seisid telgid ja tehti oranzŠi revolutsiooni.",
+    "target_word": "poliitika",
+    "word_span": [
+      145,
+      154
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "88",
+    "candidates": [
+      "Pärnu",
+      "Tartu",
+      "Rakvere",
+      "Haapsalu",
+      "Narva",
+      "Tallinna",
+      "Paide",
+      "Võru",
+      "Valga",
+      "Kuressaare"
+    ],
+    "chosen": "Pärnu",
+    "rewritten": "Pärnu linnapea Malle Vahtra sõnul on veekeskus ja väliujula sedavõrd erinevad objektid, et neid omavahel võrrelda ei saa.",
+    "source_sentence": "Viljandi linnapea Malle Vahtra sõnul on veekeskus ja väliujula sedavõrd erinevad objektid, et neid omavahel võrrelda ei saa.",
+    "target_word": "Viljandi",
+    "word_span": [
+      0,
+      8
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "89",
+    "candidates": [
+      "aasta",
+      "kuu",
+      "päeva",
+      "ajavahemiku",
+      "hetke",
+      "aja",
+      "ajajärgu",
+      "perioodi",
+      "sügise",
+      "kevade"
+    ],
+    "chosen": "kuu",
+    "rewritten": "1996. kuu 17. detsembril müüs sama aasta märtsis endisest SAB-ist Pecuniaks saanud aktsiaselts Saaremaa Autobaasi aktsiaid bussifirmale Mobilo.",
+    "source_sentence": "1996. aasta 17. detsembril müüs sama aasta märtsis endisest SAB-ist Pecuniaks saanud aktsiaselts Saaremaa Autobaasi aktsiaid bussifirmale Mobilo.",
+    "target_word": "aasta",
+    "word_span": [
+      6,
+      11
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "90",
+    "candidates": [
+      "patsient",
+      "kannatanu",
+      "isik",
+      "abivajaja",
+      "kodanik",
+      "töövõimetu",
+      "klient",
+      "teenusesaaja",
+      "töötaja",
+      "ravialune"
+    ],
+    "chosen": "patsient",
+    "rewritten": "Samas ei ole selgitatud, kui suures ulatuses ja kellele ; õhku jääb ka küsimus, kas patsient jõuab kõiki eeldatavaid kulutusi kinni maksta?",
+    "source_sentence": "Samas ei ole selgitatud, kui suures ulatuses ja kellele ; õhku jääb ka küsimus, kas haige jõuab kõiki eeldatavaid kulutusi kinni maksta?",
+    "target_word": "haige",
+    "word_span": [
+      84,
+      89
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "91",
+    "candidates": [
+      "Tallinn",
+      "Tartu",
+      "Pärnu",
+      "Viljandi",
+      "Narva",
+      "Rakvere",
+      "Võru",
+      "Valga",
+      "Paide",
+      "Kohtla-Järve"
+    ],
+    "chosen": "Tallinn",
+    "rewritten": "Tallinn ei juhtinud kordagi.",
+    "source_sentence": "Kehra ei juhtinud kordagi.",
+    "target_word": "Kehra",
+    "word_span": [
+      0,
+      5
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "92",
+    "candidates": [
+      "mingisugune",
+      "teatud",
+      "oluline",
+      "märkimisväärne",
+      "suuremat sorti",
+      "üks",
+      "mõni",
+      "olulisem",
+      "konkreetne",
+      "ulatuslik"
+    ],
+    "chosen": "oluline",
+    "rewritten": "Kui seal toimub oluline suurem muutus, reageerib ka Eesti turg.",
+    "source_sentence": "Kui seal toimub mingi suurem muutus, reageerib ka Eesti turg.",
+    "target_word": "mingi",
+    "word_span": [
+      16,
+      21
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "93",
+    "candidates": [
+      "aasta",
+      "päeva",
+      "kuu",
+      "minuti",
+      "sekundi",
+      "tunni",
+      "ajastu",
+      "eoni",
+      "sajandi",
+      "aastakümne"
+    ],
+    "chosen": "aastakümne",
+    "rewritten": "1992. aastal arvutasid ameerika geoloogid 455 miljoni aastakümne taguse vulkaani võimaliku võimsuse.",
+    "source_sentence": "1992. aastal arvutasid ameerika geoloogid 455 miljoni aasta taguse vulkaani võimaliku võimsuse.",
+    "target_word": "aasta",
+    "word_span": [
+      54,
+      59
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "94",
+    "candidates": [
+      "Tartu",
+      "Põltsamaa",
+      "Viljandi",
+      "Paide",
+      "Elva",
+      "Rakvere",
+      "Valga",
+      "Võru",
+      "Türi",
+      "Keila"
+    ],
+    "chosen": "Põltsamaa",
+    "rewritten": "1999. aastal läks käima Weroli tehas Põltsamaa lähedal.",
+    "source_sentence": "1999. aastal läks käima Weroli tehas Jõgeva lähedal.",
+    "target_word": "Jõgeva",
+    "word_span": [
+      37,
+      43
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "95",
+    "candidates": [
+      "Tallinna",
+      "Pärnu",
+      "Narva",
+      "Viljandi",
+      "Rakvere",
+      "Kuressaare",
+      "Võru",
+      "Paide",
+      "Haapsalu",
+      "Valga"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "Tallinna klubil ei puudu kuueses alagrupis edasipääsulootused, sest Tuulast on rahaliste raskuste tõttu lahkunud kõik möödunud hooaja paremad mehed, üks tartlaste vastane on ka Küprose teine klubi Nicosia Achilleas.",
+    "source_sentence": "Tartu klubil ei puudu kuueses alagrupis edasipääsulootused, sest Tuulast on rahaliste raskuste tõttu lahkunud kõik möödunud hooaja paremad mehed, üks tartlaste vastane on ka Küprose teine klubi Nicosia Achilleas.",
+    "target_word": "Tartu",
+    "word_span": [
+      0,
+      5
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "96",
+    "candidates": [
+      "Tallinna",
+      "Tartu",
+      "Pärnu",
+      "Rakvere",
+      "Narva",
+      "Keila",
+      "Võru",
+      "Viljandi",
+      "Haapsalu",
+      "Jõhvi"
+    ],
+    "chosen": "Tallinna",
+    "rewritten": "23.09.2002 teatas Harju Politseiprefektuuri Mihhail (s. 1964), et ajavahemikul kella 12.45 - 14.30 on Tallinna linnas Fosforiidi tänaval seisnud tema kasutuses oleva sõiduauto BMW 745 juhiukse pihta tulistatud tulirelvast viis lasku.",
+    "source_sentence": "23.09.2002 teatas Harju Politseiprefektuuri Mihhail (s. 1964), et ajavahemikul kella 12.45 - 14.30 on Maardu linnas Fosforiidi tänaval seisnud tema kasutuses oleva sõiduauto BMW 745 juhiukse pihta tulistatud tulirelvast viis lasku.",
+    "target_word": "Maardu",
+    "word_span": [
+      102,
+      108
+    ],
+    "form_label": [
+      "sg g"
+    ]
+  },
+  {
+    "id": "97",
+    "candidates": [
+      "Lugematu",
+      "Lõputu",
+      "Arutu",
+      "Piiramatu",
+      "Hulk",
+      "Mitu",
+      "Lakkamatu",
+      "Tohutu",
+      "Lõputu",
+      "Lugematu"
+    ],
+    "chosen": "Lõputu",
+    "rewritten": "Lõputu arv kordi on Spree treeningutele ja kohtumistele hiljaks jäänud, kord jooksis ta hilinenuna väljakule ilma treeneri korralduseta...",
+    "source_sentence": "Lugematu arv kordi on Spree treeningutele ja kohtumistele hiljaks jäänud, kord jooksis ta hilinenuna väljakule ilma treeneri korralduseta...",
+    "target_word": "Lugematu",
+    "word_span": [
+      0,
+      8
+    ],
+    "form_label": [
+      "sg n"
+    ]
+  },
+  {
+    "id": "98",
+    "candidates": [
+      "prügimägi",
+      "jäätmejaam",
+      "prügihunnik",
+      "prügiladestus",
+      "jäätmehunnik",
+      "prügikoorem",
+      "prügiplats",
+      "jäätmeala",
+      "prügimäestik",
+      "jäätmehunnik"
+    ],
+    "chosen": "prügimägi",
+    "rewritten": "(VIDEO) TV3 : Anijal kerkis laupäeval koristatud prahi asemele uus prügimägi 20 : 57 06.05 (5)",
+    "source_sentence": "ValgamaalaneMaailmInfopluss Postimees.ee 06.05 Afganistanis vahetuvad kaitseväe üksused 06.05 (2) (VIDEO) Reporter.ee : põhiseadus jäi kiirkorras muutmata 23 : 32 06.05 (1) (VIDEO) TV3 : kasutatud auto ostja sattus avarii teinud sõiduki otsa 23 : 17 06.05 (VIDEO) Reporter.ee : parlamendi palgakomisjon alustas erimeelsustega 23 : 10 06.05 (6) Ajaloolane : pole võimalik tõestada, et okupatsiooni ei olnud 22 : 50 06.05 (10) Lugejate meelest Jaan Männik ei sobi keskpanga juhiks 22 : 41 06.05 (1) Tallinn eitab vastuolusid riigikohtu otsusega ümberasunute vara osas 22 : 35 06.05 (1) President kiitis piirivalvet 22 : 28 06.05 (2) (VIDEO) TV3 : söetehas saastab lubatust sada korda rohkem 21 : 49 06.05 (4) Naiste seelikualuste filmijat ootab trahv või arest 21 : 24 06.05 Laos Lukasest saab TTÜ võrkpallimeeskonna peatreener 21 : 15 06.05 (27) (VIDEO) TV3 : Anijal kerkis laupäeval koristatud prahi asemele uus prügila 20 : 57 06.05 (5) TÜ/Rock võitis Faustot ja jõudis finaali 20 : 53 06.05 Tallinna Kalev alistas koduväljakul Nõmme Kalju 20 : 42 06.05 (4) (VIDEO) Reporter.ee : Mona Lisat pole siiani suudetud madalikult lahti tõmmata 20 : 40 06.05 (9) (VIDEO) Reporter.ee : naine kihutas varastatud maasturiga bensiinijaama 20 : 27 06.05 (8) (VIDEO) TV3 : Tartu autoärandaja põhjustas mitu avariid 20 : 03 06.05 Jäähoki liit tahab Saaremaale hokihalli ehitada 19 : 59 06.05 (4) Rak",
+    "target_word": "prügila",
+    "word_span": [
+      912,
+      919
+    ],
+    "form_label": [
+      "sg n"
     ]
   }
 ]
