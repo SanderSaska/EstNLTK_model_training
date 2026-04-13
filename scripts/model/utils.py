@@ -519,8 +519,6 @@ def prepare_token_classification_data(
     encodings = []
     all_label_ids: typing.List[typing.List[int]] = []
 
-    # Delegate to module-level helpers so there is a single implementation of
-    # placeholder normalisation and checking shared across the whole codebase.
     normalized_placeholder_labels = _normalise_placeholder_labels(placeholder_labels)
 
     tokenizer_signature = " ".join(

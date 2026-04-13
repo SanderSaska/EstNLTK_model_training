@@ -28,7 +28,15 @@ Do BERT masked prediction. Take TOP 10 predictions for the masked word and do mo
 
 ~~Add more constraints to the BERT word predictions using part of speech or prediction scores. For predictions, check if the score is above a certain threshold.~~
 
-Change the prompt to two steps: first, ask GPT for synonyms (or similar words). Then, ask GPT to replace the homonym word with one of the synonyms. The condition for the synonym is that it should have the case in possible cases for the homonym word ["nominative", "genitive", "partitive", "adessive"]. Check if the synonym has the correct case on the labelled homonym dataset.
+Change the prompt to two steps: first, ask GPT for 10 synonyms (or similar words). Then, ask GPT to replace the homonym word with one of the synonyms. The condition for the synonym is that it should have the case in possible cases for the homonym word ["nominative", "genitive", "partitive", "adessive"]. Check if the synonym has the correct case on the labelled homonym dataset. One other way to condition the synonym is after getting the response from GPT, do a morph analysis (Vabamorf) for the synonym and check if it has the correct case profile.
+
+Do Vabamorf analysis on the sample LLM sentences.
+
+We have three ways to do MLM:
+
+1. Mask the homonym word and ask BERT to predict the masked word. Take the top 20 predictions and do morph analysis for these predictions. Filter out predictions that do not match with the form and part of speech of the homonym word.
+2. Mask the homonym word and ask GPT to predict the masked word. Take 10 similar words or synonyms for the homonym word and ask GPT to replace the homonym word with one of the similar words. We should give additional information of possible forms to choose from, because we know the inflection type of the homonym word.
+3. Same as 2, but we also condition the similar words to match the form and part of speech of the homonym word.
 
 ### Morph-syntax conflicts dataset
 
