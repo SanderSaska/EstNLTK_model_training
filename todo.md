@@ -18,6 +18,8 @@ Integrate MoE to EstNLTK pipeline.
 
 Improve the gating mechanism by not only matching the word with the dictionary of homonym words, but match the lemma with a regex that matches the specific inflection type.
 
+Redo the BERT and GPT MLM algorithms.
+
 ~~Early stopping criteria: if F1-score on the validation set does not go under 95% for 2 consecutive epochs, stop training.~~
 
 ~~Might have to write report for Siim showcasing the results and the process of training the model on the homonym dataset. Explain why we chose so.~~
@@ -32,11 +34,17 @@ Change the prompt to two steps: first, ask GPT for 10 synonyms (or similar words
 
 Do Vabamorf analysis on the sample LLM sentences.
 
-We have three ways to do MLM:
+~~We have three ways to do MLM:~~
 
-1. Mask the homonym word and ask BERT to predict the masked word. Take the top 20 predictions and do morph analysis for these predictions. Filter out predictions that do not match with the form and part of speech of the homonym word.
-2. Mask the homonym word and ask GPT to predict the masked word. Take 10 similar words or synonyms for the homonym word and ask GPT to replace the homonym word with one of the similar words. We should give additional information of possible forms to choose from, because we know the inflection type of the homonym word.
-3. Same as 2, but we also condition the similar words to match the form and part of speech of the homonym word.
+~~1. Mask the homonym word and ask BERT to predict the masked word. Take the top 20 predictions and do morph analysis for these predictions. Filter out predictions that do not match with the form and part of speech of the homonym word.~~
+~~2. Mask the homonym word and ask GPT to predict the masked word. Take 10 similar words or synonyms for the homonym word and ask GPT to replace the homonym word with one of the similar words. We should give additional information of possible forms to choose from, because we know the inflection type of the homonym word.~~
+~~3. Same as 2, but we also condition the similar words to match the form and part of speech of the homonym word.~~
+
+Try three different methods:
+
+1. Bert distillation with MLM: Mask the homonym word and ask BERT to predict the masked word. Take the top N predictions with probabilities and do morph analysis with Vabamorf for these predictions. Filter out predictions that do not match with the morphological label of the homonym word. If the correct label is among the top N predictions, then sum up the probabilities of the predictions that have the correct label and check if the sum is above a certain threshold. For new dataset, we can use the same method but instead of checking if the correct form is among the top N predictions, we sum up the probabilities of the predictions per morphological label and pick the label with the highest sum of probabilities. We distill the knowledge from BERT to our model by using the probabilities of the predictions as soft labels for the training examples.
+2. LLM distillation with MLM: Mask the homonym word and ask LLM to predict 10 candidates for the masked word. Then we do morph analysis with Vabamorf for these candidates. Filter out candidates that do not match with the morphological label of the homonym word. Depending on the amount of candidates that match with the morphological label, we can see how confident we can be about the prediction, and how knowledgeable the LLM is about the morphological label of the homonym word. We can use the same method for the new dataset, but instead of checking if the correct form is among the candidates, we can check how many candidates match with the morphological label and use this as a confidence score for the prediction. We can distill the knowledge from LLM to our model by using the confidence scores as soft labels for the training examples.
+3. Bert + LLM distillation with MLM: We can combine the two methods above by first using BERT to get the top N predictions and their probabilities, and then using LLM to choose <N candidates from the top N predictions based on how well do they semantically fit in the sentence. We can then do morph analysis with Vabamorf for these candidates and filter out candidates that do not match with the morphological label of the homonym word. We can use the probabilities from BERT and the confidence scores from LLM to distill the knowledge to our model.
 
 ### Morph-syntax conflicts dataset
 
