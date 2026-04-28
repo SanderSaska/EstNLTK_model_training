@@ -78,6 +78,7 @@ def train_token_classification(
       patience_n: number of epochs to wait for improvement before stopping (if use_early_stopping).
       early_stopping_method: "f1" or "loss".
       early_stopping_threshold: minimum improvement or maximum loss for early stopping
+      eval_every_n_epochs: how often to evaluate during training (in epochs).
       best_model_dir: where to save best model (if provided).
       save_model_every_epoch: save a checkpoint every epoch (if True).
       save_steps: not used here because checkpointing is epoch-based; keep for API compatibility.
@@ -339,9 +340,9 @@ def train_token_classification(
         return {
             "loss": avg_loss,
             "accuracy": accuracy,
-            "weighted avg precision": prec,
-            "weighted avg recall": rec,
-            "weighted avg f1-score": f1,
+            "precision": prec,
+            "recall": rec,
+            "f1": f1,
             "report": report,
         }
 
@@ -421,7 +422,8 @@ def train_token_classification(
         # Show epoch-level train loss on the progress bar
         if not silent:
             try:
-                progress.set_postfix({"train_loss": f"{avg_epoch_loss:.4f}"})
+                message = f"train_loss: {avg_epoch_loss:.4f}"
+                progress.write(message)
             except Exception:
                 pass
 
@@ -430,6 +432,15 @@ def train_token_classification(
         eval_report = None
         train_metrics = _compute_metrics(train_loader)
         training_stats["train_metrics"].append(train_metrics)
+
+        if not silent:
+            message = (
+                f"Epoch {epoch + 1} train metrics:\n"
+                f" loss={train_metrics['loss']:.4f}, "
+                f" f1={train_metrics['f1']:.4f}, "
+                f" accuracy={train_metrics['accuracy']:.4f}"
+            )
+            progress.write(message)
 
         # Optionally compute metrics on the validation set for early stopping.
         # The `eval_every_n_epochs` parameter controls how often (in epochs)
@@ -445,7 +456,7 @@ def train_token_classification(
 
             # Shorthand report containing the most-used fields
             eval_report = {
-                "f1": eval_metrics["weighted avg f1-score"],
+                "f1": eval_metrics["f1"],
                 "loss": eval_metrics["loss"],
                 "report": eval_metrics["report"],
             }
@@ -525,22 +536,14 @@ def train_token_classification(
             # Update progress bar with key metrics for quick visual feedback
             if not silent:
                 try:
-                    # Print eval metrics to console for visibility
-                    print(
-                        f"Epoch {epoch + 1} eval metrics: "
-                        f"loss={eval_metrics['loss']:.4f}, "
-                        f"f1={eval_metrics['f1']:.4f}, "
-                        f"accuracy={eval_metrics['accuracy']:.4f}"
+                    # Print train and eval metrics to console for visibility
+                    message = (
+                        f"Epoch {epoch + 1} train/eval metrics:\n"
+                        f" train_loss={train_metrics['loss']:.4f} | eval_loss={eval_metrics['loss']:.4f}\n"
+                        f" train_f1={train_metrics['f1']:.4f} | eval_f1={eval_metrics['f1']:.4f}\n"
+                        f" train_acc={train_metrics['accuracy']:.4f} | eval_acc={eval_metrics['accuracy']:.4f}"
                     )
-                    postfix = {
-                        "train_loss": f"{avg_epoch_loss:.4f}",
-                        "train_f1": f"{train_metrics['f1']:.4f}",
-                        "train_acc": f"{train_metrics['accuracy']:.4f}",
-                        "eval_f1": f"{eval_metrics['f1']:.4f}",
-                        "eval_acc": f"{eval_metrics['accuracy']:.4f}",
-                        "eval_loss": f"{eval_metrics['loss']:.4f}",
-                    }
-                    progress.set_postfix(postfix)
+                    progress.write(message)
                 except Exception:
                     pass
 
