@@ -1,0 +1,32 @@
+[
+  {
+    "candidates": [
+      "laureaadi",
+      "saaja",
+      "tunnustatu",
+      "auhinna",
+      "pretendendi",
+      "tiitli",
+      "kandidaadi",
+      "võistleja",
+      "nominendi",
+      "osaleja"
+    ],
+    "id": "0",
+    "source_sentence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri võitja James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+    "target_word": "võitja",
+    "word_span": [
+      74,
+      80
+    ],
+    "label": [
+      "sg n"
+    ],
+    "_cost": {
+      "prompt_cost_uncached": "0.00079000",
+      "prompt_cost_cached": "0.00000000",
+      "completion_cost": "0.00048000",
+      "total_cost": "0.00127000"
+    }
+  }
+]
