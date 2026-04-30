@@ -1,0 +1,65 @@
+[
+  {
+    "id": "chatcmpl-Da6AgtzmAb6GsNwBhGpAiJ9TqSdu4",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"candidates\":[\"võitja\",\"võitnud\",\"pälvinud\",\"saanud\",\"laure\"]}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": []
+        },
+        "content_filter_results": {
+          "protected_material_code": {
+            "filtered": false,
+            "detected": false
+          },
+          "protected_material_text": {
+            "filtered": false,
+            "detected": false
+          }
+        }
+      }
+    ],
+    "created": 1777495902,
+    "model": "gpt-4o-2024-11-20",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "system_fingerprint": "fp_af7f7349a4",
+    "usage": {
+      "completion_tokens": 26,
+      "prompt_tokens": 562,
+      "total_tokens": 588,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    },
+    "prompt_filter_results": [
+      {
+        "prompt_index": 0,
+        "content_filter_results": {
+          "jailbreak": {
+            "filtered": false,
+            "detected": false
+          }
+        }
+      }
+    ],
+    "cost": {
+      "prompt_cost_uncached": "0.00140500",
+      "prompt_cost_cached": "0.00000000",
+      "completion_cost": "0.00026000",
+      "total_cost": "0.00166500"
+    }
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "candidates": [
+      "võitja",
+      "võitnud",
+      "pälvinud",
+      "saanud",
+      "laure"
+    ],
+    "sentence_id": 0,
+    "candidate_details": [
+      {
+        "rank": 1,
+        "token": "võitja",
+        "score": 0.6679869294166565,
+        "sequence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri võitja James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_sentence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri võitja James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_span": [
+          74,
+          80
+        ],
+        "resolved_forms": [
+          "sg n"
+        ],
+        "normalised_score": 0.87470161763636
+      },
+      {
+        "rank": 4,
+        "token": "võitnud",
+        "score": 0.05125705897808075,
+        "sequence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri võitnud James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_sentence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri võitnud James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_span": [
+          74,
+          81
+        ],
+        "resolved_forms": [
+          "nud",
+          "pl n",
+          "sg n"
+        ],
+        "normalised_score": 0.06711902647939982
+      },
+      {
+        "rank": 5,
+        "token": "saanud",
+        "score": 0.02686145156621933,
+        "sequence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri saanud James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_sentence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri saanud James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_span": [
+          74,
+          80
+        ],
+        "resolved_forms": [
+          "nud",
+          "pl n",
+          "sg n"
+        ],
+        "normalised_score": 0.035173974373347835
+      },
+      {
+        "rank": 7,
+        "token": "pälvinud",
+        "score": 0.015388736501336098,
+        "sequence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri pälvinud James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_sentence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri pälvinud James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_span": [
+          74,
+          82
+        ],
+        "resolved_forms": [
+          "nud",
+          "pl n",
+          "sg n"
+        ],
+        "normalised_score": 0.020150922298514576
+      },
+      {
+        "rank": 16,
+        "token": "laure",
+        "score": 0.002179876435548067,
+        "sequence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri laure James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_sentence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri laure James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+        "candidate_span": [
+          74,
+          79
+        ],
+        "resolved_forms": [
+          "sg g"
+        ],
+        "normalised_score": 0.002854459212377714
+      }
+    ],
+    "predictions": {},
+    "pred_label": null,
+    "source_sentence": "Edinburghi agulite mehe Irvine Welshi ja Glasgow tööliskirjaniku, Bookeri võitja James Kelmani puhul võib tõlketõrke tekitada keelekasutus - inglise inglise keelele demonstratiivselt vastanduv proletaarne Scots.",
+    "target_word": "võitja",
+    "word_span": [
+      74,
+      80
+    ],
+    "label": "sg n"
+  }
+]
