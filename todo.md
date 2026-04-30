@@ -14,10 +14,17 @@ Inspect and gather senteneces containing homonym words in the Koondkorpus and pl
 
 Do the MLM experiments with BERT and GPT on the whole homonym set using OpenAI API.
 
-Ask Siim about the possibility from ambiguous morphological analyses with Vabamorf to either:
+~~Ask Siim about the possibility from ambiguous morphological analyses with Vabamorf to either:~~
+~~1. sort the analyses to get the most probable analysis for the word in the sentence, or~~
+~~2. randomly choose one of the analyses among the possible analyses for the word in the sentence.~~
 
-1. sort the analyses to get the most probable analysis for the word in the sentence, or
-2. randomly choose one of the analyses among the possible analyses for the word in the sentence.
+Hindamisel ära arvesta arvu (ainsus või mitmus) ja muuda märgendid sg ill + sg all -> adt pmst sellised märgendid, mis võivad viidata kohale.
+
+Võta sagedusmaatriksis ainult alamosa võimalikest käänetest (sg n, sg g, sg p, adt), normaliseeri need ja vaata ainult selle alamosa peal meetrikuid. Vaata, kui palju juhtudest pakub mudel ennustust alamossa ja kui palju juhtudest pakub mudel ennustust väljaspool alamossa.
+
+Edasiarendusse võib kirjutada: võta 4 mudelit (bert_v2, bert_mlm, llm_mlm, bert_llm_mlm) ja uus vormihomonüümia andmestik (10000), teosta morfanalüüs ja loo tabel, kus igas lahtris on mudeli paari kattuvad ennustused ehk ennustused, kus mudelipaar ennustab sama vormi. Kui need protsendid on suured diagonaalil, siis võib oletada, et uue andmekomplekti puhul on veamäär väike, kuna mudelid teevad sarnaseid ennustusi. Kui need protsendid on suured mitte-diagonaalil, siis võib oletada, et uue andmekomplekti puhul on veamäär suur, kuna mudelid teevad erinevaid ennustusi.
+
+Raul Niit. BERTi tokeniseerimise kommentaar.
 
 Using your models (bert_v2, bert_full, bert_mlm, llm_mlm, bert_llm_mlm) get the predictions for the homonym dataset alongside with the scores for these predictions. Put a threshold to the scores (0.5) and get a new column that shows whether the specific model for this specific example is sure about its prediction or not. Using that calculate L1 score for the homonym dataset and see if there is any correlation between the L1 score and the confidence of the model in its predictions. The idea is to see whether the models make the similar mistakes for the same examples and if these mistakes are due to the model being unsure about its predictions.
 
