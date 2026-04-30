@@ -5,6 +5,7 @@ import estnltk
 import pathlib
 import sklearn
 import sklearn.metrics
+import random
 
 from typing import Any, Tuple, Optional
 
@@ -353,6 +354,7 @@ def plot_confusion_matrices(
     results_df: pd.DataFrame,
     pred_col: str,
     true_col: str,
+    fig_size: Tuple[int, int] = (8, 8),
     group_col: str | None = None,
     save_path: str | None = None,
     significant_pred_threshold_pct: float = 1.0,
@@ -442,7 +444,7 @@ def plot_confusion_matrices(
             cm_normalised = np.divide(cm, row_sums, where=row_sums != 0)
         cm_normalised = np.nan_to_num(cm_normalised, nan=0.0)
 
-        plt.figure(figsize=(8, 8))
+        plt.figure(figsize=fig_size)
         sns.heatmap(
             cm_normalised,
             annot=True,
