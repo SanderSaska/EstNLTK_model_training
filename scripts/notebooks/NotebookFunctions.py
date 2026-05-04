@@ -16,9 +16,172 @@ import seaborn as sns
 from tqdm import tqdm
 from scripts.model.bert_morph_tagger import BertMorphTagger
 from IPython.display import display
+from estnltk.default_resolver import make_resolver
+from scripts.config import SEED
+
+# Set random seed for reproducibility
+random_seed = SEED
+random.seed(SEED)
+np.random.seed(SEED)
 
 
-# Additional helper functions included before the main APIs:
+def _lenient_label(label: str) -> str:
+    """
+    Convert labels containing "all" or "ill" to "adt", otherwise return the original label.
+    This is a lenient mapping to handle cases where the model might predict "all" or "ill" instead of "adt".
+
+    For ill, adt is essentially subset of ill, and for all, usually we can't be sure that all always answers to question "kuhu?", but since we know that the possible correct cases are "n", "g", "p" and "adt", and "all" might fit with the "adt" case.
+
+    Parameters
+    ----------
+        label (str): The label to convert.
+
+    Returns
+    -------
+        str: The converted label.
+    """
+    if isinstance(label, str):
+        if re.search(r"\bill\b", label):
+            return "adt"
+        elif re.search(r"\ball\b", label):
+            return "adt"
+    return label
+
+
+def _other_label(label: str) -> str:
+    """
+    Convert labels that do not contain "n", "g", "p", or "adt" to "other", otherwise return the original label.
+    This is used to filter out labels that are not among the possible true labels.
+
+    Parameters
+    ----------
+        label (str): The label to convert.
+
+    Returns
+    -------
+        str: The converted label.
+    """
+    if isinstance(label, str):
+        if not any(
+            re.search(rf"\b{true_label}\b", label)
+            for true_label in ["n", "g", "p", "adt"]
+        ):
+            return "other"
+    if not label or pd.isna(label):
+        return "other"
+    return label
+
+
+def _split_label(label: str) -> Tuple[Optional[str | Any], str]:
+    """
+    Split a label into count and case components.
+    This function takes a label string either in the format "count case" or a single component "case" and splits it into its count and case parts. If the label does not contain a space, it is assumed to be a case with no count, and the count is returned as an empty string.
+
+    Parameters
+    ----------
+        label (str): The label to split.
+
+    Returns
+    -------
+        Tuple[Optional[str], str]: A tuple containing the count and case components of the label.
+    """
+    if isinstance(label, str):
+        parts = label.split(" ", 1)
+        if len(parts) == 2:  # Count and case are present
+            return parts[0], parts[1]
+        else:  # Only case is present, count is empty
+            return pd.NA, parts[0]
+
+
+def create_lenient_labels_and_split_counts_and_cases(
+    df: pd.DataFrame, true_col: str = "true_label", pred_col: str = "pred_label"
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Create lenient label columns and split count and case into separate columns.
+    This function takes a DataFrame with true and predicted label columns, applies a lenient mapping to handle cases where the model might predict "all" or "ill" instead of "adt", and then splits the original and lenient labels into separate count and case columns for easier analysis.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame containing the evaluation results with true and predicted label columns.
+    true_col : str, optional
+        Column name for true labels, by default "true_label".
+    pred_col : str, optional
+        Column name for predicted labels, by default "pred_label".
+
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with additional columns for lenient labels and split count/case.
+    """
+    # Make a copy of the original DataFrame to avoid modifying the input directly
+    df_copy = df.copy()
+    # Split the true and predicted columns into separate count and case columns
+    df_copy[["true_count", "true_case"]] = df_copy[true_col].apply(
+        lambda x: pd.Series(_split_label(x))
+    )
+    df_copy[["pred_count", "pred_case"]] = df_copy[pred_col].apply(
+        lambda x: pd.Series(_split_label(x))
+    )
+    # Apply the lenient label mapping to both true and predicted case columns
+    df_copy.insert(
+        df.columns.get_loc(true_col) + 1,
+        "true_label_lenient",
+        df_copy[true_col].apply(_lenient_label),
+    )
+    df_copy.insert(
+        df.columns.get_loc(pred_col) + 1,
+        "pred_label_lenient",
+        df_copy[pred_col].apply(_lenient_label),
+    )
+    # Split the lenient case columns into count and case again
+    df_copy[["true_count_lenient", "true_case_lenient"]] = df_copy[
+        "true_label_lenient"
+    ].apply(lambda x: pd.Series(_split_label(x)))
+    df_copy[["pred_count_lenient", "pred_case_lenient"]] = df_copy[
+        "pred_label_lenient"
+    ].apply(lambda x: pd.Series(_split_label(x)))
+
+    # A copy of DataFrame with only possible true labels (n, g, p, adt)
+    df_filtered = df.copy()
+    # Apply the lenient label mapping to both true and predicted case columns
+    df_filtered.insert(
+        df.columns.get_loc(true_col) + 1,
+        "true_label_lenient",
+        df_filtered[true_col].apply(_lenient_label),
+    )
+    df_filtered.insert(
+        df.columns.get_loc(pred_col) + 1,
+        "pred_label_lenient",
+        df_filtered[pred_col].apply(_lenient_label),
+    )
+    # Rename all the labels that are not in the possible true labels to "other" in the filtered DataFrame
+    df_filtered[true_col] = df_filtered[true_col].apply(_other_label)
+    df_filtered[pred_col] = df_filtered[pred_col].apply(_other_label)
+    df_filtered["true_label_lenient"] = df_filtered["true_label_lenient"].apply(
+        _other_label
+    )
+    df_filtered["pred_label_lenient"] = df_filtered["pred_label_lenient"].apply(
+        _other_label
+    )
+    # Split the true and predicted columns into separate count and case columns
+    df_filtered[["true_count", "true_case"]] = df_filtered[true_col].apply(
+        lambda x: pd.Series(_split_label(x))
+    )
+    df_filtered[["pred_count", "pred_case"]] = df_filtered[pred_col].apply(
+        lambda x: pd.Series(_split_label(x))
+    )
+
+    # Split the lenient case columns into count and case again
+    df_filtered[["true_count_lenient", "true_case_lenient"]] = df_filtered[
+        "true_label_lenient"
+    ].apply(lambda x: pd.Series(_split_label(x)))
+    df_filtered[["pred_count_lenient", "pred_case_lenient"]] = df_filtered[
+        "pred_label_lenient"
+    ].apply(lambda x: pd.Series(_split_label(x)))
+    return df_copy, df_filtered
+
+
 def _validate_columns(
     results_df: pd.DataFrame,
     pred_col: str,
@@ -110,8 +273,11 @@ def _normalise_true_label(label_value: Any) -> str:
 
 
 def _extract_prediction_from_layer(
-    text: estnltk.Text, layer_name: str, target_span: tuple[int, int]
-) -> str | None:
+    text: estnltk.Text,
+    layer_name: str,
+    target_span: tuple[int, int],
+    vabamorf_random_or_first: Optional[str] = None,
+) -> tuple[str | None, bool]:
     """Extract first form prediction from an EstNLTK layer for target span.
 
     Parameters
@@ -122,30 +288,42 @@ def _extract_prediction_from_layer(
         Layer name to inspect (e.g., "bert_morph_tagging", "morph_analysis").
     target_span : tuple[int, int]
         Span tuple in format '(start, end)'.
+    vabamorf_random_or_first : str | None, optional
+        If layer is "morph_analysis" and multiple analyses are present, choose "random" or "first" analysis. Ignored for other layers.
 
     Returns
     -------
-    str | None
-        Predicted form label or None if no matching annotation is found.
+    tuple[str | None, bool]
+        A tuple containing the predicted label (or None if not found) and a boolean indicating if the prediction was ambiguous (multiple analyses).
     """
+    global SEED  # To ensure reproducibility of random choices across function calls
+    local_seed = SEED
     layer = getattr(text, layer_name, None)
     if layer is None:
-        return None
-
+        return None, False
+    ambiguous = False
     for annotation in layer:
         annotation_span = tuple([annotation.start, annotation.end])
         if annotation_span == target_span:
-            prediction = annotation.form[0]
+            if len(annotation.form) > 1:
+                ambiguous = True
+            if vabamorf_random_or_first == "random":
+                random.seed(local_seed)  # Ensure reproducibility of random choice
+                prediction = random.choice(annotation.form) if annotation.form else None
+                local_seed += 1  # Change seed for next random choice to avoid same selection across rows
+            else:
+                prediction = annotation.form[0]
             if isinstance(prediction, list):
                 prediction = prediction[0] if prediction else None
-            return prediction
+            return prediction, ambiguous
 
-    return None
+    return None, ambiguous
 
 
 def annotate_sentences_with_model(
     input_df: pd.DataFrame,
     model_name: str,
+    vabamorf_random_or_first: str = "first",
     output_csv_path: str | None = None,
     progress_desc: str = "Evaluating model",
     sentence_col: str = "sentence",
@@ -164,6 +342,8 @@ def annotate_sentences_with_model(
         Input dataframe containing sentence-level data to evaluate.
     model_name : str
         Model path for BertMorphTagger or string "Vabamorf".
+    vabamorf_random_or_first : str, optional
+        If model_name is "Vabamorf" and multiple analyses are present, choose "random" or "first" analysis.
     output_csv_path : str | None, optional
         If provided, save results dataframe to this CSV path.
     progress_desc : str, optional
@@ -198,8 +378,6 @@ def annotate_sentences_with_model(
     if missing_columns:
         raise ValueError(f"Missing required input columns: {missing_columns}")
 
-    from estnltk.default_resolver import make_resolver
-
     resolver = make_resolver()
     use_vabamorf_as_model = model_name.strip().lower() == "vabamorf"
     bmt_model = None
@@ -222,24 +400,28 @@ def annotate_sentences_with_model(
 
         if use_vabamorf_as_model:
             text.tag_layer(resolver=resolver)
-            model_prediction = _extract_prediction_from_layer(
+            model_prediction, ambiguous = _extract_prediction_from_layer(
                 text=text,
                 layer_name="morph_analysis",
                 target_span=target_span,
+                vabamorf_random_or_first=vabamorf_random_or_first,
             )
         else:
             bmt_model.tag(text)
-            model_prediction = _extract_prediction_from_layer(
+            model_prediction, ambiguous = _extract_prediction_from_layer(
                 text=text,
                 layer_name="bert_morph_tagging",
                 target_span=target_span,
+                vabamorf_random_or_first=None,
             )
 
         result_row: dict[str, Any] = {
             "sentence": sentence_text,
             "word": row[word_col],
+            "word_span": target_span,
             "true_label": _normalise_true_label(row[true_label_col]),
             model_prediction_col: model_prediction,
+            "ambiguous": ambiguous,
         }
 
         for optional_column in optional_columns:
@@ -355,6 +537,7 @@ def plot_confusion_matrices(
     pred_col: str,
     true_col: str,
     fig_size: Tuple[int, int] = (8, 8),
+    title: str | None = "Confusion Matrix",
     group_col: str | None = None,
     save_path: str | None = None,
     significant_pred_threshold_pct: float = 1.0,
@@ -453,9 +636,12 @@ def plot_confusion_matrices(
             xticklabels=plot_pred_labels,
             yticklabels=true_labels,
         )
-        plt.title(
-            f"{title} (extra predicted-only columns >= {significant_pred_threshold_pct:.2f}%)"
-        )
+        if significant_pred_threshold_pct > 0:
+            plt.title(
+                f"{title} (extra predicted-only columns >= {significant_pred_threshold_pct:.2f}%)"
+            )
+        else:
+            plt.title(title)
         plt.xlabel("Predicted Label")
         plt.ylabel("True Label")
         plt.tight_layout()
@@ -477,7 +663,7 @@ def plot_confusion_matrices(
     if group_col is None:
         _plot_one(
             block_df=data,
-            title=f"{pred_col} vs {true_col}",
+            title=f"{title}: {pred_col} vs {true_col}",
             one_save_path=save_path,
         )
         return
@@ -492,7 +678,7 @@ def plot_confusion_matrices(
 
         _plot_one(
             block_df=group_data,
-            title=f"Confusion Matrix ({group_col}={group_value}): {pred_col} vs {true_col}",
+            title=f"{title} ({group_col}={group_value}): {pred_col} vs {true_col}",
             one_save_path=group_save_path,
         )
 
@@ -515,6 +701,7 @@ def plot_true_vs_pred_by_inflection(
     top_n: int | None = None,
     save_dir: Optional[str] = None,
     save_prefix: str = "_true_vs_pred",
+    title: str | None = "True vs Predicted label distribution",
     dpi: int = 200,
     save_ext: str = "png",
     plot_per_inflection: bool = True,
@@ -672,7 +859,7 @@ def plot_true_vs_pred_by_inflection(
             labels=labels,
             true_vals=true_vals,
             pred_vals=pred_vals,
-            title=f"Overall True vs Predicted label distribution",
+            title=f"{title} (Overall)",
             save_name=safe_fn if savedir_path else None,
         )
 
@@ -690,7 +877,7 @@ def plot_true_vs_pred_by_inflection(
                 labels=labels,
                 true_vals=true_vals,
                 pred_vals=pred_vals,
-                title=f"True vs Predicted label distribution — {inflection_col} = {inf}",
+                title=f"{title} — {inflection_col} = {inf}",
                 save_name=safe_fn if savedir_path else None,
             )
 
