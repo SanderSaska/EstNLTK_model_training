@@ -2,6 +2,9 @@
 data/*
 models/*
 outputs/old/
+outputs/backup/
+notes/*
+notebooks/old/
 
 # Enable plots
 !outputs/plots/
