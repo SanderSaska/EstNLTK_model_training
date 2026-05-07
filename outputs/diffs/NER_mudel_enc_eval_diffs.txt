@@ -625,7 +625,7 @@ true_label        sg g_H
 pred_label      sg all_S
 is_diff             True
 Name: 21611, dtype: object
-Decision:
+Decision: pred_label
 Context:
                 word true_label pred_label  is_diff
 21603         juunil    sg ad_S    sg ad_S    False
@@ -652,7 +652,7 @@ true_label    sg p_S
 pred_label         I
 is_diff         True
 Name: 66543, dtype: object
-Decision:
+Decision: pred_label
 Context:
            word true_label pred_label  is_diff
 66535        Ei          D          D    False
@@ -679,7 +679,7 @@ true_label     adt_S
 pred_label    sg p_S
 is_diff         True
 Name: 33835, dtype: object
-Decision:
+Decision: pred_label
 Context:
             word true_label pred_label  is_diff
 33827         on        b_V        b_V    False
@@ -706,7 +706,7 @@ true_label    sg n_H
 pred_label       ?_Y
 is_diff         True
 Name: 54675, dtype: object
-Decision:
+Decision: true_label
 Context:
                word true_label pred_label  is_diff
 54667        veelgi          D          D    False
@@ -733,7 +733,7 @@ true_label    sg n_H
 pred_label    sg n_S
 is_diff         True
 Name: 36635, dtype: object
-Decision:
+Decision: pred_label
 Context:
                word true_label pred_label  is_diff
 36627  Elektritarbe     sg g_S     sg g_S    False
@@ -760,7 +760,7 @@ true_label        sg in_H
 pred_label        sg in_S
 is_diff              True
 Name: 48428, dtype: object
-Decision:
+Decision: true_label
 Context:
               word true_label pred_label  is_diff
 48420         täis          A          A    False
@@ -787,7 +787,7 @@ true_label       sg p_S
 pred_label        adt_S
 is_diff            True
 Name: 74006, dtype: object
-Decision:
+Decision: pred_label
 Context:
                     word true_label pred_label  is_diff
 73998                  ,          Z          Z    False
@@ -814,7 +814,7 @@ true_label      sg n_H
 pred_label           -
 is_diff           True
 Name: 93136, dtype: object
-Decision:
+Decision: true_label
 Context:
            word true_label pred_label  is_diff
 93128      2001        ?_N     sg n_H     True
@@ -841,7 +841,7 @@ true_label                 sg g_S
 pred_label                 sg n_S
 is_diff                      True
 Name: 34043, dtype: object
-Decision:
+Decision: pred_label
 Context:
                       word true_label pred_label  is_diff
 34035                    .          Z          Z    False
@@ -868,7 +868,7 @@ true_label     sg tr_S
 pred_label      nuks_V
 is_diff           True
 Name: 68427, dtype: object
-Decision:
+Decision: pred_label
 Context:
            word true_label pred_label  is_diff
 68419      Ühel    sg ad_P    sg ad_P    False
@@ -895,7 +895,7 @@ true_label    adt_S
 pred_label        D
 is_diff        True
 Name: 109868, dtype: object
-Decision:
+Decision: true_label
 Context:
               word true_label pred_label  is_diff
 109860      Kuulid     pl n_S     pl n_S    False
@@ -922,7 +922,7 @@ true_label    sg n_S
 pred_label    sg g_S
 is_diff         True
 Name: 26526, dtype: object
-Decision:
+Decision: pred_label
 Context:
                  word true_label pred_label  is_diff
 26518          Liidus    sg in_S    sg in_H     True
@@ -949,7 +949,7 @@ true_label       ?_O
 pred_label       ?_N
 is_diff         True
 Name: 45807, dtype: object
-Decision:
+Decision: true_label
 Context:
              word true_label pred_label  is_diff
 45799    Tallinna     sg g_H     sg g_H    False
@@ -976,7 +976,7 @@ true_label    sg n_H
 pred_label    sg g_H
 is_diff         True
 Name: 12019, dtype: object
-Decision:
+Decision: pred_label
 Context:
                   word true_label pred_label  is_diff
 12011         kiiresti          D          D    False
@@ -1003,7 +1003,7 @@ true_label      sg n_H
 pred_label    sg all_S
 is_diff           True
 Name: 12798, dtype: object
-Decision:
+Decision: pred_label
 Context:
                   word true_label pred_label  is_diff
 12790     pärismaalase     sg g_S     sg g_S    False
@@ -1030,7 +1030,7 @@ true_label    sg all_Y
 pred_label    sg all_H
 is_diff           True
 Name: 31641, dtype: object
-Decision:
+Decision: true_label
 Context:
                               word true_label pred_label  is_diff
 31633                        jaoks          K          K    False
@@ -1057,7 +1057,7 @@ true_label    sg g_S
 pred_label    sg n_S
 is_diff         True
 Name: 82855, dtype: object
-Decision:
+Decision: pred_label
 Context:
                  word true_label pred_label  is_diff
 82847           Muret     sg p_S     sg p_S    False
@@ -1084,7 +1084,7 @@ true_label          sg g_H
 pred_label          sg n_H
 is_diff               True
 Name: 88947, dtype: object
-Decision:
+Decision: true_label
 Context:
                word true_label pred_label  is_diff
 88939      Arnoveri     sg g_H     sg g_H    False
@@ -1111,7 +1111,7 @@ true_label     sg n_H
 pred_label    sg tr_S
 is_diff          True
 Name: 20763, dtype: object
-Decision:
+Decision: pred_label
 Context:
                word true_label pred_label  is_diff
 20755           kes     sg n_P     sg n_P    False
@@ -1138,7 +1138,7 @@ true_label    sg el_H
 pred_label     sg n_H
 is_diff          True
 Name: 78593, dtype: object
-Decision:
+Decision: true_label
 Context:
                    word true_label pred_label  is_diff
 78585                õe     sg g_S     sg g_S    False
@@ -1165,7 +1165,7 @@ true_label    sg p_S
 pred_label    sg g_S
 is_diff         True
 Name: 55013, dtype: object
-Decision:
+Decision: pred_label
 Context:
                 word true_label pred_label  is_diff
 55005   miiniväljade     pl g_S     pl g_S    False
@@ -1192,7 +1192,7 @@ true_label    sg n_H
 pred_label    sg g_H
 is_diff         True
 Name: 90480, dtype: object
-Decision:
+Decision: true_label
 Context:
              word true_label pred_label  is_diff
 90472        Keel     sg n_S     sg n_S    False
@@ -1219,7 +1219,7 @@ true_label    sg n_S
 pred_label    sg n_H
 is_diff         True
 Name: 53942, dtype: object
-Decision:
+Decision: pred_label
 Context:
                word true_label pred_label  is_diff
 53934         teada       da_V       da_V    False
@@ -1246,7 +1246,7 @@ true_label           A
 pred_label       tud_V
 is_diff           True
 Name: 13679, dtype: object
-Decision:
+Decision: pred_label
 Context:
                  word true_label pred_label  is_diff
 13671         Sellele   sg all_P   sg all_P    False
@@ -1273,7 +1273,7 @@ true_label       sg g_S
 pred_label        adt_S
 is_diff            True
 Name: 82466, dtype: object
-Decision:
+Decision: ?
 Context:
                    word true_label pred_label  is_diff
 82458            eetika     sg g_S     sg n_S     True
@@ -1300,7 +1300,7 @@ true_label     sg n_S
 pred_label     sg g_S
 is_diff          True
 Name: 33317, dtype: object
-Decision:
+Decision: true_label
 Context:
                    word true_label pred_label  is_diff
 33309        seadustega   pl kom_S   pl kom_S    False
@@ -1327,7 +1327,7 @@ true_label     adt_S
 pred_label    sg p_S
 is_diff         True
 Name: 37199, dtype: object
-Decision:
+Decision: pred_label
 Context:
               word true_label pred_label  is_diff
 37191       Linnas    sg in_S    sg in_S    False

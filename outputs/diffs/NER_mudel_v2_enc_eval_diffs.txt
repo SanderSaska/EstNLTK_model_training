@@ -4,7 +4,7 @@ true_label        nud_V
 pred_label    neg nud_V
 is_diff            True
 Name: 115652, dtype: object
-Decision:
+Decision: pred_label
 Context:
                  word true_label pred_label  is_diff
 115644           anda       da_V       da_V    False
@@ -31,7 +31,7 @@ true_label      sg g_H
 pred_label           Y
 is_diff           True
 Name: 90477, dtype: object
-Decision:
+Decision: true_label
 Context:
             word true_label pred_label  is_diff
 90469          .          Z          Z    False
@@ -58,7 +58,7 @@ true_label           tud_V
 pred_label               A
 is_diff               True
 Name: 89684, dtype: object
-Decision:
+Decision: true_label
 Context:
                 word true_label pred_label  is_diff
 89676              .          Z          Z    False
@@ -85,7 +85,7 @@ true_label    sg n_P
 pred_label    pl n_P
 is_diff         True
 Name: 65047, dtype: object
-Decision:
+Decision: pred_label
 Context:
                      word true_label pred_label  is_diff
 65039                  on        b_V        b_V    False
@@ -112,7 +112,7 @@ true_label    neg_V
 pred_label        D
 is_diff        True
 Name: 97355, dtype: object
-Decision:
+Decision: pred_label
 Context:
          word true_label pred_label  is_diff
 97347   lööge       ge_V   neg ge_V     True
@@ -139,7 +139,7 @@ true_label       sg n_S
 pred_label            I
 is_diff            True
 Name: 69250, dtype: object
-Decision:
+Decision: 
 Context:
             word true_label pred_label  is_diff
 69242       ikka          D          D    False

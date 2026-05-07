@@ -1,0 +1,2700 @@
+Diff at index 113199:
+word          nendeta
+true_label    pl ab_P
+pred_label    pl ab_S
+is_diff          True
+Name: 113199, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+113191           kiri     sg n_S     sg n_S    False
+113192         MOSKVA     sg g_H     sg n_S     True
+113193              '          Z          Z    False
+113194             80        ?_N          N     True
+113195           ning          J          J    False
+113196  olümpiarõngad     pl n_S     pl n_S    False
+113197              .          Z          Z    False
+113198           Ilma          K          K    False
+113199        nendeta    pl ab_P    pl ab_S     True
+113200      tundunuks    sg tr_S          V     True
+113201           linn     sg n_S     sg n_S    False
+113202        kuidagi          D          D    False
+113203           tühi     sg n_A     sg n_A    False
+113204              .          Z          Z    False
+113205    Merejalaväe     sg g_S     sg g_S    False
+113206        ekipaaž     sg n_S     sg n_S    False
+113207        paiknes        s_V        s_V    False
+---------------------------------------------------------------------------
+Diff at index 8780:
+word             •
+true_label     ?_Y
+pred_label       Z
+is_diff       True
+Name: 8780, dtype: object
+Decision:
+Context:
+          word true_label pred_label  is_diff
+8772        ja          J          J    False
+8773      1000        ?_N          N     True
+8774  seeriate     pl g_S     pl g_S    False
+8775  raamatud     pl n_S     pl n_S    False
+8776       oma     sg g_P     sg g_P    False
+8777  artiklit     sg p_S     sg p_S    False
+8778         .          Z          Z    False
+8779         •        ?_Y          Z     True
+8780         •        ?_Y          Z     True
+8781         •        ?_Y          Z     True
+8782  Kasutaja     sg n_S     sg n_S    False
+8783         :          Z          Z    False
+8784   Ahsoous     sg n_H     sg n_H    False
+8785         •        ?_Y          Z     True
+8786   arutelu     sg n_S     sg n_S    False
+8787         •        ?_Y          Z     True
+8788       22.        ?_O          O     True
+---------------------------------------------------------------------------
+Diff at index 26805:
+word          2004
+true_label     ?_N
+pred_label       N
+is_diff       True
+Name: 26805, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+26797       jälgi     pl p_S     pl p_S    False
+26798     jätmata     mata_V     mata_V    False
+26799           ?          Z          Z    False
+26800       Kõigi     pl g_P     pl g_P    False
+26801   vastanute     pl g_S     pl g_S    False
+26802       vahel          K          K    False
+26803   jagatakse    takse_V    takse_V    False
+26804     märtsis    sg in_S    sg in_S    False
+26805        2004        ?_N          N     True
+26806       kümme     sg n_N     sg n_N    False
+26807    preemiat     sg p_S     sg p_S    False
+26808           .          Z          Z    False
+26809     Võidust    sg el_S    sg el_S    False
+26810  teatatakse    takse_V    takse_V    False
+26811   inimesele   sg all_S   sg all_S    False
+26812  isiklikult          D          D    False
+26813           .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 96288:
+word              ta
+true_label    sg g_P
+pred_label    sg n_P
+is_diff         True
+Name: 96288, dtype: object
+Decision:
+Context:
+              word true_label pred_label  is_diff
+96280            "          Z          Z    False
+96281       ridade     pl g_S     pl g_S    False
+96282  täienduseks    sg tr_S    sg tr_S    False
+96283            .          Z          Z    False
+96284            "          Z          Z    False
+96285         Kuid          J          J    False
+96286       paraku          D          D    False
+96287        jagas        s_V        s_V    False
+96288           ta     sg g_P     sg n_P     True
+96289   poliitikat     sg p_S     sg p_S    False
+96290           ja          J          J    False
+96291      ajalugu     sg p_S     sg p_S    False
+96292        liiga          D          D    False
+96293        hästi          D          D    False
+96294            .          Z          Z    False
+96295          Aga          J          J    False
+96296       selles    sg in_P    sg in_P    False
+---------------------------------------------------------------------------
+Diff at index 86106:
+word          revolutsiooni
+true_label           sg g_S
+pred_label           sg p_S
+is_diff                True
+Name: 86106, dtype: object
+Decision:
+Context:
+                           word true_label pred_label  is_diff
+86098              mälestustele   pl all_S   pl all_S    False
+86099                         .          Z          Z    False
+86100                 Kompartei     sg g_S     sg g_S    False
+86101                    ajaloo     sg g_S     sg g_S    False
+86102                  kursuses    sg in_S    sg in_S    False
+86103                  nimetati       ti_V       ti_V    False
+86104                     1905.        ?_O          O     True
+86105                     aasta     sg g_S     sg g_S    False
+86106             revolutsiooni     sg g_S     sg p_S     True
+86107  kodanlik-demokraatlikuks    sg tr_A    sg tr_A    False
+86108                         ,          Z          Z    False
+86109                    Eestis    sg in_H    sg in_H    False
+86110                       oli        s_V        s_V    False
+86111                       see     sg n_P     sg n_P    False
+86112    rahvuslik-demokraatlik     sg n_A     sg n_A    False
+86113                         .          Z          Z    False
+86114                      Kuid          J          J    False
+---------------------------------------------------------------------------
+Diff at index 28126:
+word             on
+true_label      b_V
+pred_label    vad_V
+is_diff        True
+Name: 28126, dtype: object
+Decision:
+Context:
+                      word true_label pred_label  is_diff
+28118                   on        b_V        b_V    False
+28119               võrdne     sg n_A     sg n_A    False
+28120              nulliga   sg kom_N   sg kom_N    False
+28121                    ,          Z          Z    False
+28122                 sest          J          J    False
+28123            eestlased     pl n_S     pl n_S    False
+28124                   ja          J          J    False
+28125             lätlased     pl n_S     pl n_S    False
+28126                   on        b_V      vad_V     True
+28127                 kõik     pl n_P     pl n_P    False
+28128                  kas          D          D    False
+28129       natsionalistid     pl n_S     pl n_S    False
+28130                  või          J          J    False
+28131  sotsiaaldemokraadid     pl n_S     pl n_S    False
+28132                    .          Z          Z    False
+28133                   XI        ?_O          O     True
+28134                 1969        ?_N          N     True
+---------------------------------------------------------------------------
+Diff at index 42499:
+word          seotud
+true_label         A
+pred_label     tud_V
+is_diff         True
+Name: 42499, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+42491    kasutusjuhend     sg n_S     sg n_S    False
+42492                .          Z          Z    False
+42493             Sepa     sg g_S     sg g_H     True
+42494            sõnul    pl ad_S    pl ad_S    False
+42495               on        b_V        b_V    False
+42496         peamised     pl n_A     pl n_A    False
+42497            mured     pl n_S     pl n_S    False
+42498  arvutikasutajal    sg ad_S    sg ad_S    False
+42499           seotud          A      tud_V     True
+42500       tarkvaraga   sg kom_S   sg kom_S    False
+42501                .          Z          Z    False
+42502              Kui          J          J    False
+42503             siis          D          D    False
+42504              ehk          D          D    False
+42505       probleemid     pl n_S     pl n_S    False
+42506      kõvakettaga   sg kom_S   sg kom_S    False
+42507                .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 107136:
+word           kui
+true_label       J
+pred_label       D
+is_diff       True
+Name: 107136, dtype: object
+Decision:
+Context:
+              word true_label pred_label  is_diff
+107128       Pavka     sg g_H     sg g_H    False
+107129       tuppa      adt_S      adt_S    False
+107130           .          Z          Z    False
+107131        Kõik     pl n_P     sg n_P     True
+107132         oli        s_V        s_V    False
+107133   vanamoodi          D          D    False
+107134           ,          Z          Z    False
+107135         aga          J          J    False
+107136         kui          J          D     True
+107137       väike     sg n_A     sg n_A    False
+107138         see     sg n_P     sg n_P    False
+107139  toapugerik     sg n_S     sg n_S    False
+107140        nüüd          D          D    False
+107141        näis        s_V        s_V    False
+107142           .          Z          Z    False
+107143           "          Z          Z    False
+107144       Pavka     sg g_H     sg g_H    False
+---------------------------------------------------------------------------
+Diff at index 33651:
+word            kava
+true_label    sg n_S
+pred_label    sg g_S
+is_diff         True
+Name: 33651, dtype: object
+Decision:
+Context:
+           word true_label pred_label  is_diff
+33643     liiga          D          D    False
+33644    teevad      vad_V      vad_V    False
+33645         (          Z          Z    False
+33646        nt        ?_Y          Y     True
+33647   kajakad     pl n_S     pl n_S    False
+33648         )          Z          Z    False
+33649         .          Z          Z    False
+33650  Valminud          A          A    False
+33651      kava     sg n_S     sg g_S     True
+33652    kiitis        s_V        s_V    False
+33653     heaks          D          D    False
+33654  komisjon     sg n_S     sg n_S    False
+33655         ,          Z          Z    False
+33656      kuhu          D          D    False
+33657  kuuluvad      vad_V      vad_V    False
+33658     Hanno     sg n_H     sg n_H    False
+33659    Zingel     sg n_H     sg n_H    False
+---------------------------------------------------------------------------
+Diff at index 70835:
+word           aga
+true_label       J
+pred_label       D
+is_diff       True
+Name: 70835, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+70827         ja          J          J    False
+70828  rahvusena    sg es_S    sg es_S    False
+70829   püsimise     sg g_S     sg g_S    False
+70830   alltekst     sg n_S     sg n_S    False
+70831          .          Z          Z    False
+70832     Henrik     sg n_H     sg n_H    False
+70833   Ibsenile   sg all_H   sg all_H    False
+70834     vihjab        b_V        b_V    False
+70835        aga          J          D     True
+70836   romaanis    sg in_S    sg in_S    False
+70837         ka          D          D    False
+70838   kirjanik     sg n_S     sg n_S    False
+70839        ise     sg n_P     sg n_P    False
+70840          .          Z          Z    False
+70841   Ibsenlik     sg n_H     sg n_A     True
+70842         on        b_V        b_V    False
+70843         ka          D          D    False
+---------------------------------------------------------------------------
+Diff at index 32116:
+word           Naine
+true_label    sg n_S
+pred_label    sg n_H
+is_diff         True
+Name: 32116, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+32108    võõrsil          D          D    False
+32109      olnud      nud_V      nud_V    False
+32110          .          Z          Z    False
+32111      Mitut     sg p_P     sg p_P    False
+32112  võõrkeelt     sg p_S     sg p_S    False
+32113     vabalt          D          D    False
+32114     valdav     sg n_A     sg n_A    False
+32115      Aasta     sg g_S     sg g_S    False
+32116      Naine     sg n_S     sg n_H     True
+32117       2003        ?_N          N     True
+32118         on        b_V        b_V    False
+32119         ka          D          D    False
+32120      Leedu     sg g_H     sg g_H    False
+32121  Vabariigi     sg g_S     sg g_H     True
+32122   aukonsul     sg n_S     sg n_S    False
+32123     Tartus    sg in_H    sg in_H    False
+32124         ja          J          J    False
+---------------------------------------------------------------------------
+Diff at index 77623:
+word          ilmunud
+true_label          A
+pred_label      nud_V
+is_diff          True
+Name: 77623, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+77615        oodata       da_V       da_V    False
+77616     kirjaniku     sg g_S     sg g_S    False
+77617        teoste     pl g_S     pl g_S    False
+77618          uusi     pl p_A     pl p_A    False
+77619       tõlkeid     pl p_S     pl p_S    False
+77620            ja          J          J    False
+77621        temalt   sg abl_P   sg abl_P    False
+77622            on        b_V        b_V    False
+77623       ilmunud          A      nud_V     True
+77624     eestindus     sg n_S     sg n_S    False
+77625        Tordis     sg n_H     sg n_H    False
+77626    Ørjasæteri     sg g_H     sg g_H    False
+77627  biograafiast    sg el_S    sg el_S    False
+77628             (          Z          Z    False
+77629          1999        ?_N          N     True
+77630             )          Z          Z    False
+77631             ,          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 6997:
+word           pruugi
+true_label        o_V
+pred_label    neg o_V
+is_diff          True
+Name: 6997, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+6989       öelda       da_V       da_V    False
+6990           ,          Z          Z    False
+6991      kuidas          D          D    False
+6992        seda     sg p_P     sg p_P    False
+6993    tekitada       da_V       da_V    False
+6994           .          Z          Z    False
+6995         See     sg n_P     sg n_P    False
+6996          ei      neg_V      neg_V    False
+6997      pruugi        o_V    neg o_V     True
+6998        olla       da_V       da_V    False
+6999  tõenäoline     sg n_A     sg n_A    False
+7000  väljavaade     sg n_S     sg n_S    False
+7001           ,          Z          Z    False
+7002        kuid          J          J    False
+7003     sellest    sg el_P    sg el_P    False
+7004     mõttest    sg el_S    sg el_S    False
+7005          on        b_V        b_V    False
+---------------------------------------------------------------------------
+Diff at index 95888:
+word          arstiabi
+true_label      sg n_S
+pred_label      sg g_S
+is_diff           True
+Name: 95888, dtype: object
+Decision:
+Context:
+           word true_label pred_label  is_diff
+95880  Ühiskond     sg n_S     sg n_S    False
+95881     annab        b_V        b_V    False
+95882     teile   pl all_P   pl all_P    False
+95883      kõik     pl n_P     sg n_P     True
+95884         —          Z          Z    False
+95885  hariduse     sg g_S     sg g_S    False
+95886         ,          Z          Z    False
+95887    tasuta    sg ab_S    sg ab_S    False
+95888  arstiabi     sg n_S     sg g_S     True
+95889         ,          Z          Z    False
+95890       töö     sg n_S     sg g_S     True
+95891         !          Z          Z    False
+95892   Millega   sg kom_P   sg kom_P    False
+95893        te     pl n_P     pl n_P    False
+95894     rahul          D          D    False
+95895        ei      neg_V      neg_V    False
+95896       ole        o_V    neg o_V     True
+---------------------------------------------------------------------------
+Diff at index 12436:
+word          intervjuu
+true_label       sg n_S
+pred_label       sg g_S
+is_diff            True
+Name: 12436, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+12428            andis        s_V        s_V    False
+12429            Bowie     sg n_H     sg n_H    False
+12430           London     sg n_H     sg n_H    False
+12431          Weekend     sg n_H     sg n_H    False
+12432      Televisioni     sg g_H     sg g_H    False
+12433   ajakirjanikule   sg all_S   sg all_S    False
+12434          Russell     sg n_H     sg n_H    False
+12435          Hartyle     sg g_H   sg all_H     True
+12436        intervjuu     sg n_S     sg g_S     True
+12437                ,          Z          Z    False
+12438            mille     sg g_P     sg g_P    False
+12439           käigus          K          K    False
+12440              sai        s_V        s_V    False
+12441        avalikuks    sg tr_A    sg tr_A    False
+12442                ,          Z          Z    False
+12443          kuivõrd          D          D    False
+12444  uimastisõltuvus     sg n_S     sg n_S    False
+---------------------------------------------------------------------------
+Diff at index 81798:
+word            lk
+true_label     ?_Y
+pred_label       Y
+is_diff       True
+Name: 81798, dtype: object
+Decision:
+Context:
+          word true_label pred_label  is_diff
+81790        “          Z          Z    False
+81791  Looming     sg n_S     sg n_S    False
+81792        ”          Z          Z    False
+81793     1960        ?_N          N     True
+81794        ,          Z          Z    False
+81795      nr.        ?_Y          Y     True
+81796       10        ?_N          N     True
+81797        ,          Z          Z    False
+81798       lk        ?_Y          Y     True
+81799        .          Z          Z    False
+81800     1563        ?_N          N     True
+81801        -          Z          Z    False
+81802     1579        ?_N          N     True
+81803        )          Z          Z    False
+81804        .          Z          Z    False
+81805     Seda     sg p_P     sg p_P    False
+81806     enam          D          D    False
+---------------------------------------------------------------------------
+Diff at index 18717:
+word          Hepatobiliaarse
+true_label             sg g_H
+pred_label             sg g_A
+is_diff                  True
+Name: 18717, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+18709       haavandina    sg es_S    sg es_S    False
+18710                ,          Z          Z    False
+18711       sõlmekeste     pl g_S     pl g_S    False
+18712                ,          Z          Z    False
+18713   tuberkuloomide     pl g_S     pl g_S    False
+18714              või          J          J    False
+18715   granuloomidena    pl es_S    pl es_S    False
+18716                .          Z          Z    False
+18717  Hepatobiliaarse     sg g_H     sg g_A     True
+18718         süsteemi     sg g_S     sg g_S    False
+18719                (          Z          Z    False
+18720             maks     sg n_S     sg n_S    False
+18721                ,          Z          Z    False
+18722         sapipõis     sg n_S     sg n_S    False
+18723                ,          Z          Z    False
+18724         sapiteed     pl n_S     pl n_S    False
+18725                )          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 75763:
+word          Jumalale
+true_label    sg all_S
+pred_label    sg all_H
+is_diff           True
+Name: 75763, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+75755          .          Z          Z    False
+75756  Kristiina     sg n_H     sg n_H    False
+75757     väidab        b_V        b_V    False
+75758          ,          Z          Z    False
+75759         et          J          J    False
+75760      poisi     sg g_S     sg g_S    False
+75761        elu     sg n_S     sg n_S    False
+75762     kuulub        b_V        b_V    False
+75763   Jumalale   sg all_S   sg all_H     True
+75764         ja          J          J    False
+75765         ta     sg n_P     sg n_P    False
+75766      paneb        b_V        b_V    False
+75767        oma     sg g_P     sg g_P    False
+75768        elu     sg g_S     sg g_S    False
+75769    kaalule   sg all_S   sg all_S    False
+75770          ,          Z          Z    False
+75771         et          J          J    False
+---------------------------------------------------------------------------
+Diff at index 23030:
+word          1953
+true_label     ?_N
+pred_label       N
+is_diff       True
+Name: 23030, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+23022         eelistas        s_V        s_V    False
+23023                "          Z          Z    False
+23024      teaduslikku     sg p_A     sg p_A    False
+23025                "          Z          Z    False
+23026      filosoofiat     sg p_S     sg p_S    False
+23027                .          Z          Z    False
+23028           Popper     sg n_H     sg n_H    False
+23029          taotles        s_V        s_V    False
+23030             1953        ?_N          N     True
+23031         lisaraha     sg p_S     sg p_S    False
+23032                ,          Z          Z    False
+23033               et          J          J    False
+23034            saada       da_V       da_V    False
+23035    Feyerabendile     sg g_H   sg all_H     True
+23036  assistendikohta     sg p_S     sg p_S    False
+23037                ,          Z          Z    False
+23038             kuid          J          J    False
+---------------------------------------------------------------------------
+Diff at index 67217:
+word            kari
+true_label    sg g_S
+pred_label    sg n_S
+is_diff         True
+Name: 67217, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+67209             veel          D          D    False
+67210            kõige          D          D    False
+67211  märkimisväärsem     sg n_C     sg n_C    False
+67212       ebamugavus     sg n_S     sg n_S    False
+67213                .          Z          Z    False
+67214            Hulga          D          D    False
+67215           hullem     sg n_C     sg n_C    False
+67216               on        b_V        b_V    False
+67217             kari     sg g_S     sg n_S     True
+67218          inimesi     pl p_S     pl p_S    False
+67219                ,          Z          Z    False
+67220              kes     sg n_P     pl n_P     True
+67221                "          Z          Z    False
+67222             Mutt     sg n_H     sg n_H    False
+67223                !          Z          Z    False
+67224           Mingil    sg ad_P    sg ad_P    False
+67225         põhjusel    sg ad_S    sg ad_S    False
+---------------------------------------------------------------------------
+Diff at index 13037:
+word             Los
+true_label       ?_H
+pred_label    sg g_H
+is_diff         True
+Name: 13037, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+13029          ja          J          J    False
+13030        Iman     sg n_H     sg n_H    False
+13031    Šveitsis    sg in_H    sg in_H    False
+13032           .          Z          Z    False
+13033         Nad     pl n_P     pl n_P    False
+13034  kavatsesid      sid_V      sid_V    False
+13035       asuda       da_V       da_V    False
+13036       elama       ma_V       ma_V    False
+13037         Los        ?_H     sg g_H     True
+13038   Angelesse      adt_H   sg ill_H     True
+13039          ja          J          J    False
+13040    lendasid      sid_V      sid_V    False
+13041       sinna          D          D    False
+13042     sobivat     sg p_A     sg p_A    False
+13043    elukohta     sg p_S     sg p_S    False
+13044      otsima       ma_V       ma_V    False
+13045           ,          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 4262:
+word          Peale
+true_label        K
+pred_label        D
+is_diff        True
+Name: 4262, dtype: object
+Decision:
+Context:
+                word true_label pred_label  is_diff
+4254               ,          Z          Z    False
+4255              et          J          J    False
+4256          peavad      vad_V      vad_V    False
+4257          jõudma       ma_V       ma_V    False
+4258       avalikult          D          D    False
+4259   sõnastatavate     pl g_A     pl g_A    False
+4260  printsiipideni   pl ter_S   pl ter_S    False
+4261               .          Z          Z    False
+4262           Peale          K          D     True
+4263        seatakse    takse_V    takse_V    False
+4264      eesmärgiks    sg tr_S    sg tr_S    False
+4265               ,          Z          Z    False
+4266              et          J          J    False
+4267            need     pl n_P     pl n_P    False
+4268          viisid     pl n_S     pl n_S    False
+4269      seisneksid     ksid_V     ksid_V    False
+4270       valdavalt          D          D    False
+---------------------------------------------------------------------------
+Diff at index 21263:
+word          1964
+true_label     ?_N
+pred_label       N
+is_diff       True
+Name: 21263, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+21255   pühitseti       ti_V       ti_V    False
+21256  piiskopiks    sg tr_S    sg tr_S    False
+21257         28.        ?_O          O     True
+21258  septembril    sg ad_S    sg ad_S    False
+21259        1958        ?_N          N     True
+21260           )          Z          Z    False
+21261         13.        ?_O          O     True
+21262     jaanuar     sg n_S     sg n_S    False
+21263        1964        ?_N          N     True
+21264           –          Z          Z    False
+21265         16.        ?_O          O     True
+21266    oktoober     sg n_S     sg n_S    False
+21267        1978        ?_N          N     True
+21268     Krakówi     sg g_H     sg g_H    False
+21269  peapiiskop     sg n_S     sg n_S    False
+21270    Johannes     sg n_H     sg n_H    False
+21271      Paulus     sg n_H     sg n_H    False
+---------------------------------------------------------------------------
+Diff at index 15931:
+word          1999
+true_label     ?_N
+pred_label       N
+is_diff       True
+Name: 15931, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+15923         riigiga   sg kom_S   sg kom_S    False
+15924               .          Z          Z    False
+15925               [          Z          Z    False
+15926               .          Z          Z    False
+15927               .          Z          Z    False
+15928               .          Z          Z    False
+15929               (          Z          Z    False
+15930            Oras     sg n_S     sg n_H     True
+15931            1999        ?_N          N     True
+15932               )          Z          Z    False
+15933               .          Z          Z    False
+15934           Eesti     sg g_H     sg g_H    False
+15935     identiteeti     sg p_S     sg p_S    False
+15936            saab        b_V        b_V    False
+15937       põhendada       da_V       da_V    False
+15938              ka          D          D    False
+15939  aastatuhandete     pl g_S     pl g_S    False
+---------------------------------------------------------------------------
+Diff at index 8450:
+word          00:27
+true_label      ?_N
+pred_label        N
+is_diff        True
+Name: 8450, dtype: object
+Decision:
+Context:
+         word true_label pred_label  is_diff
+8442     ikka          D          D    False
+8443        .          Z          Z    False
+8444    --Epp     sg n_H     sg n_H    False
+8445      21.        ?_O          O     True
+8446      mai     sg g_S     sg n_S     True
+8447     2016        ?_N          N     True
+8448        ,          Z          Z    False
+8449     kell     sg n_S     sg n_S    False
+8450    00:27        ?_N          N     True
+8451        (          Z          Z    False
+8452     EEST     sg n_H          Y     True
+8453        )          Z          Z    False
+8454     Minu     sg g_P     sg g_P    False
+8455  meelest          K          K    False
+8456    tuleb        b_V        b_V    False
+8457  leppida       da_V       da_V    False
+8458  sellega   sg kom_P   sg kom_P    False
+---------------------------------------------------------------------------
+Diff at index 69433:
+word          sibidisah
+true_label       sg n_S
+pred_label       pl n_S
+is_diff            True
+Name: 69433, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+69425         Ehk          D          D    False
+69426         jah          D          D    False
+69427     ühendad        d_V        d_V    False
+69428        need     pl n_P     pl n_P    False
+69429         ära          D          D    False
+69430         mis     sg n_P     pl n_P     True
+69431          on        b_V      vad_V     True
+69432  ühesugused     pl n_A     pl n_A    False
+69433   sibidisah     sg n_S     pl n_S     True
+69434           -          Z          Z    False
+69435    09.12.11        ?_N          N     True
+69436       18:34        ?_N          N     True
+69437         VSS        ?_Y          Y     True
+69438           -          Z          Z    False
+69439     Vehicle     sg n_H     sg n_H    False
+69440       Speed     pl n_H     sg n_H     True
+69441      Sensor     sg n_H     sg n_H    False
+---------------------------------------------------------------------------
+Diff at index 80943:
+word          peale
+true_label        K
+pred_label        D
+is_diff        True
+Name: 80943, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+80935          (          Z          Z    False
+80936  valdavalt          D          D    False
+80937      norra          G          G    False
+80938  kirjandus     sg n_S     sg n_S    False
+80939          ,          Z          Z    False
+80940     Soomet     sg p_H     sg p_H    False
+80941    esindab        b_V        b_V    False
+80942       seal          D          D    False
+80943      peale          K          D     True
+80944  Sillanpää     sg n_H     sg n_H    False
+80945  I. Kianto        ?_H          Y     True
+80946          “          Z          Z    False
+80947     Punane     sg n_A     sg n_A    False
+80948       joon     sg n_S     sg n_S    False
+80949          ”          Z          Z    False
+80950          )          Z          Z    False
+80951   arvustas        s_V        s_V    False
+---------------------------------------------------------------------------
+Diff at index 116144:
+word          tehtud
+true_label         A
+pred_label     tud_V
+is_diff         True
+Name: 116144, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+116136         ,          Z          Z    False
+116137        ja          J          J    False
+116138      teha       da_V       da_V    False
+116139      seda     sg p_P     sg p_P    False
+116140       nii          D          D    False
+116141         ,          Z          Z    False
+116142        et          J          J    False
+116143     saaks       ks_V       ks_V    False
+116144    tehtud          A      tud_V     True
+116145      kõik     pl n_P     sg n_P     True
+116146  võimalik     sg n_A     sg n_A    False
+116147         ,          Z          Z    False
+116148      mida     sg p_P     sg p_P    False
+116149        sa     sg n_P     sg n_P    False
+116150    vähegi          D          D    False
+116151    suudad        d_V        d_V    False
+116152        ja          J          J    False
+---------------------------------------------------------------------------
+Diff at index 61439:
+word          Persse
+true_label    sg n_H
+pred_label         I
+is_diff         True
+Name: 61439, dtype: object
+Decision:
+Context:
+          word true_label pred_label  is_diff
+61431   Joonas     sg n_H     sg n_H    False
+61432  jooksis        s_V        s_V    False
+61433      ära          D          D    False
+61434        .          Z          Z    False
+61435     Loll     sg n_A     sg n_S     True
+61436     jääb        b_V        b_V    False
+61437  lolliks    sg tr_A    sg tr_A    False
+61438        .          Z          Z    False
+61439   Persse     sg n_H          I     True
+61440        !          Z          Z    False
+61441        !          Z          Z    False
+61442        "          Z          Z    False
+61443      nii          D          D    False
+61444   mõtles        s_V        s_V    False
+61445   Joonas     sg n_H     sg n_H    False
+61446        ,          Z          Z    False
+61447    Teisi     pl p_P     pl p_P    False
+---------------------------------------------------------------------------
+Diff at index 50407:
+word          tarkvara
+true_label      sg p_S
+pred_label      sg g_S
+is_diff           True
+Name: 50407, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+50399           .          Z          Z    False
+50400         Aga          J          J    False
+50401        seda     sg p_P     sg p_P    False
+50402      ainult          D          D    False
+50403       juhul    sg ad_S    sg ad_S    False
+50404         kui          J          J    False
+50405          me     pl n_P     pl n_P    False
+50406       oleme       me_V       me_V    False
+50407    tarkvara     sg p_S     sg g_S     True
+50408   selliseks    sg tr_P    sg tr_P    False
+50409      teinud      nud_V      nud_V    False
+50410           .          Z          Z    False
+50411  Elektronid     pl n_S     pl n_S    False
+50412     peaksid     ksid_V     ksid_V    False
+50413        omal    sg ad_P    sg ad_P    False
+50414      tahtel    sg ad_S    sg ad_S    False
+50415        kord          D          D    False
+---------------------------------------------------------------------------
+Diff at index 39251:
+word          Maalehel
+true_label     sg ad_S
+pred_label     sg ad_H
+is_diff           True
+Name: 39251, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+39243       kihu     sg p_S     sg g_S     True
+39244       täis          D          D    False
+39245       ning          J          J    False
+39246   mängisin      sin_V      sin_V    False
+39247      Marti      adt_S      adt_S    False
+39248          .          Z          Z    False
+39249       Nüüd          D          D    False
+39250         on        b_V        b_V    False
+39251   Maalehel    sg ad_S    sg ad_H     True
+39252  järgmisel    sg ad_A    sg ad_A    False
+39253     aastal    sg ad_S    sg ad_S    False
+39254      jälle          D          D    False
+39255     teemat     sg p_S     sg p_S    False
+39256          ,          Z          Z    False
+39257    millest    sg el_P    sg el_P    False
+39258  kirjutada       da_V       da_V    False
+39259          .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 45635:
+word          kätte
+true_label    adt_S
+pred_label        D
+is_diff        True
+Name: 45635, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+45627            teha       da_V       da_V    False
+45628  tagaseljaotsus     sg n_S     sg n_S    False
+45629               .          Z          Z    False
+45630    Hagiavalduse     sg g_S     sg g_S    False
+45631            koos          K          K    False
+45632        lisadega   pl kom_S   pl kom_S    False
+45633          saavad      vad_V      vad_V    False
+45634         kostjad     pl n_S     pl n_S    False
+45635           kätte      adt_S          D     True
+45636           Tartu     sg g_H     sg g_H    False
+45637    Linnakohtust    sg el_S    sg el_H     True
+45638               .          Z          Z    False
+45639         Kostjad     pl n_S     pl n_S    False
+45640           Irina     sg n_H     sg n_H    False
+45641      Motsjonova     sg n_H     sg n_H    False
+45642               ,          Z          Z    False
+45643         Larissa     sg n_H     sg n_H    False
+---------------------------------------------------------------------------
+Diff at index 68739:
+word           saaki
+true_label     adt_S
+pred_label    sg p_S
+is_diff         True
+Name: 68739, dtype: object
+Decision:
+Context:
+                word true_label pred_label  is_diff
+68731              ,          Z          Z    False
+68732           sest          J          J    False
+68733          Athos     sg n_H     sg n_H    False
+68734            oli        s_V        s_V    False
+68735  silmnähtavalt          D          D    False
+68736       hasardis    sg in_S    sg in_S    False
+68737             ja          J          J    False
+68738         üritas        s_V        s_V    False
+68739          saaki      adt_S     sg p_S     True
+68740           kahe     sg g_N     sg g_N    False
+68741      esikäpaga   sg kom_S   sg kom_S    False
+68742          vastu          K          K    False
+68743           maad     sg p_S     sg p_S    False
+68744          lüües      des_V      des_V    False
+68745       oimetuks       ks_V    sg tr_A     True
+68746           lüüa       da_V       da_V    False
+68747              .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 111303:
+word            õlga
+true_label    sg p_S
+pred_label     adt_S
+is_diff         True
+Name: 111303, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+111295       oli        s_V        s_V    False
+111296   vangile   sg all_S   sg all_S    False
+111297         ,          Z          Z    False
+111298      keda     pl p_P     sg p_P     True
+111299  sihtisin      sin_V      sin_V    False
+111300         ,          Z          Z    False
+111301    juhile   sg all_S   sg all_S    False
+111302         ,          Z          Z    False
+111303      õlga     sg p_S      adt_S     True
+111304  tunginud          A      nud_V     True
+111305         .          Z          Z    False
+111306      Meil    pl ad_P    pl ad_P    False
+111307     kulus        s_V        s_V    False
+111308      mitu     sg n_P     sg n_P    False
+111309     tundi     sg p_S     sg p_S    False
+111310         ,          Z          Z    False
+111311      enne          D          D    False
+---------------------------------------------------------------------------
+Diff at index 72151:
+word          õnnestunud
+true_label         nud_V
+pred_label             A
+is_diff             True
+Name: 72151, dtype: object
+Decision:
+Context:
+                   word true_label pred_label  is_diff
+72143            selles    sg in_P    sg in_P    False
+72144   väikekodanlikku     sg p_A     sg p_A    False
+72145            idülli     sg g_S     sg p_S     True
+72146               ega          J          J    False
+72147   moraliseerimist     sg p_S     sg p_S    False
+72148                 ,          Z          Z    False
+72149              vaid          J          J    False
+72150  dramaturgiliselt          D          D    False
+72151        õnnestunud      nud_V          A     True
+72152         lahendust     sg p_S     sg p_S    False
+72153                 ,          Z          Z    False
+72154                 “          Z          Z    False
+72155  päikeseloojangut     sg p_S     sg p_S    False
+72156            pärast          K          K    False
+72157        tormipäevi     pl p_S     pl p_S    False
+72158                 ”          Z          Z    False
+72159                 .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 7797:
+word             on
+true_label      b_V
+pred_label    vad_V
+is_diff        True
+Name: 7797, dtype: object
+Decision:
+Context:
+              word true_label pred_label  is_diff
+7789           nad     pl n_P     pl n_P    False
+7790     tuginevad      vad_V      vad_V    False
+7791        ainult          D          D    False
+7792    otsustuste     pl g_S     pl g_S    False
+7793  struktuurile   sg all_S   sg all_S    False
+7794             .          Z          Z    False
+7795     Lubaduste     pl g_S     pl g_S    False
+7796    kohustused     pl n_S     pl n_S    False
+7797            on        b_V      vad_V     True
+7798    teistmoodi          D          D    False
+7799         selle     sg g_P     sg g_P    False
+7800       poolest          K          K    False
+7801             ,          Z          Z    False
+7802            et          J          J    False
+7803           see     sg n_P     sg n_P    False
+7804             ,          Z          Z    False
+7805          mida     sg p_P     sg p_P    False
+---------------------------------------------------------------------------
+Diff at index 39874:
+word              tee
+true_label        o_V
+pred_label    neg o_V
+is_diff          True
+Name: 39874, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+39866          ,          Z          Z    False
+39867         on        b_V        b_V    False
+39868    niivõrd          D          D    False
+39869      väike     sg n_A     sg n_A    False
+39870          ,          Z          Z    False
+39871         et          J          J    False
+39872    sellega   sg kom_P   sg kom_P    False
+39873         ei      neg_V      neg_V    False
+39874        tee        o_V    neg o_V     True
+39875     midagi     sg p_P     sg p_P    False
+39876          .          Z          Z    False
+39877      Mõnes    sg in_P    sg in_P    False
+39878      asjas    sg in_S    sg in_S    False
+39879      oleme       me_V       me_V    False
+39880      isegi          D          D    False
+39881  eeskujuks    sg tr_S    sg tr_S    False
+39882          .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 46448:
+word          Käopesast
+true_label      sg el_H
+pred_label      sg el_S
+is_diff            True
+Name: 46448, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+46440               ,          Z          Z    False
+46441            siis          J          D     True
+46442           tuleb        b_V        b_V    False
+46443          meelde      adt_S      adt_S    False
+46444          stseen     sg n_S     sg n_S    False
+46445          Milosh     sg n_H     sg n_H    False
+46446         Formani     sg n_H     sg g_H     True
+46447               "          Z          Z    False
+46448       Käopesast    sg el_H    sg el_S     True
+46449               "          Z          Z    False
+46450               ,          Z          Z    False
+46451             kui          J          J    False
+46452          hullud     pl n_S     pl n_S    False
+46453         laevale   sg all_S   sg all_S    False
+46454  ekskursioonile   sg all_S   sg all_S    False
+46455         viiakse    takse_V    takse_V    False
+46456              ja          J          J    False
+---------------------------------------------------------------------------
+Diff at index 15511:
+word             osas
+true_label    sg in_S
+pred_label          K
+is_diff          True
+Name: 15511, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+15503       edasi          D          D    False
+15504   Pihkvasse   sg ill_H   sg ill_H    False
+15505          ja          J          J    False
+15506   Novgorodi      adt_H      adt_H    False
+15507           .          Z          Z    False
+15508       Selle     sg g_P     sg g_P    False
+15509     väitega   sg kom_S   sg kom_S    False
+15510       Leedu     sg g_H     sg g_H    False
+15511        osas    sg in_S          K     True
+15512          ei      neg_V      neg_V    False
+15513         saa        o_V    neg o_V     True
+15514       essee     sg n_S     sg g_S     True
+15515       autor     sg n_S     sg n_S    False
+15516    nõustuda       da_V       da_V    False
+15517           .          Z          Z    False
+15518      Leedus    sg in_H    sg in_H    False
+15519  hansalinnu     pl p_S     pl p_S    False
+---------------------------------------------------------------------------
+Diff at index 3239:
+word          T. M. Scanlon
+true_label              ?_H
+pred_label                Y
+is_diff                True
+Name: 3239, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+3231  utilitaristliku     sg g_A     sg g_A    False
+3232           stiili     sg g_S     sg g_S    False
+3233            vahel          K          K    False
+3234                .          Z          Z    False
+3235  Kontraktualismi     sg g_H     sg g_S     True
+3236           keskse     sg g_A     sg g_A    False
+3237             idee     sg n_S     sg g_S     True
+3238         sõnastas        s_V        s_V    False
+3239    T. M. Scanlon        ?_H          Y     True
+3240         moraalse     sg g_A     sg g_A    False
+3241          vääruse     sg g_S     sg g_S    False
+3242           suhtes          K          K    False
+3243                :          Z          Z    False
+3244             tegu     sg n_S     sg n_S    False
+3245               on        b_V        b_V    False
+3246             väär     sg n_A     sg n_A    False
+3247                ,          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 72818:
+word             Elil
+true_label     sg n_H
+pred_label    sg ad_H
+is_diff          True
+Name: 72818, dtype: object
+Decision:
+Context:
+                        word true_label pred_label  is_diff
+72810                     et          J          J    False
+72811                    tal    sg ad_P    sg ad_P    False
+72812                     on        b_V        b_V    False
+72813                lootust     sg p_S     sg p_S    False
+72814                    nei     sg n_S          ?     True
+72815                     du        ?_Y          ?     True
+72816                 kosida       da_V       da_V    False
+72817                      .          Z          Z    False
+72818                   Elil     sg n_H    sg ad_H     True
+72819                     on        b_V        b_V    False
+72820                    ees          D          D    False
+72821              lahkumine     sg n_S     sg n_S    False
+72822  lapsepõlvesõbratarist    sg el_S    sg el_S    False
+72823                      ,          Z          Z    False
+72824         pastoritütrest    sg el_S    sg el_S    False
+72825                      ,          Z          Z    False
+72826                    kes     sg n_P     pl n_P     True
+---------------------------------------------------------------------------
+Diff at index 113266:
+word          valetanud
+true_label        nud_V
+pred_label    neg nud_V
+is_diff            True
+Name: 113266, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+113258            õlgu     pl p_S     pl p_S    False
+113259               .          Z          Z    False
+113260               "          Z          Z    False
+113261         Paistis        s_V        s_V    False
+113262               ,          Z          Z    False
+113263              et          J          J    False
+113264              ta     sg n_P     sg n_P    False
+113265              ei      neg_V      neg_V    False
+113266       valetanud      nud_V  neg nud_V     True
+113267               .          Z          Z    False
+113268           Laual    sg ad_S    sg ad_S    False
+113269            vana     sg g_A     sg g_A    False
+113270         ajalehe     sg g_S     sg g_S    False
+113271            peal          K          K    False
+113272            olid      sid_V      sid_V    False
+113273          tühjad     pl n_A     pl n_A    False
+113274  konservikarbid     pl n_S     pl n_S    False
+---------------------------------------------------------------------------
+Diff at index 36671:
+word            Muud
+true_label    sg p_P
+pred_label    pl n_P
+is_diff         True
+Name: 36671, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+36663              7%        ?_N          N     True
+36664               •        ?_Y          Z     True
+36665       Pesumasin     sg n_S     sg n_S    False
+36666              6%        ?_N          N     True
+36667               •        ?_Y          Z     True
+36668  Nõudepesumasin     sg n_S     sg n_S    False
+36669              4%        ?_N          N     True
+36670               •        ?_Y          Z     True
+36671            Muud     sg p_P     pl n_P     True
+36672              4%        ?_N          N     True
+36673         Allikas     sg n_S     sg n_S    False
+36674               :          Z          Z    False
+36675           Eesti     sg g_H     sg g_H    False
+36676        Roheline     sg n_A     sg n_A    False
+36677       Liikumine     sg n_S     sg n_H     True
+36678              XI        ?_O          O     True
+36679    11. 11. 1918        ?_N          O     True
+---------------------------------------------------------------------------
+Diff at index 17425:
+word          Oldenquist
+true_label       sg el_H
+pred_label        sg n_H
+is_diff             True
+Name: 17425, dtype: object
+Decision:
+Context:
+                       word true_label pred_label  is_diff
+17417                     ,          Z          Z    False
+17418                  mida     sg p_P     pl p_P     True
+17419  mitteenesetapjalikul    sg ad_A    sg ad_A    False
+17420            ühiskonnal    sg ad_S    sg ad_S    False
+17421                    on        b_V        b_V    False
+17422              mõistlik     sg n_A     sg n_A    False
+17423      kriminaliseerida       da_V       da_V    False
+17424                     .          Z          Z    False
+17425            Oldenquist    sg el_H     sg n_H     True
+17426                 arvab        b_V        b_V    False
+17427                    ka          D          D    False
+17428                     ,          Z          Z    False
+17429                    et          J          J    False
+17430           tehnoloogia     sg n_S     sg n_S    False
+17431                  koos          K          K    False
+17432           inimloomuse     sg g_S     sg g_S    False
+17433            tundmisega   sg kom_S   sg kom_S    False
+---------------------------------------------------------------------------
+Diff at index 29184:
+word          valitud
+true_label          A
+pred_label      tud_V
+is_diff          True
+Name: 29184, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+29176     Lilleleht     sg n_H     sg n_H    False
+29177            ja          J          J    False
+29178  kalateadlane     sg n_S     sg n_S    False
+29179         Redik     sg n_H     sg n_H    False
+29180      Eschbaum     sg n_H     sg n_H    False
+29181             .          Z          Z    False
+29182         Välja          D          D    False
+29183            on        b_V      vad_V     True
+29184       valitud          A      tud_V     True
+29185         laiud     pl n_S     pl n_S    False
+29186             ,          Z          Z    False
+29187           kus          D          D    False
+29188   pesitsemist     sg p_S     sg p_S    False
+29189            ei      neg_V      neg_V    False
+29190      segataks     taks_V     taks_V    False
+29191             .          Z          Z    False
+29192         Peale          K          K    False
+---------------------------------------------------------------------------
+Diff at index 55558:
+word             usas
+true_label     sg n_S
+pred_label    sg in_S
+is_diff          True
+Name: 55558, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+55550     lahendusi     pl p_S     pl p_S    False
+55551             .          Z          Z    False
+55552       Maailma     sg g_S     sg g_S    False
+55553       esimene     sg n_O     sg n_O    False
+55554    kokkupuude     pl g_S     sg n_S     True
+55555       ufodega   pl kom_S   pl kom_S    False
+55556           oli        s_V        s_V    False
+55557          1947        ?_N          N     True
+55558          usas     sg n_S    sg in_S     True
+55559             .          Z          Z    False
+55560           See     sg n_P     sg n_P    False
+55561          mida     sg p_P     sg p_P    False
+55562  ameeriklased     pl n_S     pl n_S    False
+55563     sakasmaal     sg n_S    sg ad_S     True
+55564            ja          J          J    False
+55565         selle     sg g_P     sg g_P    False
+55566           all          K          K    False
+---------------------------------------------------------------------------
+Diff at index 84519:
+word              saa
+true_label        o_V
+pred_label    neg o_V
+is_diff          True
+Name: 84519, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+84511            on        b_V        b_V    False
+84512          mitu     sg n_P     sg n_P    False
+84513          last     sg p_S     sg p_S    False
+84514             ,          Z          Z    False
+84515       kellest    pl el_P    sg el_P     True
+84516           aga          J          D     True
+84517        kunagi          D          D    False
+84518            ei      neg_V      neg_V    False
+84519           saa        o_V    neg o_V     True
+84520          head     sg p_A     sg p_A    False
+84521           ema     sg p_S     sg p_S    False
+84522             .          Z          Z    False
+84523  Rehbinderite     pl g_H     pl g_S     True
+84524     pärusmõis     sg n_S     sg n_S    False
+84525          toob        b_V        b_V    False
+84526        meelde      adt_S      adt_S    False
+84527          taas          D          D    False
+---------------------------------------------------------------------------
+Diff at index 13669:
+word           177
+true_label     ?_N
+pred_label       N
+is_diff       True
+Name: 13669, dtype: object
+Decision:
+Context:
+              word true_label pred_label  is_diff
+13661            .          Z          Z    False
+13662            [          Z          Z    False
+13663          173        ?_N          N     True
+13664            ]          Z          Z    False
+13665            [          Z          Z    False
+13666          174        ?_N          N     True
+13667            ]          Z          Z    False
+13668            [          Z          Z    False
+13669          177        ?_N          N     True
+13670            ]          Z          Z    False
+13671      Sellele   sg all_P   sg all_P    False
+13672    järgnenud          A          A    False
+13673  kümnenditel    pl ad_S    pl ad_S    False
+13674           on        b_V        b_V    False
+13675        Bowie     sg n_H     sg g_H     True
+13676     muusikat     sg p_S     sg p_S    False
+13677           ja          J          J    False
+---------------------------------------------------------------------------
+Diff at index 72497:
+word          s.o.
+true_label     ?_Y
+pred_label       Y
+is_diff       True
+Name: 72497, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+72489       jaos    sg in_S    sg in_S    False
+72490          ”          Z          Z    False
+72491      ilmus        s_V        s_V    False
+72492  Bjørnsoni     sg n_H     sg g_H     True
+72493          “          Z          Z    False
+72494     Öövind     sg n_H     sg n_S     True
+72495          ”          Z          Z    False
+72496          ,          Z          Z    False
+72497       s.o.        ?_Y          Y     True
+72498          “          Z          Z    False
+72499     Rõõmus     sg n_H     sg n_A     True
+72500      poiss     sg n_S     sg n_S    False
+72501          ”          Z          Z    False
+72502          (          Z          Z    False
+72503        vt.        ?_Y          Y     True
+72504    eespool          D          D    False
+72505          )          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 12083:
+word             the
+true_label    sg n_S
+pred_label         ?
+is_diff         True
+Name: 12083, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+12075             oma     sg g_P     sg g_P    False
+12076        kolmanda     sg g_O     sg g_O    False
+12077          albumi     sg g_S     sg g_S    False
+12078               "          Z          Z    False
+12079             The     sg n_H     sg n_H    False
+12080             Man     sg n_H     sg n_H    False
+12081             Who     sg n_H          H     True
+12082            Sold     sg n_H          H     True
+12083             the     sg n_S          ?     True
+12084           World     sg n_H     sg n_H    False
+12085               "          Z          Z    False
+12086               .          Z          Z    False
+12087          Albumi     sg g_S     sg g_S    False
+12088  tutvustamiseks    sg tr_S    sg tr_S    False
+12089           USA-s    sg in_Y    sg in_Y    False
+12090          maksis        s_V        s_V    False
+12091     plaadifirma     sg n_S     sg n_S    False
+---------------------------------------------------------------------------
+Diff at index 51609:
+word          muteada
+true_label     sg g_S
+pred_label       da_V
+is_diff          True
+Name: 51609, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+51601        inimesed     pl n_S     pl n_S    False
+51602          lõpuks          D          D    False
+51603         hirmust    sg el_S    sg el_S    False
+51604         lolliks    sg tr_A    sg tr_A    False
+51605               .          Z          Z    False
+51606  Vähetõenäoline     sg n_A     sg n_A    False
+51607               ,          Z          Z    False
+51608             aga          J          J    False
+51609         muteada     sg g_S       da_V     True
+51610        võimalik     sg n_A     sg n_A    False
+51611            küll          D          D    False
+51612               .          Z          Z    False
+51613      Tegelikult          D          D    False
+51614              on        b_V        b_V    False
+51615          enamik     sg n_S     sg n_S    False
+51616       kristlasi     pl p_S     pl p_S    False
+51617         täiesti          D          D    False
+---------------------------------------------------------------------------
+Diff at index 69898:
+word          millest
+true_label    sg el_P
+pred_label    pl el_P
+is_diff          True
+Name: 69898, dtype: object
+Decision:
+Context:
+           word true_label pred_label  is_diff
+69890     peale          D          D    False
+69891   paistab        b_V        b_V    False
+69892         ?          Z          Z    False
+69893  Sellised     pl n_P     pl n_P    False
+69894      need     pl n_P     pl n_P    False
+69895   vidinad     pl n_S     pl n_S    False
+69896        on        b_V      vad_V     True
+69897         ,          Z          Z    False
+69898   millest    sg el_P    pl el_P     True
+69899   ülemine     sg n_A     sg n_A    False
+69900  kinnitub        b_V        b_V    False
+69901      siis          D          D    False
+69902     nende     pl g_P     pl g_P    False
+69903  ribidega   pl kom_S   pl kom_S    False
+69904     junni     sg g_S     sg g_S    False
+69905     külge          K          K    False
+69906     selle     sg g_P     sg g_P    False
+---------------------------------------------------------------------------
+Diff at index 49757:
+word          2013
+true_label     ?_N
+pred_label       N
+is_diff       True
+Name: 49757, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+49749       oled        d_V        d_V    False
+49750    soojalt          D          D    False
+49751       siia          D          D    False
+49752     lehele   sg all_S   sg all_S    False
+49753     tagasi          D          D    False
+49754    oodatud          A      tud_V     True
+49755         1.        ?_O          O     True
+49756  jaanuaril    sg ad_S    sg ad_S    False
+49757       2013        ?_N          N     True
+49758          !          Z          Z    False
+49759       Mine        o_V        o_V    False
+49760        tea        o_V        o_V    False
+49761          ,          Z          Z    False
+49762        ehk          J          D     True
+49763     selles    sg in_P    sg in_P    False
+49764       ongi        b_V        b_V    False
+49765    luulude     pl g_S     pl g_S    False
+---------------------------------------------------------------------------
+Diff at index 76485:
+word            Püha
+true_label    sg n_H
+pred_label    sg n_S
+is_diff         True
+Name: 76485, dtype: object
+Decision:
+Context:
+              word true_label pred_label  is_diff
+76477            ,          Z          Z    False
+76478      näiteks    sg tr_S          D     True
+76479        arvab        b_V        b_V    False
+76480           ta     sg n_P     sg n_P    False
+76481            ,          Z          Z    False
+76482           et          J          J    False
+76483       Snorri     sg n_H     sg g_H     True
+76484            “          Z          Z    False
+76485         Püha     sg n_H     sg n_S     True
+76486         Olav     sg n_H     sg n_H    False
+76487            ”          Z          Z    False
+76488           on        b_V        b_V    False
+76489       märksa          D          D    False
+76490  kunstilisem     sg n_C     sg n_C    False
+76491            .          Z          Z    False
+76492    Akadeemik     sg n_S     sg n_S    False
+76493      Winsnes     sg n_H     sg n_H    False
+---------------------------------------------------------------------------
+Diff at index 51998:
+word              saa
+true_label        o_V
+pred_label    neg o_V
+is_diff          True
+Name: 51998, dtype: object
+Decision:
+Context:
+                    word true_label pred_label  is_diff
+51990              endid     pl p_P     pl p_P    False
+51991         kardetakse    takse_V    takse_V    False
+51992  talvetekitajatena    pl es_S    pl es_S    False
+51993                  .          Z          Z    False
+51994             Tekkis        s_V        s_V    False
+51995            kraater     sg n_S     sg n_S    False
+51996                  .          Z          Z    False
+51997                 Ei      neg_V      neg_V    False
+51998                saa        o_V    neg o_V     True
+51999         arvestatav     sg n_A     sg n_A    False
+52000               olla       da_V       da_V    False
+52001                  ?          Z          Z    False
+52002         Võrdluseks    sg tr_S    sg tr_S    False
+52003          Hiroshima     sg g_H     sg g_H    False
+52004         purustanud      nud_V          A     True
+52005                  "          Z          Z    False
+52006             Little     sg n_H     sg n_H    False
+---------------------------------------------------------------------------
+Diff at index 78432:
+word          29. V 1992
+true_label           ?_Y
+pred_label             O
+is_diff             True
+Name: 78432, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+78424           :          Z          Z    False
+78425   H. Kaints        ?_H          Y     True
+78426           ,          Z          Z    False
+78427         Tee     sg n_S     sg n_S    False
+78428    ülesmäge          D          D    False
+78429           .          Z          Z    False
+78430           -          Z          Z    False
+78431        Sirp     sg n_H     sg n_H    False
+78432  29. V 1992        ?_Y          O     True
+78433           ,          Z          Z    False
+78434         nr.        ?_Y          Y     True
+78435          22        ?_N          N     True
+78436           )          Z          Z    False
+78437     Ühtlasi          D          D    False
+78438          on        b_V        b_V    False
+78439         see     sg n_P     sg n_P    False
+78440   omalaadne     sg n_A     sg n_A    False
+---------------------------------------------------------------------------
+Diff at index 90219:
+word          Dyrendali
+true_label       sg n_H
+pred_label       sg p_H
+is_diff            True
+Name: 90219, dtype: object
+Decision:
+Context:
+                      word true_label pred_label  is_diff
+90211            eessõnaga   sg kom_S   sg kom_S    False
+90212                    .          Z          Z    False
+90213            Kirjaniku     sg g_S     sg g_S    False
+90214  loomingututvustuses    sg in_S    sg in_S    False
+90215                   ei      neg_V      neg_V    False
+90216               seosta        o_V    neg o_V     True
+90217             Raudsepp     sg n_H     sg n_H    False
+90218                    “          Z          Z    False
+90219            Dyrendali     sg n_H     sg p_H     True
+90220                    ”          Z          Z    False
+90221                    “          Z          Z    False
+90222             Kaotatud          A          A    False
+90223               koduga   sg kom_S   sg kom_S    False
+90224                    ”          Z          Z    False
+90225                    .          Z          Z    False
+90226          A. Lembergi     sg g_H          Y     True
+90227            saatesõna     sg n_S     sg n_S    False
+---------------------------------------------------------------------------
+Diff at index 43944:
+word             ise
+true_label    sg n_P
+pred_label    pl n_P
+is_diff         True
+Name: 43944, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+43936    sõbralik     sg n_A     sg n_A    False
+43937          ja          J          J    False
+43938       vahel          D          D    False
+43939  arusaamatu     sg n_A     sg n_A    False
+43940   moodustis     sg n_S     sg n_S    False
+43941           ,          Z          Z    False
+43942        vaid          D          J     True
+43943          me     pl n_P     pl n_P    False
+43944         ise     sg n_P     pl n_P     True
+43945       oleme       me_V       me_V    False
+43946         üks     sg n_P     sg n_P    False
+43947         osa     sg n_S     sg n_S    False
+43948     sellest    sg el_P    sg el_P    False
+43949           .          Z          Z    False
+43950    Artikkel     sg n_S     sg n_S    False
+43951     põhineb        b_V        b_V    False
+43952          4.        ?_O          O     True
+---------------------------------------------------------------------------
+Diff at index 56685:
+word           USA
+true_label     ?_Y
+pred_label       Y
+is_diff       True
+Name: 56685, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+56677            ka          D          D    False
+56678         Hiina     sg g_H     sg n_H     True
+56679             .          Z          Z    False
+56680        Lisaks    sg tr_S    sg tr_S    False
+56681          teie     pl g_P     pl g_P    False
+56682         poolt          K          K    False
+56683       toodule   sg all_S   sg all_S    False
+56684          veel          D          D    False
+56685           USA        ?_Y          Y     True
+56686           üha          D          D    False
+56687      suurenev     sg n_A     sg n_A    False
+56688  laevatoodang     sg n_S     sg n_S    False
+56689             ,          Z          Z    False
+56690           mis     sg n_P     sg n_P    False
+56691         mitte          D          D    False
+56692            ei      neg_V      neg_V    False
+56693     asendanud      nud_V  neg nud_V     True
+---------------------------------------------------------------------------
+Diff at index 81684:
+word          21. XI 1983
+true_label            ?_Y
+pred_label              O
+is_diff              True
+Name: 81684, dtype: object
+Decision:
+Context:
+              word true_label pred_label  is_diff
+81676            .          Z          Z    False
+81677     Johannes     sg n_H     sg n_H    False
+81678       Edfelt     sg n_H     sg n_H    False
+81679            (          Z          Z    False
+81680            “          Z          Z    False
+81681      Svenska     sg g_H     sg n_H     True
+81682    Dagbladet     sg n_H     sg n_H    False
+81683            ”          Z          Z    False
+81684  21. XI 1983        ?_Y          O     True
+81685            )          Z          Z    False
+81686      võrdleb        b_V        b_V    False
+81687        Valev     sg n_H     sg n_H    False
+81688      Uibopuu     sg g_H     sg g_H    False
+81689      novelle     pl p_S     pl p_S    False
+81690            (          Z          Z    False
+81691        eriti          D          D    False
+81692            “          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 36975:
+word            50
+true_label     ?_N
+pred_label       N
+is_diff       True
+Name: 36975, dtype: object
+Decision:
+Context:
+           word true_label pred_label  is_diff
+36967     puhul          K          K    False
+36968        on        b_V        b_V    False
+36969       see     sg n_P     sg n_P    False
+36970      44x1        ?_Y          Y     True
+36971         ,          Z          Z    False
+36972        13        ?_N          N     True
+36973    krooni     sg p_S     sg p_S    False
+36974         =          Z          Z    False
+36975        50        ?_N          N     True
+36976    krooni     sg p_S     sg p_S    False
+36977         .          Z          Z    False
+36978     Kokku          D          D    False
+36979     seega          D          D    False
+36980       100        ?_N          N     True
+36981    krooni     sg p_S     sg p_S    False
+36982         .          Z          Z    False
+36983  Ministri     sg g_S     sg g_S    False
+---------------------------------------------------------------------------
+Diff at index 64428:
+word              ole
+true_label        o_V
+pred_label    neg o_V
+is_diff          True
+Name: 64428, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+64420      viivad      vad_V      vad_V    False
+64421     selleni   sg ter_P   sg ter_P    False
+64422           ,          Z          Z    False
+64423          et          J          J    False
+64424        mida     sg p_P     sg p_P    False
+64425      iganes          D          D    False
+64426  vanemapalk     sg n_S     sg n_S    False
+64427          ei      neg_V      neg_V    False
+64428         ole        o_V    neg o_V     True
+64429  saavutanud      nud_V      nud_V    False
+64430           ,          Z          Z    False
+64431       selle     sg g_P     sg g_P    False
+64432       efekt     sg n_S     sg n_S    False
+64433     kahaneb        b_V        b_V    False
+64434      hiljem          D          D    False
+64435        taas          D          D    False
+64436           .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 45612:
+word           a .
+true_label     ?_Y
+pred_label       Y
+is_diff       True
+Name: 45612, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+45604           tuleb        b_V        b_V    False
+45605       arutusele   sg all_S   sg all_S    False
+45606           Pärnu     sg g_H     sg g_H    False
+45607     Linnakohtus    sg in_S    sg in_H     True
+45608          Rüütli     sg g_H     sg n_H     True
+45609              19        ?_N          N     True
+45610  16 . 02 . 1998        ?_N          N     True
+45611               .          Z          Z    False
+45612             a .        ?_Y          Y     True
+45613        algusega   sg kom_S   sg kom_S    False
+45614            kell     sg n_S     sg n_S    False
+45615            10 .        ?_O          N     True
+45616            30 .        ?_O          N     True
+45617  Mitteilmumisel    sg ad_S    sg ad_S    False
+45618              on        b_V        b_V    False
+45619          kohtul    sg ad_S    sg ad_S    False
+45620           õigus     sg n_S     sg n_S    False
+---------------------------------------------------------------------------
+Diff at index 4420:
+word             on
+true_label      b_V
+pred_label    vad_V
+is_diff        True
+Name: 4420, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+4412        peaksid     ksid_V     ksid_V    False
+4413        viimaks          D          D    False
+4414          õiged     pl n_A     pl n_A    False
+4415          olema       ma_V       ma_V    False
+4416              ,          Z          Z    False
+4417           vaid          J          J    False
+4418             et          J          J    False
+4419            nad     pl n_P     pl n_P    False
+4420             on        b_V      vad_V     True
+4421           meie     pl g_P     pl g_P    False
+4422  intuitsioonid     pl n_S     pl n_S    False
+4423              :          Z          Z    False
+4424      otsitakse    takse_V    takse_V    False
+4425       eetilise     sg g_A     sg g_A    False
+4426            elu     sg g_S     sg g_S    False
+4427       teooriat     sg p_S     sg p_S    False
+4428           meie     pl g_P     pl g_P    False
+---------------------------------------------------------------------------
+Diff at index 70262:
+word          Juhitaus
+true_label     sg in_H
+pred_label      sg n_S
+is_diff           True
+Name: 70262, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+70254        seda     sg p_P     sg p_P    False
+70255     kahjuks          D          D    False
+70256       kätte      adt_S          D     True
+70257          ei      neg_V      neg_V    False
+70258  õnnestunud      nud_V  neg nud_V     True
+70259       saada       da_V       da_V    False
+70260     kahjuks    sg tr_S          D     True
+70261           .          Z          Z    False
+70262    Juhitaus    sg in_H     sg n_S     True
+70263   võrreldes      des_V      des_V    False
+70264          b4        ?_Y          Y     True
+70265          on        b_V      vad_V     True
+70266          öö     sg n_S     sg n_S    False
+70267          ja          J          J    False
+70268        päev     sg n_S     sg n_S    False
+70269           .          Z          Z    False
+70270        Siis          D          D    False
+---------------------------------------------------------------------------
+Diff at index 76848:
+word            Vene
+true_label    sg g_H
+pred_label         G
+is_diff         True
+Name: 76848, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+76840        Norral    sg ad_H    sg ad_H    False
+76841          olid      sid_V      sid_V    False
+76842          head     pl n_A     pl n_A    False
+76843        suhted     pl n_S     pl n_S    False
+76844           ühe     sg g_P     sg g_P    False
+76845      Müncheni     sg g_H     sg g_H    False
+76846  kirjastusega   sg kom_S   sg kom_S    False
+76847             .          Z          Z    False
+76848          Vene     sg g_H          G     True
+76849        keeles    sg in_S    sg in_S    False
+76850         ilmus        s_V        s_V    False
+76851        romaan     sg n_S     sg n_S    False
+76852             “          Z          Z    False
+76853         Kevad     sg n_S     sg n_S    False
+76854             ”          Z          Z    False
+76855         1929.        ?_O          O     True
+76856            a.        ?_Y          Y     True
+---------------------------------------------------------------------------
+Diff at index 66398:
+word              või
+true_label        o_V
+pred_label    neg o_V
+is_diff          True
+Name: 66398, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+66390       enda     sg g_P     sg g_P    False
+66391       eest          K          K    False
+66392  hääletama       ma_V       ma_V    False
+66393         :)          Z          Z    False
+66394          "          Z          Z    False
+66395        Tra     sg n_H          I     True
+66396         ma     sg n_P     sg n_P    False
+66397         ei      neg_V      neg_V    False
+66398        või        o_V    neg o_V     True
+66399          ,          Z          Z    False
+66400          "          Z          Z    False
+66401     vandus        s_V        s_V    False
+66402      Nublu     sg n_S     sg n_H     True
+66403          ,          Z          Z    False
+66404          "          Z          Z    False
+66405       mida     sg p_P     sg p_P    False
+66406    kuradit     sg p_S     sg p_S    False
+---------------------------------------------------------------------------
+Diff at index 85004:
+word           Taaras
+true_label    sg in_S
+pred_label    sg in_H
+is_diff          True
+Name: 85004, dtype: object
+Decision:
+Context:
+                   word true_label pred_label  is_diff
+84996           tegevus     sg n_S     sg n_S    False
+84997                 ,          Z          Z    False
+84998  patronaadiõiguse     sg g_S     sg g_S    False
+84999           küsimus     sg n_S     sg n_S    False
+85000                 ,          Z          Z    False
+85001        koolilaste     pl g_S     pl g_S    False
+85002              peod     pl n_S     pl n_S    False
+85003                 “          Z          Z    False
+85004            Taaras    sg in_S    sg in_H     True
+85005                 ”          Z          Z    False
+85006                ja          J          J    False
+85007                 “          Z          Z    False
+85008          Karskuse     sg g_S     sg g_S    False
+85009            Sõbras    sg in_S    sg in_H     True
+85010                 ”          Z          Z    False
+85011              ning          J          J    False
+85012             neile   pl all_P   pl all_P    False
+---------------------------------------------------------------------------
+Diff at index 59509:
+word            nägu
+true_label    sg n_S
+pred_label    sg p_S
+is_diff         True
+Name: 59509, dtype: object
+Decision:
+Context:
+          word true_label pred_label  is_diff
+59501    tugev     sg n_A     sg n_A    False
+59502      soe     sg n_A     sg n_A    False
+59503     tuul     sg n_S     sg n_S    False
+59504        ,          Z          Z    False
+59505      mis     sg n_P     sg n_P    False
+59506     nüüd          D          D    False
+59507       ka          D          D    False
+59508     mehe     sg g_S     sg g_S    False
+59509     nägu     sg n_S     sg p_S     True
+59510  silitas        s_V        s_V    False
+59511        .          Z          Z    False
+59512        "          Z          Z    False
+59513       Ma     sg n_P     sg n_P    False
+59514       ei      neg_V      neg_V    False
+59515   öelnud      nud_V  neg nud_V     True
+59516     seda     sg p_P     sg p_P    False
+59517        .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 78720:
+word          Monoliidi
+true_label       sg n_H
+pred_label       sg g_S
+is_diff            True
+Name: 78720, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+78712     vankrit     sg p_S     sg p_S    False
+78713           .          Z          Z    False
+78714         Nii          D          D    False
+78715     päästis        s_V        s_V    False
+78716          ta     sg n_P     sg n_P    False
+78717  õhkimisest    sg el_S    sg el_S    False
+78718   Vigelandi      adt_S     sg g_H     True
+78719           “          Z          Z    False
+78720   Monoliidi     sg n_H     sg g_S     True
+78721           ”          Z          Z    False
+78722          ja          J          J    False
+78723        sadu     pl p_N     pl p_N    False
+78724  skulptuure     pl p_S     pl p_S    False
+78725    Frøgneri     sg g_H     sg g_H    False
+78726      pargis    sg in_S    sg in_S    False
+78727       Oslos    sg in_H    sg in_H    False
+78728           .          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 19744:
+word          1109.
+true_label      ?_O
+pred_label        O
+is_diff        True
+Name: 19744, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+19736          ,          Z          Z    False
+19737    Antakya     sg n_H     sg n_H    False
+19738         ja          J          J    False
+19739    Tripoli     sg n_H     sg g_H     True
+19740          (          Z          Z    False
+19741       mida     sg p_P     sg p_P    False
+19742         ta     sg n_P     sg n_P    False
+19743      aitas        s_V        s_V    False
+19744      1109.        ?_O          O     True
+19745     aastal    sg ad_S    sg ad_S    False
+19746  vallutada       da_V       da_V    False
+19747          )          Z          Z    False
+19748          .          Z          Z    False
+19749         Et          J          J    False
+19750      saada       da_V       da_V    False
+19751     Edessa     sg g_H     sg g_H    False
+19752   armeenia          G          G    False
+---------------------------------------------------------------------------
+Diff at index 104065:
+word            viga
+true_label    sg p_S
+pred_label    sg n_S
+is_diff         True
+Name: 104065, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+104057            ,          Z          Z    False
+104058         mida     sg p_P     sg p_P    False
+104059   jaamahoone     sg g_S     sg g_S    False
+104060     tuledeks    pl tr_S    pl tr_S    False
+104061      pidasin      sin_V      sin_V    False
+104062            .          Z          Z    False
+104063            "          Z          Z    False
+104064          Oma     sg g_P     sg g_P    False
+104065         viga     sg p_S     sg n_S     True
+104066            .          Z          Z    False
+104067     Taipasin      sin_V      sin_V    False
+104068            ,          Z          Z    False
+104069           et          J          J    False
+104070      Vassili     sg n_H     sg n_H    False
+104071  Lavrentjitš     sg n_H     sg n_H    False
+104072         peab        b_V        b_V    False
+104073        olema       ma_V       ma_V    False
+---------------------------------------------------------------------------
+Diff at index 40175:
+word             on
+true_label      b_V
+pred_label    vad_V
+is_diff        True
+Name: 40175, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+40167           ”          Z          Z    False
+40168      Kolmas     sg n_O     sg n_O    False
+40169         asi     sg n_S     sg n_S    False
+40170           ,          Z          Z    False
+40171        mida     sg p_P     sg p_P    False
+40172         nad     pl n_P     pl n_P    False
+40173     kiruvad      vad_V      vad_V    False
+40174           ,          Z          Z    False
+40175          on        b_V      vad_V     True
+40176       liiga          D          D    False
+40177      kitsad     pl n_A     pl n_A    False
+40178  mahasõidud     pl n_S     pl n_S    False
+40179           .          Z          Z    False
+40180       Kalle     sg g_H     sg n_H     True
+40181     Teekivi     sg n_S     sg n_H     True
+40182         oli        s_V        s_V    False
+40183        enne          K          K    False
+---------------------------------------------------------------------------
+Diff at index 43345:
+word             ise
+true_label    sg n_P
+pred_label         D
+is_diff         True
+Name: 43345, dtype: object
+Decision:
+Context:
+                word true_label pred_label  is_diff
+43337          sõnul    pl ad_S    pl ad_S    False
+43338             on        b_V        b_V    False
+43339   norralastest    pl el_S    pl el_S    False
+43340             ja          J          J    False
+43341    soomlastest    pl el_S    pl el_S    False
+43342        värsked     pl n_A     pl n_A    False
+43343       omanikud     pl n_S     pl n_S    False
+43344             ka          D          D    False
+43345            ise     sg n_P          D     True
+43346  juustutootjad     pl n_S     pl n_S    False
+43347              ,          Z          Z    False
+43348            kes     sg n_P     pl n_P     True
+43349       tunnevad      vad_V      vad_V    False
+43350    juustundust     sg p_S     sg p_S    False
+43351             ja          J          J    False
+43352    juustuturgu     sg p_S     sg p_S    False
+43353           ning          J          J    False
+---------------------------------------------------------------------------
+Diff at index 79593:
+word            vana
+true_label    sg n_A
+pred_label    sg g_A
+is_diff         True
+Name: 79593, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+79585        tohi        o_V    neg o_V     True
+79586        seda     sg p_P     sg p_P    False
+79587        olla       da_V       da_V    False
+79588           .          Z          Z    False
+79589  Sisuliselt          D          D    False
+79590          on        b_V        b_V    False
+79591         see     sg n_P     sg n_P    False
+79592       kõige          D          D    False
+79593        vana     sg n_A     sg g_A     True
+79594          ja          J          J    False
+79595  raugastunu     sg g_S     sg g_S    False
+79596    eitamine     sg n_S     sg n_S    False
+79597           .          Z          Z    False
+79598     Novelli     sg p_S     sg g_S     True
+79599   tõlkijana    sg es_S    sg es_S    False
+79600          on        b_V        b_V    False
+79601           “          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 63977:
+word             Kes
+true_label    sg n_P
+pred_label    pl n_P
+is_diff         True
+Name: 63977, dtype: object
+Decision:
+Context:
+                      word true_label pred_label  is_diff
+63969              inimese     sg g_S     sg g_S    False
+63970  manipuleeritavusest    sg el_S    sg el_S    False
+63971                    .          Z          Z    False
+63972                 Seal          D          D    False
+63973              selline     sg n_P     sg n_P    False
+63974                 lõik     sg n_S     sg n_S    False
+63975                    :          Z          Z    False
+63976                    "          Z          Z    False
+63977                  Kes     sg n_P     pl n_P     True
+63978               näevad      vad_V      vad_V    False
+63979             paremini          D          D    False
+63980           poliitikat     sg p_S     sg p_S    False
+63981                 läbi          D          D    False
+63982                    –          Z          Z    False
+63983                  kas          D          D    False
+63984               noored     pl n_A     pl n_A    False
+63985                  või          J          J    False
+---------------------------------------------------------------------------
+Diff at index 15497:
+word           Võnnu
+true_label    sg n_H
+pred_label    sg g_H
+is_diff         True
+Name: 15497, dtype: object
+Decision:
+Context:
+              word true_label pred_label  is_diff
+15489            -          Z          Z    False
+15490  Vilniusesse   sg ill_H   sg ill_H    False
+15491            ,          Z          Z    False
+15492         läbi          K          K    False
+15493      Koknese     sg g_H     sg g_H    False
+15494  Polotskisse   sg ill_H   sg ill_H    False
+15495         ning          J          J    False
+15496         läbi          D          K     True
+15497        Võnnu     sg n_H     sg g_H     True
+15498           ja          J          J    False
+15499     Valmiera     sg n_H     sg g_H     True
+15500     Tartusse   sg ill_H   sg ill_H    False
+15501           ja          J          J    False
+15502        sealt          D          D    False
+15503        edasi          D          D    False
+15504    Pihkvasse   sg ill_H   sg ill_H    False
+15505           ja          J          J    False
+---------------------------------------------------------------------------
+Diff at index 46612:
+word              ole
+true_label        o_V
+pred_label    neg o_V
+is_diff          True
+Name: 46612, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+46604               ja          J          J    False
+46605         isikliku     sg g_A     sg g_A    False
+46606              elu     sg g_S     sg g_S    False
+46607            vahel          K          K    False
+46608               ja          J          J    False
+46609              kas          D          D    False
+46610              üks     sg n_P     sg n_P    False
+46611               ei      neg_V      neg_V    False
+46612              ole        o_V    neg o_V     True
+46613            teine     sg n_P     sg n_P    False
+46614               ja          J          J    False
+46615            teine     sg n_P     sg n_P    False
+46616          esimene     sg n_O     sg n_O    False
+46617                .          Z          Z    False
+46618         Sellised     pl n_P     pl n_P    False
+46619           siirad     pl n_A     pl n_A    False
+46620  omaetteolemised     pl n_S     pl n_S    False
+---------------------------------------------------------------------------
+Diff at index 44504:
+word           kohtus
+true_label    sg in_S
+pred_label        s_V
+is_diff          True
+Name: 44504, dtype: object
+Decision:
+Context:
+                     word true_label pred_label  is_diff
+44496                küla     sg g_S     sg g_S    False
+44497  kogukonnatöörühmas    sg in_S    sg in_S    False
+44498                   .          Z          Z    False
+44499                  Ta     sg n_P     sg n_P    False
+44500                käis        s_V        s_V    False
+44501              mitmes    sg in_P    sg in_P    False
+44502               külas    sg in_S    sg in_S    False
+44503                   ,          Z          Z    False
+44504              kohtus    sg in_S        s_V     True
+44505          inimestega   pl kom_S   pl kom_S    False
+44506                   ,          Z          Z    False
+44507              osales        s_V        s_V    False
+44508            talgutel    pl ad_S    pl ad_S    False
+44509                  ja          J          J    False
+44510             pidudel    pl ad_S    pl ad_S    False
+44511                   .          Z          Z    False
+44512               Mitte          D          D    False
+---------------------------------------------------------------------------
+Diff at index 30051:
+word             osa
+true_label    sg p_S
+pred_label    sg g_S
+is_diff         True
+Name: 30051, dtype: object
+Decision:
+Context:
+              word true_label pred_label  is_diff
+30043     varakult          D          D    False
+30044            .          Z          Z    False
+30045           Ka          D          D    False
+30046        Eesti     sg g_H     sg g_H    False
+30047       muljed     pl n_S     pl n_S    False
+30048           on        b_V      vad_V     True
+30049       andnud      nud_V      nud_V    False
+30050          oma     sg g_P     sg g_P    False
+30051          osa     sg p_S     sg g_S     True
+30052            .          Z          Z    False
+30053          Elu     sg g_S     sg g_S    False
+30054       lõpuni   sg ter_S   sg ter_S    False
+30055           on        b_V        b_V    False
+30056   kunstnikul    sg ad_S    sg ad_S    False
+30057       meeles    sg in_S    sg in_S    False
+30058         sõit     sg n_S     sg n_S    False
+30059  viieaastase     sg g_A     sg g_A    False
+---------------------------------------------------------------------------
+Diff at index 87153:
+word             on
+true_label      b_V
+pred_label    vad_V
+is_diff        True
+Name: 87153, dtype: object
+Decision:
+Context:
+           word true_label pred_label  is_diff
+87145        ja          J          J    False
+87146    varjud     pl n_S     pl n_S    False
+87147         .          Z          Z    False
+87148  Päevikud     pl n_S     pl n_S    False
+87149  aastaist    pl el_S    pl el_S    False
+87150      1907        ?_N          N     True
+87151         -          Z          Z    False
+87152      1915        ?_N          N     True
+87153        on        b_V      vad_V     True
+87154     olnud      nud_V      nud_V    False
+87155        ta     sg g_P     sg g_P    False
+87156      tugi     sg n_S     sg n_S    False
+87157       elu     sg g_S     sg g_S    False
+87158  rasketel    pl ad_A    pl ad_A    False
+87159   aegadel    pl ad_S    pl ad_S    False
+87160         ,          Z          Z    False
+87161       mil          D          D    False
+---------------------------------------------------------------------------
+Diff at index 40738:
+word          ressursikulu
+true_label          sg n_S
+pred_label          sg p_S
+is_diff               True
+Name: 40738, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+40730          väntama       ma_V       ma_V    False
+40731                .          Z          Z    False
+40732            Teine     sg n_P     sg n_P    False
+40733          näitlik     sg n_A     sg n_A    False
+40734             pilt     sg n_S     sg n_S    False
+40735                ,          Z          Z    False
+40736              mis     sg n_P     sg n_P    False
+40737  elektritootmise     sg g_S     sg g_S    False
+40738     ressursikulu     sg n_S     sg p_S     True
+40739     iseloomustab        b_V        b_V    False
+40740                ,          Z          Z    False
+40741               on        b_V        b_V    False
+40742      arvestuslik     sg n_A     sg n_A    False
+40743            ämber     sg n_S     sg n_S    False
+40744        põlevkivi     sg n_S     sg p_S     True
+40745                .          Z          Z    False
+40746          Näiteks    sg tr_S          D     True
+---------------------------------------------------------------------------
+Diff at index 31508:
+word          sisulisse
+true_label        adt_A
+pred_label     sg ill_A
+is_diff            True
+Name: 31508, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+31500          et          J          J    False
+31501        just          D          D    False
+31502       selle     sg g_P     sg g_P    False
+31503   valdkonna     sg g_S     sg g_S    False
+31504       kaudu          K          K    False
+31505       oleme       me_V       me_V    False
+31506      praegu          D          D    False
+31507    tõmmatud      tud_V      tud_V    False
+31508   sisulisse      adt_A   sg ill_A     True
+31509  koostöösse   sg ill_S   sg ill_S    False
+31510           .          Z          Z    False
+31511     Venemaa     sg n_H     sg n_H    False
+31512   protestis        s_V        s_V    False
+31513     sellise     sg g_P     sg g_P    False
+31514  kommünikee     sg g_S     sg g_S    False
+31515   sõnastuse     sg g_S     sg g_S    False
+31516          ja          J          J    False
+---------------------------------------------------------------------------
+Diff at index 67552:
+word          Joshua
+true_label    sg g_H
+pred_label    sg n_H
+is_diff         True
+Name: 67552, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+67544          kõigile   pl all_P   pl all_P    False
+67545    jahmerdustele   pl all_S   pl all_S    False
+67546        vaatamata          K          K    False
+67547             olen        n_V        n_V    False
+67548           kindel     sg n_A     sg n_A    False
+67549                ,          Z          Z    False
+67550               et          J          J    False
+67551              kui          J          J    False
+67552           Joshua     sg g_H     sg n_H     True
+67553             kord     sg n_S          D     True
+67554           kohale          D          D    False
+67555            jõuab        b_V        b_V    False
+67556                ,          Z          Z    False
+67557             saab        b_V        b_V    False
+67558               ta     sg n_P     sg n_P    False
+67559              oma     sg g_P     sg g_P    False
+67560  tööülesannetega   pl kom_S   pl kom_S    False
+---------------------------------------------------------------------------
+Diff at index 61455:
+word             says
+true_label    sg in_S
+pred_label     sg n_S
+is_diff          True
+Name: 61455, dtype: object
+Decision:
+Context:
+           word true_label pred_label  is_diff
+61447     Teisi     pl p_P     pl p_P    False
+61448       aga          J          J    False
+61449     samal    sg ad_P    sg ad_P    False
+61450      ajal    sg ad_S    sg ad_S    False
+61451     logis        s_V        s_V    False
+61452      msni     sg n_S      adt_S     True
+61453         .          Z          Z    False
+61454         *          Z          Z    False
+61455      says    sg in_S     sg n_S     True
+61456         :          Z          Z    False
+61457       Sau     sg n_H     sg n_H    False
+61458  Adelaine     sg n_H     sg n_H    False
+61459         ,          Z          Z    False
+61460      siin          D          D    False
+61461        on        b_V        b_V    False
+61462       nii          D          D    False
+61463      jube     sg n_A     sg n_A    False
+---------------------------------------------------------------------------
+Diff at index 39945:
+word           valla
+true_label         D
+pred_label    sg g_S
+is_diff         True
+Name: 39945, dtype: object
+Decision:
+Context:
+                     word true_label pred_label  is_diff
+39937                  ka          D          D    False
+39938                meie     pl g_P     pl g_P    False
+39939            tänavuse     sg g_A     sg g_A    False
+39940            Maapäeva     sg g_S     sg g_H     True
+39941         külalisteks    pl tr_S    pl tr_S    False
+39942                  ja          J          J    False
+39943            osalesid      sid_V      sid_V    False
+39944               Vinni          D     sg g_H     True
+39945               valla          D     sg g_S     True
+39946              Palasi     sg g_H     sg g_H    False
+39947                küla     sg g_S     sg g_S    False
+39948  kogukonnatöörühmas    sg in_S    sg in_S    False
+39949                   .          Z          Z    False
+39950              Laulus     sg n_H    sg in_S     True
+39951          iseolemine     sg n_S     sg n_S    False
+39952                   “          Z          Z    False
+39953               Päeva     sg g_S     sg g_S    False
+---------------------------------------------------------------------------
+Diff at index 27706:
+word          kadunud
+true_label      nud_V
+pred_label          A
+is_diff          True
+Name: 27706, dtype: object
+Decision:
+Context:
+            word true_label pred_label  is_diff
+27698         on        b_V        b_V    False
+27699      välja          D          D    False
+27700     pandud      tud_V      tud_V    False
+27701  vaevatasu     sg n_S     sg n_S    False
+27702          .          Z          Z    False
+27703    Aaspere     sg n_H     sg g_H     True
+27704       Agro     sg n_H     sg n_H    False
+27705      andis        s_V        s_V    False
+27706    kadunud      nud_V          A     True
+27707    loomade     pl g_S     pl g_S    False
+27708    numbrid     pl n_S     pl n_S    False
+27709       kohe          D          D    False
+27710         ka          D          D    False
+27711    PRIA-le   sg all_Y   sg all_Y    False
+27712      teada       da_V       da_V    False
+27713          .          Z          Z    False
+27714   Politsei     sg n_S     sg n_S    False
+---------------------------------------------------------------------------
+Diff at index 19624:
+word          Paavst
+true_label    sg n_H
+pred_label    sg n_S
+is_diff         True
+Name: 19624, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+19616        tihedaid     pl p_A     pl p_A    False
+19617     poliitilisi     pl p_A     pl p_A    False
+19618         suhteid     pl p_S     pl p_S    False
+19619            kogu          A          A    False
+19620     kuningriigi     sg g_S     sg g_S    False
+19621  eksisteerimise     sg g_S     sg g_S    False
+19622          vältel          K          K    False
+19623               .          Z          Z    False
+19624          Paavst     sg n_H     sg n_S     True
+19625         Urbanus     sg n_H     sg n_H    False
+19626              II        ?_O          O     True
+19627        kuulutas        s_V        s_V    False
+19628         esimese     sg g_O     sg g_O    False
+19629       ristisõja     sg g_S     sg g_S    False
+19630           välja          D          D    False
+19631           1095.        ?_O          O     True
+19632           aasta     sg g_S     sg g_S    False
+---------------------------------------------------------------------------
+Diff at index 44525:
+word           teeda
+true_label    sg n_S
+pred_label    sg p_S
+is_diff         True
+Name: 44525, dtype: object
+Decision:
+Context:
+               word true_label pred_label  is_diff
+44517  abipalvetele   pl all_S   pl all_S    False
+44518            ja          J          J    False
+44519           tal    sg ad_P    sg ad_P    False
+44520         tuleb        b_V        b_V    False
+44521           ise     sg n_P     sg n_P    False
+44522         minna       da_V       da_V    False
+44523             “          Z          Z    False
+44524         mööda          D          K     True
+44525         teeda     sg n_S     sg p_S     True
+44526             ,          Z          Z    False
+44527     tillukene     sg n_A     sg n_A    False
+44528             ,          Z          Z    False
+44529         mööda          D          K     True
+44530         vetta     sg n_S     sg p_S     True
+44531             ,          Z          Z    False
+44532       väikene     sg n_A     sg n_A    False
+44533             ,          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 44349:
+word              ole
+true_label        o_V
+pred_label    neg o_V
+is_diff          True
+Name: 44349, dtype: object
+Decision:
+Context:
+                    word true_label pred_label  is_diff
+44341               Pitk     sg n_H     sg n_H    False
+44342              Samas          D          D    False
+44343            ütlevad      vad_V      vad_V    False
+44344                nad     pl n_P     pl n_P    False
+44345                  ,          Z          Z    False
+44346                 et          J          J    False
+44347               raha     sg n_S     sg p_S     True
+44348                 ei      neg_V      neg_V    False
+44349                ole        o_V    neg o_V     True
+44350               enam          D          D    False
+44351               ammu          D          D    False
+44352              antud          A      tud_V     True
+44353          toetuseks    sg tr_S    sg tr_S    False
+44354                või          J          J    False
+44355  ülalpidamiskulude     pl g_S     pl g_S    False
+44356            katteks    sg tr_S    sg tr_S    False
+44357                  ,          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 97512:
+word          Maestro
+true_label     sg n_S
+pred_label     sg n_H
+is_diff          True
+Name: 97512, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+97504        Sibi     sg n_S     sg n_H     True
+97505          on        b_V        b_V    False
+97506        vist          D          D    False
+97507         ära          D          D    False
+97508    pööranud      nud_V      nud_V    False
+97509           ,          Z          Z    False
+97510           "          Z          Z    False
+97511       ütles        s_V        s_V    False
+97512     Maestro     sg n_S     sg n_H     True
+97513     viimaks          D          D    False
+97514  kõhklevalt          D          D    False
+97515           .          Z          Z    False
+97516    Üheskoos          D          D    False
+97517    õnnestus        s_V        s_V    False
+97518        neil    pl ad_P    pl ad_P    False
+97519      siiski          D          D    False
+97520          ta     sg g_P     sg n_P     True
+---------------------------------------------------------------------------
+Diff at index 18831:
+word          bovis'e
+true_label     sg g_S
+pred_label          ?
+is_diff          True
+Name: 18831, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+18823    põhjustajaks    sg tr_S    sg tr_S    False
+18824          võivad      vad_V      vad_V    False
+18825            olla       da_V       da_V    False
+18826      nakatumine     sg n_S     sg n_S    False
+18827   Mycobacterium     sg n_H          ?     True
+18828  tuberculosis'e     sg g_S          ?     True
+18829               ,          Z          Z    False
+18830   Mycobacterium     sg n_H          ?     True
+18831         bovis'e     sg g_S          ?     True
+18832               ,          Z          Z    False
+18833   Mycobacterium     sg n_H          ?     True
+18834     africanum'i     sg g_S          ?     True
+18835               ,          Z          Z    False
+18836              ja          J          J    False
+18837   Mycobacterium     sg n_H          ?     True
+18838      microti'ga   sg kom_S          ?     True
+18839       peamiselt          D          D    False
+---------------------------------------------------------------------------
+Diff at index 85076:
+word          S. Lagerlöf
+true_label         sg n_H
+pred_label              Y
+is_diff              True
+Name: 85076, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+85068  protesteerisid      sid_V      sid_V    False
+85069     utilitaarse     sg g_A     sg g_A    False
+85070        kultuuri     sg g_S     sg g_S    False
+85071           vastu          K          K    False
+85072               ,          Z          Z    False
+85073       kaitsesid      sid_V      sid_V    False
+85074             ilu     sg p_S     sg p_S    False
+85075               ,          Z          Z    False
+85076     S. Lagerlöf     sg n_H          Y     True
+85077           selle     sg g_P     sg g_P    False
+85078             ilu     sg g_S     sg g_S    False
+85079        loomisse      adt_S      adt_S    False
+85080   investeeritud          A          A    False
+85081            tööd     sg p_S     sg p_S    False
+85082               ,          Z          Z    False
+85083          Stefan     sg n_H     sg n_H    False
+85084        Žeromski     sg n_H     sg n_H    False
+---------------------------------------------------------------------------
+Diff at index 52871:
+word            huge
+true_label    sg g_S
+pred_label         ?
+is_diff         True
+Name: 52871, dtype: object
+Decision:
+Context:
+                   word true_label pred_label  is_diff
+52863  elektrikatkestus     sg n_S     sg n_S    False
+52864                ei      neg_V      neg_V    False
+52865               müü        o_V    neg o_V     True
+52866               nii          D          D    False
+52867             hästi          D          D    False
+52868               kui          J          J    False
+52869              sõnu     pl p_S     pl p_S    False
+52870                 "          Z          Z    False
+52871              huge     sg g_S          ?     True
+52872             space     sg g_S          ?     True
+52873             storm     sg n_S          ?     True
+52874                 "          Z          Z    False
+52875                ja          J          J    False
+52876                 "          Z          Z    False
+52877       devastation     sg n_S     sg n_S    False
+52878                 "          Z          Z    False
+52879          sisaldav     sg n_A     sg n_A    False
+---------------------------------------------------------------------------
+Diff at index 59027:
+word          plutooniumi
+true_label          adt_S
+pred_label         sg p_S
+is_diff              True
+Name: 59027, dtype: object
+Decision:
+Context:
+                  word true_label pred_label  is_diff
+59019                ,          Z          Z    False
+59020                "          Z          Z    False
+59021           vastas        s_V        s_V    False
+59022             mees     sg n_S     sg n_S    False
+59023                ,          Z          Z    False
+59024                "          Z          Z    False
+59025    subkriitiline     sg n_A     sg n_A    False
+59026             mass     sg n_S     sg n_S    False
+59027      plutooniumi      adt_S     sg p_S     True
+59028                ,          Z          Z    False
+59029             kaks     sg n_N     sg n_N    False
+59030       kriitilist     sg p_A     sg p_A    False
+59031  kiirgusõnnetust     sg p_S     sg p_S    False
+59032               ja          J          J    False
+59033        operation     sg n_S     sg n_S    False
+59034       Crossroads     sg n_H     sg n_H    False
+59035                ,          Z          Z    False
+---------------------------------------------------------------------------
+Diff at index 84085:
+word          O. Kruus
+true_label      sg n_H
+pred_label           Y
+is_diff           True
+Name: 84085, dtype: object
+Decision:
+Context:
+                 word true_label pred_label  is_diff
+84077  C. R. Jakobson     sg n_H          Y     True
+84078              ja          J          J    False
+84079           Jakob     sg n_H     sg n_H    False
+84080            Pärn     sg n_H     sg n_H    False
+84081               ,          Z          Z    False
+84082       viimaseid     pl p_A     pl p_A    False
+84083          mainib        b_V        b_V    False
+84084              ka          D          D    False
+84085        O. Kruus     sg n_H          Y     True
+84086               .          Z          Z    False
+84087        Wuolijoe     sg g_H     sg g_H    False
+84088     paruniproua     sg n_S     sg n_S    False
+84089       Friderike     sg n_H     sg n_H    False
+84090             von     sg n_S     sg n_S    False
+84091       Rehbinder     sg n_H     sg n_H    False
+84092            ongi        b_V        b_V    False
+84093           Vilde     sg g_H     sg g_H    False
+---------------------------------------------------------------------------
+Diff at index 56844:
+word           13.
+true_label     ?_O
+pred_label       O
+is_diff       True
+Name: 56844, dtype: object
+Decision:
+Context:
+                word true_label pred_label  is_diff
+56836            oli        s_V        s_V    False
+56837             ta     sg g_P     sg n_P     True
+56838  kindralstaabi     sg g_S     sg g_S    False
+56839           ülem     sg n_S     sg n_S    False
+56840        jaanuar     sg n_S     sg n_S    False
+56841          1941.        ?_O          O     True
+56842              (          Z          Z    False
+56843           vist          D          D    False
+56844            13.        ?_O          O     True
+56845     jaanuarist    sg el_S    sg el_S    False
+56846              )          Z          Z    False
+56847             ja          J          J    False
+56848          peale          K          K    False
+56849         Kiievi          G     sg g_H     True
+56850         katelt     sg p_S     sg p_S    False
+56851      tagandati       ti_V       ti_V    False
+56852             ta     sg g_P     sg n_P     True
+---------------------------------------------------------------------------
+Diff at index 34955:
+word           Vollile
+true_label    sg all_S
+pred_label    sg all_H
+is_diff           True
+Name: 34955, dtype: object
+Decision:
+Context:
+          word true_label pred_label  is_diff
+34947        .          Z          Z    False
+34948     Tädi     sg n_S     sg n_S    False
+34949    Marta     sg n_H     sg n_H    False
+34950      oli        s_V        s_V    False
+34951   läinud      nud_V      nud_V    False
+34952     koju      adt_S      adt_S    False
+34953        ,          Z          Z    False
+34954      onu     sg n_S     sg n_S    False
+34955  Vollile   sg all_S   sg all_H     True
+34956     kõik     pl n_P     sg n_P     True
+34957   andeks          X          X    False
+34958   andnud      nud_V      nud_V    False
+34959        ,          Z          Z    False
+34960     siis          J          D     True
+34961       ta     sg g_P     sg g_P    False
+34962    voodi     sg n_S      adt_S     True
+34963  tirinud      nud_V      nud_V    False
+---------------------------------------------------------------------------
+Diff at index 96240:
+word           viisi
+true_label    sg g_S
+pred_label         K
+is_diff         True
+Name: 96240, dtype: object
+Decision:
+Context:
+           word true_label pred_label  is_diff
+96232         ,          Z          Z    False
+96233      aina          D          D    False
+96234   viitele   sg all_S   sg all_N     True
+96235         ,          Z          Z    False
+96236        ja          J          J    False
+96237       tõi        s_V        s_V    False
+96238      koju      adt_S      adt_S    False
+96239  patakate     pl g_S     pl g_S    False
+96240     viisi     sg g_S          K     True
+96241   aukirju     pl p_S     pl p_S    False
+96242         .          Z          Z    False
+96243     Talle   sg all_P   sg all_P    False
+96244    meenus        s_V        s_V    False
+96245         ,          Z          Z    False
+96246    kuidas          D          D    False
+96247      teda     sg p_P     sg p_P    False
+96248      kogu          A          A    False
+---------------------------------------------------------------------------
+Diff at index 21704:
+word           26.
+true_label     ?_O
+pred_label       O
+is_diff       True
+Name: 21704, dtype: object
+Decision:
+Context:
+             word true_label pred_label  is_diff
+21696          4.        ?_O          O     True
+21697        mail    sg ad_S    sg ad_S    False
+21698        1986        ?_N          N     True
+21699           ,          Z          Z    False
+21700         27.        ?_O          O     True
+21701     märtsil    sg ad_S    sg ad_S    False
+21702        1987        ?_N          N     True
+21703           ,          Z          Z    False
+21704         26.        ?_O          O     True
+21705    aprillil    sg ad_S    sg ad_S    False
+21706        1987        ?_N          N     True
+21707           ,          Z          Z    False
+21708         12.        ?_O          O     True
+21709  detsembril    sg ad_S    sg ad_S    False
+21710        1987        ?_N          N     True
+21711           ,          Z          Z    False
+21712         27.        ?_O          O     True
+---------------------------------------------------------------------------
