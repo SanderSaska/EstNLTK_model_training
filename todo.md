@@ -6,21 +6,21 @@
 
 ~~Inspect homonym models confusion matrix results, specifically the confusions between adt and sg g, sg n and sg g, and sg p and sg g. Gather 10 examples for each of these confusions and analyze them to see if there are any patterns or commonalities that could explain why the model is confusing these cases.~~
 
-Overleaf: Write the Table Of Contents and start writing some paragraphs for each section if possible.
+~~Overleaf: Write the Table Of Contents and start writing some paragraphs for each section if possible.~~
 
-Since we have tabular results for the homonym dataset, transfer these results to the Overleaf document and write some analysis for these results.
+~~Since we have tabular results for the homonym dataset, transfer these results to the Overleaf document and write some analysis for these results.~~
 
 Inspect and gather senteneces containing homonym words in the Koondkorpus and plot form distribution for these words. Check if our model predicts the most common form for these words in the Koondkorpus. If not, try to find out why.
 
-Do the MLM experiments with BERT and GPT on the whole homonym set using OpenAI API.
+~~Do the MLM experiments with BERT and GPT on the whole homonym set using OpenAI API.~~
 
 ~~Ask Siim about the possibility from ambiguous morphological analyses with Vabamorf to either:~~
 ~~1. sort the analyses to get the most probable analysis for the word in the sentence, or~~
 ~~2. randomly choose one of the analyses among the possible analyses for the word in the sentence.~~
 
-Hindamisel ära arvesta arvu (ainsus või mitmus) ja muuda märgendid sg ill + sg all -> adt pmst sellised märgendid, mis võivad viidata kohale.
+~~Hindamisel ära arvesta arvu (ainsus või mitmus) ja muuda märgendid sg ill + sg all -> adt pmst sellised märgendid, mis võivad viidata kohale.~~
 
-Võta sagedusmaatriksis ainult alamosa võimalikest käänetest (sg n, sg g, sg p, adt), normaliseeri need ja vaata ainult selle alamosa peal meetrikuid. Vaata, kui palju juhtudest pakub mudel ennustust alamossa ja kui palju juhtudest pakub mudel ennustust väljaspool alamossa.
+~~Võta sagedusmaatriksis ainult alamosa võimalikest käänetest (sg n, sg g, sg p, adt), normaliseeri need ja vaata ainult selle alamosa peal meetrikuid. Vaata, kui palju juhtudest pakub mudel ennustust alamossa ja kui palju juhtudest pakub mudel ennustust väljaspool alamossa.~~
 
 Edasiarendusse võib kirjutada: võta 4 mudelit (bert_v2, bert_mlm, llm_mlm, bert_llm_mlm) ja uus vormihomonüümia andmestik (10000), teosta morfanalüüs ja loo tabel, kus igas lahtris on mudeli paari kattuvad ennustused ehk ennustused, kus mudelipaar ennustab sama vormi. Kui need protsendid on suured diagonaalil, siis võib oletada, et uue andmekomplekti puhul on veamäär väike, kuna mudelid teevad sarnaseid ennustusi. Kui need protsendid on suured mitte-diagonaalil, siis võib oletada, et uue andmekomplekti puhul on veamäär suur, kuna mudelid teevad erinevaid ennustusi.
 
@@ -28,7 +28,7 @@ Raul Niit. BERTi tokeniseerimise kommentaar.
 
 Using your models (bert_v2, bert_full, bert_mlm, llm_mlm, bert_llm_mlm) get the predictions for the homonym dataset alongside with the scores for these predictions. Put a threshold to the scores (0.5) and get a new column that shows whether the specific model for this specific example is sure about its prediction or not. Using that calculate L1 score for the homonym dataset and see if there is any correlation between the L1 score and the confidence of the model in its predictions. The idea is to see whether the models make the similar mistakes for the same examples and if these mistakes are due to the model being unsure about its predictions.
 
-Thesis draft for the next meeting.
+~~Thesis draft for the next meeting.~~
 
 ~~Weighted training: samples vs weights. Should we sample more from the homonym dataset or should we give more weight to the examples from the homonym dataset? Or maybe a combination of both?~~
 
@@ -36,7 +36,7 @@ Integrate MoE to EstNLTK pipeline.
 
 Improve the gating mechanism by not only matching the word with the dictionary of homonym words, but match the lemma with a regex that matches the specific inflection type.
 
-Redo the BERT and GPT MLM algorithms.
+~~Redo the BERT and GPT MLM algorithms.~~
 
 ~~Early stopping criteria: if F1-score on the validation set does not go under 95% for 2 consecutive epochs, stop training.~~
 
