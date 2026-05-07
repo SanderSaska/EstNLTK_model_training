@@ -22,6 +22,14 @@ Inspect and gather senteneces containing homonym words in the Koondkorpus and pl
 
 ~~Võta sagedusmaatriksis ainult alamosa võimalikest käänetest (sg n, sg g, sg p, adt), normaliseeri need ja vaata ainult selle alamosa peal meetrikuid. Vaata, kui palju juhtudest pakub mudel ennustust alamossa ja kui palju juhtudest pakub mudel ennustust väljaspool alamossa.~~
 
+Kirjelda ära, kas Vabamorfi analüüse üldse kasutatakse sinu mudelis või mitte? Kas on ainult tokeni-põhine ennustamine (mis tähendaks märgendaja mudelit) või kasutatakse analüüse, millest valida õige analüüs (mis tähendaks ühestaja mudelit). Antud juhul on tegemist märgendaja mudeliga, aga seda saab ümber teha ka ühestajaks võttes softmaxist tõenäosused ja filtreerida sealt Vabamorfi analüüsid ning nende seast võtta suurima tõenäosusega analüüsi.
+
+Selgita, miks meil üldse oleks vaja kasutada MoE-d kui tavamudel annab sama häid tulemusi. Põhjus on selles, et tavamudel võib anda häid tulemusi üldiselt, aga homonüümia puhul võib ta teha palju vigu. EKI samuti kirjutas, et Vabamorf ei anna õigeid käändeid homonüümsetele sõnadele. Üldine mudel ei saa sellega nii hästi hakkama kui sellele spetsiifilisele probleemile treenitud mudel.
+
+Selgita, miks antud olukorras naiivne MoE sobib. Naiivne on ta selles mõttes, et me ei kasuta tehisnärvivõrku mudeli valimiseks, vaid kasutame lihtsat sõnastikku, mille põhjal otsus tehakse. See sobib, sest meil on kindlad reeglid ja nendele alluvad sõnad, mille põhjal me saame teha otsuse, millist mudelit kasutada. Meil on selge arusaam, millised sõnad on homonüümid ja millised mitte. Meil on selgelt piiritletud probleem, mille jaoks me tahame kasutada spetsiaalset mudelit.
+
+Esmaspäevaks vii tagasiside parandused teksti sisse.
+
 Edasiarendusse võib kirjutada: võta 4 mudelit (bert_v2, bert_mlm, llm_mlm, bert_llm_mlm) ja uus vormihomonüümia andmestik (10000), teosta morfanalüüs ja loo tabel, kus igas lahtris on mudeli paari kattuvad ennustused ehk ennustused, kus mudelipaar ennustab sama vormi. Kui need protsendid on suured diagonaalil, siis võib oletada, et uue andmekomplekti puhul on veamäär väike, kuna mudelid teevad sarnaseid ennustusi. Kui need protsendid on suured mitte-diagonaalil, siis võib oletada, et uue andmekomplekti puhul on veamäär suur, kuna mudelid teevad erinevaid ennustusi.
 
 Raul Niit. BERTi tokeniseerimise kommentaar.
