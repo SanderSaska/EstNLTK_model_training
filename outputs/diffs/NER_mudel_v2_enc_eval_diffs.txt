@@ -139,7 +139,7 @@ true_label       sg n_S
 pred_label            I
 is_diff            True
 Name: 69250, dtype: object
-Decision: 
+Decision: ?
 Context:
             word true_label pred_label  is_diff
 69242       ikka          D          D    False
@@ -166,7 +166,7 @@ true_label         I
 pred_label    sg n_S
 is_diff         True
 Name: 99857, dtype: object
-Decision:
+Decision: pred_label
 Context:
           word true_label pred_label  is_diff
 99849        .          Z          Z    False
@@ -193,7 +193,7 @@ true_label       sg g_S
 pred_label       sg n_S
 is_diff            True
 Name: 40792, dtype: object
-Decision:
+Decision: pred_label
 Context:
                word true_label pred_label  is_diff
 40784        asemel          K          K    False
@@ -220,7 +220,7 @@ true_label     ?_N
 pred_label       N
 is_diff       True
 Name: 14145, dtype: object
-Decision:
+Decision: both
 Context:
                  word true_label pred_label  is_diff
 14137  geograafilisel    sg ad_A    sg ad_A    False
@@ -247,7 +247,7 @@ true_label    sg p_S
 pred_label    sg n_S
 is_diff         True
 Name: 75120, dtype: object
-Decision:
+Decision: pred_label
 Context:
             word true_label pred_label  is_diff
 75112          .          Z          Z    False
@@ -274,7 +274,7 @@ true_label        o_V
 pred_label    neg o_V
 is_diff          True
 Name: 115692, dtype: object
-Decision:
+Decision: pred_label
 Context:
             word true_label pred_label  is_diff
 115684     Keegi     sg n_P     sg n_P    False
@@ -301,7 +301,7 @@ true_label    sg g_P
 pred_label    sg g_N
 is_diff         True
 Name: 34167, dtype: object
-Decision:
+Decision: true_label
 Context:
                   word true_label pred_label  is_diff
 34159                .          Z          Z    False
@@ -328,7 +328,7 @@ true_label     ?_N
 pred_label       N
 is_diff       True
 Name: 11971, dtype: object
-Decision:
+Decision: both
 Context:
              word true_label pred_label  is_diff
 11963           ,          Z          Z    False
@@ -355,7 +355,7 @@ true_label       sg in_S
 pred_label       sg in_H
 is_diff             True
 Name: 35492, dtype: object
-Decision:
+Decision: ?
 Context:
                  word true_label pred_label  is_diff
 35484           kõike     sg p_P     sg p_P    False
@@ -382,7 +382,7 @@ true_label       D
 pred_label       J
 is_diff       True
 Name: 48321, dtype: object
-Decision:
+Decision: 
 Context:
                 word true_label pred_label  is_diff
 48313        planeet     sg n_S     sg n_S    False
