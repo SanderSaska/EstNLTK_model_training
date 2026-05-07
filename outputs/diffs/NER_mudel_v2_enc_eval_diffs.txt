@@ -382,7 +382,7 @@ true_label       D
 pred_label       J
 is_diff       True
 Name: 48321, dtype: object
-Decision: 
+Decision: ?
 Context:
                 word true_label pred_label  is_diff
 48313        planeet     sg n_S     sg n_S    False
@@ -409,7 +409,7 @@ true_label     ?_N
 pred_label       N
 is_diff       True
 Name: 36335, dtype: object
-Decision:
+Decision: both
 Context:
                    word true_label pred_label  is_diff
 36327               jpm        ?_Y          Y     True
@@ -436,7 +436,7 @@ true_label     ?_N
 pred_label       N
 is_diff       True
 Name: 81241, dtype: object
-Decision:
+Decision: both
 Context:
          word true_label pred_label  is_diff
 81233       (          Z          Z    False
@@ -463,7 +463,7 @@ true_label       J
 pred_label       D
 is_diff       True
 Name: 54986, dtype: object
-Decision:
+Decision: pred_label
 Context:
                word true_label pred_label  is_diff
 54978   Eisenhoweri     sg g_H     sg g_H    False
@@ -490,7 +490,7 @@ true_label            A
 pred_label    neg nud_V
 is_diff            True
 Name: 82229, dtype: object
-Decision:
+Decision: pred_label
 Context:
                        word true_label pred_label  is_diff
 82221                   ega          J          J    False
@@ -517,7 +517,7 @@ true_label        nud_V
 pred_label    neg nud_V
 is_diff            True
 Name: 756, dtype: object
-Decision:
+Decision: pred_label
 Context:
           word true_label pred_label  is_diff
 748       siis          J          D     True
@@ -544,7 +544,7 @@ true_label        o_V
 pred_label    neg o_V
 is_diff          True
 Name: 54699, dtype: object
-Decision:
+Decision: pred_label
 Context:
                 word true_label pred_label  is_diff
 54691         vägede     pl g_S     pl g_S    False
