@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 import evaluate
 import pandas as pd
@@ -132,6 +132,12 @@ def parse_args() -> argparse.Namespace:
         default="-,NONE",
         help="Comma-separated placeholder labels (case-insensitive).",
     )
+    parser.add_argument(
+        "--average",
+        choices=["macro avg", "weighted avg"],
+        default="macro avg",
+        help="Averaging method for evaluation metrics.",
+    )
     return parser.parse_args()
 
 
@@ -154,17 +160,41 @@ def custom_metrics(
     return poseval_metric.compute(predictions=preds, references=labels, zero_division=0)
 
 
-def print_metrics(results: dict[str, Any]) -> None:
+def print_metrics(
+    results: dict[str, Any], average: Literal["macro avg", "weighted avg"] = "macro avg"
+) -> None:
     """Print weighted aggregate evaluation metrics in notebook-compatible style.
 
     Args:
             results: Poseval metric result dictionary.
+            average: The averaging method for the metrics.
     """
 
     print(f"Accuracy: \t{results['accuracy']:.2%}")
-    print(f"Precision: \t{results['weighted avg']['precision']:.2%}")
-    print(f"Recall: \t{results['weighted avg']['recall']:.2%}")
-    print(f"F1-score: \t{results['weighted avg']['f1-score']:.2%}")
+    print(f"Precision: \t{results[average]['precision']:.2%}")
+    print(f"Recall: \t{results[average]['recall']:.2%}")
+    print(f"F1-score: \t{results[average]['f1-score']:.2%}")
+
+
+def get_metrics(
+    results: dict[str, Any], average: Literal["macro avg", "weighted avg"] = "macro avg"
+) -> dict[str, float]:
+    """Extract weighted aggregate evaluation metrics into a dictionary.
+
+    Args:
+            results: Poseval metric result dictionary.
+            average: The averaging method for the metrics.
+
+    Returns:
+            Dictionary with accuracy, precision, recall and F1-score.
+    """
+
+    return {
+        "accuracy": results["accuracy"],
+        "precision": results[average]["precision"],
+        "recall": results[average]["recall"],
+        "f1-score": results[average]["f1-score"],
+    }
 
 
 def run_single_model_eval(

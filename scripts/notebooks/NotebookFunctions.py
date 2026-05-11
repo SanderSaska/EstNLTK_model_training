@@ -7,7 +7,7 @@ import sklearn
 import sklearn.metrics
 import random
 
-from typing import Any, Tuple, Optional
+from typing import Any, Tuple, Optional, Literal
 
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
@@ -297,7 +297,7 @@ def _extract_prediction_from_layer(
         A tuple containing the predicted label (or None if not found) and a boolean indicating if the prediction was ambiguous (multiple analyses).
     """
     global SEED  # To ensure reproducibility of random choices across function calls
-    local_seed = SEED
+    random.seed(SEED)
     layer = getattr(text, layer_name, None)
     if layer is None:
         return None, False
@@ -308,9 +308,7 @@ def _extract_prediction_from_layer(
             if len(annotation.form) > 1:
                 ambiguous = True
             if vabamorf_random_or_first == "random":
-                random.seed(local_seed)  # Ensure reproducibility of random choice
                 prediction = random.choice(annotation.form) if annotation.form else None
-                local_seed += 1  # Change seed for next random choice to avoid same selection across rows
             else:
                 prediction = annotation.form[0]
             if isinstance(prediction, list):
@@ -441,7 +439,12 @@ def annotate_sentences_with_model(
     return results_df
 
 
-def _print_metrics(y_true: pd.Series, y_pred: pd.Series, title: str) -> None:
+def _print_metrics(
+    y_true: pd.Series,
+    y_pred: pd.Series,
+    average: Literal["binary", "micro", "macro", "samples", "weighted"],
+    title: str,
+) -> None:
     """Compute and print weighted metrics for a prediction task.
 
     Parameters
@@ -450,6 +453,8 @@ def _print_metrics(y_true: pd.Series, y_pred: pd.Series, title: str) -> None:
         True labels.
     y_pred : pd.Series
         Predicted labels.
+    average : Literal['binary', 'micro', 'macro', 'samples', 'weighted']
+        Averaging method for precision, recall, and F1-score (e.g., "weighted").
     title : str
         Header title for the printed block.
     """
@@ -457,7 +462,7 @@ def _print_metrics(y_true: pd.Series, y_pred: pd.Series, title: str) -> None:
     precision, recall, f1_score, _ = sklearn.metrics.precision_recall_fscore_support(
         y_true=y_true,
         y_pred=y_pred,
-        average="weighted",
+        average=average,
         zero_division=0,
     )
 
@@ -468,11 +473,43 @@ def _print_metrics(y_true: pd.Series, y_pred: pd.Series, title: str) -> None:
     print(f"F1-score:  {f1_score:.2%}")
 
 
+def _get_metrics_dict(
+    y_true: pd.Series,
+    y_pred: pd.Series,
+    average: Literal["binary", "micro", "macro", "samples", "weighted"],
+) -> dict[str, Any]:
+    """Extract weighted aggregate evaluation metrics into a dictionary.
+
+    Args:
+            y_true: True labels.
+            y_pred: Predicted labels.
+            average: The averaging method for the metrics.
+
+    Returns:
+            Dictionary with accuracy, precision, recall and F1-score.
+    """
+    accuracy = sklearn.metrics.accuracy_score(y_true=y_true, y_pred=y_pred)
+    precision, recall, f1_score, _ = sklearn.metrics.precision_recall_fscore_support(
+        y_true=y_true,
+        y_pred=y_pred,
+        average=average,
+        zero_division=0,
+    )
+
+    return {
+        "accuracy": accuracy,
+        "precision": precision,
+        "recall": recall,
+        "f1-score": f1_score,
+    }
+
+
 def display_metrics_and_classification_report(
     results_df: pd.DataFrame,
     pred_col: str,
     true_col: str,
     group_col: str | None = None,
+    average: Literal["binary", "micro", "macro", "samples", "weighted"] = "macro",
     show_metrics: bool = True,
     show_classification_report: bool = True,
 ) -> None:
@@ -488,6 +525,8 @@ def display_metrics_and_classification_report(
         Column name from which true labels are read.
     group_col : str | None, optional
         Optional grouping column for per-group results.
+    average : Literal['binary', 'micro', 'macro', 'samples', 'weighted'], optional
+        Averaging method for precision, recall, and F1-score (e.g., "macro").
     show_metrics : bool, optional
         If True, print weighted metrics (accuracy, precision, recall, F1).
     show_classification_report : bool, optional
@@ -511,7 +550,7 @@ def display_metrics_and_classification_report(
         y_pred = block_df[pred_col]
 
         if show_metrics:
-            _print_metrics(y_true=y_true, y_pred=y_pred, title=title)
+            _print_metrics(y_true=y_true, y_pred=y_pred, average=average, title=title)
 
         if show_classification_report:
             print(f"{title} - Classification Report")

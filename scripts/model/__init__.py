@@ -30,6 +30,7 @@ from scripts.model.eval import (
     load_homonym_set,
     print_hybrid_gate_stats,
     print_metrics,
+    get_metrics,
     run_hybrid_density_eval,
     run_single_model_eval,
 )
@@ -63,6 +64,7 @@ __all__ = [
     "load_homonym_set",
     "print_hybrid_gate_stats",
     "print_metrics",
+    "get_metrics",
     "run_hybrid_density_eval",
     "run_single_model_eval",
     # train
