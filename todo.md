@@ -28,13 +28,15 @@ Selgita, miks meil üldse oleks vaja kasutada MoE-d kui tavamudel annab sama hä
 
 Selgita, miks antud olukorras naiivne MoE sobib. Naiivne on ta selles mõttes, et me ei kasuta tehisnärvivõrku mudeli valimiseks, vaid kasutame lihtsat sõnastikku, mille põhjal otsus tehakse. See sobib, sest meil on kindlad reeglid ja nendele alluvad sõnad, mille põhjal me saame teha otsuse, millist mudelit kasutada. Meil on selge arusaam, millised sõnad on homonüümid ja millised mitte. Meil on selgelt piiritletud probleem, mille jaoks me tahame kasutada spetsiaalset mudelit.
 
-Esmaspäevaks vii tagasiside parandused teksti sisse.
+~~Struktueeri metoodika ja tulemused ümber nii, et iga mudeli puhul oleks eraldi alapeatükk, kus kirjeldatakse mudelit, treeningprotsessi ja tulemusi.~~
+
+~~Esmaspäevaks vii tagasiside parandused teksti sisse.~~
 
 Edasiarendusse võib kirjutada: võta 4 mudelit (bert_v2, bert_mlm, llm_mlm, bert_llm_mlm) ja uus vormihomonüümia andmestik (10000), teosta morfanalüüs ja loo tabel, kus igas lahtris on mudeli paari kattuvad ennustused ehk ennustused, kus mudelipaar ennustab sama vormi. Kui need protsendid on suured diagonaalil, siis võib oletada, et uue andmekomplekti puhul on veamäär väike, kuna mudelid teevad sarnaseid ennustusi. Kui need protsendid on suured mitte-diagonaalil, siis võib oletada, et uue andmekomplekti puhul on veamäär suur, kuna mudelid teevad erinevaid ennustusi.
 
-Raul Niit. BERTi tokeniseerimise kommentaar.
+~~Raul Niit. BERTi tokeniseerimise kommentaar.~~
 
-Using your models (bert_v2, bert_full, bert_mlm, llm_mlm, bert_llm_mlm) get the predictions for the homonym dataset alongside with the scores for these predictions. Put a threshold to the scores (0.5) and get a new column that shows whether the specific model for this specific example is sure about its prediction or not. Using that calculate L1 score for the homonym dataset and see if there is any correlation between the L1 score and the confidence of the model in its predictions. The idea is to see whether the models make the similar mistakes for the same examples and if these mistakes are due to the model being unsure about its predictions.
+~~Using your models (bert_v2, bert_full, bert_mlm, llm_mlm, bert_llm_mlm) get the predictions for the homonym dataset alongside with the scores for these predictions. Put a threshold to the scores (0.5) and get a new column that shows whether the specific model for this specific example is sure about its prediction or not. Using that calculate L1 score for the homonym dataset and see if there is any correlation between the L1 score and the confidence of the model in its predictions. The idea is to see whether the models make the similar mistakes for the same examples and if these mistakes are due to the model being unsure about its predictions.~~
 
 ~~Thesis draft for the next meeting.~~
 
@@ -52,13 +54,13 @@ Improve the gating mechanism by not only matching the word with the dictionary o
 
 ### BERT and GPT MLM
 
-Do BERT masked prediction. Take TOP 10 predictions for the masked word and do morph analysis. Do case profile (for forms) analysis for these predictions. Check if the correct form is among the TOP 10 predictions and if it is, check if it has the correct case profile. You can filter out cases or labels (cases + forms), where the case does not match with the word at all. The idea is to see whether BERT can predict a word for the masked position that has the correct case profile, for gathering more data for the homonym dataset. Nevertheless, we need to check the same with GPT as well, since it is a more powerful model and might give better results.
+~~Do BERT masked prediction. Take TOP 10 predictions for the masked word and do morph analysis. Do case profile (for forms) analysis for these predictions. Check if the correct form is among the TOP 10 predictions and if it is, check if it has the correct case profile. You can filter out cases or labels (cases + forms), where the case does not match with the word at all. The idea is to see whether BERT can predict a word for the masked position that has the correct case profile, for gathering more data for the homonym dataset. Nevertheless, we need to check the same with GPT as well, since it is a more powerful model and might give better results.~~
 
 ~~Add more constraints to the BERT word predictions using part of speech or prediction scores. For predictions, check if the score is above a certain threshold.~~
 
-Change the prompt to two steps: first, ask GPT for 10 synonyms (or similar words). Then, ask GPT to replace the homonym word with one of the synonyms. The condition for the synonym is that it should have the case in possible cases for the homonym word ["nominative", "genitive", "partitive", "adessive"]. Check if the synonym has the correct case on the labelled homonym dataset. One other way to condition the synonym is after getting the response from GPT, do a morph analysis (Vabamorf) for the synonym and check if it has the correct case profile.
+~~Change the prompt to two steps: first, ask GPT for 10 synonyms (or similar words). Then, ask GPT to replace the homonym word with one of the synonyms. The condition for the synonym is that it should have the case in possible cases for the homonym word ["nominative", "genitive", "partitive", "adessive"]. Check if the synonym has the correct case on the labelled homonym dataset. One other way to condition the synonym is after getting the response from GPT, do a morph analysis (Vabamorf) for the synonym and check if it has the correct case profile.~~
 
-Do Vabamorf analysis on the sample LLM sentences.
+~~Do Vabamorf analysis on the sample LLM sentences.~~
 
 ~~We have three ways to do MLM:~~
 
@@ -66,13 +68,13 @@ Do Vabamorf analysis on the sample LLM sentences.
 ~~2. Mask the homonym word and ask GPT to predict the masked word. Take 10 similar words or synonyms for the homonym word and ask GPT to replace the homonym word with one of the similar words. We should give additional information of possible forms to choose from, because we know the inflection type of the homonym word.~~
 ~~3. Same as 2, but we also condition the similar words to match the form and part of speech of the homonym word.~~
 
-Try three different methods:
+~~Try three different methods:~~
 
-1. Bert distillation with MLM: Mask the homonym word and ask BERT to predict the masked word. Take the top N predictions with probabilities and do morph analysis with Vabamorf for these predictions. We sum up the probabilities of the predictions per morphological label and pick the label with the highest sum of probabilities. We distill the knowledge from BERT to our model by using the probabilities of the predictions as soft labels for the training examples.
-2. LLM distillation with MLM: Mask the homonym word and ask LLM to predict 10 candidates for the masked word. Then we do morph analysis with Vabamorf for these candidates. We assign confidence scores to the candidates uniformly, each candidate gets 0.1 confidence score. We then sum up the confidence scores of the candidates per morphological label and pick the label with the highest sum of confidence scores. We can distill the knowledge from LLM to our model by using the confidence scores of the candidates as soft labels for the training examples.
-3. Bert + LLM distillation with MLM: We can combine the two methods above by first using BERT to get the top $N$ predictions and their probabilities, and then using LLM to choose $<N$ candidates from the top $N$ predictions based on how well do they semantically fit in the sentence. We can then do morph analysis with Vabamorf for these candidates and sum up the probabilities of the candidates per morphological label and pick the label with the highest sum of probabilities. We can distill the knowledge from both BERT and LLM to our model by using the probabilities of the predictions as soft labels for the training examples.
+1. ~~Bert distillation with MLM: Mask the homonym word and ask BERT to predict the masked word. Take the top N predictions with probabilities and do morph analysis with Vabamorf for these predictions. We sum up the probabilities of the predictions per morphological label and pick the label with the highest sum of probabilities. We distill the knowledge from BERT to our model by using the probabilities of the predictions as soft labels for the training examples.~~
+2. ~~LLM distillation with MLM: Mask the homonym word and ask LLM to predict 10 candidates for the masked word. Then we do morph analysis with Vabamorf for these candidates. We assign confidence scores to the candidates uniformly, each candidate gets 0.1 confidence score. We then sum up the confidence scores of the candidates per morphological label and pick the label with the highest sum of confidence scores. We can distill the knowledge from LLM to our model by using the confidence scores of the candidates as soft labels for the training examples.~~
+3. ~~Bert + LLM distillation with MLM: We can combine the two methods above by first using BERT to get the top $N$ predictions and their probabilities, and then using LLM to choose $<N$ candidates from the top $N$ predictions based on how well do they semantically fit in the sentence. We can then do morph analysis with Vabamorf for these candidates and sum up the probabilities of the candidates per morphological label and pick the label with the highest sum of probabilities. We can distill the knowledge from both BERT and LLM to our model by using the probabilities of the predictions as soft labels for the training examples.~~
 
-Essentially, we use the MLM capabilities of BERT and LLM to get morphological annotations for the homonymous words in the sentences, and we use these predictions to compare these three methods with our Bert Morph v2 model and see the capabilities of these models to predict the correct morphological labels for the homonymous words.
+~~Essentially, we use the MLM capabilities of BERT and LLM to get morphological annotations for the homonymous words in the sentences, and we use these predictions to compare these three methods with our Bert Morph v2 model and see the capabilities of these models to predict the correct morphological labels for the homonymous words.~~
 
 ### Morph-syntax conflicts dataset
 
@@ -111,20 +113,5 @@ Send at <kadri.muischnek@ut.ee> the expert diffs between predicted and gold labe
 ### Koondkorpus
 
 ~~Now, that we have examples of predictions for the homonym dataset, where the model predicted wrong cases, we can use these examples to find similar sentences containing these words in the Koondkorpus. The problem is that Koondkorpus presumably does not have morphological annotations, but Siim might have some scripts or a way to get the morphological analysis for the sentences in the Koondkorpus.~~
-
-### Background research
-
-Millistes keeltes käänte homonüümia üldse esineb?
-How to use LLM (GPT) to predict cases for words? Morphological analysis. Search for existing research or examples using LLM based tools.
-Catastrophic forgetting literature review: does it apply to this dashboard case?
-
-### Notes
-
-GPT experiments:
-
-- Morphological analysis with GPT on homonyms test set. Replace the labelled word with "see" (eluta) or "tema"/name (elus) (Find a name that has different writings in different cases) OR replace with synonym. Find or search for alternative methods to augment data.
-- Test GPT on 10 sample sentences from homonyms test set and see if the score is over 90%.
-- Use few-shot prompting.
-- Try to limit API calls to 10€ or even less for GPT.
 
 ## Automatic TODO list for EstNLTK model training
