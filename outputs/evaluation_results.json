@@ -1,0 +1,482 @@
+[
+  {
+    "model_name": "Vabamorf",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0
+  },
+  {
+    "model_name": "Vabamorf",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.9034,
+    "precision": 0.7050,
+    "recall": 0.6980,
+    "f1-score": 0.6862
+  },
+  {
+    "model_name": "Vabamorf",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.8330,
+    "precision": 0.4118,
+    "recall": 0.3739,
+    "f1-score": 0.3890
+  },
+  {
+    "model_name": "Bert_morph_v1",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.9681005350116926,
+    "precision": 0.8236401952194771,
+    "recall": 0.8081236369438692,
+    "f1-score": 0.81101249964135
+  },
+  {
+    "model_name": "Bert_morph_v1",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.9261256805871129,
+    "precision": 0.7958192209132966,
+    "recall": 0.78619039643554,
+    "f1-score": 0.7718078326499902
+  },
+  {
+    "model_name": "Bert_morph_v1",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.8941161552117677,
+    "precision": 0.20847983759590671,
+    "recall": 0.1786110135283019,
+    "f1-score": 0.18906682157953117
+  },
+  {
+    "model_name": "Bert_morph_v2",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.9171009444240124,
+    "precision": 0.7091320993842722,
+    "recall": 0.7071598407171175,
+    "f1-score": 0.691680398143457
+  },
+  {
+    "model_name": "Bert_morph_v2",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.9886720444906852,
+    "precision": 0.9123222734513832,
+    "recall": 0.9061843604500678,
+    "f1-score": 0.9089841027696292
+  },
+  {
+    "model_name": "Bert_morph_v2",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.9481359371037281,
+    "precision": 0.4200155968021122,
+    "recall": 0.39613743590870787,
+    "f1-score": 0.40694547218699945
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.7870292625720808,
+    "precision": 0.7069786278961977,
+    "recall": 0.5311659266401041,
+    "f1-score": 0.5441103866900208
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.82109015242352,
+    "precision": 0.8848852918376793,
+    "recall": 0.6538819899098804,
+    "f1-score": 0.6983394907062285
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.9997463860005072,
+    "precision": 0.9998416715520729,
+    "recall": 0.9996168516348429,
+    "f1-score": 0.9997291794997236
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full_finetune",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.9158362767072147,
+    "precision": 0.7079544557033582,
+    "recall": 0.7025222379594498,
+    "f1-score": 0.6896065609178201
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full_finetune",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.9866285335709654,
+    "precision": 0.9185020115075353,
+    "recall": 0.8992662098454499,
+    "f1-score": 0.9069525715113883
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full_finetune",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.9996195790007608,
+    "precision": 0.9972562882874376,
+    "recall": 0.9996932515337423,
+    "f1-score": 0.9984677013325616
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.8258158754831413,
+    "precision": 0.7000797687546128,
+    "recall": 0.5606635567069358,
+    "f1-score": 0.5738972859245118
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.8651446087236455,
+    "precision": 0.8985903013891693,
+    "recall": 0.7049811178776157,
+    "f1-score": 0.7472004941184577
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.9920111590159777,
+    "precision": 0.9904231845848533,
+    "recall": 0.9813817862324157,
+    "f1-score": 0.9858326323036513
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80_finetune",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.9170575744748767,
+    "precision": 0.7097761773585852,
+    "recall": 0.7069373140037725,
+    "f1-score": 0.6924701818521424
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80_finetune",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.9881518356606652,
+    "precision": 0.9121273047301632,
+    "recall": 0.905055376793687,
+    "f1-score": 0.9081536792833813
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80_finetune",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.9775551610448897,
+    "precision": 0.5606481343711917,
+    "recall": 0.5519756922488324,
+    "f1-score": 0.5562084362192249
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_50",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.8118750390329542,
+    "precision": 0.7084835162077926,
+    "recall": 0.61063878530395,
+    "f1-score": 0.6162144857839589
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_50",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.8578943439536805,
+    "precision": 0.8899329620845724,
+    "recall": 0.7599940517099996,
+    "f1-score": 0.7907106199727972
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_50",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.980598529038803,
+    "precision": 0.777187315643503,
+    "recall": 0.7774848309450675,
+    "f1-score": 0.7772739948997678
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.9168424595271635,
+    "precision": 0.7091242531334346,
+    "recall": 0.705804776106383,
+    "f1-score": 0.6908750039198591
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.9882334827864531,
+    "precision": 0.9123966425954994,
+    "recall": 0.9047612919060523,
+    "f1-score": 0.9082690468072272
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.9996195790007608,
+    "precision": 0.9972562882874376,
+    "recall": 0.9996932515337423,
+    "f1-score": 0.9984677013325616
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full_finetune",
+    "set_name": "ENC2017 Sampled",
+    "accuracy": 0.9168424595271635,
+    "precision": 0.7091242531334346,
+    "recall": 0.705804776106383,
+    "f1-score": 0.6908750039198591
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full_finetune",
+    "set_name": "UD ET-EDT",
+    "accuracy": 0.9882334827864531,
+    "precision": 0.9123966425954994,
+    "recall": 0.9047612919060523,
+    "f1-score": 0.9082690468072272
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full_finetune",
+    "set_name": "Homonyms Overall",
+    "accuracy": 0.9996195790007608,
+    "precision": 0.9972562882874376,
+    "recall": 0.9996932515337423,
+    "f1-score": 0.9984677013325616
+  },
+  {
+    "model_name": "Vabamorf",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0
+  },
+  {
+    "model_name": "Vabamorf",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.9064,
+    "precision": 0.7905,
+    "recall": 0.7715,
+    "f1-score": 0.7701
+  },
+  {
+    "model_name": "Vabamorf",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.8475,
+    "precision": 0.7638,
+    "recall": 0.6625,
+    "f1-score": 0.6976
+  },
+  {
+    "model_name": "Bert_morph_v1",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.9692384322077565,
+    "precision": 0.8861863117484301,
+    "recall": 0.8852157777826768,
+    "f1-score": 0.88444431815115
+  },
+  {
+    "model_name": "Bert_morph_v1",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.9283398523290594,
+    "precision": 0.8318877177467875,
+    "recall": 0.8067060008126559,
+    "f1-score": 0.8030694605245526
+  },
+  {
+    "model_name": "Bert_morph_v1",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.8941027266962587,
+    "precision": 0.4975896969976155,
+    "recall": 0.40591008117271904,
+    "f1-score": 0.43286398835268597
+  },
+  {
+    "model_name": "Bert_morph_v2",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.9191714472192642,
+    "precision": 0.7727989665293346,
+    "recall": 0.7723699624026015,
+    "f1-score": 0.7558110756804622
+  },
+  {
+    "model_name": "Bert_morph_v2",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.9829948336087347,
+    "precision": 0.9283987065055351,
+    "recall": 0.9301132909038701,
+    "f1-score": 0.9242207578753988
+  },
+  {
+    "model_name": "Bert_morph_v2",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.9511731135066582,
+    "precision": 0.5501747366752668,
+    "recall": 0.49963085073479446,
+    "f1-score": 0.5204946274065129
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.7877434646697125,
+    "precision": 0.7713582891798683,
+    "recall": 0.5830683986607984,
+    "f1-score": 0.5969414298040027
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.8221673743437428,
+    "precision": 0.8701037884549353,
+    "recall": 0.6777149514610898,
+    "f1-score": 0.7188010627273077
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.9993658845909955,
+    "precision": 0.9994897959183673,
+    "recall": 0.9985955056179775,
+    "f1-score": 0.9990404120329741
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full_finetune",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.9177630448971179,
+    "precision": 0.7736892970861724,
+    "recall": 0.7680318752255343,
+    "f1-score": 0.7537935119452728
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full_finetune",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.9806521784601225,
+    "precision": 0.9391038429230543,
+    "recall": 0.9170725995996379,
+    "f1-score": 0.9258965478464672
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_full_finetune",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.9993658845909955,
+    "precision": 0.9997197309417041,
+    "recall": 0.9994887525562373,
+    "f1-score": 0.9996039015126944
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.8278743430318436,
+    "precision": 0.7511847261464474,
+    "recall": 0.6099473499887605,
+    "f1-score": 0.6255941371760713
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.8637913363592629,
+    "precision": 0.8931421230244927,
+    "recall": 0.7201066279547996,
+    "f1-score": 0.7602525149339076
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.9606848446417248,
+    "precision": 0.9503252434201385,
+    "recall": 0.9079785781369045,
+    "f1-score": 0.9274352704072849
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80_finetune",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.9190168664765896,
+    "precision": 0.7742734330633985,
+    "recall": 0.7724150820888989,
+    "f1-score": 0.7571913212951448
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80_finetune",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.9829320839172541,
+    "precision": 0.928726531418197,
+    "recall": 0.9286991835611393,
+    "f1-score": 0.923404534352721
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_80_finetune",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.9632213062777425,
+    "precision": 0.6456434541133439,
+    "recall": 0.6158627506487604,
+    "f1-score": 0.6295654218179166
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_50",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.8131376455635327,
+    "precision": 0.7773522815138036,
+    "recall": 0.6644775978623432,
+    "f1-score": 0.6710852062666066
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_50",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.8532912213181618,
+    "precision": 0.9071945759284274,
+    "recall": 0.7730722259467576,
+    "f1-score": 0.8006725182676036
+  },
+  {
+    "model_name": "Bert_morph_v2_homonym_50",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.9847812301838935,
+    "precision": 0.9827955498319207,
+    "recall": 0.9724330816229584,
+    "f1-score": 0.9773474511954647
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.9189052248291024,
+    "precision": 0.7727976536694066,
+    "recall": 0.7714181483733895,
+    "f1-score": 0.7552230026835179
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.98255558576837,
+    "precision": 0.9287198889258717,
+    "recall": 0.9278361042690093,
+    "f1-score": 0.9230563566672798
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.9993658845909955,
+    "precision": 0.9997197309417041,
+    "recall": 0.9994887525562373,
+    "f1-score": 0.9996039015126944
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full_finetune",
+    "set_name": "ENC2017 Sampled Test",
+    "accuracy": 0.9189052248291024,
+    "precision": 0.7727976536694066,
+    "recall": 0.7714181483733895,
+    "f1-score": 0.7552230026835179
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full_finetune",
+    "set_name": "UD ET-EDT Test",
+    "accuracy": 0.98255558576837,
+    "precision": 0.9287198889258717,
+    "recall": 0.9278361042690093,
+    "f1-score": 0.9230563566672798
+  },
+  {
+    "model_name": "MoE_w_Bert_morph_v2_homonym_full_finetune",
+    "set_name": "Homonyms Test 20",
+    "accuracy": 0.9993658845909955,
+    "precision": 0.9997197309417041,
+    "recall": 0.9994887525562373,
+    "f1-score": 0.9996039015126944
+  }
+]
