@@ -141,7 +141,7 @@ All models are based on Est-RoBERTa (RoBERTa pretrained on Estonian text). Train
 - **Keskmine (K)**: Normalized class space (illative/allative → short illative; rare forms → "other")
 - **Leebe (L)**: Lenient evaluation, focused on target forms only (excludes "other" class)
 
-See `notebooks/comparison` for detailed metric computation and visualization for each strategy and model variant.
+See `notebooks/comparison` for detailed metric computation and visualization for each strategy and model variant on the homonymy corpus (γ).
 
 ### Morph-syntax Conflicts
 
