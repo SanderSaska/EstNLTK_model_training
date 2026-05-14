@@ -52,6 +52,16 @@ Improve the gating mechanism by not only matching the word with the dictionary o
 
 ~~Might have to write report for Siim showcasing the results and the process of training the model on the homonym dataset. Explain why we chose so.~~
 
+### Visual abstract
+
+"Kolme korpuse kogumine" ja "korpuste analüüsimine ja eeltöötlus" kastid võiks kokku panna (pole vaja eraldi panna)
+
+Tulemuste joonises on x-telje tekst liiga väike. Jääb arusaamatuks, kumb nüüd parem on (kas see, millel on kõrgem F1?)
+
+"Mudelite treenimine kolmel korpusel" kastis see lõikamine võiks ära jääda. Ei saada aru, mida selle all täpselt mõeldakse.
+
+MA on eestikeeles MSc (küsitav)
+
 ### BERT and GPT MLM
 
 ~~Do BERT masked prediction. Take TOP 10 predictions for the masked word and do morph analysis. Do case profile (for forms) analysis for these predictions. Check if the correct form is among the TOP 10 predictions and if it is, check if it has the correct case profile. You can filter out cases or labels (cases + forms), where the case does not match with the word at all. The idea is to see whether BERT can predict a word for the masked position that has the correct case profile, for gathering more data for the homonym dataset. Nevertheless, we need to check the same with GPT as well, since it is a more powerful model and might give better results.~~
