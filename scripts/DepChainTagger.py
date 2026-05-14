@@ -1,4 +1,5 @@
 import estnltk
+import json
 from typing import (
     Dict,
     List,
@@ -10,9 +11,12 @@ from typing import (
     Any,
     Callable,
     TypeAlias,
+    Literal,
 )
 from dataclasses import dataclass, field
 from enum import Enum
+from estnltk.taggers import Tagger
+from estnltk import Layer, Text
 
 NodePredicate: TypeAlias = Callable[[Any], bool]
 
@@ -2076,7 +2080,7 @@ class PhraseDecorator:
 
 
 @dataclass(slots=True)
-class DepChainTagger:
+class DepChainTaggerOrchestrator:
     """
     End-to-end orchestrator for dependency-chain tagging on sentence layers.
 
@@ -2308,3 +2312,305 @@ class DepChainTagger:
             raise ValueError(
                 "matcher.patterns must be the same as DepChainTagger.patterns."
             )
+
+
+class DepChainTagger(Tagger):
+    """
+    EstNLTK-compatible wrapper for DepChainTagger.
+
+    This class integrates the DepChainTagger into the EstNLTK pipeline by implementing
+    the Tagger interface. It processes sentence syntax layers and produces a new layer
+    containing dependency chain matches.
+
+    Attributes:
+        patterns (`Tuple[PathPattern, ...]`): Patterns to match.
+        output_layer (`str`): Name of the output layer.
+        output_attributes (`Tuple[str, ...]`): Attributes for the output layer.
+        sentence_match_dedup_mode (`Literal["none", "exact", "role_based"]`): Deduplication strategy within sentences.
+        max_matches_per_sentence (`int`): Maximum matches per sentence.
+        allow_role_node_overlap (`bool`): Allow different roles to map to same token.
+        global_dedup_mode (`Literal["none", "exact", "role_based"]`): Global deduplication across sentences.
+        max_total_matches (`int`): Maximum total matches.
+    """
+
+    conf_param = [
+        "patterns",
+        "output_layer",
+        "output_attributes",
+        "sentence_match_dedup_mode",
+        "max_matches_per_sentence",
+        "allow_role_node_overlap",
+        "global_dedup_mode",
+        "max_total_matches",
+        "_depchain_tagger",
+        "_pattern_by_name",
+    ]
+
+    def __init__(
+        self: Self,
+        patterns: Tuple[PathPattern, ...],
+        output_layer: str = "dep_chains",
+        output_attributes: Optional[Tuple[str, ...]] = None,
+        sentence_match_dedup_mode: Literal["none", "exact", "role_based"] = "none",
+        max_matches_per_sentence: int = 100000,
+        allow_role_node_overlap: bool = False,
+        global_dedup_mode: Literal["none", "exact", "role_based"] = "none",
+        max_total_matches: int = 1000000,
+    ) -> None:
+        """
+        Initialize EstNLTK-compatible dependency chain tagger.
+
+        Args:
+            patterns (Tuple[PathPattern, ...]): Patterns to match in syntax graphs.
+            output_layer (str, optional): Name of output layer. Defaults to "dep_chains".
+            output_attributes (Optional[Tuple[str, ...]], optional): Output layer attributes.
+                Defaults to ("pattern_name", "matched_text", "roles_info").
+            sentence_match_dedup_mode (Literal["none", "exact", "role_based"], optional): Deduplication within sentences.
+                Defaults to "none".
+            max_matches_per_sentence (int, optional): Max matches per sentence.
+                Defaults to 100000.
+            allow_role_node_overlap (bool, optional): Allow role overlaps.
+                Defaults to False.
+            global_dedup_mode (Literal["none", "exact", "role_based"], optional): Global deduplication.
+                Defaults to "none".
+            max_total_matches (int, optional): Max total matches.
+                Defaults to 1000000.
+
+        Deduplication modes:
+            - `"none"`: No deduplication, all matches are kept.
+            - `"exact"`: Remove duplicate matches with identical role-to-token mappings.
+            - `"role_based"`: Remove matches that share the same token for any role, allowing only one match per unique token assignment.
+        """
+        # EstNLTK Tagger interface setup
+        self.input_layers = ("stanza_syntax", "sentences")
+        self.output_layer = output_layer
+        if output_attributes is None:
+            self.output_attributes = (
+                "pattern_name",
+                "matched_text",
+                "upostag",
+                "xpostag",
+                "feats",
+                "lemma",
+                "deprel",
+                "role",
+                "is_anchor",
+                "match_id",
+            )
+        else:
+            self.output_attributes = output_attributes
+        # Initialize internal DepChainTaggerOrchestrator with provided configuration
+        self._depchain_tagger = DepChainTaggerOrchestrator(
+            patterns=patterns,
+            sentence_match_dedup_mode=sentence_match_dedup_mode,
+            max_matches_per_sentence=max_matches_per_sentence,
+            allow_role_node_overlap=allow_role_node_overlap,
+            global_dedup_mode=global_dedup_mode,
+            max_total_matches=max_total_matches,
+        )
+        self._pattern_by_name: Dict[str, PathPattern] = {
+            pattern.name: pattern for pattern in patterns
+        }
+
+    def _make_layer_template(self: Self) -> Layer:
+        """
+        Create empty layer template according to tagger configuration.
+
+        Returns:
+            Layer: Empty layer template with configured name and attributes.
+        """
+        return Layer(
+            name=self.output_layer,
+            attributes=self.output_attributes,
+            text_object=None,
+            ambiguous=False,
+        )
+
+    def _make_layer(
+        self: Self,
+        text: Text,
+        layers: Any,
+        status: Optional[Dict[str, Any]] = None,
+    ) -> Layer:
+        """
+        Create and populate layer with dependency chain matches.
+
+        This method runs the full DepChainTagger pipeline on the stanza_syntax layer
+        and converts matches into Layer annotations using the anchor role strategy.
+
+        Args:
+            text (Text): Input text object.
+            layers (Any): Dictionary of input layers. Must contain "stanza_syntax" layer.
+            status (Optional[Dict[str, Any]], optional): Processing status tracker.
+                Defaults to None.
+
+        Returns:
+            Layer: Populated layer with dependency chain match annotations.
+        """
+        # Create layer template
+        layer = self._make_layer_template()
+        layer.text_object = text
+
+        # Validate input layer availability
+        if layers is None or "stanza_syntax" not in layers or "sentences" not in layers:
+            # Return empty layer if no syntax layer or sentences layer is available
+            return layer
+
+        sentences_layer = layers["sentences"]
+
+        # Run matching on the sentence syntax layer
+        try:
+            for i, sentence in enumerate(sentences_layer):
+                sentence_span = (sentence.start, sentence.end)
+                sentence_syntax = sentence.stanza_syntax
+                sentence_matches = self._run_depchain_matcher(
+                    i, sentence_span, sentence_syntax
+                )
+                # Add matches to layer
+                try:
+                    for match in sentence_matches:
+                        self._add_match_to_layer(layer, match, text)
+                except Exception as exc:
+                    if status is not None:
+                        status.setdefault("errors", []).append(
+                            f"Error adding matches to layer for sentence {i}: {str(exc)}"
+                        )
+
+        except Exception as exc:
+            # Log error and return empty layer on matching failure
+            if status is not None:
+                status.setdefault("errors", []).append(
+                    f"DepChainTagger matching failed: {str(exc)}"
+                )
+            return layer
+
+        return layer
+
+    def _run_depchain_matcher(
+        self: Self,
+        sentence_index: int,
+        sentence_span: Tuple[int, int],
+        stanza_syntax_layer: Layer,
+    ) -> List[ChainMatch]:
+        """
+        Run dependency chain matching on syntax layer.
+
+        Args:
+            sentence_index (int): Index of the sentence being processed.
+            sentence_span (Tuple[int, int]): Character span of the sentence.
+            stanza_syntax_layer (Layer): The stanza syntax layer from estNLTK.
+
+        Returns:
+            List[ChainMatch]: List of matched dependency chains.
+
+        Raises:
+            ValueError: If stanza_syntax_layer is invalid or empty.
+        """
+        if stanza_syntax_layer is None or len(stanza_syntax_layer) == 0:
+            return []
+
+        # Build syntax graph index from stanza_syntax layer
+        graph_index = SyntaxGraphIndex(
+            stanza_syntax_layer=stanza_syntax_layer,
+            sentence_id=sentence_index,
+            sentence_span=sentence_span,
+        )
+
+        # Run matcher
+        matcher = self._depchain_tagger._get_matcher()
+        matches = matcher.match_sentence(
+            graph_index=graph_index,
+            sentence_index=sentence_index,
+            sentence_span=sentence_span,
+        )
+
+        return matches
+
+    def _add_match_to_layer(
+        self: Self,
+        layer: Layer,
+        match: ChainMatch,
+        text: Text,
+    ) -> None:
+        """
+        Add a single ChainMatch as annotation to the layer.
+
+        Uses the anchor role strategy: the first role (typically "self") becomes
+        the span for the Layer annotation, while all role information is stored
+        in a JSON-serialized attribute.
+
+        Args:
+            layer (Layer): Target layer to which annotation is added.
+            match (ChainMatch): The match to convert.
+            text (Text): Source text object.
+
+        Raises:
+            ValueError: If match has no roles or anchor role not found.
+        """
+        pattern = self._pattern_by_name.get(match.pattern_name)
+        anchor_role = (
+            pattern.anchor_role
+            if pattern and pattern.anchor_role in match.role_to_node
+            else None
+        )
+        if anchor_role is None:
+            anchor_role = (
+                "self"
+                if "self" in match.role_to_node
+                else next(iter(match.role_to_token_id.keys()))
+            )
+
+        # roles_info = self._build_roles_info(match)
+        match_id = f"{match.sentence_index}:{match.pattern_name}:{hash(tuple(sorted(match.role_to_token_id.items())))}"
+
+        for role, node in match.role_to_node.items():
+            annotation_dict = {
+                "pattern_name": match.pattern_name,
+                "matched_text": match.matched_text,
+                "upostag": getattr(node, "upostag", None),
+                "xpostag": getattr(node, "xpostag", None),
+                "feats": getattr(node, "feats", None),
+                "lemma": getattr(node, "lemma", None),
+                "deprel": getattr(node, "deprel", None),
+                # "roles_info": json.dumps(roles_info[role]),
+                "role": role,
+                "is_anchor": role == anchor_role,
+                "match_id": match_id,
+            }
+            layer.add_annotation((node.start, node.end), annotation_dict)
+
+    def _build_roles_info(self: Self, match: ChainMatch) -> Dict[str, Any]:
+        """
+        Build a dictionary containing information about all matched roles.
+
+        For each role in the match, extracts the most relevant linguistic properties
+        from the matched Span annotation.
+
+        Args:
+            match (ChainMatch): The match object containing role-to-node mapping.
+
+        Returns:
+            Dict[str, Any]: Serializable dictionary with role information.
+                Keys are role names, values are dicts containing:
+                - text: surface text of the node
+                - start: character start position
+                - end: character end position
+                - upostag: universal POS tag
+                - xpostag: extended POS tag
+                - feats: morphological features
+                - lemma: lemmatized form
+                - deprel: dependency relation
+        """
+        roles_info: Dict[str, Any] = {}
+        for role, node in match.role_to_node.items():
+            roles_info[role] = {
+                "text": getattr(node, "text", ""),
+                "start": node.start,
+                "end": node.end,
+                "upostag": getattr(node, "upostag", None),
+                "xpostag": getattr(node, "xpostag", None),
+                "feats": getattr(node, "feats", None),
+                "lemma": getattr(node, "lemma", None),
+                "deprel": getattr(node, "deprel", None),
+            }
+        return roles_info
