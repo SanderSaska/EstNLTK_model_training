@@ -516,6 +516,14 @@ def prepare_token_classification_data(
         placeholder_labels: Optional set of placeholder label strings.
             Defaults to ``{"-", "NONE"}``. Matching is case-insensitive.
     """
+    # Validate and clean U+2581 markers before tokenization
+    # The tokenizer uses U+2581 (▁) to mark word beginnings.
+    cleaned_sentences = []
+    for words, labels in sentences:
+        # Remove any existing U+2581 from input to avoid conflicts.
+        cleaned_words = [word.replace("\u2581", " ").strip() for word in words]
+        cleaned_sentences.append((cleaned_words, labels))
+
     encodings = []
     all_label_ids: typing.List[typing.List[int]] = []
 
@@ -559,7 +567,7 @@ def prepare_token_classification_data(
         fallback_tokens = tokenizer.tokenize(unk_token)
         return fallback_tokens or [unk_token]
 
-    for words, labels in sentences:
+    for words, labels in cleaned_sentences:
         if len(words) != len(labels):
             raise ValueError(
                 "Each sentence must contain the same number of words and labels."
