@@ -52,14 +52,14 @@ EstNLTK_model_training/
 cd EstNLTK_model_training
 ```
 
-2. Create and activate a virtual environment:
+1. Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+1. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -72,7 +72,7 @@ pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-4. Install the local package in editable mode:
+1. Install the local package in editable mode:
 
 ```bash
 pip install -e .
@@ -142,7 +142,3 @@ All models are based on Est-RoBERTa (RoBERTa pretrained on Estonian text). Train
 - **Leebe (L)**: Lenient evaluation, focused on target forms only (excludes "other" class)
 
 See `notebooks/comparison` for detailed metric computation and visualization for each strategy and model variant on the homonymy corpus (γ).
-
-### Morph-syntax Conflicts
-
-This repository also includes a collection of examples where morphological analysis conflicts with syntactic structure and the beginning of an exploration into these phenomena. This is not related to the thesis work but the framework can be extended to analyze these cases in the future.

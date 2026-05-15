@@ -1,0 +1,3 @@
+- `scripts/model` uses HF token-classification with a SimpleTransformers-compatible preprocessing path: labels are attached only to the first subtoken of each word and other subtokens get `-100`.
+- CamemBERT checkpoints default to `use_fast=False` to preserve SentencePiece tokenisation parity with the training pipeline.
+- Evaluation/prediction support two-model hybrid gating based on homonym density at sentence level.
