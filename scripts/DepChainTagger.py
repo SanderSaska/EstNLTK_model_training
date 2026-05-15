@@ -29,6 +29,7 @@ class ConditionMode(str, Enum):
     EXACT = "exact"  # Match when actual value is exactly equal to expected value
     NEGATION = "negation"  # Match when actual value is not equal to expected value
     WILDCARD = "wildcard"  # Match any value (expected value is ignored, must be None)
+    MEMBERSHIP = "membership"  # Match when actual value is in the expected iterable (list, tuple, set, etc.)
 
 
 class DirectionMode(str, Enum):
@@ -391,6 +392,8 @@ class ValueCondition:
             return actual_value == self.value
         if self.mode is ConditionMode.NEGATION:
             return actual_value != self.value
+        if self.mode is ConditionMode.MEMBERSHIP:
+            return actual_value in self.value
 
         # Defensive fallback; should be unreachable due to validation.
         raise ValueError(f"Unsupported mode: {self.mode}")
@@ -405,6 +408,8 @@ class ValueCondition:
             return f"Value must not be {self.value!r}"
         if self.mode is ConditionMode.WILDCARD:
             return "Value can be any value"
+        if self.mode is ConditionMode.MEMBERSHIP:
+            return f"Value must be in {self.value!r}"
         raise ValueError(f"Unsupported mode: {self.mode}")
 
     def _is_missing(self: Self, value: Any) -> bool:
@@ -424,7 +429,7 @@ class ValueCondition:
         """
         if not isinstance(self.mode, ConditionMode):
             raise TypeError(
-                "mode must be ConditionMode (EXACT, NEGATION, or WILDCARD)."
+                "mode must be ConditionMode (EXACT, NEGATION, WILDCARD, or MEMBERSHIP)."
             )
 
         if self.mode in (ConditionMode.EXACT, ConditionMode.NEGATION):
@@ -433,6 +438,21 @@ class ValueCondition:
 
         if self.mode is ConditionMode.WILDCARD and self.value is not None:
             raise ValueError("value must be None when mode is WILDCARD.")
+
+        if self.mode is ConditionMode.MEMBERSHIP:
+            if self.value is None:
+                raise ValueError("value is required for MEMBERSHIP mode.")
+            # Check if value is iterable (but not string)
+            if isinstance(self.value, str):
+                raise TypeError(
+                    "value for MEMBERSHIP mode must be an iterable (list, tuple, set) but not a string."
+                )
+            try:
+                iter(self.value)
+            except TypeError:
+                raise TypeError(
+                    f"value for MEMBERSHIP mode must be iterable, got {type(self.value).__name__}."
+                )
 
         if self.normalizer is not None and not callable(self.normalizer):
             raise TypeError("normalizer must be callable or None.")
