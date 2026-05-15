@@ -146,22 +146,7 @@ NER_mudel (Ro-v1)
 | Ro-v2-H-80    | 68% F1              | 93% F1      | Alternative specialist        |
 | Ro-v2-H-FT    | 91% F1              | Good        | Single-model alternative      |
 | Ro-v2-H-80-FT | 91% F1              | 63% F1      | Balanced compromise           |
-| **Ro-v2-MoE** | **92% F1**          | **100% F1** | ✅ Production recommended     |
-
-## Loading and Using Models
-
-### Basic Loading
-
-```python
-from transformers import AutoTokenizer, AutoModelForTokenClassification
-
-# Load general-purpose model
-tokenizer = AutoTokenizer.from_pretrained("e:/Git_projects/EstNLTK/EstNLTK_model_training/models/NER_mudel_v2")
-model = AutoModelForTokenClassification.from_pretrained("e:/Git_projects/EstNLTK/EstNLTK_model_training/models/NER_mudel_v2")
-
-# Load MoE variant (if implemented as separate checkpoint)
-moe_model = AutoModelForTokenClassification.from_pretrained("e:/Git_projects/EstNLTK/EstNLTK_model_training/models/NER_mudel_v2_muna_1")
-```
+| **Ro-v2-MoE** | **92% F1**          | **100% F1** | Production recommended        |
 
 ## Model Checkpoints
 

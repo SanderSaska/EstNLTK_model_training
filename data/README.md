@@ -100,22 +100,6 @@ Data is available at University of Tartu's OwnCloud page: https://owncloud.ut.ee
    - Preserves all morphological feature information
    - Includes train/val/test splits for reproducibility
 
-### Example Loading Code
-
-```python
-import pandas as pd
-from scripts.preprocessing import load_dataset
-
-# Load α dataset
-enc2017_df = pd.read_parquet('data/enc2017/train.parquet')
-
-# Load β dataset
-ud_df = pd.read_parquet('data/ud_et_edt/test.parquet')
-
-# Load γ dataset
-homonymy_df = pd.read_parquet('data/vormihomonüümia/train.parquet')
-```
-
 ## Dataset Statistics
 
 | Dataset             | Tokens   | Sentences | Morphological Tags |
