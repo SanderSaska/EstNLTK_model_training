@@ -40,6 +40,7 @@ from scripts.model.train import (
 )
 
 from scripts.model.bert_morph_tagger import BertMorphTagger
+from scripts.model.morph_homonyms_retagger import MorphHomonymsRetagger
 
 __all__ = [
     # utils
@@ -71,4 +72,6 @@ __all__ = [
     "train_token_classification",
     # bert_morph_tagger
     "BertMorphTagger",
+    # morph_homonyms_retagger
+    "MorphHomonymsRetagger",
 ]
