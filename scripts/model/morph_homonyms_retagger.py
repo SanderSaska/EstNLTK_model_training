@@ -193,14 +193,40 @@ class MorphHomonymsRetagger(Retagger):
         layers: MutableMapping[str, Layer],
         status: dict,
     ) -> dict[tuple[int, int], Layer]:
-        """Build a lookup table from span boundaries to expert predictions."""
+        """Build a lookup table from span boundaries to expert predictions.
 
-        expert_layer = self._bert_morph_tagger.make_layer(
-            text=text,
-            layers=layers,
-            status=status,
-        )
-        return {(span.start, span.end): span for span in expert_layer}
+        The BERT helper is only invoked for sentences that contain at least one
+        homonymous word. Sentences without homonyms are skipped entirely.
+        """
+
+        predicted_by_span: dict[tuple[int, int], Layer] = {}
+        sentences_layer = layers[self.sentences_layer]
+        source_layer = layers[self.layer_to_change]
+
+        for sentence in sentences_layer:
+            sentence_has_homonym = any(
+                self._is_homonym_word(span.text)
+                for span in source_layer
+                if span.start >= sentence.start and span.end <= sentence.end
+            )
+            if not sentence_has_homonym:
+                continue
+
+            sentence_text = Text(sentence.enclosing_text)
+            sentence_text.tag_layer([self.sentences_layer, self.words_layer])
+            sentence_layers = sentence_text.layers.union(sentence_text.relation_layers)
+            expert_layer = self._bert_morph_tagger.make_layer(
+                text=sentence_text,
+                layers=sentence_layers,
+                status=status,
+            )
+
+            for span in expert_layer:
+                predicted_by_span[
+                    (span.start + sentence.start, span.end + sentence.start)
+                ] = span
+
+        return predicted_by_span
 
     def _copy_span_annotations(
         self,
