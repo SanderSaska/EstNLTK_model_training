@@ -15,7 +15,7 @@ from estnltk.taggers import Retagger
 
 from scripts.model.bert_morph_tagger import BertMorphTagger
 
-
+# TODO: Needs to be refactored when putting it into estnltk package.
 DEFAULT_HOMONYM_LIST_PATH = (
     Path(__file__).resolve().parents[2]
     / "data"
